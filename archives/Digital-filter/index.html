@@ -1,0 +1,1470 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="数字信号,matlab,数字滤波器," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Alex's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="实验目的：
+实验类型：设计性实验。 
+掌握通过零、极点设计低阶数字滤波器的设计方法。
+掌握IIR和FIR数字滤波器的设计方法，并利用所设计滤波器解决实际问题。
+通过分析滤波前后信号频谱的变化，深刻理解滤波的概念。
+对两种滤波器设计方法的进行比较。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数字信号与信息处理2:数字滤波器的设计">
+<meta property="og:url" content="https://blog.jiangyayu.cn/archives/Digital-filter/index.html">
+<meta property="og:site_name" content="Alex's Blog">
+<meta property="og:description" content="实验目的：
+实验类型：设计性实验。 
+掌握通过零、极点设计低阶数字滤波器的设计方法。
+掌握IIR和FIR数字滤波器的设计方法，并利用所设计滤波器解决实际问题。
+通过分析滤波前后信号频谱的变化，深刻理解滤波的概念。
+对两种滤波器设计方法的进行比较。">
+<meta property="og:image" content="https://image.jiangyayu.cn/Digital-filter/1.png">
+<meta property="og:image" content="https://image.jiangyayu.cn/Digital-filter/2.png">
+<meta property="og:image" content="https://image.jiangyayu.cn/Digital-filter/3.png">
+<meta property="og:image" content="https://image.jiangyayu.cn/Digital-filter/4.png">
+<meta property="og:image" content="https://image.jiangyayu.cn/Digital-filter/5.png">
+<meta property="og:image" content="https://image.jiangyayu.cn/Digital-filter/6.png">
+<meta property="og:image" content="https://image.jiangyayu.cn/Digital-filter/7.png">
+<meta property="og:image" content="https://image.jiangyayu.cn/Digital-filter/8.png">
+<meta property="og:image" content="https://image.jiangyayu.cn/Digital-filter/9.png">
+<meta property="og:image" content="https://image.jiangyayu.cn/Digital-filter/10.png">
+<meta property="og:image" content="https://image.jiangyayu.cn/Digital-filter/11.png">
+<meta property="og:image" content="https://image.jiangyayu.cn/Digital-filter/12.png">
+<meta property="og:image" content="https://image.jiangyayu.cn/Digital-filter/13.png">
+<meta property="og:image" content="https://image.jiangyayu.cn/Digital-filter/14.png">
+<meta property="og:image" content="https://image.jiangyayu.cn/Digital-filter/15.png">
+<meta property="og:image" content="https://image.jiangyayu.cn/Digital-filter/16.png">
+<meta property="og:image" content="https://image.jiangyayu.cn/Digital-filter/17.png">
+<meta property="og:updated_time" content="2017-02-22T11:06:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数字信号与信息处理2:数字滤波器的设计">
+<meta name="twitter:description" content="实验目的：
+实验类型：设计性实验。 
+掌握通过零、极点设计低阶数字滤波器的设计方法。
+掌握IIR和FIR数字滤波器的设计方法，并利用所设计滤波器解决实际问题。
+通过分析滤波前后信号频谱的变化，深刻理解滤波的概念。
+对两种滤波器设计方法的进行比较。">
+<meta name="twitter:image" content="https://image.jiangyayu.cn/Digital-filter/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '6373080329548202754',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://blog.jiangyayu.cn/archives/Digital-filter/"/>
+
+
+
+
+
+  <title> 数字信号与信息处理2:数字滤波器的设计 | Alex's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=1261165488&web_id=1261165488" language="JavaScript"></script>
+  </div>
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Alex's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle"></p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-comments"></i> <br />
+            
+            留言
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://blog.jiangyayu.cn/archives/Digital-filter/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Alexander Chiang">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.png">
+  </span>
+
+  <span class="logospan" style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Alex's Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Alex's Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                数字信号与信息处理2:数字滤波器的设计
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2012-12-14T16:04:22+08:00">
+                2012-12-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数字信号/" itemprop="url" rel="index">
+                    <span itemprop="name">数字信号</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/archives/Digital-filter/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="/archives/Digital-filter/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/archives/Digital-filter/" class="leancloud_visitors" data-flag-title="数字信号与信息处理2:数字滤波器的设计">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="实验目的："><a href="#实验目的：" class="headerlink" title="实验目的："></a>实验目的：</h1><ol>
+<li>实验类型：设计性实验。 </li>
+<li>掌握通过零、极点设计低阶数字滤波器的设计方法。</li>
+<li>掌握IIR和FIR数字滤波器的设计方法，并利用所设计滤波器解决实际问题。</li>
+<li>通过分析滤波前后信号频谱的变化，深刻理解滤波的概念。</li>
+<li>对两种滤波器设计方法的进行比较。<a id="more"></a>
+</li>
+</ol>
+<h1 id="实验主要仪器设备，软件"><a href="#实验主要仪器设备，软件" class="headerlink" title="实验主要仪器设备，软件"></a>实验主要仪器设备，软件</h1><ol>
+<li>硬件准备：PC机</li>
+<li>软件准备：Matlab语言环境</li>
+</ol>
+<h1 id="实验的基本原理与内容"><a href="#实验的基本原理与内容" class="headerlink" title="实验的基本原理与内容"></a>实验的基本原理与内容</h1><h2 id="实验原理"><a href="#实验原理" class="headerlink" title="实验原理"></a>实验原理</h2><p>&emsp;&emsp;数字滤波器是具有某种特定频率特性的线性时不变系统。广义上，任何线性时不变离散系统都是一个数字滤波器。设计数字滤波器的任务就是需求一个因果稳定的线性是不变系统，并使系统函数H(z)具有指定的频率特性。<br><img src="https://image.jiangyayu.cn/Digital-filter/1.png" alt="公式" style="zoom:0.5"><br>&emsp;&emsp;低阶数字滤波器一般指一阶或二阶滤波器。因其阶次较低，可用零极点的分布来调控其频率特性；其好处处理速度快，硬件简单。另外，高阶滤波器在许多情况下由多个低阶滤波器组合来实现。<br>&emsp;&emsp;LTI系统可在z域中用零极点图的形式来描述。这在设计简单的滤波器时很重要，利用其可进行谱分析，只要正确地配置零极点就可达到一定的设计要求。那么，建立零极点与频率特性的关系规律：</p>
+<ol>
+<li>设计滤波器时，一定要保证结构的稳定，因此所有极点应该位于单位圆之内；</li>
+<li>负相位越大引起系统的延时越大，为了减少系统时延，所设计的系统零点最好也在单位圆内(或上)；</li>
+<li>极点在单位圆附近，对应频率幅度会出现波峰；零点在单位圆上，对应频率幅度会出现波谷。</li>
+</ol>
+<p>&emsp;&emsp;基于零极点的低阶数据滤波器模型：</p>
+<p><img src="https://image.jiangyayu.cn/Digital-filter/2.png" alt="公式" style="zoom:0.5"></p>
+<p>&emsp;&emsp;数字滤波器从实现的网络结构或者从单位冲激响应分类，可以分为无限长单位冲激响应（IIR）数字滤波器和有限长单位冲激响应（FIR）数字滤波器。<br>&emsp;&emsp;数字滤波器设计的基本问题：</p>
+<ol>
+<li>根据实际要求确定数字滤波器的性能指标。</li>
+<li>用一个稳定的系统函数去逼近这个指标。</li>
+<li>用一个有限精度的运算去实现这个传输函数。</li>
+</ol>
+<p>&emsp;&emsp;其中IIR数字滤波器主要是借助于模拟滤波器的设计方法。模拟滤波器已有一套成熟的设计方法，充分利用这些资源为IIR数字滤波器设计提供很大方便。但IIR数字滤波器的相位特征一般为非线性的。而在有些实际应用场合，如图像处理，对滤波器线性相位特性要求颇为严格，因此需要选择FIR数字滤波器，且FIR数字滤波器的幅度特征可任意设计，比较IIR数字滤波器的设计更灵活。</p>
+<h2 id="实验内容（一）："><a href="#实验内容（一）：" class="headerlink" title="实验内容（一）："></a>实验内容（一）：</h2><p>&emsp;&emsp;设有一连续信号x(t)=sin(15t)+cos(40t)+cos(200t)，基于零、极点低阶数字滤波器模型，分别设计二阶数字波器和一阶数字滤波器，分别提取三个频率分量。设采样周期T=0.005秒。<br><strong>基本流程：</strong><br>a）    构造连续信号x(t)并显示波形，信号的作用时间设定为：0~10s;<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt;&gt; t = <span class="number">0</span>:<span class="number">0.005</span>:<span class="number">10</span>;</div><div class="line">&gt;&gt; x=<span class="built_in">sin</span>(<span class="number">15</span>*t)+<span class="built_in">cos</span>(<span class="number">40</span>*t)+<span class="built_in">cos</span>(<span class="number">200</span>*t);</div><div class="line">&gt;&gt; plot(x);   <span class="comment">%% 绘出原始信号</span></div></pre></td></tr></table></figure></p>
+<p><img src="https://image.jiangyayu.cn/Digital-filter/3.png" style="zoom:0.7"><br>b）    需求分析并选定滤波的类型【低通，高通，带通，带阻】；基于二阶数字波器和一阶数字滤波器的模型传递函数设计其参数，并画出零、极点分布图及滤波器的频响；<br>c）    用设计出的滤波器分别提取x(t)信号各频率成分；并与参考信号相比。<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">b=[<span class="number">1</span> <span class="number">1</span>];</div><div class="line">a=[<span class="number">20</span> <span class="number">-18</span>];</div><div class="line">y0=filter(b,a,x);  <span class="comment">%%用低通滤除cos（200t）</span></div><div class="line">a1 = poly([<span class="number">0.9</span>,<span class="number">0.9</span>]);</div><div class="line">b1 = poly([exp(<span class="number">0.2</span>j),exp(<span class="number">-0.2</span>j)]);</div><div class="line">w0 = <span class="number">0.2</span>;</div><div class="line">alpha1 = <span class="built_in">sin</span>(w0);</div><div class="line">k1 = (<span class="number">1</span>+alpha1)/<span class="number">2</span> ;</div><div class="line">b1 = k1.*b1;</div><div class="line">y1=filter(b1,a1,y0); <span class="comment">%%用带阻滤除cos（40t）</span></div><div class="line">figure,subplot(<span class="number">3</span>,<span class="number">1</span>,<span class="number">1</span>),zplane(b1,a1); <span class="comment">%%绘制零极点</span></div><div class="line">[H,w] = freqz(b1,a1);</div><div class="line">subplot(<span class="number">3</span>,<span class="number">1</span>,<span class="number">2</span>), plot(w,<span class="built_in">abs</span>(H)); <span class="comment">%%绘制滤波器   </span></div><div class="line">subplot(<span class="number">3</span>,<span class="number">1</span>,<span class="number">3</span>),plot(y1); <span class="comment">%%绘制提取的sin（15t）</span></div><div class="line">hold on ;</div><div class="line">plot(<span class="built_in">sin</span>(<span class="number">15</span>*t),<span class="string">'g'</span>); <span class="comment">%%绘出sin（15t）</span></div></pre></td></tr></table></figure></p>
+<p><img src="https://image.jiangyayu.cn/Digital-filter/4.png" style="zoom:0.7"></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">alpha2 = <span class="number">0.98</span>;</div><div class="line">beta2 = <span class="built_in">cos</span>(<span class="number">0.2</span>);</div><div class="line">a2 = [<span class="number">1</span> -beta2*(<span class="number">1</span>+alpha2) alpha2];</div><div class="line">k2 = (<span class="number">1</span>-alpha2)/<span class="number">2</span>;</div><div class="line">b2 = k2.*[<span class="number">1</span> <span class="number">0</span> <span class="number">-1</span>];</div><div class="line">y3 =filter(b2,a2,x);</div><div class="line">figure,subplot(<span class="number">3</span>,<span class="number">1</span>,<span class="number">1</span>),zplane(b2,a2);<span class="comment">%%绘制零极点</span></div><div class="line">[H,w] = freqz(b2,a2);</div><div class="line">subplot(<span class="number">3</span>,<span class="number">1</span>,<span class="number">2</span>), plot(w,<span class="built_in">abs</span>(H)); <span class="comment">%%绘制滤波器</span></div><div class="line">subplot(<span class="number">3</span>,<span class="number">1</span>,<span class="number">3</span>),plot(y3);<span class="comment">%%绘制提取的cos（40t）</span></div><div class="line">hold on;</div><div class="line">plot(<span class="built_in">cos</span>(<span class="number">40</span>*t),<span class="string">'g'</span>);   <span class="comment">%%绘出cos（40t）</span></div></pre></td></tr></table></figure>
+<p><img src="https://image.jiangyayu.cn/Digital-filter/5.png" style="zoom:0.7"></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">alpha3 = <span class="number">0.98</span>;</div><div class="line">beta3 = <span class="built_in">cos</span>(<span class="number">1</span>);</div><div class="line">a3 = [<span class="number">1</span> -beta3*(<span class="number">1</span>+alpha3) alpha3];</div><div class="line">k3 = (<span class="number">1</span>-alpha2)/<span class="number">2</span>;</div><div class="line">b3 = k3.*[<span class="number">1</span> <span class="number">0</span> <span class="number">-1</span>];</div><div class="line">y4 =filter(b3,a3,x);</div><div class="line">figure,subplot(<span class="number">3</span>,<span class="number">1</span>,<span class="number">1</span>),zplane(b3,a3);<span class="comment">%%绘制零极点</span></div><div class="line">[H,w] = freqz(b3,a3);</div><div class="line">subplot(<span class="number">3</span>,<span class="number">1</span>,<span class="number">2</span>),plot(w,<span class="built_in">abs</span>(H));<span class="comment">%%绘制滤波器</span></div><div class="line">subplot(<span class="number">3</span>,<span class="number">1</span>,<span class="number">3</span>),plot(y4);  <span class="comment">%%绘制提取的cos（200t）</span></div><div class="line">hold on;</div><div class="line">plot(<span class="built_in">cos</span>(<span class="number">200</span>*t),<span class="string">'g'</span>);     <span class="comment">%%绘制cos（200t）</span></div><div class="line">axis([<span class="number">0</span>,<span class="number">300</span>,<span class="number">-1.1</span>,<span class="number">1.1</span>]);<span class="comment">%%设置显示范围</span></div><div class="line">hold off;</div></pre></td></tr></table></figure>
+<p><img src="https://image.jiangyayu.cn/Digital-filter/6.png" style="zoom:0.7"></p>
+<h2 id="实验内容（二）"><a href="#实验内容（二）" class="headerlink" title="实验内容（二）"></a>实验内容（二）</h2><p><strong>实验背景:</strong><br>&emsp;&emsp;心电( Electrocardiograph, ECG) 信号是心脏电活动在人体体表的表现，它一般比较微弱，正常的心电信号在0.01Hz-100Hz频带范围内。而90%的ECG频谱能量又集中在0.25-35Hz之间。因此, 心电信号在提取的过程中极易受到内、 外环境的干扰, 而其中最而其中最主要的干扰是近场 50 Hz工频干扰源。因此, 如何消除 50 Hz工频干扰, 成为处理心电信号的首要任务。<br><strong>实验数据：</strong><br>&emsp;&emsp;实验数据是从美国麻省理工学院提供的MIT-BIH数据库下载的212文件格式带工频干扰的心电信号。该212文件格式包括头、数据和注释三个文件，以ASCll码方式存储。其采样率为360Hz，共有30000个样本点，数据文件<a href="https://image.jiangyayu.cn/Digital-filter/xindiandata.xls" target="_blank" rel="external">xindiantu.xls</a>。<br><strong>实验任务：</strong><br>&emsp;&emsp;分别设计IIR数字带阻滤波器（陷波器）和FIR数字带阻滤波器（陷波器），陷波器的模拟指标如下图所示：阻带从49-51Hz间，其中心频率为f 0=50 Hz，过渡带宽B=2Hz，通带的波动控制在1dB内，而阻带的衰减至少到45dB，采样频率为fs=360Hz；并将所设计滤波器对实际被50Hz干扰后的心电图信号进行滤波处理仿真实验，滤除其中的干扰成分。观察总结滤波作用与效果。<br><img src="https://image.jiangyayu.cn/Digital-filter/7.png"></p>
+<p><strong>实验步骤：</strong><br>（1）读取给定心电图信号的数据文件xidiantu.xls，并绘出心电图信号波形图；</p>
+<ul>
+<li>将xindiantu.xls导入matlab，并转换成行向量data。</li>
+<li>运行以下程序绘出原始心电图<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">T=<span class="number">1</span>/<span class="number">360</span>;</div><div class="line">t=<span class="number">0</span>:T:<span class="number">29999</span>*T;</div><div class="line">plot(t,data)；</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="https://image.jiangyayu.cn/Digital-filter/8.png" style="zoom:0.7"></p>
+<p>（2）对心电图信号的频谱进行分析，得出滤波器的设计指标参数；并绘制其模拟域频谱图。<br>根据实验要求，所设计的滤波器阻带为49-51Hz，其中心频率为f 0=50 Hz，过渡带宽B=2Hz，通带的波动控制在1dB内，而阻带的衰减至少到45dB，采样频率为fs=360Hz；所以设计滤波器的阻带为60dB。<br>（3）根据所分析的指标参数，<strong>设计50Hz IIR数字陷波器（带阻滤波器）</strong>；</p>
+<ul>
+<li><p>将数字域频率转化成模拟域频率</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Rp=<span class="number">1</span>;</div><div class="line">As=<span class="number">60</span>;</div><div class="line">fs=<span class="number">360</span>;</div></pre></td></tr></table></figure>
+</li>
+<li><p>设定滤波器各项参数</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">wpl=fs*<span class="number">2</span>*<span class="built_in">tan</span>((<span class="number">47</span>*<span class="built_in">pi</span>/<span class="number">360</span>));</div><div class="line">wph=fs*<span class="number">2</span>*<span class="built_in">tan</span>((<span class="number">53</span>*<span class="built_in">pi</span>/<span class="number">360</span>));</div><div class="line">wsl=fs*<span class="number">2</span>*<span class="built_in">tan</span>((<span class="number">49</span>*<span class="built_in">pi</span>/<span class="number">360</span>));</div><div class="line">wsh=fs*<span class="number">2</span>*<span class="built_in">tan</span>((<span class="number">51</span>*<span class="built_in">pi</span>/<span class="number">360</span>));</div><div class="line">wp=[wpl,wph];</div><div class="line">ws=[wsl,wsh];</div></pre></td></tr></table></figure>
+</li>
+<li><p>设置巴特沃思(Butterworth)低通滤波器原型</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[N,wc]=buttord(wp,ws,rp,as,<span class="string">'s'</span>);</div><div class="line">[z,p,k]=buttap(N);</div><div class="line">[b0,a0]=zp2tf(z,p,k);</div><div class="line">[H,w] = freqs(b0,a0);</div><div class="line">plot(w,<span class="built_in">abs</span>(H));</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="https://image.jiangyayu.cn/Digital-filter/9.png" style="zoom:0.7"></p>
+<ul>
+<li><p>低通滤波器转换成带阻滤波器</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">B=wc(<span class="number">2</span>)-wc(<span class="number">1</span>);</div><div class="line">wz=(wc(<span class="number">2</span>).*wc(<span class="number">1</span>)).^(<span class="number">1</span>/<span class="number">2</span>);</div><div class="line">[bt,at]=lp2bs(b0,a0,wz,B);</div></pre></td></tr></table></figure>
+</li>
+<li><p>绘制滤波器形状</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[b,a]=bilinear(bt,at,fs); </div><div class="line">subplot(<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>) ,zplane(b,a);</div><div class="line">[H,w]=freqz(b,a);</div><div class="line">subplot(<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>),plot(w*<span class="number">360</span>/(<span class="number">2</span>*<span class="built_in">pi</span>),<span class="number">20</span>*<span class="built_in">log10</span>(<span class="built_in">abs</span>(H)));</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="https://image.jiangyayu.cn/Digital-filter/10.png" style="zoom:0.7"></p>
+<ul>
+<li>开始滤波<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">y=filter(b,a,data);</div><div class="line">plot(t,data);</div><div class="line">figure,plot(t,y);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><a href="https://image.jiangyayu.cn/Digital-filter/11.png" data-fancybox="fancyboxgroup" class="fancybox" target="_blank" rel="external"><img src="https://image.jiangyayu.cn/Digital-filter/11.png"></a></div><div class="group-picture-column" style="width: 50%;"><a href="https://image.jiangyayu.cn/Digital-filter/12.png" data-fancybox="fancyboxgroup" class="fancybox" target="_blank" rel="external"><img src="https://image.jiangyayu.cn/Digital-filter/12.png"></a></div></div></div></div>
+<p>(4)根据所分析的指标参数，<strong>设计50Hz FIR数字陷波器（带阻滤波器）</strong>；用给定指标进行验证设计的合理性。</p>
+<ul>
+<li><p>将信号转到换数字域</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">rp=<span class="number">1</span>;</div><div class="line">As=<span class="number">60</span>;</div><div class="line">fs=<span class="number">360</span>;</div></pre></td></tr></table></figure>
+</li>
+<li><p>设置滤波器参数</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">wp1=<span class="number">47</span>*<span class="number">2</span>*<span class="built_in">pi</span>/<span class="number">360</span>;</div><div class="line">wph=<span class="number">53</span>*<span class="number">2</span>*<span class="built_in">pi</span>/<span class="number">360</span>;</div><div class="line">ws1=<span class="number">49</span>*<span class="number">2</span>*<span class="built_in">pi</span>/<span class="number">360</span>;</div><div class="line">wsh=<span class="number">51</span>*<span class="number">2</span>*<span class="built_in">pi</span>/<span class="number">360</span>;</div></pre></td></tr></table></figure>
+</li>
+<li><p>生成滤波器并绘制出滤波器形状</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">deltaw=<span class="number">2</span>*<span class="number">2</span>*<span class="built_in">pi</span>/<span class="number">360</span>;</div><div class="line">N0=<span class="built_in">ceil</span>(<span class="number">6.6</span>*<span class="built_in">pi</span>/deltaw);</div><div class="line">N=N0+<span class="built_in">mod</span>(N0+<span class="number">1</span>,<span class="number">2</span>);</div><div class="line">wd=(hamming(N));</div><div class="line">wc1=(ws1+wp1)/<span class="number">2</span>; wc2=(wph+wsh)/<span class="number">2</span>;</div><div class="line">hd=[zeros(<span class="number">1</span>,(N<span class="number">-1</span>)/<span class="number">2</span>),<span class="number">1</span>,zeros(<span class="number">1</span>,(N<span class="number">-1</span>)/<span class="number">2</span>)]-ideallp(wc2,N)+ideallp(wc1,N)</div><div class="line"></div><div class="line">h=hd.*wd';</div><div class="line">a=<span class="number">1</span>;</div><div class="line">H=freqz(h,a,<span class="number">0</span>:<span class="number">0.01</span>:<span class="built_in">pi</span>);</div><div class="line">subplot(<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>), zplane(h,a);</div><div class="line">subplot(<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>), plot([<span class="number">0</span>:<span class="number">0.01</span>:pi]*<span class="number">360</span>/(<span class="number">2</span>*<span class="built_in">pi</span>),<span class="built_in">abs</span>(H)) ;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="https://image.jiangyayu.cn/Digital-filter/13.png" style="zoom:0.7"></p>
+<ul>
+<li>进行滤波<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">T=<span class="number">1</span>/<span class="number">360</span>;</div><div class="line">t=<span class="number">0</span>:T:<span class="number">29999</span>*T;</div><div class="line">y=filter(h,a,data);</div><div class="line">plot(t,data);</div><div class="line">figure,plot(t,y);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><a href="https://image.jiangyayu.cn/Digital-filter/14.png" data-fancybox="fancyboxgroup" class="fancybox" target="_blank" rel="external"><img src="https://image.jiangyayu.cn/Digital-filter/14.png"></a></div><div class="group-picture-column" style="width: 50%;"><a href="https://image.jiangyayu.cn/Digital-filter/15.png" data-fancybox="fancyboxgroup" class="fancybox" target="_blank" rel="external"><img src="https://image.jiangyayu.cn/Digital-filter/15.png"></a></div></div></div></div>
+<p>（5）分别利用两种所设计的数字陷波器对给定的心电图信号进行滤波，滤除50Hz的工频干扰；<br>（6）绘制滤波后信号的频谱图，并原始心电信号的频谱进行比对，分析结果；<br><div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><a href="https://image.jiangyayu.cn/Digital-filter/16.png" data-fancybox="fancyboxgroup" class="fancybox" target="_blank" rel="external"><img src="https://image.jiangyayu.cn/Digital-filter/16.png"></a></div><div class="group-picture-column" style="width: 50%;"><a href="https://image.jiangyayu.cn/Digital-filter/17.png" data-fancybox="fancyboxgroup" class="fancybox" target="_blank" rel="external"><img src="https://image.jiangyayu.cn/Digital-filter/17.png"></a></div></div></div></div><br>（7）两种滤波器设计结果的比对，分析其原因。<br>IIR数字滤波器的设计方法简单方便，但其相位特征一般为非线性的。FIR数字滤波器，具有系统稳定、其幅度特征可任意设计等优点。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div><div class="preview-item shake-little shake-constant shake-constant--hover">若本文对您有帮助，请打赏鼓励本人！</div></div>
+    <button id="rewardButton" class="preview-item shake-slow shake-constant shake-constant--hover" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechat-reward-image.png" alt="Alexander Chiang WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay-reward-image.png" alt="Alexander Chiang Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+      
+    </div>
+		
+		<div>
+		  
+		    
+<div style="text-align:center;color: #ccc;font-size:14px;">
+----------------   End   ----------------</div>
+
+		  
+		</div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数字信号/" rel="tag"><i class="fa fa-tag"></i> 数字信号</a>
+          
+            <a href="/tags/matlab/" rel="tag"><i class="fa fa-tag"></i> matlab</a>
+          
+            <a href="/tags/数字滤波器/" rel="tag"><i class="fa fa-tag"></i> 数字滤波器</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/archives/Digital-Image-Positioning/" rel="next" title="数字信号与信息处理1:图像特征定位">
+                <i class="fa fa-chevron-left"></i> 数字信号与信息处理1:图像特征定位
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/archives/ArcGIS-practice-1/" rel="prev" title="ArcGIS练习1：地形图校正和拼接">
+                ArcGIS练习1：地形图校正和拼接 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="/archives/Digital-filter/"
+     data-title="数字信号与信息处理2:数字滤波器的设计"
+     data-content=""
+     data-url="https://blog.jiangyayu.cn//archives/Digital-filter/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li >分享到：</li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="/archives/Digital-filter/"
+           data-title="数字信号与信息处理2:数字滤波器的设计" data-url="https://blog.jiangyayu.cn//archives/Digital-filter/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="Alexander Chiang" />
+          <p class="site-author-name" itemprop="name">Alexander Chiang</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+            
+						  <a title="点击图标High起来" rel="alternate" class="mw-harlem_shake_slow wobble shake" href='javascript:(
+    /*
+     * Copyright (C) 2015 Rocko (rocko.xyz) <rocko.zxp@gmail.com>
+     *
+     * Licensed under the Apache License, Version 2.0 (the "License");
+     * you may not use this file except in compliance with the License.
+     * You may obtain a copy of the License at
+     *
+     *      http://www.apache.org/licenses/LICENSE-2.0
+     *
+     * Unless required by applicable law or agreed to in writing, software
+     * distributed under the License is distributed on an "AS IS" BASIS,
+     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     * See the License for the specific language governing permissions and
+     * limitations under the License.
+     */
+    function go() {
+
+
+    var songs = [
+                "http://o9w8f1xrl.bkt.clouddn.com/highqilai/harlem-shake.mp3",
+                "......"
+    ];
+
+    
+    function c() {
+        var e = document.createElement("link");
+        e.setAttribute("type", "text/css");
+        e.setAttribute("rel", "stylesheet");
+        e.setAttribute("href", f);
+        e.setAttribute("class", l);
+        document.body.appendChild(e)
+    }
+ 
+    function h() {
+        var e = document.getElementsByClassName(l);
+        for (var t = 0; t < e.length; t++) {
+            document.body.removeChild(e[t])
+        }
+    }
+ 
+    function p() {
+        var e = document.createElement("div");
+        e.setAttribute("class", a);
+        document.body.appendChild(e);
+        setTimeout(function() {
+            document.body.removeChild(e)
+        }, 100)
+    }
+ 
+    function d(e) {
+        return {
+            height : e.offsetHeight,
+            width : e.offsetWidth
+        }
+    }
+ 
+    function v(i) {
+        var s = d(i);
+        return s.height > e && s.height < n && s.width > t && s.width < r
+    }
+ 
+    function m(e) {
+        var t = e;
+        var n = 0;
+        while (!!t) {
+            n += t.offsetTop;
+            t = t.offsetParent
+        }
+        return n
+    }
+ 
+    function g() {
+        var e = document.documentElement;
+        if (!!window.innerWidth) {
+            return window.innerHeight
+        } else if (e && !isNaN(e.clientHeight)) {
+            return e.clientHeight
+        }
+        return 0
+    }
+ 
+    function y() {
+        if (window.pageYOffset) {
+            return window.pageYOffset
+        }
+        return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+    }
+ 
+    function E(e) {
+        var t = m(e);
+        return t >= w && t <= b + w
+    }
+
+    function S() {
+        var e = document.getElementById("audio_element_id");
+        if(e != null){
+            var index = parseInt(e.getAttribute("curSongIndex"));
+            if(index > songs.length - 2) {
+                index = 0;
+            } else {
+                index++;
+            }
+            e.setAttribute("curSongIndex", index);
+            N();
+        }
+
+        e.src = i;
+        e.play()
+    }
+ 
+    function x(e) {
+        e.className += " " + s + " " + o
+    }
+ 
+    function T(e) {
+        e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+    }
+ 
+    function N() {
+        var e = document.getElementsByClassName(s);
+        var t = new RegExp("\\b" + s + "\\b");
+        for (var n = 0; n < e.length; ) {
+            e[n].className = e[n].className.replace(t, "")
+        }
+    }
+
+    function initAudioEle() {
+        var e = document.getElementById("audio_element_id");
+        if(e === null){
+            e = document.createElement("audio");
+            e.setAttribute("class", l);
+            e.setAttribute("curSongIndex", 0);
+            e.id = "audio_element_id";
+            e.loop = false;
+            e.bgcolor = 0;
+            e.addEventListener("canplay", function() {
+            setTimeout(function() {
+                x(k)
+            }, 500);
+            setTimeout(function() {
+                N();
+                p();
+                for (var e = 0; e < O.length; e++) {
+                    T(O[e])
+                }
+            }, 15500)
+        }, true);
+        e.addEventListener("ended", function() {
+            N();
+            h();
+            go();
+        }, true);
+        e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+        document.body.appendChild(e);
+        }
+    }
+    
+    initAudioEle();
+    var e = 30;
+    var t = 30;
+    var n = 350;
+    var r = 350;
+
+    var curSongIndex = parseInt(document.getElementById("audio_element_id").getAttribute("curSongIndex"));
+    var i = songs[curSongIndex];
+    
+    var s = "mw-harlem_shake_me";
+    var o = "im_first";
+    var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+    var a = "mw-strobe_light";
+
+    /* harlem-shake-style.css，替换成你的位置，也可以直接使用：//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css */
+    var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+    
+    var l = "mw_added_css";
+    var b = g();
+    var w = y();
+    var C = document.getElementsByTagName("*");
+    var k = null;
+    for (var L = 0; L < C.length; L++) {
+        var A = C[L];
+        if (v(A)) {
+            if (E(A)) {
+                k = A;
+                break
+            }
+        }
+    }
+    if (A === null) {
+        console.warn("Could not find a node of the right size. Please try a different page.");
+        return
+    }
+    c();
+    S();
+    var O = [];
+    for (var L = 0; L < C.length; L++) {
+        var A = C[L];
+        if (v(A)) {
+            O.push(A)
+        }
+    }
+})()'><i class="fa fa-music"></i> High</a>
+						
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Alexander-Chiang" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/2350168841/profile?topnav=1&wvr=6&is_all=1" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-link"></i>
+              友情链接
+            </div>
+            
+						  <span class="links-of-author-item" style="text-align:left">
+						    <a href="https://www.jiangyayu.cn" title="JiaBlog" target="_blank">
+						      JiaBlog
+						    </a>
+						  </span>
+						
+						  <span class="links-of-author-item" style="text-align:left">
+						    <a href="http://www.katouspace.com" title="Ka Tou Space" target="_blank">
+						      Ka Tou Space
+						    </a>
+						  </span>
+						
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#实验目的："><span class="nav-number">1.</span> <span class="nav-text">实验目的：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验主要仪器设备，软件"><span class="nav-number">2.</span> <span class="nav-text">实验主要仪器设备，软件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验的基本原理与内容"><span class="nav-number">3.</span> <span class="nav-text">实验的基本原理与内容</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#实验原理"><span class="nav-number">3.1.</span> <span class="nav-text">实验原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实验内容（一）："><span class="nav-number">3.2.</span> <span class="nav-text">实验内容（一）：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实验内容（二）"><span class="nav-number">3.3.</span> <span class="nav-text">实验内容（二）</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  All Right Reserved &copy;  2012 - 
+  <span itemprop="copyrightYear">2017 &nbsp | &nbsp</span>
+  <span class="with-love">
+    <i class="fa fa-superpowers"></i>
+    <span class="author" itemprop="copyrightHolder">Alexander Chiang</span>
+  </span>
+  
+  </br>皖ICP备17001662号 &nbsp
+  
+  
+		 <span class="site-pv">
+		   <script type="text/javascript">
+		   		var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+		   		document.write(unescape("%3Cspan id='cnzz_stat_icon_1261165488'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1261165488%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+		   </script>
+		 </span>
+  
+  
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+      <span id="scrollIndicator" ></span>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"alexanderblog"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js?v=5.1.0"></script>
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("kifD93te5BbhFRHTPcnGUap9-gzGzoHsz", "fYgh3e3eF6QRqDJzJ1TYSi63");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+  
+  
+
+
+	</script>
+
+</body>
+
+<!--显示滚动进度百分比-->
+<script type="text/javascript">
+$(window).scroll(function() {
+        var wintop = $(window).scrollTop(),
+            docheight =$(document).height(),
+            winheight = $(window).height();
+        var scrolled = (wintop / (docheight - winheight)) * 100;
+        $('.scroll-line').css('width', (scrolled + '%')); 
+        document.getElementById('scrollIndicator').innerHTML = Math.round(scrolled).toString()+'%'; 
+});
+</script>
+
+</html>

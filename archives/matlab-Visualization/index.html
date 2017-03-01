@@ -1,0 +1,1393 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="matlab,NetCDF,可视化," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Alex's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="实验目的1.了解科学数据netcdf的存储模式，学会读取和创建netcdf等科学数据。2.学会应用Matlab对数据进行处理分析。3.应用Matlab和Surfer等软件对已有数据进行可视化显示。4.学会应用contour绘制等值线图和pcolor绘制伪彩色图。5.掌握Matlab句柄操作和对图像显示的控制。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="matlab可视化综合实验">
+<meta property="og:url" content="https://blog.jiangyayu.cn/archives/matlab-Visualization/index.html">
+<meta property="og:site_name" content="Alex's Blog">
+<meta property="og:description" content="实验目的1.了解科学数据netcdf的存储模式，学会读取和创建netcdf等科学数据。2.学会应用Matlab对数据进行处理分析。3.应用Matlab和Surfer等软件对已有数据进行可视化显示。4.学会应用contour绘制等值线图和pcolor绘制伪彩色图。5.掌握Matlab句柄操作和对图像显示的控制。">
+<meta property="og:image" content="https://image.jiangyayu.cn/matlab-Visualization/1.png">
+<meta property="og:image" content="https://image.jiangyayu.cn/matlab-Visualization/2.png">
+<meta property="og:image" content="https://image.jiangyayu.cn/matlab-Visualization/3.png">
+<meta property="og:image" content="https://image.jiangyayu.cn/matlab-Visualization/4.png">
+<meta property="og:image" content="https://image.jiangyayu.cn/matlab-Visualization/5.png">
+<meta property="og:image" content="https://image.jiangyayu.cn/matlab-Visualization/6.png">
+<meta property="og:image" content="https://image.jiangyayu.cn/matlab-Visualization/7.png">
+<meta property="og:image" content="https://image.jiangyayu.cn/matlab-Visualization/8.png">
+<meta property="og:image" content="https://image.jiangyayu.cn/matlab-Visualization/9.png">
+<meta property="og:image" content="https://image.jiangyayu.cn/matlab-Visualization/10.png">
+<meta property="og:image" content="https://image.jiangyayu.cn/matlab-Visualization/11.png">
+<meta property="og:image" content="https://image.jiangyayu.cn/matlab-Visualization/12.png">
+<meta property="og:image" content="https://image.jiangyayu.cn/matlab-Visualization/13.png">
+<meta property="og:updated_time" content="2017-02-23T04:55:32.942Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="matlab可视化综合实验">
+<meta name="twitter:description" content="实验目的1.了解科学数据netcdf的存储模式，学会读取和创建netcdf等科学数据。2.学会应用Matlab对数据进行处理分析。3.应用Matlab和Surfer等软件对已有数据进行可视化显示。4.学会应用contour绘制等值线图和pcolor绘制伪彩色图。5.掌握Matlab句柄操作和对图像显示的控制。">
+<meta name="twitter:image" content="https://image.jiangyayu.cn/matlab-Visualization/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '6373080329548202754',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://blog.jiangyayu.cn/archives/matlab-Visualization/"/>
+
+
+
+
+
+  <title> matlab可视化综合实验 | Alex's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=1261165488&web_id=1261165488" language="JavaScript"></script>
+  </div>
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Alex's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle"></p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-comments"></i> <br />
+            
+            留言
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://blog.jiangyayu.cn/archives/matlab-Visualization/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Alexander Chiang">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.png">
+  </span>
+
+  <span class="logospan" style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Alex's Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Alex's Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                matlab可视化综合实验
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2013-09-10T08:25:33+08:00">
+                2013-09-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据处理分析/" itemprop="url" rel="index">
+                    <span itemprop="name">数据处理分析</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/archives/matlab-Visualization/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="/archives/matlab-Visualization/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/archives/matlab-Visualization/" class="leancloud_visitors" data-flag-title="matlab可视化综合实验">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><p>1.了解科学数据netcdf的存储模式，学会读取和创建netcdf等科学数据。<br>2.学会应用Matlab对数据进行处理分析。<br>3.应用Matlab和Surfer等软件对已有数据进行可视化显示。<br>4.学会应用contour绘制等值线图和pcolor绘制伪彩色图。<br>5.掌握Matlab句柄操作和对图像显示的控制。<br><a id="more"></a></p>
+<h2 id="主要内容"><a href="#主要内容" class="headerlink" title="主要内容"></a>主要内容</h2><p>1.NetCDF格式的读取<br>2.NetCDF格式的写入<br>3.Matlab绘图与格式化<br>4.Surfer绘图</p>
+<h2 id="实验主要仪器设备、软件"><a href="#实验主要仪器设备、软件" class="headerlink" title="实验主要仪器设备、软件"></a>实验主要仪器设备、软件</h2><p>1.硬件准备：PC机；<br>2.操作系统：Linux系统或Windows 2k以上系统；<br>3.软件开发工具：Matlab 2013a 、Surfer  80<br>4.使用数据：ECMWF 1965年全年海表压强(Mean sea level pressure)和皮温(skin temperature)的netcdf文件。</p>
+<h2 id="NetCDF文件介绍"><a href="#NetCDF文件介绍" class="headerlink" title="NetCDF文件介绍"></a>NetCDF文件介绍</h2><h3 id="NetCDF简介"><a href="#NetCDF简介" class="headerlink" title="NetCDF简介"></a>NetCDF简介</h3><p>&emsp;&emsp;NetCDF(network Common Data Form)网络通用数据格式是由美国大学大气研究协会（University Corporation for Atmospheric Research，UCAR)的Unidata项目科学家针对科学数据的特点开发的，是一种面向数组型并适于网络共享的数据的描述和编码标准。对程序员来说，它和zip、jpeg、bmp文件格式类似，都是一种文件格式的标准。netcdf文件开始的目的是用于存储气象科学中的数据，现在已经成为许多数据采集软件的生成文件的格式。利用NetCDF可以对网格数据进行高效地存储、管理、获取和分发等操作。由于其灵活性，能够传输海量的面向阵列（array-oriented）数据，目前广泛应用于大气科学、水文、海洋学、环境模拟、地球物理等诸多领域，例如，NCEP(美国国家环境预报中心)发布的再分析资料，NOAA的CDC(气候数据中心)发布的海洋与大气综合数据集(COADS)均采用NetCDF作为标准。</p>
+<h3 id="NetCDF的数据结构"><a href="#NetCDF的数据结构" class="headerlink" title="NetCDF的数据结构"></a>NetCDF的数据结构</h3><p>&emsp;&emsp;NetCDF数据集(文件名后缀为.nc) 的格式不是固定的，它是使用者根据需求 自己定义的。一个NetCDF数据集包含维(dimensions)、变量(variables)和属性(attributes)三种描述类型，每种类型都会被分配一个名字和一个ID，这些类型共同描述了一个数据集，NetCDF库可以同时访问多个数据集，用ID来识别不同数据集。变量存储实际数据，维给出了变量维度信息，属性则给出了变量或数据集本身的辅助信息属性，又可以分为适用于整个文件的全局属性和适用于特定变量的局部属性，全局属性则描述了数据集的基本属性以及数据集的来源。一个NetCDF文件的结构包括以下对象：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">NetCDF name｛</div><div class="line">Dimensions：…  //定义维数</div><div class="line">Variables：… //定义变量</div><div class="line">Attributes：… //属性</div><div class="line">Data：…//数据</div><div class="line">｝</div></pre></td></tr></table></figure></p>
+<h3 id="NetCDF数据的主要特点"><a href="#NetCDF数据的主要特点" class="headerlink" title="NetCDF数据的主要特点"></a>NetCDF数据的主要特点</h3><p>1)    自描述性：<br>&emsp;&emsp;它是一种自描述的二进制数据格式，包含自身的描述信息；<br>2)    易用性：<br>&emsp;&emsp;它是网络透明的，可以使用多种方式管理和操作这些数据；<br>3)    高可用性：<br>&emsp;&emsp;可以高效访问该数据，在读取大数据集中的子数据集时不用按顺序读取，可以直接读取需要访问的数据；<br>4)    可追加性：<br>&emsp;&emsp;对于新数据，可沿某一维进行追加，不用复制数据集和重新定义数据结构；<br>5)    平台无关性：<br>&emsp;&emsp;NetCDF数据集支持在异构的网络平台间进行数据传输和数据共享。可以由多种软件读取并使用多种语言编写，其中包括C语言，C++，Fortran，IDL，Python，Perl和Java语言等。</p>
+<h2 id="实验内容"><a href="#实验内容" class="headerlink" title="实验内容"></a>实验内容</h2><h3 id="使用数据"><a href="#使用数据" class="headerlink" title="使用数据"></a>使用数据</h3><p>1.ECMWF简介<br>&emsp;&emsp;欧洲中期天气预报中心（European Centre for Medium-Range Weather Forecasts 简称 ECMWF）是一个包括24个欧盟成员国的国际性组织，是当今全球独树一帜的国际性天气预报研究和业务机构。其前身为欧洲的一个科学与技术合作项目。1973年有关国家召开大会宣布ECMWF正式成立，总部设在英国的Bracknell。<br>该中心于1979年6月首次做出了实时的中期天气预报。自1979年8月１日中心开始发布业务性中期天气预报，为其成员国提供实时的天气预报服务。<br>&emsp;&emsp;此外，ECMWF还与克罗地亚、冰岛、匈牙利和斯洛文尼亚达成了合作协议，与世界气象组织（WMO）、欧洲气象卫星开发组织（EUMETSAT）和非洲气象应用发展中心（ACMAD）也有业务工作上的具体协议。同时ECMWF与世界各国气象预报机构在天气预报领域有广泛的联系。ECMWF主要提供10天的中期数值预报产品，各成员国通过专用的区域气象数据通信网络得到这些产品后做出各自的中期预报，同时ECMWF也通过由世界气象组织（WMO）维护的全球通信网络向世界所有国家发送部分有用的中期数值预报产品。其使用的模式充分利用四维同化资料，可提供全球在65公里高度内60层的40公里网格密度共20，911，680个点的风、温、湿预报。<br>2.数据下载<br>&emsp;&emsp;本次实习使用数据是从ECMWF官网(<a href="http://data-portal.ecmwf.int/data/d/era40_daily/" target="_blank" rel="external">http://data-portal.ecmwf.int/data/d/era40_daily/</a> )下载的NetCDF文件，主要内容为1965年全球海表压强(Mean sea level pressure)和皮温(skin temperature)。</p>
+<h3 id="并读取数据"><a href="#并读取数据" class="headerlink" title="并读取数据"></a>并读取数据</h3><p>1.获取文件信息<br>&emsp;&emsp;matlab中使用ncdisp命令查看NetCDF文件信息。<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div></pre></td><td class="code"><pre><div class="line">&gt;&gt; ncdisp(<span class="string">'1965.nc'</span>)</div><div class="line">Source:</div><div class="line">           C:\Users\Jiangyayu\Documents\MATLAB\<span class="number">1965.</span>nc</div><div class="line">Format:</div><div class="line">           classic</div><div class="line">Global Attributes:</div><div class="line">           Conventions = <span class="string">'CF-1.0'</span></div><div class="line">           history     = <span class="string">'2013-09-04 04:50:02 GMT by mars2netcdf-0.92'</span></div><div class="line">Dimensions:</div><div class="line">           longitude = <span class="number">144</span></div><div class="line">           latitude  = <span class="number">73</span></div><div class="line">           time      = <span class="number">1460</span>  (UNLIMITED)</div><div class="line">Variables:</div><div class="line">    longitude</div><div class="line">           Size:       <span class="number">144</span>x1</div><div class="line">           Dimensions: longitude</div><div class="line">           Datatype:   single</div><div class="line">           Attributes:</div><div class="line">                       units     = <span class="string">'degrees_east'</span></div><div class="line">                       long_name = <span class="string">'longitude'</span></div><div class="line">    latitude </div><div class="line">           Size:       <span class="number">73</span>x1</div><div class="line">           Dimensions: latitude</div><div class="line">           Datatype:   single</div><div class="line">           Attributes:</div><div class="line">                       units     = <span class="string">'degrees_north'</span></div><div class="line">                       long_name = <span class="string">'latitude'</span></div><div class="line">    time     </div><div class="line">           Size:       <span class="number">1460</span>x1</div><div class="line">           Dimensions: time</div><div class="line">           Datatype:   int32</div><div class="line">           Attributes:</div><div class="line">                       units     = <span class="string">'hours since 1900-01-01 00:00:0.0'</span></div><div class="line">                       long_name = <span class="string">'time'</span></div><div class="line">    msl      </div><div class="line">           Size:       <span class="number">144</span>x73x1460</div><div class="line">           Dimensions: longitude,latitude,time</div><div class="line">           Datatype:   int16</div><div class="line">           Attributes:</div><div class="line">                       scale_factor  = <span class="number">0.222</span></div><div class="line">                       add_offset    = <span class="number">9.95e+04</span></div><div class="line">                       _FillValue    = <span class="number">-3.28e+04</span></div><div class="line">                       missing_value = <span class="number">-3.28e+04</span></div><div class="line">                       units         = <span class="string">'Pa'</span></div><div class="line">                       long_name     = <span class="string">'Mean sea level pressure'</span></div><div class="line">    skt      </div><div class="line">           Size:       <span class="number">144</span>x73x1460</div><div class="line">           Dimensions: longitude,latitude,time</div><div class="line">           Datatype:   int16</div><div class="line">           Attributes:</div><div class="line">                       scale_factor  = <span class="number">0.00238</span></div><div class="line">                       add_offset    = <span class="number">267</span></div><div class="line">                       _FillValue    = <span class="number">-3.28e+04</span></div><div class="line">                       missing_value = <span class="number">-3.28e+04</span></div><div class="line">                       units         = <span class="string">'K'</span></div><div class="line">                       long_name     = <span class="string">'Skin temperature'</span></div></pre></td></tr></table></figure></p>
+<p>2.读取数据<br>（1）读取变量<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">%% Read data from the netcdf file</span></div><div class="line"><span class="comment">%Read Variables </span></div><div class="line">longitude_data = ncread(<span class="string">'1965.nc'</span>,<span class="string">'longitude'</span>);</div><div class="line">latitude_data = ncread(<span class="string">'1965.nc'</span>,<span class="string">'latitude'</span>);</div><div class="line">time_data = ncread(<span class="string">'1965.nc'</span>,<span class="string">'time'</span>);</div><div class="line">msl = ncread(<span class="string">'1965.nc'</span>,<span class="string">'msl'</span>);</div><div class="line">skt = ncread(<span class="string">'1965.nc'</span>,<span class="string">'skt'</span>);</div></pre></td></tr></table></figure></p>
+<p>（2）读取属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">% Read Attributes</div><div class="line">msl_FillValue = ncreadatt(&apos;1965.nc&apos;,&apos;msl&apos;,&apos;_FillValue&apos;);</div><div class="line">msl_missing_value = ncreadatt(&apos;1965.nc&apos;,&apos;msl&apos;,&apos;missing_value&apos;);</div><div class="line">msl_scale_factor = ncreadatt(&apos;1965.nc&apos;,&apos;msl&apos;,&apos;scale_factor&apos;);</div><div class="line">msl_add_offset = ncreadatt(&apos;1965.nc&apos;,&apos;msl&apos;,&apos;add_offset&apos;);</div><div class="line"> </div><div class="line">skt_FillValue = ncreadatt(&apos;1965.nc&apos;,&apos;skt&apos;,&apos;_FillValue&apos;);</div><div class="line">skt_missing_value = ncreadatt(&apos;1965.nc&apos;,&apos;skt&apos;,&apos;missing_value&apos;);</div><div class="line">skt_scale_factor = ncreadatt(&apos;1965.nc&apos;,&apos;skt&apos;,&apos;scale_factor&apos;);</div><div class="line">skt_add_offset = ncreadatt(&apos;1965.nc&apos;,&apos;skt&apos;,&apos;add_offset&apos;);</div></pre></td></tr></table></figure></p>
+<p>（3）读取结果<br><img src="https://image.jiangyayu.cn/matlab-Visualization/1.png" alter="读取数据"><br>（4）计算年平均msl和skt</p>
+<h3 id="绘制等值线图和伪彩色图"><a href="#绘制等值线图和伪彩色图" class="headerlink" title="绘制等值线图和伪彩色图"></a>绘制等值线图和伪彩色图</h3><p>(1)contour绘制等值线图<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">%% figure</span></div><div class="line">AX = figure(<span class="number">1</span>);</div><div class="line"><span class="comment">% Figure Mean sea level pressure</span></div><div class="line">AX1 = subplot(<span class="number">211</span>);</div><div class="line">v1 = min(min(ave_msl))/<span class="number">100</span>:<span class="number">2.5</span>:max(max(ave_msl))/<span class="number">100</span>;</div><div class="line">[c1,h1] = contour(longitude_data,latitude_data,ave_msl'/<span class="number">100</span>,v1);</div><div class="line">axis image</div><div class="line">xlabel(<span class="string">'longitude'</span>);</div><div class="line">ylabel(<span class="string">'latitude'</span>);</div><div class="line">title(<span class="string">'1965 Mean sea level pressure (+1000hpa)'</span>);</div><div class="line">clabel(c1,h1,v1([<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">9</span>,<span class="number">11</span>,<span class="number">13</span>,<span class="number">14</span>,<span class="number">15</span>,<span class="number">16</span>]),<span class="string">'LabelSpacing'</span>,<span class="number">1000</span>);</div><div class="line">ht = clabel(c1,h1);</div><div class="line"><span class="keyword">for</span> ii = <span class="number">1</span>:<span class="built_in">length</span>(ht)</div><div class="line">    num = get(ht(ii),<span class="string">'UserData'</span>);</div><div class="line">    set(ht(ii),<span class="string">'String'</span>,num2str(num<span class="number">-1000</span>,<span class="string">'%.1f'</span>))</div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure></p>
+<p>(2)pcolor绘制伪彩色图<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">%Figure Skin temperature</span></div><div class="line">AX2 = subplot(<span class="number">212</span>); </div><div class="line">h2 = pcolor(longitude_data,latitude_data,ave_skt');</div><div class="line">axis image</div><div class="line">xlabel(<span class="string">'longitude'</span>);</div><div class="line">ylabel(<span class="string">'latitude'</span>);</div><div class="line">title(<span class="string">'1965 Average Skin temperature (K)'</span>);</div><div class="line">shading interp;</div><div class="line"><span class="number">3</span>)	 绘制colorbar</div><div class="line"><span class="comment">% colorbar</span></div><div class="line">h = colorbar;</div><div class="line">set(h,<span class="string">'Position'</span>,[<span class="number">0.85</span>,<span class="number">0.12</span>,<span class="number">0.05</span>,<span class="number">0.8</span>]);</div><div class="line">v2 = min(min(ave_skt)):<span class="number">10</span>:max(max(ave_skt));</div><div class="line">v3 = cell(<span class="number">1</span>,<span class="built_in">length</span>(v2));</div><div class="line"><span class="keyword">for</span> ii = <span class="number">1</span>:<span class="built_in">length</span>(v2)</div><div class="line">    v3(ii) = &#123;num2str(v2(ii),<span class="string">'%.1f'</span>)&#125;;</div><div class="line"><span class="keyword">end</span></div><div class="line">set(h,<span class="string">'YTick'</span>,v2,<span class="string">'YTickLabel'</span>,v3)</div><div class="line">set(get(h,<span class="string">'Title'</span>),<span class="string">'string'</span>,<span class="string">'K'</span>)</div></pre></td></tr></table></figure></p>
+<p>(4) 保存图片<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">% save the figure </span></div><div class="line">saveas(gcf,<span class="string">'msl&amp;skt'</span>,<span class="string">'jpg'</span>)</div></pre></td></tr></table></figure></p>
+<p>(5)结果图<br><img src="https://image.jiangyayu.cn/matlab-Visualization/2.png" alter="结果图"></p>
+<h3 id="将数据写入新文件"><a href="#将数据写入新文件" class="headerlink" title="将数据写入新文件"></a>将数据写入新文件</h3><p>(1)创建NetCDF文件和变量<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">%% Rewrite the data to a new netcdf file</span></div><div class="line"><span class="comment">%Create File and Variables</span></div><div class="line">nccreate(<span class="string">'average_1965.nc'</span>,<span class="string">'longitude'</span>,<span class="string">'Dimensions'</span>,&#123;<span class="string">'longitude'</span>,<span class="number">144</span>&#125;,<span class="string">'Datatype'</span>,<span class="string">'single'</span>,<span class="string">'Format'</span>,<span class="string">'classic'</span>);</div><div class="line">nccreate(<span class="string">'average_1965.nc'</span>,<span class="string">'latitude'</span>,<span class="string">'Dimensions'</span>,&#123;<span class="string">'latitude'</span>,<span class="number">73</span>&#125;,<span class="string">'Datatype'</span>,<span class="string">'single'</span>,<span class="string">'Format'</span>,<span class="string">'classic'</span>);</div><div class="line">nccreate(<span class="string">'average_1965.nc'</span>,<span class="string">'msl'</span>,<span class="string">'Dimensions'</span>,&#123;<span class="string">'longitude'</span>,<span class="number">144</span>,<span class="string">'latitude'</span>,<span class="number">73</span>&#125;,<span class="string">'Datatype'</span>,<span class="string">'int16'</span>,<span class="string">'Format'</span>,<span class="string">'classic'</span>);</div><div class="line">nccreate(<span class="string">'average_1965.nc'</span>,<span class="string">'skt'</span>,<span class="string">'Dimensions'</span>,&#123;<span class="string">'longitude'</span>,<span class="number">144</span>,<span class="string">'latitude'</span>,<span class="number">73</span>&#125;,<span class="string">'Datatype'</span>,<span class="string">'int16'</span>,<span class="string">'Format'</span>,<span class="string">'classic'</span>);</div></pre></td></tr></table></figure></p>
+<p>(2)创建属性值<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="comment">%Attributes</span></div><div class="line">fileattrib(<span class="string">'average_1965.nc'</span>,<span class="string">'+w'</span>);</div><div class="line"><span class="comment">%Global Attributes</span></div><div class="line">ncwriteatt(<span class="string">'average_1965.nc'</span>,<span class="string">'/'</span>,<span class="string">'discription'</span>,<span class="string">'Mean sea level pressure and skin temperature of 1965'</span>);</div><div class="line">ncwriteatt(<span class="string">'average_1965.nc'</span>,<span class="string">'/'</span>,<span class="string">'author'</span>,<span class="string">'Yayu Jiang'</span>);</div><div class="line">ncwriteatt(<span class="string">'average_1965.nc'</span>,<span class="string">'/'</span>,<span class="string">'data'</span>,<span class="string">'20130910'</span>);</div><div class="line"> </div><div class="line"><span class="comment">% Variables Attributes</span></div><div class="line">ncwriteatt(<span class="string">'average_1965.nc'</span>,<span class="string">'longitude'</span>, <span class="string">'units'</span>,<span class="string">'degrees_east'</span>);</div><div class="line">ncwriteatt(<span class="string">'average_1965.nc'</span>,<span class="string">'longitude'</span>, <span class="string">'long_name'</span> ,<span class="string">'longitude'</span>);</div><div class="line"> </div><div class="line">ncwriteatt(<span class="string">'average_1965.nc'</span>,<span class="string">'latitude'</span>, <span class="string">'units'</span>,<span class="string">'degrees_north'</span>);</div><div class="line">ncwriteatt(<span class="string">'average_1965.nc'</span>,<span class="string">'latitude'</span>, <span class="string">'long_name'</span> ,<span class="string">'latitude'</span>);</div><div class="line"> </div><div class="line">ncwriteatt(<span class="string">'average_1965.nc'</span>,<span class="string">'msl'</span>, <span class="string">'scale_factor'</span>,msl_scale_factor);</div><div class="line">ncwriteatt(<span class="string">'average_1965.nc'</span>,<span class="string">'msl'</span>, <span class="string">'add_offset'</span>,msl_add_offset);</div><div class="line">ncwriteatt(<span class="string">'average_1965.nc'</span>,<span class="string">'msl'</span>, <span class="string">'_FillValue'</span>,msl_FillValue);</div><div class="line">ncwriteatt(<span class="string">'average_1965.nc'</span>,<span class="string">'msl'</span>, <span class="string">'missing_value'</span>,msl_missing_value);</div><div class="line">ncwriteatt(<span class="string">'average_1965.nc'</span>,<span class="string">'msl'</span>, <span class="string">'units'</span>,<span class="string">'K'</span>);</div><div class="line">ncwriteatt(<span class="string">'average_1965.nc'</span>,<span class="string">'msl'</span>, <span class="string">'long_name'</span>,<span class="string">'Skin temperature'</span>);</div><div class="line"> </div><div class="line">ncwriteatt(<span class="string">'average_1965.nc'</span>,<span class="string">'skt'</span>, <span class="string">'scale_factor'</span>,skt_scale_factor);</div><div class="line">ncwriteatt(<span class="string">'average_1965.nc'</span>,<span class="string">'skt'</span>, <span class="string">'add_offset'</span>,skt_add_offset);</div><div class="line">ncwriteatt(<span class="string">'average_1965.nc'</span>,<span class="string">'skt'</span>, <span class="string">'_FillValue'</span>,msl_FillValue);</div><div class="line">ncwriteatt(<span class="string">'average_1965.nc'</span>,<span class="string">'skt'</span>, <span class="string">'missing_value'</span>,msl_missing_value);</div><div class="line">ncwriteatt(<span class="string">'average_1965.nc'</span>,<span class="string">'skt'</span>, <span class="string">'units'</span>,<span class="string">'Pa'</span>);</div><div class="line">ncwriteatt(<span class="string">'average_1965.nc'</span>,<span class="string">'skt'</span>, <span class="string">'long_name'</span>,<span class="string">'Mean sea level pressure'</span>);</div></pre></td></tr></table></figure></p>
+<p>(3) 写入数据<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">% input the new data</span></div><div class="line">ncwrite(<span class="string">'average_1965.nc'</span>,<span class="string">'longitude'</span>,longitude_data);</div><div class="line">ncwrite(<span class="string">'average_1965.nc'</span>,<span class="string">'latitude'</span>,latitude_data);</div><div class="line">ncwrite(<span class="string">'average_1965.nc'</span>,<span class="string">'msl'</span>,ave_msl);</div><div class="line">ncwrite(<span class="string">'average_1965.nc'</span>,<span class="string">'skt'</span>,ave_skt);</div></pre></td></tr></table></figure></p>
+<h3 id="Surfer绘图"><a href="#Surfer绘图" class="headerlink" title="Surfer绘图"></a>Surfer绘图</h3><p>（1)创建dat文件<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">%% creat data for surfer</span></div><div class="line">m = <span class="built_in">zeros</span>(<span class="number">144</span>*<span class="number">73</span>,<span class="number">3</span>);</div><div class="line">s = <span class="built_in">zeros</span>(<span class="number">144</span>*<span class="number">73</span>,<span class="number">3</span>);</div><div class="line"><span class="keyword">for</span> ii = <span class="number">1</span>:<span class="number">144</span></div><div class="line">    <span class="keyword">for</span> jj = <span class="number">1</span>:<span class="number">73</span></div><div class="line">        m((ii<span class="number">-1</span>)*<span class="number">73</span>+jj,<span class="number">1</span>) = longitude_data(ii);</div><div class="line">        m((ii<span class="number">-1</span>)*<span class="number">73</span>+jj,<span class="number">2</span>) = latitude_data(jj);</div><div class="line">        m((ii<span class="number">-1</span>)*<span class="number">73</span>+jj,<span class="number">3</span>) = ave_msl(ii,jj);</div><div class="line">        s((ii<span class="number">-1</span>)*<span class="number">73</span>+jj,<span class="number">1</span>) = longitude_data(ii);</div><div class="line">        s((ii<span class="number">-1</span>)*<span class="number">73</span>+jj,<span class="number">2</span>) = latitude_data(jj);</div><div class="line">        s((ii<span class="number">-1</span>)*<span class="number">73</span>+jj,<span class="number">3</span>) = ave_skt(ii,jj);</div><div class="line">    <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div><div class="line">csvwrite(<span class="string">'msl.dat'</span>,m);</div><div class="line">csvwrite(<span class="string">'skt.dat'</span>,s);</div></pre></td></tr></table></figure></p>
+<p>(2)网格化数据<br>&emsp;&emsp;打开Surfer 8软件，通过菜单下网格-&gt;数据，将matlab生成的dat文件通过插值方式变成网格数据，由于在matlab中已考虑行列的关系，因此这里的数据列就不用考虑了，数据点数也比较多，网格化方式也可默认。<br><img src="https://image.jiangyayu.cn/matlab-Visualization/3.png" alter="生成网格"><br>(3)    绘制等值线<br>&emsp;&emsp;在菜单栏下选择地图-&gt;等值线图-&gt;新建等值线图，依次导入刚刚生成的msl.grd和skt.grd网格数据。<br>(4)    设置参数<br>&emsp;&emsp;对skt等值线图作如下设置：<br>&emsp;&emsp;勾选填充等值线选项；将等值线填充成由篮到红的渐变；设置线条为不可见；将右侧和上侧的刻度属性设置为无。<br><div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><a href="https://image.jiangyayu.cn/matlab-Visualization/4.png" data-fancybox="fancyboxgroup" class="fancybox" target="_blank" rel="external"><img src="https://image.jiangyayu.cn/matlab-Visualization/4.png"></a></div><div class="group-picture-column" style="width: 50%;"><a href="https://image.jiangyayu.cn/matlab-Visualization/5.png" data-fancybox="fancyboxgroup" class="fancybox" target="_blank" rel="external"><img src="https://image.jiangyayu.cn/matlab-Visualization/5.png"></a></div></div></div></div><br>&emsp;&emsp;最终效果图：<br><img src="https://image.jiangyayu.cn/matlab-Visualization/6.png"><br>&emsp;&emsp;对msl等值线进行颜色设置标注显示等最终效果：<br><img src="https://image.jiangyayu.cn/matlab-Visualization/7.png"><br>&emsp;&emsp;添加全球大陆的轮廓图，设置填充：<br><img src="https://image.jiangyayu.cn/matlab-Visualization/8.png"><br>&emsp;&emsp;选中这三个图层，在菜单下选择：地图-&gt;覆盖地图，将三幅图覆盖到一起，调整合适的图层顺序使显示正常。<br>&emsp;&emsp;在菜单下选择：绘制-&gt;符号，找到指北针符号，为等值线图添加指北针。<br>&emsp;&emsp;点击工具栏中的T，为地图添加标题、坐标轴名称等基本信息。<br><img src="https://image.jiangyayu.cn/matlab-Visualization/9.png"><br>(5)    添加colorbar<br>&emsp;&emsp;根据画skt等值线图的基本思想，要制作一个colorbar可以通过设置一个从左往右均匀渐变的网格，然后填充颜色的做法来绘制。这样绘制的colorbar其实就是一种特殊的等值线。<br>&emsp;&emsp;同样用matlab生成这样的一个dat文件：<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">a = <span class="number">0</span>:<span class="number">2.55</span>:<span class="number">255</span>;</div><div class="line">m = <span class="built_in">zeros</span>(<span class="number">1010</span>,<span class="number">3</span>);</div><div class="line"><span class="keyword">for</span> ii = <span class="number">1</span>:<span class="number">10</span></div><div class="line">    <span class="keyword">for</span> jj = <span class="number">210</span>:<span class="number">310</span></div><div class="line">        m((ii<span class="number">-1</span>)*<span class="number">101</span>+jj<span class="number">-209</span>,<span class="number">1</span>) = jj;</div><div class="line">        m((ii<span class="number">-1</span>)*<span class="number">101</span>+jj<span class="number">-209</span>,<span class="number">2</span>) = ii;</div><div class="line">        m((ii<span class="number">-1</span>)*<span class="number">101</span>+jj<span class="number">-209</span>,<span class="number">3</span>) = a(jj<span class="number">-209</span>);</div><div class="line">    <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div><div class="line">csvwrite(<span class="string">'colorbar.dat'</span>,m);</div></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;然后像skt图一样设置填充、坐标轴、等值线、刻度线等，使之美观。<br><img src="https://image.jiangyayu.cn/matlab-Visualization/10.png"><br>(6)保存文件<br><img src="https://image.jiangyayu.cn/matlab-Visualization/11.png"></p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><h3 id="matlab等值线标注问题"><a href="#matlab等值线标注问题" class="headerlink" title="matlab等值线标注问题"></a>matlab等值线标注问题</h3><p>&emsp;&emsp;用Matlab中<code>contour</code>命令画等值线的等值线虽然设置了每隔2.5hpa画一条，但<code>min（min（ave_msl））</code>和<code>max（max（ave_msl））</code>这中间还有16个数据，画出来的等压线十分密集。因此我们在使用<code>clabel</code>进行标注时可以有选择性地对等值线密集的地方少一些标注，稀疏的地方多一些标注，例如：<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">clabel(c1,h1,v1([<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">9</span>,<span class="number">11</span>,<span class="number">13</span>,<span class="number">14</span>,<span class="number">15</span>,<span class="number">16</span>]),<span class="string">'LabelSpacing'</span>,<span class="number">1000</span>);</div></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;此外我们还可以设置标注数据的有效位数，并将其值共同减去一个较大的值来实现用较少位数的数进行标注，例如：<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">ht = clabel(c1,h1);</div><div class="line"><span class="keyword">for</span> ii = <span class="number">1</span>:<span class="built_in">length</span>(ht)</div><div class="line">    num = get(ht(ii),<span class="string">'UserData'</span>);</div><div class="line">    set(ht(ii),<span class="string">'String'</span>,num2str(num<span class="number">-1000</span>,<span class="string">'%.1f'</span>))</div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure></p>
+<h3 id="matlab-colorbar的标注问题"><a href="#matlab-colorbar的标注问题" class="headerlink" title="matlab  colorbar的标注问题"></a>matlab  colorbar的标注问题</h3><p>&emsp;&emsp;matlab中的<code>colorbar</code>命令可以直接绘制出比较优美的colorbar，但是有时候为了是设置colorbar的标注，我们需要用到命令：<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">set(h,<span class="string">'YTick'</span>,v2,<span class="string">'YTickLabel'</span>,&#123;’string1’,’strng2’,’string3’&#125;);</div></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;当colorbar上的标注比较少的时候这种做法可行，但是当colorbar上的标注达到一定的数量时，这种做法很明显会比较耗时耗力，我们可以尝试用：<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">v2 = min(min(ave_skt)):<span class="number">10</span>:max(max(ave_skt));</div><div class="line">v3 = cell(<span class="number">1</span>,<span class="built_in">length</span>(v2));</div><div class="line"><span class="keyword">for</span> ii = <span class="number">1</span>:<span class="built_in">length</span>(v2)</div><div class="line">    v3(ii) = &#123;num2str(v2(ii),<span class="string">'%.1f'</span>)&#125;;</div><div class="line"><span class="keyword">end</span></div><div class="line">set(h,<span class="string">'YTick'</span>,v2,<span class="string">'YTickLabel'</span>,v3);</div></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;此时就能按照所要求的标注间隔和所要保留的位数进行自动标注了。</p>
+<h3 id="surfer-8绘制colorbar的方法"><a href="#surfer-8绘制colorbar的方法" class="headerlink" title="surfer 8绘制colorbar的方法"></a>surfer 8绘制colorbar的方法</h3><p>&emsp;&emsp;相比较matlab而言，surfer中没有提供直接画colorbar的方便操作，但是我们还是可以通过已有的功能来实现colorbar的制作。</p>
+<p>(1)首先我们要做的是生成用来制作colorbar的数据，我们可以在matlab中生成这样的一组数据：<br>&emsp;&emsp;x：将来作为colorbar的刻度值，应设置为skt的整个范围<br>&emsp;&emsp;y：colorbar的宽度，可以任意设置，将来仍然可以调节<br>&emsp;&emsp;(x，y):0:255要保证维度和x，y个数，且不同值的数目与x相同</p>
+<p>(2)    用matlab实现生成数据<br>&emsp;&emsp;这里为了后面绘图方便，在生成数据的时候就生成了一个等价的二维数组colorbar.dat</p>
+<p>(3)    转换成网格数据并导<br><img src="https://image.jiangyayu.cn/matlab-Visualization/12.png"><br>(4)    设置参数<br>&emsp;&emsp;分别设置填充颜色、线条颜色、坐标轴标注、坐标轴刻度等属性，一个美观的colorbar就绘制出来了。<br><img src="https://image.jiangyayu.cn/matlab-Visualization/13.png"></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div><div class="preview-item shake-little shake-constant shake-constant--hover">若本文对您有帮助，请打赏鼓励本人！</div></div>
+    <button id="rewardButton" class="preview-item shake-slow shake-constant shake-constant--hover" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechat-reward-image.png" alt="Alexander Chiang WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay-reward-image.png" alt="Alexander Chiang Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+      
+    </div>
+		
+		<div>
+		  
+		    
+<div style="text-align:center;color: #ccc;font-size:14px;">
+----------------   End   ----------------</div>
+
+		  
+		</div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/matlab/" rel="tag"><i class="fa fa-tag"></i> matlab</a>
+          
+            <a href="/tags/NetCDF/" rel="tag"><i class="fa fa-tag"></i> NetCDF</a>
+          
+            <a href="/tags/可视化/" rel="tag"><i class="fa fa-tag"></i> 可视化</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/archives/IDL-SST/" rel="next" title="利用IDL从TRMM/TMI卫星数据反演全球SST">
+                <i class="fa fa-chevron-left"></i> 利用IDL从TRMM/TMI卫星数据反演全球SST
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/archives/temp-salin/" rel="prev" title="海洋要素计算：温盐跃层的分析">
+                海洋要素计算：温盐跃层的分析 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="/archives/matlab-Visualization/"
+     data-title="matlab可视化综合实验"
+     data-content=""
+     data-url="https://blog.jiangyayu.cn//archives/matlab-Visualization/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li >分享到：</li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="/archives/matlab-Visualization/"
+           data-title="matlab可视化综合实验" data-url="https://blog.jiangyayu.cn//archives/matlab-Visualization/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="Alexander Chiang" />
+          <p class="site-author-name" itemprop="name">Alexander Chiang</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+            
+						  <a title="点击图标High起来" rel="alternate" class="mw-harlem_shake_slow wobble shake" href='javascript:(
+    /*
+     * Copyright (C) 2015 Rocko (rocko.xyz) <rocko.zxp@gmail.com>
+     *
+     * Licensed under the Apache License, Version 2.0 (the "License");
+     * you may not use this file except in compliance with the License.
+     * You may obtain a copy of the License at
+     *
+     *      http://www.apache.org/licenses/LICENSE-2.0
+     *
+     * Unless required by applicable law or agreed to in writing, software
+     * distributed under the License is distributed on an "AS IS" BASIS,
+     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     * See the License for the specific language governing permissions and
+     * limitations under the License.
+     */
+    function go() {
+
+
+    var songs = [
+                "http://o9w8f1xrl.bkt.clouddn.com/highqilai/harlem-shake.mp3",
+                "......"
+    ];
+
+    
+    function c() {
+        var e = document.createElement("link");
+        e.setAttribute("type", "text/css");
+        e.setAttribute("rel", "stylesheet");
+        e.setAttribute("href", f);
+        e.setAttribute("class", l);
+        document.body.appendChild(e)
+    }
+ 
+    function h() {
+        var e = document.getElementsByClassName(l);
+        for (var t = 0; t < e.length; t++) {
+            document.body.removeChild(e[t])
+        }
+    }
+ 
+    function p() {
+        var e = document.createElement("div");
+        e.setAttribute("class", a);
+        document.body.appendChild(e);
+        setTimeout(function() {
+            document.body.removeChild(e)
+        }, 100)
+    }
+ 
+    function d(e) {
+        return {
+            height : e.offsetHeight,
+            width : e.offsetWidth
+        }
+    }
+ 
+    function v(i) {
+        var s = d(i);
+        return s.height > e && s.height < n && s.width > t && s.width < r
+    }
+ 
+    function m(e) {
+        var t = e;
+        var n = 0;
+        while (!!t) {
+            n += t.offsetTop;
+            t = t.offsetParent
+        }
+        return n
+    }
+ 
+    function g() {
+        var e = document.documentElement;
+        if (!!window.innerWidth) {
+            return window.innerHeight
+        } else if (e && !isNaN(e.clientHeight)) {
+            return e.clientHeight
+        }
+        return 0
+    }
+ 
+    function y() {
+        if (window.pageYOffset) {
+            return window.pageYOffset
+        }
+        return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+    }
+ 
+    function E(e) {
+        var t = m(e);
+        return t >= w && t <= b + w
+    }
+
+    function S() {
+        var e = document.getElementById("audio_element_id");
+        if(e != null){
+            var index = parseInt(e.getAttribute("curSongIndex"));
+            if(index > songs.length - 2) {
+                index = 0;
+            } else {
+                index++;
+            }
+            e.setAttribute("curSongIndex", index);
+            N();
+        }
+
+        e.src = i;
+        e.play()
+    }
+ 
+    function x(e) {
+        e.className += " " + s + " " + o
+    }
+ 
+    function T(e) {
+        e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+    }
+ 
+    function N() {
+        var e = document.getElementsByClassName(s);
+        var t = new RegExp("\\b" + s + "\\b");
+        for (var n = 0; n < e.length; ) {
+            e[n].className = e[n].className.replace(t, "")
+        }
+    }
+
+    function initAudioEle() {
+        var e = document.getElementById("audio_element_id");
+        if(e === null){
+            e = document.createElement("audio");
+            e.setAttribute("class", l);
+            e.setAttribute("curSongIndex", 0);
+            e.id = "audio_element_id";
+            e.loop = false;
+            e.bgcolor = 0;
+            e.addEventListener("canplay", function() {
+            setTimeout(function() {
+                x(k)
+            }, 500);
+            setTimeout(function() {
+                N();
+                p();
+                for (var e = 0; e < O.length; e++) {
+                    T(O[e])
+                }
+            }, 15500)
+        }, true);
+        e.addEventListener("ended", function() {
+            N();
+            h();
+            go();
+        }, true);
+        e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+        document.body.appendChild(e);
+        }
+    }
+    
+    initAudioEle();
+    var e = 30;
+    var t = 30;
+    var n = 350;
+    var r = 350;
+
+    var curSongIndex = parseInt(document.getElementById("audio_element_id").getAttribute("curSongIndex"));
+    var i = songs[curSongIndex];
+    
+    var s = "mw-harlem_shake_me";
+    var o = "im_first";
+    var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+    var a = "mw-strobe_light";
+
+    /* harlem-shake-style.css，替换成你的位置，也可以直接使用：//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css */
+    var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+    
+    var l = "mw_added_css";
+    var b = g();
+    var w = y();
+    var C = document.getElementsByTagName("*");
+    var k = null;
+    for (var L = 0; L < C.length; L++) {
+        var A = C[L];
+        if (v(A)) {
+            if (E(A)) {
+                k = A;
+                break
+            }
+        }
+    }
+    if (A === null) {
+        console.warn("Could not find a node of the right size. Please try a different page.");
+        return
+    }
+    c();
+    S();
+    var O = [];
+    for (var L = 0; L < C.length; L++) {
+        var A = C[L];
+        if (v(A)) {
+            O.push(A)
+        }
+    }
+})()'><i class="fa fa-music"></i> High</a>
+						
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Alexander-Chiang" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/2350168841/profile?topnav=1&wvr=6&is_all=1" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-link"></i>
+              友情链接
+            </div>
+            
+						  <span class="links-of-author-item" style="text-align:left">
+						    <a href="https://www.jiangyayu.cn" title="JiaBlog" target="_blank">
+						      JiaBlog
+						    </a>
+						  </span>
+						
+						  <span class="links-of-author-item" style="text-align:left">
+						    <a href="http://www.katouspace.com" title="Ka Tou Space" target="_blank">
+						      Ka Tou Space
+						    </a>
+						  </span>
+						
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#实验目的"><span class="nav-number">1.</span> <span class="nav-text">实验目的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主要内容"><span class="nav-number">2.</span> <span class="nav-text">主要内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实验主要仪器设备、软件"><span class="nav-number">3.</span> <span class="nav-text">实验主要仪器设备、软件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NetCDF文件介绍"><span class="nav-number">4.</span> <span class="nav-text">NetCDF文件介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#NetCDF简介"><span class="nav-number">4.1.</span> <span class="nav-text">NetCDF简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NetCDF的数据结构"><span class="nav-number">4.2.</span> <span class="nav-text">NetCDF的数据结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NetCDF数据的主要特点"><span class="nav-number">4.3.</span> <span class="nav-text">NetCDF数据的主要特点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实验内容"><span class="nav-number">5.</span> <span class="nav-text">实验内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用数据"><span class="nav-number">5.1.</span> <span class="nav-text">使用数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#并读取数据"><span class="nav-number">5.2.</span> <span class="nav-text">并读取数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绘制等值线图和伪彩色图"><span class="nav-number">5.3.</span> <span class="nav-text">绘制等值线图和伪彩色图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将数据写入新文件"><span class="nav-number">5.4.</span> <span class="nav-text">将数据写入新文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Surfer绘图"><span class="nav-number">5.5.</span> <span class="nav-text">Surfer绘图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">6.</span> <span class="nav-text">小结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#matlab等值线标注问题"><span class="nav-number">6.1.</span> <span class="nav-text">matlab等值线标注问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#matlab-colorbar的标注问题"><span class="nav-number">6.2.</span> <span class="nav-text">matlab  colorbar的标注问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#surfer-8绘制colorbar的方法"><span class="nav-number">6.3.</span> <span class="nav-text">surfer 8绘制colorbar的方法</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  All Right Reserved &copy;  2012 - 
+  <span itemprop="copyrightYear">2017 &nbsp | &nbsp</span>
+  <span class="with-love">
+    <i class="fa fa-superpowers"></i>
+    <span class="author" itemprop="copyrightHolder">Alexander Chiang</span>
+  </span>
+  
+  </br>皖ICP备17001662号 &nbsp
+  
+  
+		 <span class="site-pv">
+		   <script type="text/javascript">
+		   		var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+		   		document.write(unescape("%3Cspan id='cnzz_stat_icon_1261165488'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1261165488%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+		   </script>
+		 </span>
+  
+  
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+      <span id="scrollIndicator" ></span>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"alexanderblog"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js?v=5.1.0"></script>
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("kifD93te5BbhFRHTPcnGUap9-gzGzoHsz", "fYgh3e3eF6QRqDJzJ1TYSi63");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+  
+  
+
+
+	</script>
+
+</body>
+
+<!--显示滚动进度百分比-->
+<script type="text/javascript">
+$(window).scroll(function() {
+        var wintop = $(window).scrollTop(),
+            docheight =$(document).height(),
+            winheight = $(window).height();
+        var scrolled = (wintop / (docheight - winheight)) * 100;
+        $('.scroll-line').css('width', (scrolled + '%')); 
+        document.getElementById('scrollIndicator').innerHTML = Math.round(scrolled).toString()+'%'; 
+});
+</script>
+
+</html>
