@@ -92,20 +92,20 @@
 <meta property="og:url" content="https://blog.jiangyayu.cn/archives/ArcGIS-practice-2/index.html">
 <meta property="og:site_name" content="Alex's Blog">
 <meta property="og:description" content="本文将简单记述如何应用ArcGIS软件对天津地形图进行校正和矢量化操作，并作必要的统计分析和数据处理工作。">
-<meta property="og:image" content="https://image.jiangyayu.cn/ArcGIS-practice-2/1.%E5%A4%A9%E6%B4%A5%E5%B8%82%E6%BB%A8%E6%B5%B7%E6%96%B0%E5%8C%BA%E5%9B%BE.jpg">
-<meta property="og:image" content="https://image.jiangyayu.cn/ArcGIS-practice-2/2.png">
-<meta property="og:image" content="https://image.jiangyayu.cn/ArcGIS-practice-2/3.png">
-<meta property="og:image" content="https://image.jiangyayu.cn/ArcGIS-practice-2/4.png">
-<meta property="og:image" content="https://image.jiangyayu.cn/ArcGIS-practice-2/5.png">
-<meta property="og:image" content="https://image.jiangyayu.cn/ArcGIS-practice-2/6.png">
-<meta property="og:image" content="https://image.jiangyayu.cn/ArcGIS-practice-2/7.png">
-<meta property="og:image" content="https://image.jiangyayu.cn/ArcGIS-practice-2/8.png">
-<meta property="og:image" content="https://image.jiangyayu.cn/ArcGIS-practice-2/9.png">
-<meta property="og:updated_time" content="2017-01-30T14:47:08.537Z">
+<meta property="og:image" content="http://source.jiangyayu.cn/ArcGIS-practice-2/1.%E5%A4%A9%E6%B4%A5%E5%B8%82%E6%BB%A8%E6%B5%B7%E6%96%B0%E5%8C%BA%E5%9B%BE.jpg">
+<meta property="og:image" content="http://source.jiangyayu.cn/ArcGIS-practice-2/2.png">
+<meta property="og:image" content="http://source.jiangyayu.cn/ArcGIS-practice-2/3.png">
+<meta property="og:image" content="http://source.jiangyayu.cn/ArcGIS-practice-2/4.png">
+<meta property="og:image" content="http://source.jiangyayu.cn/ArcGIS-practice-2/5.png">
+<meta property="og:image" content="http://source.jiangyayu.cn/ArcGIS-practice-2/6.png">
+<meta property="og:image" content="http://source.jiangyayu.cn/ArcGIS-practice-2/7.png">
+<meta property="og:image" content="http://source.jiangyayu.cn/ArcGIS-practice-2/8.png">
+<meta property="og:image" content="http://source.jiangyayu.cn/ArcGIS-practice-2/9.png">
+<meta property="og:updated_time" content="2017-03-02T14:50:42.548Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ArcGIS练习2：地图投影与编辑">
 <meta name="twitter:description" content="本文将简单记述如何应用ArcGIS软件对天津地形图进行校正和矢量化操作，并作必要的统计分析和数据处理工作。">
-<meta name="twitter:image" content="https://image.jiangyayu.cn/ArcGIS-practice-2/1.%E5%A4%A9%E6%B4%A5%E5%B8%82%E6%BB%A8%E6%B5%B7%E6%96%B0%E5%8C%BA%E5%9B%BE.jpg">
+<meta name="twitter:image" content="http://source.jiangyayu.cn/ArcGIS-practice-2/1.%E5%A4%A9%E6%B4%A5%E5%B8%82%E6%BB%A8%E6%B5%B7%E6%96%B0%E5%8C%BA%E5%9B%BE.jpg">
 
 
 
@@ -420,18 +420,18 @@
 
       
         <p>本文将简单记述如何应用ArcGIS软件对天津地形图进行校正和矢量化操作，并作必要的统计分析和数据处理工作。<br><a id="more"></a></p>
-<h1 id="投影与配准"><a href="#投影与配准" class="headerlink" title="投影与配准"></a>投影与配准</h1><h2 id="地图数据"><a href="#地图数据" class="headerlink" title="地图数据"></a>地图数据</h2><p><img src="https://image.jiangyayu.cn/ArcGIS-practice-2/1.%E5%A4%A9%E6%B4%A5%E5%B8%82%E6%BB%A8%E6%B5%B7%E6%96%B0%E5%8C%BA%E5%9B%BE.jpg" alt="天津市滨海新区图" style="zoom:15%"></p>
+<h1 id="投影与配准"><a href="#投影与配准" class="headerlink" title="投影与配准"></a>投影与配准</h1><h2 id="地图数据"><a href="#地图数据" class="headerlink" title="地图数据"></a>地图数据</h2><p><img src="http://source.jiangyayu.cn/ArcGIS-practice-2/1.%E5%A4%A9%E6%B4%A5%E5%B8%82%E6%BB%A8%E6%B5%B7%E6%96%B0%E5%8C%BA%E5%9B%BE.jpg" alt="天津市滨海新区图" style="zoom:15%"></p>
 <h2 id="打开图像，设置地图单位"><a href="#打开图像，设置地图单位" class="headerlink" title="打开图像，设置地图单位"></a>打开图像，设置地图单位</h2><ol>
 <li>添加“天津市滨海新区图.jpg”</li>
 <li>在ArcMap主菜单下选择View→Data Frame Properties，打开的Data Frame Properties窗口，在General标签中设置地图单位为Meters。</li>
 </ol>
 <h2 id="地图配准"><a href="#地图配准" class="headerlink" title="地图配准"></a>地图配准</h2><ol>
 <li>选择投影坐标：在Data Frame Properties窗口的Coordinate System的标签中，设置地图的投影为Gauss Kruger →Xian 1980→Xian1980 GK CM 117E。</li>
-<li>采取控制点：添加实验一中已配准的塘沽地形图，找出两幅地图中的同名地物作为采取的控制点。本实验中采取的控制点为：塘沽火站、北塘站、以及部分铁路和公路的交点。至少选取四个点，采用一次多项式，删除误差较大的点并使最后误差小于1。<br><img src="https://image.jiangyayu.cn/ArcGIS-practice-2/2.png" alt="采取控制点" style="zoom:70%"></li>
-<li>地图矫正：选择Georeferencing→rectify对“天津市滨海新区图.jpg”进行矫正，保存名为“天津市滨海新区图”，设置保存格式为TIFF。<br><img src="https://image.jiangyayu.cn/ArcGIS-practice-2/3.png" alt="地图矫正" style="zoom:50%"></li>
+<li>采取控制点：添加实验一中已配准的塘沽地形图，找出两幅地图中的同名地物作为采取的控制点。本实验中采取的控制点为：塘沽火站、北塘站、以及部分铁路和公路的交点。至少选取四个点，采用一次多项式，删除误差较大的点并使最后误差小于1。<br><img src="http://source.jiangyayu.cn/ArcGIS-practice-2/2.png" alt="采取控制点" style="zoom:70%"></li>
+<li>地图矫正：选择Georeferencing→rectify对“天津市滨海新区图.jpg”进行矫正，保存名为“天津市滨海新区图”，设置保存格式为TIFF。<br><img src="http://source.jiangyayu.cn/ArcGIS-practice-2/3.png" alt="地图矫正" style="zoom:50%"></li>
 </ol>
 <h1 id="地图编辑"><a href="#地图编辑" class="headerlink" title="地图编辑"></a>地图编辑</h1><ol>
-<li>创建shape<br>打开ArcCatalog，在左侧目录树中选择指定的位置，然后在Contents框中右击鼠标，选择New→Shapfile打开Creat New Shapeflie窗口，在Name中输入lake，FeatureType选择Polygon，然后点击Edit，选择Import导入“天津滨海新区图.tif”的坐标系统。<div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><a href="https://image.jiangyayu.cn/ArcGIS-practice-2/4.png" data-fancybox="fancyboxgroup" class="fancybox" target="_blank" rel="external"><img src="https://image.jiangyayu.cn/ArcGIS-practice-2/4.png" alt="导入坐标系统" style="zoom:60%"></a></div><div class="group-picture-column" style="width: 50%;"><a href="https://image.jiangyayu.cn/ArcGIS-practice-2/5.png" data-fancybox="fancyboxgroup" class="fancybox" target="_blank" rel="external"><img src="https://image.jiangyayu.cn/ArcGIS-practice-2/5.png" alt="导入坐标系统" style="zoom:120%"></a></div></div></div></div></li>
+<li>创建shape<br>打开ArcCatalog，在左侧目录树中选择指定的位置，然后在Contents框中右击鼠标，选择New→Shapfile打开Creat New Shapeflie窗口，在Name中输入lake，FeatureType选择Polygon，然后点击Edit，选择Import导入“天津滨海新区图.tif”的坐标系统。<div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><a href="http://source.jiangyayu.cn/ArcGIS-practice-2/4.png" data-fancybox="fancyboxgroup" class="fancybox" target="_blank" rel="external"><img src="http://source.jiangyayu.cn/ArcGIS-practice-2/4.png" alt="导入坐标系统" style="zoom:60%"></a></div><div class="group-picture-column" style="width: 50%;"><a href="http://source.jiangyayu.cn/ArcGIS-practice-2/5.png" data-fancybox="fancyboxgroup" class="fancybox" target="_blank" rel="external"><img src="http://source.jiangyayu.cn/ArcGIS-practice-2/5.png" alt="导入坐标系统" style="zoom:120%"></a></div></div></div></div></li>
 <li>添加字段<br>双击刚刚新建好的Shapefile文件，在Shapefile Properties窗口中，为lake图层增加一个字段name，类型为Text。</li>
 <li>加载数据<br>回到ArcMap中，添加图层“天津滨海新区图.tif”和“lake.shp”。</li>
 <li>编辑数据</li>
@@ -440,15 +440,15 @@
 <li>选中lake图层，在Editor工具条上选择Editor→Start Editing开始对lake图层进行编辑。</li>
 <li>在地图中找到一个水库，如钱圈水库，将地图放大到合适比例，然后沿着水库的周围提取图形。待跟踪完一周后，右击鼠标，选择Finish Sketch。然后在打开lake的属性窗口输入水库的name：钱圈水库。</li>
 <li>完成其他水库、盐田等的矢量化。最后Stop Editing，保存文件。</li>
-<li>参照lake图层的矢量化，完成其他几个图层的矢量化。并参照天津滨海新新区图的地图符号，为矢量化后的各要素设置相应的地图符号。最终矢量化得到的图层如图所示：<br><img src="https://image.jiangyayu.cn/ArcGIS-practice-2/6.png" alt="矢量化的图层"></li>
+<li>参照lake图层的矢量化，完成其他几个图层的矢量化。并参照天津滨海新新区图的地图符号，为矢量化后的各要素设置相应的地图符号。最终矢量化得到的图层如图所示：<br><img src="http://source.jiangyayu.cn/ArcGIS-practice-2/6.png" alt="矢量化的图层"></li>
 </ul>
 <h1 id="统计分析"><a href="#统计分析" class="headerlink" title="统计分析"></a>统计分析</h1><ol>
 <li>创建统计图</li>
 </ol>
 <ul>
 <li>选中river图层，Start Editing，打开属性表，右击length字段，选中Calculate Geometry，计算出河流长度。</li>
-<li>点击Options，选择Creat Graph，设计河流统计表的样式<br><img src="https://image.jiangyayu.cn/ArcGIS-practice-2/7.png" alt="设置统计图" style="zoom:60%"></li>
-<li>点击Next生成河流统计图：<br><img src="https://image.jiangyayu.cn/ArcGIS-practice-2/8.png" alt="生成统计图" style="zoom:60%"></li>
+<li>点击Options，选择Creat Graph，设计河流统计表的样式<br><img src="http://source.jiangyayu.cn/ArcGIS-practice-2/7.png" alt="设置统计图" style="zoom:60%"></li>
+<li>点击Next生成河流统计图：<br><img src="http://source.jiangyayu.cn/ArcGIS-practice-2/8.png" alt="生成统计图" style="zoom:60%"></li>
 <li>在统计图上右击选择Add to Layout将统计图添加到制版上，调整至合适的大小和位置。</li>
 </ul>
 <h1 id="地图制版"><a href="#地图制版" class="headerlink" title="地图制版"></a>地图制版</h1><ul>
@@ -458,7 +458,7 @@
 <li>为地图设置合适的图标；</li>
 <li>在ArcGis主菜单下选择File→Export Map，选择输出格式为jpg，输出地图。</li>
 </ul>
-<h1 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h1><p><img src="https://image.jiangyayu.cn/ArcGIS-practice-2/9.png" alt="结果图"></p>
+<h1 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h1><p><img src="http://source.jiangyayu.cn/ArcGIS-practice-2/9.png" alt="结果图"></p>
 
       
     </div>

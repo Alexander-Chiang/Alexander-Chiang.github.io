@@ -100,16 +100,16 @@
 掌握卷积和相关运算的基本原理与主要应用；
 掌握利用MATLAB语言环境进行灰度图像的读取和显示；
 掌握利用相关运算进行图像特征的定位的主要方法；">
-<meta property="og:image" content="https://image.jiangyayu.cn/Digital-Image-Positioning/math.png">
-<meta property="og:image" content="https://image.jiangyayu.cn/Digital-Image-Positioning/1.png">
-<meta property="og:image" content="https://image.jiangyayu.cn/Digital-Image-Positioning/1.png">
-<meta property="og:image" content="https://image.jiangyayu.cn/Digital-Image-Positioning/2.png">
-<meta property="og:image" content="https://image.jiangyayu.cn/Digital-Image-Positioning/3.png">
-<meta property="og:image" content="https://image.jiangyayu.cn/Digital-Image-Positioning/4.png">
-<meta property="og:image" content="https://image.jiangyayu.cn/Digital-Image-Positioning/5.png">
-<meta property="og:image" content="https://image.jiangyayu.cn/Digital-Image-Positioning/6.png">
-<meta property="og:image" content="https://image.jiangyayu.cn/Digital-Image-Positioning/7.png">
-<meta property="og:updated_time" content="2017-02-22T11:05:46.000Z">
+<meta property="og:image" content="http://source.jiangyayu.cn/Digital-Image-Positioning/math.png">
+<meta property="og:image" content="http://source.jiangyayu.cn/Digital-Image-Positioning/1.png">
+<meta property="og:image" content="http://source.jiangyayu.cn/Digital-Image-Positioning/1.png">
+<meta property="og:image" content="http://source.jiangyayu.cn/Digital-Image-Positioning/2.png">
+<meta property="og:image" content="http://source.jiangyayu.cn/Digital-Image-Positioning/3.png">
+<meta property="og:image" content="http://source.jiangyayu.cn/Digital-Image-Positioning/4.png">
+<meta property="og:image" content="http://source.jiangyayu.cn/Digital-Image-Positioning/5.png">
+<meta property="og:image" content="http://source.jiangyayu.cn/Digital-Image-Positioning/6.png">
+<meta property="og:image" content="http://source.jiangyayu.cn/Digital-Image-Positioning/7.png">
+<meta property="og:updated_time" content="2017-03-02T14:50:37.153Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数字信号与信息处理1:图像特征定位">
 <meta name="twitter:description" content="实验目的
@@ -117,7 +117,7 @@
 掌握卷积和相关运算的基本原理与主要应用；
 掌握利用MATLAB语言环境进行灰度图像的读取和显示；
 掌握利用相关运算进行图像特征的定位的主要方法；">
-<meta name="twitter:image" content="https://image.jiangyayu.cn/Digital-Image-Positioning/math.png">
+<meta name="twitter:image" content="http://source.jiangyayu.cn/Digital-Image-Positioning/math.png">
 
 
 
@@ -443,8 +443,8 @@
 <li>软件准备：Matlab语言环境</li>
 </ol>
 <h1 id="实验的基本原理与内容："><a href="#实验的基本原理与内容：" class="headerlink" title="实验的基本原理与内容："></a>实验的基本原理与内容：</h1><ol>
-<li>实验原理：数字信号处理应用中广泛的应用到相关和卷积运算。从技术上讲，相关和卷积是相同的过程。相关运算常用它来度量两个序列相似的程度，可应用到在图像特性的定位。二维卷积和相关运算的表达式如下： <div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 100%;"><a href="https://image.jiangyayu.cn/Digital-Image-Positioning/math.png" data-fancybox="fancyboxgroup" class="fancybox" target="_blank" rel="external"><img src="https://image.jiangyayu.cn/Digital-Image-Positioning/math.png" style="zoom:0.5"></a></div></div><div class="group-picture-row"></div></div></div></li>
-<li><p>实验内容：应用Matlab语言进行编程，实现在一个包含文字的图像中定位所有的字母“e”。图像matlab工具箱自带图像名为‘text.png’。<br><img src="https://image.jiangyayu.cn/Digital-Image-Positioning/1.png"></p>
+<li>实验原理：数字信号处理应用中广泛的应用到相关和卷积运算。从技术上讲，相关和卷积是相同的过程。相关运算常用它来度量两个序列相似的程度，可应用到在图像特性的定位。二维卷积和相关运算的表达式如下： <div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 100%;"><a href="http://source.jiangyayu.cn/Digital-Image-Positioning/math.png" data-fancybox="fancyboxgroup" class="fancybox" target="_blank" rel="external"><img src="http://source.jiangyayu.cn/Digital-Image-Positioning/math.png" style="zoom:0.5"></a></div></div><div class="group-picture-row"></div></div></div></li>
+<li><p>实验内容：应用Matlab语言进行编程，实现在一个包含文字的图像中定位所有的字母“e”。图像matlab工具箱自带图像名为‘text.png’。<br><img src="http://source.jiangyayu.cn/Digital-Image-Positioning/1.png"></p>
 </li>
 <li><p>用到主要的Matlab命令：<br><code>imread</code>，<code>imshow</code>，<code>ginput</code>，<code>im2double</code>，<code>rot90</code>，<code>conv2</code>（或<code>corr2</code>）。</p>
 </li>
@@ -453,7 +453,7 @@
 <li>输入图像的读取与显示<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;bw = imread(<span class="string">'text.png'</span>);</div><div class="line">&gt;&gt;imshow(bw);</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<p><img src="https://image.jiangyayu.cn/Digital-Image-Positioning/1.png"></p>
+<p><img src="http://source.jiangyayu.cn/Digital-Image-Positioning/1.png"></p>
 <ol>
 <li>从图像中提取字母“e” 的模板图形<br>用鼠标取点字母”e”左上角和右下角，划定范围，得出x，y坐标。</li>
 </ol>
@@ -461,7 +461,7 @@
 <li>鼠标取点：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&gt;&gt; [x,y] = ginput(2)</div><div class="line"></div><div class="line">x =</div><div class="line"></div><div class="line">   51.7526</div><div class="line">   62.7916</div><div class="line"></div><div class="line"></div><div class="line">y =</div><div class="line">   10.7505</div><div class="line">10.7505 </div><div class="line">23.8922</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p><img src="https://image.jiangyayu.cn/Digital-Image-Positioning/2.png" style="zoom:0.6"></p>
+<p><img src="http://source.jiangyayu.cn/Digital-Image-Positioning/2.png" style="zoom:0.6"></p>
 <ul>
 <li><p>求所取矩形的中点，并以该矩形的中心作为基准，将矩形转换为正方形：</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt; l = min(x(<span class="number">2</span>)-x(<span class="number">1</span>) , y(<span class="number">2</span>)-y(<span class="number">1</span>));</div><div class="line">&gt;&gt; half_l = int32(<span class="number">0.5</span>*l); </div><div class="line">&gt;&gt; ave_x = int32(<span class="number">0.5</span>*(x(<span class="number">1</span>)+x(<span class="number">2</span>)));</div><div class="line">&gt;&gt; ave_y = int32(<span class="number">0.5</span>*(y(<span class="number">1</span>)+y(<span class="number">2</span>)));</div></pre></td></tr></table></figure>
@@ -476,7 +476,7 @@
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt;&gt; le_max=max(c1(:));</div><div class="line">&gt;&gt; thresh=le_max<span class="number">-5</span>;   <span class="comment">%%减5是为了降噪</span></div><div class="line">&gt;&gt; imshow(c1&gt;thresh);</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><a href="https://image.jiangyayu.cn/Digital-Image-Positioning/3.png" data-fancybox="fancyboxgroup" class="fancybox" target="_blank" rel="external"><img src="https://image.jiangyayu.cn/Digital-Image-Positioning/3.png" style="zoom:0.74"></a></div><div class="group-picture-column" style="width: 50%;"><a href="https://image.jiangyayu.cn/Digital-Image-Positioning/4.png" data-fancybox="fancyboxgroup" class="fancybox" target="_blank" rel="external"><img src="https://image.jiangyayu.cn/Digital-Image-Positioning/4.png"></a></div></div></div></div>
+<div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><a href="http://source.jiangyayu.cn/Digital-Image-Positioning/3.png" data-fancybox="fancyboxgroup" class="fancybox" target="_blank" rel="external"><img src="http://source.jiangyayu.cn/Digital-Image-Positioning/3.png" style="zoom:0.74"></a></div><div class="group-picture-column" style="width: 50%;"><a href="http://source.jiangyayu.cn/Digital-Image-Positioning/4.png" data-fancybox="fancyboxgroup" class="fancybox" target="_blank" rel="external"><img src="http://source.jiangyayu.cn/Digital-Image-Positioning/4.png"></a></div></div></div></div>
 <ul>
 <li><p>将“e”与上一步所得特征定位图做卷积运算提取字母“e”</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;imshow(conv2(im2double(m1),im2double(letter_1)))；</div></pre></td></tr></table></figure>
@@ -485,12 +485,12 @@
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt;&gt; letter_2 = <span class="built_in">rot90</span>(letter_1,<span class="number">1</span>);</div><div class="line">&gt;&gt; c2 = xcorr2(im2double(bw),im2double(letter_2));</div><div class="line">&gt;&gt; imshow（conv2(im2double(m2),im2double(letter_2)));</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><a href="https://image.jiangyayu.cn/Digital-Image-Positioning/5.png" data-fancybox="fancyboxgroup" class="fancybox" target="_blank" rel="external"><img src="https://image.jiangyayu.cn/Digital-Image-Positioning/5.png" style="zoom:0.88"></a></div><div class="group-picture-column" style="width: 50%;"><a href="https://image.jiangyayu.cn/Digital-Image-Positioning/6.png" data-fancybox="fancyboxgroup" class="fancybox" target="_blank" rel="external"><img src="https://image.jiangyayu.cn/Digital-Image-Positioning/6.png"></a></div></div></div></div>
+<div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><a href="http://source.jiangyayu.cn/Digital-Image-Positioning/5.png" data-fancybox="fancyboxgroup" class="fancybox" target="_blank" rel="external"><img src="http://source.jiangyayu.cn/Digital-Image-Positioning/5.png" style="zoom:0.88"></a></div><div class="group-picture-column" style="width: 50%;"><a href="http://source.jiangyayu.cn/Digital-Image-Positioning/6.png" data-fancybox="fancyboxgroup" class="fancybox" target="_blank" rel="external"><img src="http://source.jiangyayu.cn/Digital-Image-Positioning/6.png"></a></div></div></div></div>
 <ul>
 <li>将两次运算得到的“e”相加，得到最终结果<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt;&gt; imshow((c1&gt;thresh) + (c1&gt;thresh));</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p><img src="https://image.jiangyayu.cn/Digital-Image-Positioning/7.png"></p>
+<p><img src="http://source.jiangyayu.cn/Digital-Image-Positioning/7.png"></p>
 <h1 id="附完整代码"><a href="#附完整代码" class="headerlink" title="附完整代码"></a>附完整代码</h1><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="comment">%%清屏</span></div><div class="line">clc;</div><div class="line">clear;  </div><div class="line"> </div><div class="line"><span class="comment">%%读图</span></div><div class="line">bw = imread(<span class="string">'text.png'</span>);</div><div class="line">imshow(bw);             </div><div class="line"> </div><div class="line">[x,y] = ginput(<span class="number">2</span>);  <span class="comment">%取点</span></div><div class="line"> </div><div class="line"><span class="comment">%%提取字母模板</span></div><div class="line">l = min(x(<span class="number">2</span>)-x(<span class="number">1</span>) , y(<span class="number">2</span>)-y(<span class="number">1</span>));</div><div class="line">half_l = int32(<span class="number">0.5</span>*l); </div><div class="line">ave_x = int32(<span class="number">0.5</span>*(x(<span class="number">1</span>)+x(<span class="number">2</span>)));</div><div class="line">ave_y = int32(<span class="number">0.5</span>*(y(<span class="number">1</span>)+y(<span class="number">2</span>)));</div><div class="line">letter_1 = bw(ave_y-half_l:ave_y+half_l,ave_x-half_l:ave_x+half_l);</div><div class="line"></div><div class="line"><span class="comment">%%相关运算 </span></div><div class="line">c1=xcorr2(im2double(bw),im2double(letter_1));</div><div class="line"> </div><div class="line"><span class="comment">%%设定阈值并定位</span></div><div class="line">le_max=max(c1(:));</div><div class="line">thresh=le_max<span class="number">-5</span>;</div><div class="line">m1 = (c1&gt;thresh);</div><div class="line"> </div><div class="line"><span class="comment">%%纵向字母定位</span></div><div class="line">letter_2 = <span class="built_in">rot90</span>(letter_1,<span class="number">1</span>);</div><div class="line">c2 = xcorr2(im2double(bw),im2double(letter_2));</div><div class="line">m2 = (c2&gt;thresh);</div><div class="line"> </div><div class="line"><span class="comment">%%卷积运算，将所需字母提取出来</span></div><div class="line">imshow(conv2(im2double(m1),im2double(letter_1))+conv2(im2double(m2),im2double(letter_2)));</div></pre></td></tr></table></figure>
 
       
