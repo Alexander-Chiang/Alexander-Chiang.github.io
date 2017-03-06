@@ -4,21 +4,100 @@
 
     
   <url>
+    <loc>https://blog.jiangyayu.cn//archives/photos/</loc>
+    <lastmod>2017-03-06T15:20:39.167Z</lastmod>
+    <data>
+        <display>
+        <title>相册</title>
+        <pubTime>2017-03-06T13:50:47.987Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>https://blog.jiangyayu.cn//archives/csharp-excel-to-shape/</loc>
+    <lastmod>2017-03-06T14:00:26.428Z</lastmod>
+    <data>
+        <display>
+        <title>基于Arcboject二次开发的Excel数据转换Shape文件的C#批处理应用程序</title>
+        <pubTime>2017-03-04T00:40:38.000Z</pubTime>
+        
+        <tag>ArcGIS</tag>
+         
+        <tag>C#</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.jiangyayu.cn//archives/linear-equation/</loc>
+    <lastmod>2017-03-06T13:22:37.057Z</lastmod>
+    <data>
+        <display>
+        <title>迭代法求解线性方程组--C#实现Jacobi、Gauss-Seidel、SOR迭代法</title>
+        <pubTime>2016-04-12T01:26:25.000Z</pubTime>
+        
+        <tag>C#</tag>
+         
+        <tag>线性方程组</tag>
+         
+         
+           
+             
+              <breadCrumb title="编程" url="https://blog.jiangyayu.cn/categories/%E7%BC%96%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.jiangyayu.cn//archives/ArcGIS-practice-3/</loc>
+    <lastmod>2017-03-04T21:31:01.685Z</lastmod>
+    <data>
+        <display>
+        <title>ArcGIS练习3：空间分析</title>
+        <pubTime>2012-12-16T14:45:12.000Z</pubTime>
+        
+        <tag>ArcGIS</tag>
+         
+        <tag>空间分析</tag>
+         
+         
+           
+             
+              <breadCrumb title="GIS" url="https://blog.jiangyayu.cn/categories/GIS/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.jiangyayu.cn//archives/ArcGIS-practice-2/</loc>
-    <lastmod>2017-03-02T14:50:42.548Z</lastmod>
+    <lastmod>2017-03-04T21:30:55.349Z</lastmod>
     <data>
         <display>
         <title>ArcGIS练习2：地图投影与编辑</title>
         <pubTime>2012-12-16T13:58:08.000Z</pubTime>
         
-        <tag>ArcGIS操作</tag>
+        <tag>ArcGIS</tag>
          
         <tag>地图编辑</tag>
          
          
            
              
-              <breadCrumb title="ArcGIS" url="https://blog.jiangyayu.cn/categories/ArcGIS/"/>
+              <breadCrumb title="GIS" url="https://blog.jiangyayu.cn/categories/GIS/"/>
           
         </display>
     </data>
@@ -27,20 +106,20 @@
     
   <url>
     <loc>https://blog.jiangyayu.cn//archives/ArcGIS-practice-1/</loc>
-    <lastmod>2017-03-02T14:50:40.943Z</lastmod>
+    <lastmod>2017-03-04T21:30:49.278Z</lastmod>
     <data>
         <display>
         <title>ArcGIS练习1：地形图校正和拼接</title>
         <pubTime>2012-12-16T13:10:49.000Z</pubTime>
         
-        <tag>ArcGIS操作</tag>
+        <tag>ArcGIS</tag>
          
         <tag>地图拼接</tag>
          
          
            
              
-              <breadCrumb title="ArcGIS" url="https://blog.jiangyayu.cn/categories/ArcGIS/"/>
+              <breadCrumb title="GIS" url="https://blog.jiangyayu.cn/categories/GIS/"/>
           
         </display>
     </data>
@@ -87,28 +166,6 @@
            
              
               <breadCrumb title="数字信号" url="https://blog.jiangyayu.cn/categories/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.jiangyayu.cn//archives/ArcGIS-practice-3/</loc>
-    <lastmod>2017-03-02T14:50:34.462Z</lastmod>
-    <data>
-        <display>
-        <title>ArcGIS练习3：空间分析</title>
-        <pubTime>2012-12-16T14:45:12.000Z</pubTime>
-        
-        <tag>ArcGIS操作</tag>
-         
-        <tag>空间分析</tag>
-         
-         
-           
-             
-              <breadCrumb title="ArcGIS" url="https://blog.jiangyayu.cn/categories/ArcGIS/"/>
           
         </display>
     </data>
@@ -361,9 +418,9 @@
         
         <tag>matlab</tag>
          
-        <tag>可视化</tag>
-         
         <tag>NetCDF</tag>
+         
+        <tag>可视化</tag>
          
          
            

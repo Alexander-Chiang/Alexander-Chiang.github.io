@@ -2027,7 +2027,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #835011;
+  background: #df06e5;
 }
 .links-of-author-item {
   text-align: center;
@@ -2984,12 +2984,12 @@ p.search-result {
 .sidebar-position-right .footer-inner:before {
   float: right;
 }
-@media only screen and (min-width: 980px) and (max-width: 20000px) {
+@media (min-width: 992px) and (max-width: 20000px) {
   .header {
-    width: 80%;
+    width: 90%;
   }
   .container .main-inner {
-    width: 80%;
+    width: 90%;
   }
   .content-wrap {
     width: calc(100% - 260px);
