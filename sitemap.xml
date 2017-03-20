@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.jiangyayu.cn//archives/Integrals/</loc>
+    
+    <lastmod>2017-03-20T13:59:47.086Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.jiangyayu.cn//archives/linear-equation/</loc>
+    
+    <lastmod>2017-03-20T11:41:46.539Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.jiangyayu.cn//archives/photos/</loc>
     
     <lastmod>2017-03-06T15:20:39.167Z</lastmod>
@@ -19,13 +33,6 @@
     <loc>https://blog.jiangyayu.cn//archives/csharp-excel-to-shape/</loc>
     
     <lastmod>2017-03-06T14:00:26.428Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.jiangyayu.cn//archives/linear-equation/</loc>
-    
-    <lastmod>2017-03-06T13:22:37.057Z</lastmod>
     
   </url>
   

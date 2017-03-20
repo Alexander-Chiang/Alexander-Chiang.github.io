@@ -4,6 +4,50 @@
 
     
   <url>
+    <loc>https://blog.jiangyayu.cn//archives/Integrals/</loc>
+    <lastmod>2017-03-20T13:59:47.086Z</lastmod>
+    <data>
+        <display>
+        <title>C#实现定积分求解</title>
+        <pubTime>2016-09-12T01:26:25.000Z</pubTime>
+        
+        <tag>C#</tag>
+         
+        <tag>定积分求解</tag>
+         
+         
+           
+             
+              <breadCrumb title="编程" url="https://blog.jiangyayu.cn/categories/%E7%BC%96%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.jiangyayu.cn//archives/linear-equation/</loc>
+    <lastmod>2017-03-20T11:41:46.539Z</lastmod>
+    <data>
+        <display>
+        <title>迭代法求解线性方程组--C#实现Jacobi、Gauss-Seidel、SOR迭代法</title>
+        <pubTime>2016-04-12T01:26:25.000Z</pubTime>
+        
+        <tag>C#</tag>
+         
+        <tag>线性方程组</tag>
+         
+         
+           
+             
+              <breadCrumb title="编程" url="https://blog.jiangyayu.cn/categories/%E7%BC%96%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.jiangyayu.cn//archives/photos/</loc>
     <lastmod>2017-03-06T15:20:39.167Z</lastmod>
     <data>
@@ -33,28 +77,6 @@
          
          
            
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.jiangyayu.cn//archives/linear-equation/</loc>
-    <lastmod>2017-03-06T13:22:37.057Z</lastmod>
-    <data>
-        <display>
-        <title>迭代法求解线性方程组--C#实现Jacobi、Gauss-Seidel、SOR迭代法</title>
-        <pubTime>2016-04-12T01:26:25.000Z</pubTime>
-        
-        <tag>C#</tag>
-         
-        <tag>线性方程组</tag>
-         
-         
-           
-             
-              <breadCrumb title="编程" url="https://blog.jiangyayu.cn/categories/%E7%BC%96%E7%A8%8B/"/>
-          
         </display>
     </data>
     </url>
@@ -418,9 +440,9 @@
         
         <tag>matlab</tag>
          
-        <tag>NetCDF</tag>
-         
         <tag>可视化</tag>
+         
+        <tag>NetCDF</tag>
          
          
            
