@@ -942,6 +942,53 @@ pre .javascript .function {
   display: inline-block;
   margin: 10px;
 }
+#back-to-top {
+  position: fixed;
+  bottom: 90px;
+  right: 50px;
+  width: 48px;
+  height: 48px;
+  margin: 40px auto 50px;
+  padding: 1px 8px;
+  background: #fff;
+  background: rgba(255,255,255,0.1);
+  border-radius: 24px;
+  box-shadow: 0 1px 8px 1px rgba(0,0,0,0.15), 0px 10px 80px 5px rgba(0,0,0,0.15);
+  cursor: pointer;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-transition: background 300ms;
+  -moz-transition: background 300ms;
+  -ms-transition: background 300ms;
+  -o-transition: background 300ms;
+  transition: background 300ms;
+}
+#back-to-top:hover {
+  background: #9d9d9d;
+  background: rgba(255,255,255,0.6);
+}
+#back-to-top.flying svg {
+  position: fixed;
+  -webkit-filter: drop-shadow(0 5px 2px #d36800);
+  border-radius: 30px;
+}
+#back-to-top svg path {
+  fill: #bbb;
+  -webkit-transition: all 300ms;
+  -moz-transition: all 300ms;
+  -ms-transition: all 300ms;
+  -o-transition: all 300ms;
+  transition: all 300ms;
+}
+#back-to-top.flying svg path {
+  fill: #951015;
+}
+#back-to-top:hover svg path {
+  fill: rgba(57,69,75,0.8);
+}
+#back-to-top svg {
+  margin-top: 7px;
+}
 .back-to-top {
   box-sizing: border-box;
   position: fixed;
@@ -2027,7 +2074,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #41e55e;
+  background: #b4ff1f;
 }
 .links-of-author-item {
   text-align: center;

@@ -41,9 +41,9 @@ NexT.utils = NexT.$u = {
   },
 
   registerBackToTop: function () {
+   
     var THRESHOLD = 50;
     var $top = $('.back-to-top');
-
     $(window).on('scroll', function () {
       $top.toggleClass('back-to-top-on', window.pageYOffset > THRESHOLD);
     });
@@ -51,6 +51,42 @@ NexT.utils = NexT.$u = {
     $top.on('click', function () {
       $('body').velocity('scroll');
     });
+    
+  },
+
+  registerRocketToTop: function () {
+   
+    var THRESHOLD = 50;
+    var $top = $('#rocket-to-top');
+    $(window).on('scroll', function () {
+      $top.toggleClass('rocket-to-top-on', window.pageYOffset > THRESHOLD);
+    });
+
+    $top.on('click', function () {
+      var a = $(this),
+        c = $(this).find("svg"),
+        d = c.offset(),
+        e = $(document).scrollTop();
+        c.css({
+            top: d.top - e -7 + "px",
+            left: d.left -7 + "px"
+        }),
+        a.addClass("flying"),
+        c.animate({
+            top: -50
+        },
+        500,
+        function() {
+            a.removeClass("flying"),
+            c.removeAttr("style")
+        }),
+        $('html,body').animate({
+            scrollTop: 0
+        },
+        500
+        )
+    });
+    
   },
 
   /**
