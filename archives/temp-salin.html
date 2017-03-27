@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="RS,影像波谱," />
+  <meta name="keywords" content="matlab,海洋数据分析,温盐跃层," />
 
 
 
@@ -86,35 +86,36 @@
 
 
 
-<meta name="description" content="实验目的
-理解卫星及实验室高光谱概念，初步了解辐亮度、反射率的概念；
-能够打开并处理卫星高光谱数据；
-能够加载不同波谱库的反射率波谱曲线，并学会处理；
-学会判读不同地物的光谱曲线特征，了解其与相应的卫星光谱的比较，并解释差异原因。">
+<meta name="description" content="摘要&amp;emsp;&amp;emsp;提供某次海洋观测的RBR-CTD测得的海洋要素数据，要求完成以下内容：
+
+根据数据的头文件，给出观测的基本信息。
+进行异常数据的剔除，仅保留“下放（Down-casting）”时观测的数据。
+去尖峰。
+将数据处理成1m平均的形式。保存数据文件。
+绘制温度和盐度的剖面图。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AVIRIS卫星影像波谱与实验室波谱库波谱曲线的比较">
-<meta property="og:url" content="https://blog.jiangyayu.cn/archives/AVIRIS/index.html">
+<meta property="og:title" content="海洋要素计算：温盐跃层的分析">
+<meta property="og:url" content="https://blog.jiangyayu.cn/archives/temp-salin.html">
 <meta property="og:site_name" content="Alex's Blog">
-<meta property="og:description" content="实验目的
-理解卫星及实验室高光谱概念，初步了解辐亮度、反射率的概念；
-能够打开并处理卫星高光谱数据；
-能够加载不同波谱库的反射率波谱曲线，并学会处理；
-学会判读不同地物的光谱曲线特征，了解其与相应的卫星光谱的比较，并解释差异原因。">
-<meta property="og:image" content="http://source.jiangyayu.cn/AVIRIS/1.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/AVIRIS/2.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/AVIRIS/3.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/AVIRIS/4.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/AVIRIS/5.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/AVIRIS/6.png">
-<meta property="og:updated_time" content="2017-03-02T14:50:39.225Z">
+<meta property="og:description" content="摘要&amp;emsp;&amp;emsp;提供某次海洋观测的RBR-CTD测得的海洋要素数据，要求完成以下内容：
+
+根据数据的头文件，给出观测的基本信息。
+进行异常数据的剔除，仅保留“下放（Down-casting）”时观测的数据。
+去尖峰。
+将数据处理成1m平均的形式。保存数据文件。
+绘制温度和盐度的剖面图。">
+<meta property="og:image" content="http://source.jiangyayu.cn/temp-salin/temp-salin.jpg">
+<meta property="og:updated_time" content="2017-03-02T14:50:22.716Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AVIRIS卫星影像波谱与实验室波谱库波谱曲线的比较">
-<meta name="twitter:description" content="实验目的
-理解卫星及实验室高光谱概念，初步了解辐亮度、反射率的概念；
-能够打开并处理卫星高光谱数据；
-能够加载不同波谱库的反射率波谱曲线，并学会处理；
-学会判读不同地物的光谱曲线特征，了解其与相应的卫星光谱的比较，并解释差异原因。">
-<meta name="twitter:image" content="http://source.jiangyayu.cn/AVIRIS/1.png">
+<meta name="twitter:title" content="海洋要素计算：温盐跃层的分析">
+<meta name="twitter:description" content="摘要&amp;emsp;&amp;emsp;提供某次海洋观测的RBR-CTD测得的海洋要素数据，要求完成以下内容：
+
+根据数据的头文件，给出观测的基本信息。
+进行异常数据的剔除，仅保留“下放（Down-casting）”时观测的数据。
+去尖峰。
+将数据处理成1m平均的形式。保存数据文件。
+绘制温度和盐度的剖面图。">
+<meta name="twitter:image" content="http://source.jiangyayu.cn/temp-salin/temp-salin.jpg">
 
 
 
@@ -142,13 +143,13 @@
 
 
 
-  <link rel="canonical" href="https://blog.jiangyayu.cn/archives/AVIRIS/"/>
+  <link rel="canonical" href="https://blog.jiangyayu.cn/archives/temp-salin.html"/>
 
 
 
 
 
-  <title> AVIRIS卫星影像波谱与实验室波谱库波谱曲线的比较 | Alex's Blog </title>
+  <title> 海洋要素计算：温盐跃层的分析 | Alex's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -320,7 +321,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://blog.jiangyayu.cn/archives/AVIRIS/">
+  <link itemprop="mainEntityOfPage" href="https://blog.jiangyayu.cn/archives/temp-salin.html">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Alexander Chiang">
@@ -344,7 +345,7 @@
             
             
               
-                AVIRIS卫星影像波谱与实验室波谱库波谱曲线的比较
+                海洋要素计算：温盐跃层的分析
               
             
           </h1>
@@ -359,8 +360,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2012-12-17T15:27:10+08:00">
-                2012-12-17
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2013-10-15T13:54:39+08:00">
+                2013-10-15
               </time>
             
 
@@ -382,8 +383,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/RS/" itemprop="url" rel="index">
-                    <span itemprop="name">RS</span>
+                  <a href="/categories/数据处理分析/" itemprop="url" rel="index">
+                    <span itemprop="name">数据处理分析</span>
                   </a>
                 </span>
 
@@ -401,8 +402,8 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/archives/AVIRIS/#SOHUCS" itemprop="discussionUrl">
-                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="/archives/AVIRIS/" itemprop="commentsCount"></span>
+                <a href="/archives/temp-salin.html#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="/archives/temp-salin.html" itemprop="commentsCount"></span>
                 </a>
               
               </span>
@@ -413,7 +414,7 @@
 
           
           
-             <span id="/archives/AVIRIS/" class="leancloud_visitors" data-flag-title="AVIRIS卫星影像波谱与实验室波谱库波谱曲线的比较">
+             <span id="/archives/temp-salin.html" class="leancloud_visitors" data-flag-title="海洋要素计算：温盐跃层的分析">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -440,63 +441,22 @@
       
 
       
-        <h1 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h1><ol>
-<li>理解卫星及实验室高光谱概念，初步了解辐亮度、反射率的概念；</li>
-<li>能够打开并处理卫星高光谱数据；</li>
-<li>能够加载不同波谱库的反射率波谱曲线，并学会处理；</li>
-<li>学会判读不同地物的光谱曲线特征，了解其与相应的卫星光谱的比较，并解释差异原因。<a id="more"></a>
-<h1 id="实验要求"><a href="#实验要求" class="headerlink" title="实验要求"></a>实验要求</h1></li>
-<li>打开AVIRIS影像光谱，确定点（448,505）、（502,589）、（531,541）以及（260,613）。要求：显示完整的曲线名称对照课本及影像，确定该区的主要岩性，并判读光谱曲线主要特征及其区别。</li>
-<li>打开JPL1.sli光谱库，绘制alunite so-4a，buddingtonite felds ts-11a，calcite c-3d，kaolinite well ordered ps-1a。要求：显示完整的波谱曲线名称，确定横纵坐标，并判读光谱主要特征及区别。</li>
-<li>打开usgs_min.sli光谱库。要求：在该波谱库中找出与JPL波谱库中对应的上述四种矿物波谱曲线最大相似度的四种矿物，并在同一个窗口中绘制其波谱廓线，显示完整的名称。</li>
-<li>将calcite（明矾石）的AVIRIS卫星影像及JPL、USGS波谱库中的光谱曲线放在同一个窗口中显示，并进行光谱形状上的比较，简要说明其差别的原因。</li>
-</ol>
-<h1 id="实验内容"><a href="#实验内容" class="headerlink" title="实验内容"></a>实验内容</h1><h2 id="实验一："><a href="#实验一：" class="headerlink" title="实验一："></a>实验一：</h2><h3 id="实验步骤"><a href="#实验步骤" class="headerlink" title="实验步骤"></a>实验步骤</h3><ol>
-<li>打开c95avsub文件夹中的cup95_rd.int文件，按顺序点击 Band 183、Band 193 和Band 207（波长分别为2.10、2.20 和2.35μm)，加载一幅彩色影像。</li>
-<li>从主影像显示窗口菜单栏中，选择 Tools → Pixel Locator。在 Pixel Locator 对话框中输入像素的坐标定位到所指定的点。</li>
-<li>选择 Tools → Profiles → Z-Profile (Spectrum)，来提取这个位置的辐亮度波谱曲线。</li>
-<li>选择 Options → Collect Spectra。然后再在Pixel Locator 对话框中输入像素的坐标，按照实验要求依次提取以下位置的辐亮度波谱曲线。</li>
-<li>选择 Options → Stack Plots，分别查看每一条波谱曲线。在绘图窗口中点击右键，并在弹出的快捷菜单中选择Plot Key 来显示波谱曲线的图例。<br><img src="http://source.jiangyayu.cn/AVIRIS/1.png" alt="波谱曲线"></li>
-</ol>
-<h3 id="结果分析"><a href="#结果分析" class="headerlink" title="结果分析"></a>结果分析</h3><ol>
-<li>岩性分析：<br>（448,505）：Buddingtonite Zone<br>（502,589）：Strongly Argillized Zone with Kaolinite<br>（531,541）：Opalite Zone with Alunite<br>（260,613）：Calcite</li>
-<li>主要特征：<br>图像的横坐标表示波段，纵坐标表示辐亮度。<br>这四种岩石有着同样趋势光谱曲线：在2.015μm处附近出现谷值，在2.04μm附近出现了峰值，在2.06μm附近再一次出现谷值，之后曲线上升，从2.1μm之后开始缓慢下降，在2.2μm附近有一个较小的吸收，2.3μm之后波谱呈现波动状态。</li>
-<li>区别：<br>波谱曲线在两个较大的峰值和谷值处的大小有区别，其次在2.2μm处的小的吸收特性能够反映不同岩石的特性。</li>
-</ol>
-<h2 id="实验二："><a href="#实验二：" class="headerlink" title="实验二："></a>实验二：</h2><h3 id="实验步骤-1"><a href="#实验步骤-1" class="headerlink" title="实验步骤"></a>实验步骤</h3><ol>
-<li>从 ENVI 主菜单中选择Spectral → Spectral Libraries → Spectral Library Viewer。</li>
-<li>当 Spectral Library Input File 对话框出现后，点击Open Spec Lib，并从spec_lib/jpl_lib子目录中选择jpl1.sli 文件。</li>
-<li>点击 OK。jpl1.sli 文件将会出现在对话框的Select Input File 区域。</li>
-<li>点击该文件名，再点击 OK，打开Spectral Library Viewer 对话框。</li>
-<li>在 Spectral Library Viewer 对话框所列出的波谱曲线中，点击相应的矿物质名称，绘制下列矿物质的波谱曲线：<ul>
-<li>ALUNITE SO-4A</li>
-<li>BUDDINGTONITE FELDS TS-11A</li>
-<li>CALCITE C-3D</li>
-<li>KAOLINITE WELL ORDERED PS-1A<br><img src="http://source.jiangyayu.cn/AVIRIS/2.png" alt="波谱曲线"></li>
-</ul>
+        <h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>&emsp;&emsp;提供某次海洋观测的RBR-CTD测得的海洋要素数据，要求完成以下内容：</p>
+<ol>
+<li>根据数据的头文件，给出观测的基本信息。</li>
+<li>进行异常数据的剔除，仅保留“下放（Down-casting）”时观测的数据。</li>
+<li>去尖峰。</li>
+<li>将数据处理成1m平均的形式。保存数据文件。</li>
+<li>绘制温度和盐度的剖面图。<a id="more"></a>
 </li>
 </ol>
-<h3 id="结果分析-1"><a href="#结果分析-1" class="headerlink" title="结果分析"></a>结果分析</h3><ol>
-<li>主要特征：<br>横坐标为波段，做坐标为反射率。<br>光谱曲线整体比较平缓，在1.4μm左右和2.2μm左右有比较明显的吸收。</li>
-<li>区别：<br>KAOLINITE WELL ORDERED PS-1A 和ALUNITE SO-4A在1.4μm处的吸收比较明显，形成比较大的谷值，两者相对应的波段来说KAOLINITE WELL ORDERED PS-1A在1.4μm左右，而ALUNITE SO-4A则在1.5μm左右；BUDDINGTONITE FELDS TS-11A在1.4μm左右的吸收很小，CALCITE C-3D则几乎没有；在2.2μm左右以上四种岩石波谱均有所吸收，其中CALCITE C-3D对应的吸收波段值则更大一些，且吸收幅度相对小一些。</li>
-</ol>
-<h2 id="实验三："><a href="#实验三：" class="headerlink" title="实验三："></a>实验三：</h2><h3 id="实验步骤-2"><a href="#实验步骤-2" class="headerlink" title="实验步骤"></a>实验步骤</h3><ol>
-<li>从 ENVI 主菜单中选择Spectral →Spectral Analyst</li>
-<li>当Spectral Analyst Input Spectral Library对话框出现后，点击Open Spec Lib，并从spec_lib/ usgs_min子目录中选择usgs_min.sli 文件。</li>
-<li>点击 OK。将会弹出Edit Identify Methods Weighting窗口，在这里我们选择合适的权重（本实验取0.35），点击OK。</li>
-<li>在Spectral Analyst窗口点击Apply，在弹出的Spectral Analyst Input窗口中选择ALUNITE SO-4A并点击OK。这是ENVI会对光谱匹配度进行分析。结果会显示在Spectral Analyst中，其中第一项为匹配度最高的。</li>
-<li>双击第一项，会将匹配的两条光谱曲线显示在一起。<div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><a href="http://source.jiangyayu.cn/AVIRIS/3.png" data-fancybox="fancyboxgroup" class="fancybox" target="_blank" rel="external"><img src="http://source.jiangyayu.cn/AVIRIS/3.png" alt="Spectral Analyst" style="zoom:40%"></a></div><div class="group-picture-column" style="width: 50%;"><a href="http://source.jiangyayu.cn/AVIRIS/4.png" data-fancybox="fancyboxgroup" class="fancybox" target="_blank" rel="external"><img src="http://source.jiangyayu.cn/AVIRIS/4.png" alt="波谱曲线"></a></div></div></div></div></li>
-<li>用同样的方法找到与其他三种矿物波谱曲线匹配度最高的矿物，并将这些波谱曲线显示在同一窗口。<br><img src="http://source.jiangyayu.cn/AVIRIS/5.png" alt="波谱曲线"></li>
-</ol>
-<h2 id="实验四："><a href="#实验四：" class="headerlink" title="实验四："></a>实验四：</h2><h3 id="实验步骤-3"><a href="#实验步骤-3" class="headerlink" title="实验步骤"></a>实验步骤</h3><ol>
-<li>在打开的Spectral Library Viewer窗口菜单下Options→Edit（x，y）Scale Factors，在弹出的Edit Display Scale窗口中设置Y Multiplier值为850，使得接下来绘出的波谱曲线与影像中获取的波谱曲线的纵坐标一致。</li>
-<li>在jpl1光谱库中选择CALCITE C-3D，点击绘出其光谱曲线。</li>
-<li>类似于步骤1、2，在usgs_min光谱库中选择carnall.spc Carnallite NMNH98011绘出光谱曲线。</li>
-<li>在波谱曲线窗口的菜单下，依次Options→New Windows:Blank，打开一个新窗口。</li>
-<li>将步骤2、3中绘制的光谱曲线和实验一中的X:260 Y:613拖到新建的绘图窗口中。</li>
-<li>设置相应的参数是结果如图所示：<br><img src="http://source.jiangyayu.cn/AVIRIS/6.png" alt="波谱曲线"></li>
-</ol>
-<h3 id="结果分析-2"><a href="#结果分析-2" class="headerlink" title="结果分析"></a>结果分析</h3><p>两个实验室得到的光谱图像有一定的差别，主要原因可能是因为两者的环境存在着差异。但两者的共同特性很明显：2.34μm处均有比较明显的光谱吸收。两个实验室得到的结果与卫星影像上的光谱曲线的差别都很大，这主要是因为受太阳辐射和大气辐射共同作用的影响。但是其光谱曲线在2.34μm处被吸收的趋势还是能够看出来的。</p>
+<h2 id="文件下载"><a href="#文件下载" class="headerlink" title="文件下载"></a>文件下载</h2><p>RBR-CTD观测数据：<a href="http://source.jiangyayu.cn/temp-salin/G4.txt" download="" target="_blank" rel="external">G4.txt</a><br>去尖峰函数：<a href="http://source.jiangyayu.cn/temp-salin/despike.m" target="_blank" rel="external">despike.m</a></p>
+<h2 id="处理流程"><a href="#处理流程" class="headerlink" title="处理流程"></a>处理流程</h2><h3 id="打开文件"><a href="#打开文件" class="headerlink" title="打开文件"></a>打开文件</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">% file open</span></div><div class="line">fid1 = fopen(<span class="string">'G4.txt'</span>);</div><div class="line"><span class="comment">% display the information of the data </span></div><div class="line"><span class="keyword">for</span> ii = <span class="number">1</span>:<span class="number">4</span></div><div class="line">    hdata&#123;ii&#125; = fgets(fid1);</div><div class="line">    <span class="built_in">disp</span>(hdata&#123;ii&#125;)   </div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<h3 id="读取数据"><a href="#读取数据" class="headerlink" title="读取数据"></a>读取数据</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">% Read Data </span></div><div class="line"></div><div class="line"><span class="comment">% [Date,Time,Cond,Temp,Pres,D_O2,PAR,FlC_a,Depth,Salin,SpecCond,DensAnom,SoS,xdO2C] = ...,</span></div><div class="line"><span class="comment">% textread('G4.txt','%s%s%f%f%f%f%f%f%f%f%f%f%f%f','headerlines',51);</span></div><div class="line">data_cell = textscan(fid1,<span class="string">'%s%s%f%f%f%f%f%f%f%f%f%f%f%f'</span>,<span class="string">'headerlines'</span>,<span class="number">51</span>);</div><div class="line">fclose(fid1);</div></pre></td></tr></table></figure>
+<h3 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="comment">%% data processing</span></div><div class="line"><span class="comment">% cell to mat</span></div><div class="line">data = cell2mat(data_cell(<span class="number">3</span>:<span class="number">14</span>));</div><div class="line">Depth = data(:,<span class="number">9</span>);</div><div class="line"><span class="comment">% find the data during Down-casting</span></div><div class="line">index = <span class="built_in">find</span>(Depth &gt; <span class="number">0</span> &amp; Depth &lt; max(Depth));</div><div class="line">mod_data = data(index,:);</div><div class="line"><span class="comment">% despike</span></div><div class="line">dsp_data=despike(mod_data,<span class="number">3</span>);</div><div class="line"><span class="comment">% write to text file</span></div><div class="line"><span class="comment">% fprintf(fid2,'%f  %f  %f  %f  %f  %f  %f  %f  %f  %f  %f  %f\n',dsp_data');</span></div><div class="line"></div><div class="line"><span class="comment">% get depth temp and salin</span></div><div class="line">dsp_depth = dsp_data(:,<span class="number">7</span>)';</div><div class="line">dsp_temp = dsp_data(:,<span class="number">2</span>)';</div><div class="line">dsp_salin = dsp_data(:,<span class="number">8</span>)';</div><div class="line"></div><div class="line"><span class="comment">% 	initializing the variables</span></div><div class="line">yi = <span class="number">0</span>:<span class="number">1.0</span>:max(dsp_depth);</div><div class="line">ave_temp = <span class="built_in">zeros</span>(<span class="number">1</span>,<span class="built_in">length</span>(yi));</div><div class="line">ave_salin = <span class="built_in">zeros</span>(<span class="number">1</span>,<span class="built_in">length</span>(yi));</div><div class="line"><span class="comment">% the average of temp and salin in each meters</span></div><div class="line"><span class="keyword">for</span> ii = <span class="number">1</span>:<span class="built_in">length</span>(yi)</div><div class="line">   ave_temp(ii) = mean( dsp_temp(<span class="built_in">find</span>(dsp_depth &gt; ii<span class="number">-1</span> &amp; dsp_depth &lt;ii)));</div><div class="line">   ave_salin(ii) = mean( dsp_salin(<span class="built_in">find</span>(dsp_depth &gt; ii<span class="number">-1</span> &amp; dsp_depth &lt;ii)));</div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<h3 id="数据导出"><a href="#数据导出" class="headerlink" title="数据导出"></a>数据导出</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">%% output new data to a text file</span></div><div class="line">fid2 = fopen(<span class="string">'new_Data.txt'</span>,<span class="string">'a+'</span>);</div><div class="line"><span class="keyword">for</span> ii = <span class="number">1</span>:<span class="number">4</span></div><div class="line">fprintf(fid2,hdata&#123;ii&#125;);</div><div class="line"><span class="keyword">end</span></div><div class="line">fprintf(fid2,<span class="string">'%s\n'</span>,<span class="string">' '</span>);</div><div class="line">fprintf(fid2,<span class="string">'%s%s%s\n'</span>,<span class="string">'depth    temp     salin '</span>);</div><div class="line">new_data = [yi;ave_temp;ave_salin];</div><div class="line">fprintf(fid2,<span class="string">'%s\n'</span>,<span class="string">' '</span>);</div><div class="line">fprintf(fid2,<span class="string">'%6.4f  %6.4f  %6.4f\n'</span>,new_data);</div><div class="line">fclose(fid2);</div></pre></td></tr></table></figure>
+<h3 id="绘制温盐跃层图"><a href="#绘制温盐跃层图" class="headerlink" title="绘制温盐跃层图"></a>绘制温盐跃层图</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">%% plot</span></div><div class="line">h1 = plot(ave_temp,-yi,<span class="string">'--m'</span>);</div><div class="line">xlabel(<span class="string">'Temperature  /\circC'</span>);</div><div class="line">ylabel(<span class="string">'Depth /m'</span>);</div><div class="line">set(gca,<span class="string">'position'</span>,<span class="string">'default'</span>);</div><div class="line">set(gca,<span class="string">'YTickLabel'</span>,&#123;[<span class="number">70</span>:<span class="number">-10</span>:<span class="number">0</span>]&#125;);  <span class="comment">% change the y axis label</span></div><div class="line">box off;</div><div class="line">axes;</div><div class="line">h2 = plot(ave_salin,-yi,<span class="string">'b'</span>);</div><div class="line">xlabel(<span class="string">'Salinity'</span>);</div><div class="line">set(gca,<span class="string">'position'</span>,<span class="string">'default'</span>,<span class="string">'xaxislocation'</span>,<span class="string">'top'</span>,<span class="string">'color'</span>,<span class="string">'none'</span>);</div><div class="line">set(gca,<span class="string">'YTickLabel'</span>,&#123;&#125;,<span class="string">'yaxislocation'</span>,<span class="string">'right'</span>);</div><div class="line">box off;</div><div class="line"><span class="comment">% show the legend</span></div><div class="line">legend([h1,h2],<span class="string">'Temperature'</span>,<span class="string">'Salinity'</span>,<span class="string">'Location'</span>, <span class="string">'NorthWest'</span>);</div><div class="line"><span class="comment">% save as jpg file</span></div><div class="line">saveas(gcf,<span class="string">'temp-salin'</span>,<span class="string">'jpg'</span>);</div></pre></td></tr></table></figure>
+<h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><p><img src="http://source.jiangyayu.cn/temp-salin/temp-salin.jpg"></p>
 
       
     </div>
@@ -548,9 +508,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/RS/" rel="tag"><i class="fa fa-tag"></i> RS</a>
+            <a href="/tags/matlab/" rel="tag"><i class="fa fa-tag"></i> matlab</a>
           
-            <a href="/tags/影像波谱/" rel="tag"><i class="fa fa-tag"></i> 影像波谱</a>
+            <a href="/tags/海洋数据分析/" rel="tag"><i class="fa fa-tag"></i> 海洋数据分析</a>
+          
+            <a href="/tags/温盐跃层/" rel="tag"><i class="fa fa-tag"></i> 温盐跃层</a>
           
         </div>
       
@@ -559,8 +521,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/archives/ArcGIS-practice-3/" rel="next" title="ArcGIS练习3：空间分析">
-                <i class="fa fa-chevron-left"></i> ArcGIS练习3：空间分析
+              <a href="/archives/matlab-Visualization.html" rel="next" title="matlab可视化综合实验">
+                <i class="fa fa-chevron-left"></i> matlab可视化综合实验
               </a>
             
           </div>
@@ -569,8 +531,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/archives/Hyperspectral-RS-image-Processing/" rel="prev" title="高级高光谱遥感应用">
-                高级高光谱遥感应用 <i class="fa fa-chevron-right"></i>
+              <a href="/archives/tide.html" rel="prev" title="海洋要素计算：潮汐调和分析">
+                海洋要素计算：潮汐调和分析 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -597,7 +559,7 @@
           
   <div class="comments" id="comments">
     
-      <div id="SOHUCS" sid="/archives/AVIRIS/"></div>
+      <div id="SOHUCS" sid="/"></div>
     
   </div>
 
@@ -955,7 +917,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#实验目的"><span class="nav-number">1.</span> <span class="nav-text">实验目的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验要求"><span class="nav-number">2.</span> <span class="nav-text">实验要求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验内容"><span class="nav-number">3.</span> <span class="nav-text">实验内容</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#实验一："><span class="nav-number">3.1.</span> <span class="nav-text">实验一：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实验步骤"><span class="nav-number">3.1.1.</span> <span class="nav-text">实验步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结果分析"><span class="nav-number">3.1.2.</span> <span class="nav-text">结果分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实验二："><span class="nav-number">3.2.</span> <span class="nav-text">实验二：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实验步骤-1"><span class="nav-number">3.2.1.</span> <span class="nav-text">实验步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结果分析-1"><span class="nav-number">3.2.2.</span> <span class="nav-text">结果分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实验三："><span class="nav-number">3.3.</span> <span class="nav-text">实验三：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实验步骤-2"><span class="nav-number">3.3.1.</span> <span class="nav-text">实验步骤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实验四："><span class="nav-number">3.4.</span> <span class="nav-text">实验四：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实验步骤-3"><span class="nav-number">3.4.1.</span> <span class="nav-text">实验步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结果分析-2"><span class="nav-number">3.4.2.</span> <span class="nav-text">结果分析</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#摘要"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件下载"><span class="nav-number">2.</span> <span class="nav-text">文件下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#处理流程"><span class="nav-number">3.</span> <span class="nav-text">处理流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#打开文件"><span class="nav-number">3.1.</span> <span class="nav-text">打开文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#读取数据"><span class="nav-number">3.2.</span> <span class="nav-text">读取数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据处理"><span class="nav-number">3.3.</span> <span class="nav-text">数据处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据导出"><span class="nav-number">3.4.</span> <span class="nav-text">数据导出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绘制温盐跃层图"><span class="nav-number">3.5.</span> <span class="nav-text">绘制温盐跃层图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结果"><span class="nav-number">4.</span> <span class="nav-text">结果</span></a></li></ol></div>
             
 
           </div>

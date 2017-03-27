@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="C#,定积分求解," />
+  <meta name="keywords" content="ArcGIS,地图编辑," />
 
 
 
@@ -86,27 +86,26 @@
 
 
 
-<meta name="description" content="&amp;emsp;&amp;emsp;在科学研究和实际生产中，经常遇到求积分的计算问题。我们知道在高等数学中，可以通过牛顿-莱布尼兹公式推导原函数的方法求得积分。而本篇博客中将从定积分的物理意义出发，通过原函数的图像的手段来近似地求解给定函数的定积分。">
+<meta name="description" content="本文将简单记述如何应用ArcGIS软件对天津地形图进行校正和矢量化操作，并作必要的统计分析和数据处理工作。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C#实现定积分求解">
-<meta property="og:url" content="https://blog.jiangyayu.cn/archives/Integrals/index.html">
+<meta property="og:title" content="ArcGIS练习2：地图投影与编辑">
+<meta property="og:url" content="https://blog.jiangyayu.cn/archives/ArcGIS-practice-2.html">
 <meta property="og:site_name" content="Alex's Blog">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;在科学研究和实际生产中，经常遇到求积分的计算问题。我们知道在高等数学中，可以通过牛顿-莱布尼兹公式推导原函数的方法求得积分。而本篇博客中将从定积分的物理意义出发，通过原函数的图像的手段来近似地求解给定函数的定积分。">
-<meta property="og:image" content="http://source.jiangyayu.cn/integrals/1.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/integrals/2.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/integrals/3.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/integrals/4.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/integrals/5.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/integrals/6.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/integrals/7.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/integrals/8.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/integrals/9.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/integrals/10.png">
-<meta property="og:updated_time" content="2017-03-20T14:06:36.213Z">
+<meta property="og:description" content="本文将简单记述如何应用ArcGIS软件对天津地形图进行校正和矢量化操作，并作必要的统计分析和数据处理工作。">
+<meta property="og:image" content="http://source.jiangyayu.cn/ArcGIS-practice-2/1.%E5%A4%A9%E6%B4%A5%E5%B8%82%E6%BB%A8%E6%B5%B7%E6%96%B0%E5%8C%BA%E5%9B%BE.jpg">
+<meta property="og:image" content="http://source.jiangyayu.cn/ArcGIS-practice-2/2.png">
+<meta property="og:image" content="http://source.jiangyayu.cn/ArcGIS-practice-2/3.png">
+<meta property="og:image" content="http://source.jiangyayu.cn/ArcGIS-practice-2/4.png">
+<meta property="og:image" content="http://source.jiangyayu.cn/ArcGIS-practice-2/5.png">
+<meta property="og:image" content="http://source.jiangyayu.cn/ArcGIS-practice-2/6.png">
+<meta property="og:image" content="http://source.jiangyayu.cn/ArcGIS-practice-2/7.png">
+<meta property="og:image" content="http://source.jiangyayu.cn/ArcGIS-practice-2/8.png">
+<meta property="og:image" content="http://source.jiangyayu.cn/ArcGIS-practice-2/9.png">
+<meta property="og:updated_time" content="2017-03-04T21:30:55.349Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C#实现定积分求解">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;在科学研究和实际生产中，经常遇到求积分的计算问题。我们知道在高等数学中，可以通过牛顿-莱布尼兹公式推导原函数的方法求得积分。而本篇博客中将从定积分的物理意义出发，通过原函数的图像的手段来近似地求解给定函数的定积分。">
-<meta name="twitter:image" content="http://source.jiangyayu.cn/integrals/1.png">
+<meta name="twitter:title" content="ArcGIS练习2：地图投影与编辑">
+<meta name="twitter:description" content="本文将简单记述如何应用ArcGIS软件对天津地形图进行校正和矢量化操作，并作必要的统计分析和数据处理工作。">
+<meta name="twitter:image" content="http://source.jiangyayu.cn/ArcGIS-practice-2/1.%E5%A4%A9%E6%B4%A5%E5%B8%82%E6%BB%A8%E6%B5%B7%E6%96%B0%E5%8C%BA%E5%9B%BE.jpg">
 
 
 
@@ -134,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="https://blog.jiangyayu.cn/archives/Integrals/"/>
+  <link rel="canonical" href="https://blog.jiangyayu.cn/archives/ArcGIS-practice-2.html"/>
 
 
 
 
 
-  <title> C#实现定积分求解 | Alex's Blog </title>
+  <title> ArcGIS练习2：地图投影与编辑 | Alex's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -312,7 +311,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://blog.jiangyayu.cn/archives/Integrals/">
+  <link itemprop="mainEntityOfPage" href="https://blog.jiangyayu.cn/archives/ArcGIS-practice-2.html">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Alexander Chiang">
@@ -336,7 +335,7 @@
             
             
               
-                C#实现定积分求解
+                ArcGIS练习2：地图投影与编辑
               
             
           </h1>
@@ -351,8 +350,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-09-12T09:26:25+08:00">
-                2016-09-12
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2012-12-16T21:58:08+08:00">
+                2012-12-16
               </time>
             
 
@@ -374,8 +373,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程/" itemprop="url" rel="index">
-                    <span itemprop="name">编程</span>
+                  <a href="/categories/GIS/" itemprop="url" rel="index">
+                    <span itemprop="name">GIS</span>
                   </a>
                 </span>
 
@@ -393,8 +392,8 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/archives/Integrals/#SOHUCS" itemprop="discussionUrl">
-                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="/archives/Integrals/" itemprop="commentsCount"></span>
+                <a href="/archives/ArcGIS-practice-2.html#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="/archives/ArcGIS-practice-2.html" itemprop="commentsCount"></span>
                 </a>
               
               </span>
@@ -405,7 +404,7 @@
 
           
           
-             <span id="/archives/Integrals/" class="leancloud_visitors" data-flag-title="C#实现定积分求解">
+             <span id="/archives/ArcGIS-practice-2.html" class="leancloud_visitors" data-flag-title="ArcGIS练习2：地图投影与编辑">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -432,19 +431,46 @@
       
 
       
-        <p>&emsp;&emsp;在科学研究和实际生产中，经常遇到求积分的计算问题。我们知道在高等数学中，可以通过牛顿-莱布尼兹公式推导原函数的方法求得积分。而本篇博客中将从定积分的物理意义出发，通过原函数的图像的手段来近似地求解给定函数的定积分。<br><a id="more"></a></p>
-<h2 id="随机投点法（蒙特卡洛算法）"><a href="#随机投点法（蒙特卡洛算法）" class="headerlink" title="随机投点法（蒙特卡洛算法）"></a>随机投点法（蒙特卡洛算法）</h2><p>&emsp;&emsp;在a到b和函数组成的矩形的范围内，随机投N个点，落到绿色阴影点的个数为M个，对于此图来说便可以容易得知积分的值（绿色阴影）为(M/N)*矩形面积。<br><img src="http://source.jiangyayu.cn/integrals/1.png" alter="蒙特卡洛算法原理"><br>&emsp;&emsp;考虑到积分的正负性，随机点落到积分面积内时，分为两种情况：当随机点落在x轴上方时，计数加一，随机点落在x轴下方时，计数减一。<br><img src="http://source.jiangyayu.cn/integrals/2.png" alter="蒙特卡洛算法原理"><br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">double</span> <span class="title">methodMTK</span>(<span class="params"> <span class="keyword">double</span> upLimit, <span class="keyword">double</span> lowLimit</span>)</span></div><div class="line">&#123;</div><div class="line">    Random randx = <span class="keyword">new</span> Random();</div><div class="line">    Random randy = <span class="keyword">new</span> Random();</div><div class="line">    <span class="keyword">double</span> result = <span class="number">0</span>;</div><div class="line">    <span class="keyword">int</span> N = <span class="number">1000000</span>;  </div><div class="line">    <span class="keyword">int</span> count = <span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; i++)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">double</span> x = lowLimit + (upLimit - lowLimit) * randx.NextDouble();</div><div class="line">        <span class="keyword">double</span> y = yMin + (yMax - yMin) * randx.NextDouble(); ;</div><div class="line">        <span class="keyword">if</span> (f(x) &gt; <span class="number">0</span> &amp;&amp; f(x) &gt;= y &amp;&amp; y &gt;= <span class="number">0</span>)</div><div class="line">            count++;</div><div class="line">        <span class="keyword">if</span> (f(x) &lt; <span class="number">0</span> &amp;&amp; f(x) &lt;= y &amp;&amp; y &lt;= <span class="number">0</span>)</div><div class="line">            count--;</div><div class="line">    &#125;</div><div class="line">    result = Math.Abs(((<span class="keyword">double</span>)count / N) * ((yMax-yMin)*(upLimit-lowLimit)));</div><div class="line">    <span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="定义法求积分"><a href="#定义法求积分" class="headerlink" title="定义法求积分"></a>定义法求积分</h2><p>&emsp;&emsp;把一块面积分解成N个小矩形，然后求面积和，最后求极限。我们就利用这种方式来实现它，但我们的N毕竟有限，为了结果更准确，把求矩形面积改成求梯形面积（当然矩形也是可以的），如下图：<br><img src="http://source.jiangyayu.cn/integrals/3.png" alter="定义法求解定积分"><br>&emsp;&emsp;把$\left(a,b\right)$分成$N$等分，积分值等于$S_{1}+S_{2}+….+S_{n}$，其中 $S_{i} = \left(f\left(x_{i}\right) + f\left(x_{i+1}\right)\right) * \left(b-a\right)/n / 2$ (矩形面积公式）。<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">double</span> <span class="title">methodDY</span>(<span class="params"><span class="keyword">double</span> upLimit, <span class="keyword">double</span> lowLimit</span>)</span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> N = <span class="number">1000000</span>;</div><div class="line">    <span class="keyword">double</span> step = (upLimit - lowLimit) / N;</div><div class="line">    <span class="keyword">double</span> result = <span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; i++)</div><div class="line">    &#123;</div><div class="line">        result += f(lowLimit+step*i) * step;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="变步长梯形求积分法"><a href="#变步长梯形求积分法" class="headerlink" title="变步长梯形求积分法"></a>变步长梯形求积分法</h2><p>&emsp;&emsp;用定义求积分法，要确定积分的误差是很难的，我们无法找到一个正好的N值符合我们要求的误差值，所以就需对定义法进行改进，改进的方式就是把原来固定的步长改为变化的步长，利用二分法，如下图：<br><div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 33.333333333333336%;"><a href="http://source.jiangyayu.cn/integrals/4.png" data-fancybox="fancyboxgroup" class="fancybox" target="_blank" rel="external"><img src="http://source.jiangyayu.cn/integrals/4.png" alter="变步长梯形求定积分"></a></div><div class="group-picture-column" style="width: 33.333333333333336%;"><a href="http://source.jiangyayu.cn/integrals/5.png" data-fancybox="fancyboxgroup" class="fancybox" target="_blank" rel="external"><img src="http://source.jiangyayu.cn/integrals/5.png" alter="变步长梯形求定积分"></a></div><div class="group-picture-column" style="width: 33.333333333333336%;"><a href="http://source.jiangyayu.cn/integrals/6.png" data-fancybox="fancyboxgroup" class="fancybox" target="_blank" rel="external"><img src="http://source.jiangyayu.cn/integrals/6.png" alter="变步长梯形求定积分"></a></div></div></div></div><br>&emsp;&emsp;分到 <code>| 后一个面积和 - 前一个面积和 |  &lt; 规定误差</code> 时。这样我们就达到了精确的目的。<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">double</span> <span class="title">methodBBCTX</span>(<span class="params"><span class="keyword">double</span> upLimit, <span class="keyword">double</span> lowLimit</span>)</span></div><div class="line">&#123; </div><div class="line">    <span class="keyword">double</span> e = <span class="number">0.0000001</span>;</div><div class="line">    <span class="keyword">double</span> s0 = <span class="number">0</span>;</div><div class="line">    <span class="keyword">double</span> s = <span class="number">05</span> * (f(upLimit) + f(lowLimit)) * (upLimit - lowLimit);</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; Math.Abs(s - s0) &gt; e; i *= <span class="number">2</span>)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">double</span> h = (upLimit - lowLimit) / i;</div><div class="line">        <span class="keyword">double</span> sum = <span class="number">0</span>;</div><div class="line">        <span class="keyword">double</span> a = lowLimit;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; i; j++)</div><div class="line">        &#123;</div><div class="line">            sum += <span class="number">0.5</span> * (f(a) + f(a + h)) * h;</div><div class="line">            a = a + h;</div><div class="line">        &#125;</div><div class="line">        s0 = s;</div><div class="line">        s = sum;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> s0;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="C-实现"><a href="#C-实现" class="headerlink" title="C#实现"></a>C#实现</h2><p>&emsp;&emsp;应用程序主界面：<br><img src="http://source.jiangyayu.cn/integrals/7.png" style="zoom:0.7" alter="窗体程序"></p>
-<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><ol>
-<li>输入参数<br>&emsp;&emsp;如下图所示，标识部分为程序的输入部分，包含以下几个必要的输入参数：<br>1) 被积函数：该部分为被积函数的表达式，变量需用x表示，如<code>0.5*x</code>、<code>0.5*x+0.25*x*x*x</code>。同时，该部分还支持C#的<code>Math</code>库中的函数，如<code>Math.Sqrt()</code>、<code>Math.Abs()</code>、<code>Math.Tan()</code>等。<br>2) 积分上限：定积分的积分上限。<br>3) 积分下限：定积分的积分下限。<br>4) 积分方法：该应用程序用来求解定积分所使用的算法，包括：蒙特卡洛算法(随机投点法)、定积分定义法、变步长梯形求积分法。<br><img src="http://source.jiangyayu.cn/integrals/8.png" style="zoom:0.7" alter="窗体程序"></li>
-<li>函数表达式的动态编译<br>&emsp;&emsp;由于函数表达式是在程序运行后手动输入的，因此函数表达式不能被当做代码执行。这里提供的解决方案是使用动态编译技术，让函数表达式被动态编译到内存中，供主程序调用，具体实现如下：<figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line"> <span class="comment">//动态编译代码</span></div><div class="line"> <span class="function"><span class="keyword">private</span> CompilerResults <span class="title">getCompilerResult</span>(<span class="params"><span class="keyword">string</span> expression</span>)</span></div><div class="line"> &#123;</div><div class="line">     <span class="comment">//动态编译函数表达式</span></div><div class="line">     CSharpCodeProvider provider = <span class="keyword">new</span> CSharpCodeProvider();</div><div class="line">     CompilerParameters parameter = <span class="keyword">new</span> CompilerParameters();</div><div class="line">     parameter.ReferencedAssemblies.Add(<span class="string">"System.dll"</span>);</div><div class="line">     parameter.GenerateExecutable = <span class="literal">false</span>;       <span class="comment">//&lt;--不生成exe</span></div><div class="line">     parameter.GenerateInMemory = <span class="literal">true</span>;          <span class="comment">//&lt;--直接在内存运行</span></div><div class="line">     CompilerResults result = provider.CompileAssemblyFromSource(parameter, GenerateCodeBlocks(expression));</div><div class="line">     <span class="comment">//动态编译</span></div><div class="line">     <span class="keyword">if</span> (result.Errors.Count &gt; <span class="number">0</span>)</div><div class="line">     &#123;</div><div class="line">         MessageBox.Show(<span class="string">"函数表达式错误！"</span>, <span class="string">"Error"</span>, MessageBoxButtons.OK);</div><div class="line">         <span class="keyword">return</span> <span class="literal">null</span>;</div><div class="line">     &#125;</div><div class="line">     <span class="keyword">return</span> result;</div><div class="line"> &#125;</div><div class="line"> </div><div class="line"> <span class="comment">//拼接代码块</span></div><div class="line"> <span class="function"><span class="keyword">private</span> <span class="keyword">string</span> <span class="title">GenerateCodeBlocks</span>(<span class="params"><span class="keyword">string</span> formula</span>)</span></div><div class="line"> &#123;</div><div class="line">     <span class="keyword">string</span> code =</div><div class="line">         <span class="string">"using System;"</span> +</div><div class="line">         <span class="string">"namespace demo"</span> +</div><div class="line">         <span class="string">"&#123;"</span> +</div><div class="line">            <span class="string">"public static class calculation"</span> +</div><div class="line">            <span class="string">"&#123;"</span> +</div><div class="line">            <span class="string">"public static double dowork(double x, double y)"</span> +</div><div class="line">            <span class="string">"&#123; return "</span> + formula +</div><div class="line">            <span class="string">";&#125;&#125;&#125;"</span>; <span class="comment">//这里是将你的formula和代码片段拼接成完整的程序准备编译的过程。</span></div><div class="line">     <span class="keyword">return</span> code;</div><div class="line"> &#125;</div><div class="line"></div><div class="line"><span class="comment">//实现函数表达式求值</span></div><div class="line"> <span class="function"><span class="keyword">private</span> <span class="keyword">private</span> <span class="keyword">double</span> <span class="title">f</span>(<span class="params"><span class="keyword">double</span> x</span>)</span></div><div class="line"> &#123;</div><div class="line">     <span class="keyword">if</span> (compResult == <span class="literal">null</span>)</div><div class="line">     &#123;</div><div class="line">         <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">     &#125;</div><div class="line">     <span class="keyword">else</span></div><div class="line">         <span class="keyword">return</span> Convert.ToDouble(compResult.CompiledAssembly.GetType(<span class="string">"demo.calculation"</span>).GetMethod(<span class="string">"dowork"</span>).Invoke(<span class="literal">null</span>, <span class="keyword">new</span> <span class="keyword">object</span>[] &#123; x, <span class="number">0</span> &#125;));</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
-</li>
+        <p>本文将简单记述如何应用ArcGIS软件对天津地形图进行校正和矢量化操作，并作必要的统计分析和数据处理工作。<br><a id="more"></a></p>
+<h1 id="投影与配准"><a href="#投影与配准" class="headerlink" title="投影与配准"></a>投影与配准</h1><h2 id="地图数据"><a href="#地图数据" class="headerlink" title="地图数据"></a>地图数据</h2><p><img src="http://source.jiangyayu.cn/ArcGIS-practice-2/1.%E5%A4%A9%E6%B4%A5%E5%B8%82%E6%BB%A8%E6%B5%B7%E6%96%B0%E5%8C%BA%E5%9B%BE.jpg" alt="天津市滨海新区图" style="zoom:15%"></p>
+<h2 id="打开图像，设置地图单位"><a href="#打开图像，设置地图单位" class="headerlink" title="打开图像，设置地图单位"></a>打开图像，设置地图单位</h2><ol>
+<li>添加“天津市滨海新区图.jpg”</li>
+<li>在ArcMap主菜单下选择View→Data Frame Properties，打开的Data Frame Properties窗口，在General标签中设置地图单位为Meters。</li>
 </ol>
-<h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><p>&emsp;&emsp;设置好输入参数后，点击下面的计算按钮，即可使用选定的方法计算所输入定积分的结果：<br><img src="http://source.jiangyayu.cn/integrals/9.png" style="zoom:0.7" alter="窗体程序"><br><strong>注：</strong><br>&emsp;&emsp;1)由于是近似求解，其结果与实际定积分的结果有一定偏差，但一般较小，在非精确计算的情况下可以忽略。<br>&emsp;&emsp;2)一般而言，蒙特卡洛算法的精确度随着投点数的增加而越来越接近真实值，但由于本程序兼顾计算效率问题，将投点数设置为1000000，有需要的可以修改。<br>&emsp;&emsp;3)定义法和变步长梯形求积分法在具有较高计算效率的同时有较好的精确度。<br>&emsp;&emsp;4)针对线性函数的定积分求解，由于算法的特性决定变步长梯形求解法效率最高，且没有误差。</p>
-<h3 id="显示"><a href="#显示" class="headerlink" title="显示"></a>显示</h3><p>&emsp;&emsp;本应用程序在计算结果的同时，还能显示被积函数的函数图像：<br><img src="http://source.jiangyayu.cn/integrals/10.png" style="zoom:0.7" alter="窗体程序"><br>&emsp;&emsp;此处的函数图像的显示使用的是<a href="http://source.jiangyayu.cn/integrals/ZedGraph.dll" target="_blank" rel="external">ZedGraph</a>控件,其Sourceforge的下载地址为：<a href="https://sourceforge.net/projects/zedgraph/" target="_blank" rel="external">https://sourceforge.net/projects/zedgraph/</a><br>&emsp;&emsp;在点击计算按钮的时候调用绘图函数绘制函数图像，绘图部分的实现如下：<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Draw</span>(<span class="params"><span class="keyword">double</span> upLimit,<span class="keyword">double</span> lowLimit</span>)</span></div><div class="line">&#123;</div><div class="line">    zedGraphControl1.GraphPane.CurveList.Clear();</div><div class="line"></div><div class="line">    <span class="keyword">double</span>[] Xs = <span class="keyword">new</span> <span class="keyword">double</span>[<span class="number">1000</span>];</div><div class="line">    <span class="keyword">double</span>[] Ys = <span class="keyword">new</span> <span class="keyword">double</span>[<span class="number">1000</span>];</div><div class="line">    Xs[<span class="number">0</span>] = lowLimit;</div><div class="line">    Ys[<span class="number">0</span>] = f(lowLimit);</div><div class="line">    <span class="keyword">double</span> step = (upLimit - lowLimit) / <span class="number">1000</span>;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; <span class="number">1000</span>; i++)</div><div class="line">    &#123;</div><div class="line">        Xs[i] = Xs[i - <span class="number">1</span>] + step;</div><div class="line">        Ys[i] = f(Xs[i]);</div><div class="line">        yMin = Ys[i] &lt; yMin ? Ys[i] : yMin;</div><div class="line">        yMax = Ys[i] &gt; yMax ? Ys[i] : yMax;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    zedGraphControl1.GraphPane.AddCurve(<span class="string">"f(x)"</span>, Xs, Ys, Color.Blue, SymbolType.None);</div><div class="line">    zedGraphControl1.AxisChange();</div><div class="line">    zedGraphControl1.Invalidate();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h3 id="GitHub项目地址"><a href="#GitHub项目地址" class="headerlink" title="GitHub项目地址"></a>GitHub项目地址</h3><p><a href="https://github.com/Alexander-Chiang/Integrals" target="_blank" rel="external">https://github.com/Alexander-Chiang/Integrals</a></p>
+<h2 id="地图配准"><a href="#地图配准" class="headerlink" title="地图配准"></a>地图配准</h2><ol>
+<li>选择投影坐标：在Data Frame Properties窗口的Coordinate System的标签中，设置地图的投影为Gauss Kruger →Xian 1980→Xian1980 GK CM 117E。</li>
+<li>采取控制点：添加实验一中已配准的塘沽地形图，找出两幅地图中的同名地物作为采取的控制点。本实验中采取的控制点为：塘沽火站、北塘站、以及部分铁路和公路的交点。至少选取四个点，采用一次多项式，删除误差较大的点并使最后误差小于1。<br><img src="http://source.jiangyayu.cn/ArcGIS-practice-2/2.png" alt="采取控制点" style="zoom:70%"></li>
+<li>地图矫正：选择Georeferencing→rectify对“天津市滨海新区图.jpg”进行矫正，保存名为“天津市滨海新区图”，设置保存格式为TIFF。<br><img src="http://source.jiangyayu.cn/ArcGIS-practice-2/3.png" alt="地图矫正" style="zoom:50%"></li>
+</ol>
+<h1 id="地图编辑"><a href="#地图编辑" class="headerlink" title="地图编辑"></a>地图编辑</h1><ol>
+<li>创建shape<br>打开ArcCatalog，在左侧目录树中选择指定的位置，然后在Contents框中右击鼠标，选择New→Shapfile打开Creat New Shapeflie窗口，在Name中输入lake，FeatureType选择Polygon，然后点击Edit，选择Import导入“天津滨海新区图.tif”的坐标系统。<div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><a href="http://source.jiangyayu.cn/ArcGIS-practice-2/4.png" data-fancybox="fancyboxgroup" class="fancybox" target="_blank" rel="external"><img src="http://source.jiangyayu.cn/ArcGIS-practice-2/4.png" alt="导入坐标系统" style="zoom:60%"></a></div><div class="group-picture-column" style="width: 50%;"><a href="http://source.jiangyayu.cn/ArcGIS-practice-2/5.png" data-fancybox="fancyboxgroup" class="fancybox" target="_blank" rel="external"><img src="http://source.jiangyayu.cn/ArcGIS-practice-2/5.png" alt="导入坐标系统" style="zoom:120%"></a></div></div></div></div></li>
+<li>添加字段<br>双击刚刚新建好的Shapefile文件，在Shapefile Properties窗口中，为lake图层增加一个字段name，类型为Text。</li>
+<li>加载数据<br>回到ArcMap中，添加图层“天津滨海新区图.tif”和“lake.shp”。</li>
+<li>编辑数据</li>
+</ol>
+<ul>
+<li>选中lake图层，在Editor工具条上选择Editor→Start Editing开始对lake图层进行编辑。</li>
+<li>在地图中找到一个水库，如钱圈水库，将地图放大到合适比例，然后沿着水库的周围提取图形。待跟踪完一周后，右击鼠标，选择Finish Sketch。然后在打开lake的属性窗口输入水库的name：钱圈水库。</li>
+<li>完成其他水库、盐田等的矢量化。最后Stop Editing，保存文件。</li>
+<li>参照lake图层的矢量化，完成其他几个图层的矢量化。并参照天津滨海新新区图的地图符号，为矢量化后的各要素设置相应的地图符号。最终矢量化得到的图层如图所示：<br><img src="http://source.jiangyayu.cn/ArcGIS-practice-2/6.png" alt="矢量化的图层"></li>
+</ul>
+<h1 id="统计分析"><a href="#统计分析" class="headerlink" title="统计分析"></a>统计分析</h1><ol>
+<li>创建统计图</li>
+</ol>
+<ul>
+<li>选中river图层，Start Editing，打开属性表，右击length字段，选中Calculate Geometry，计算出河流长度。</li>
+<li>点击Options，选择Creat Graph，设计河流统计表的样式<br><img src="http://source.jiangyayu.cn/ArcGIS-practice-2/7.png" alt="设置统计图" style="zoom:60%"></li>
+<li>点击Next生成河流统计图：<br><img src="http://source.jiangyayu.cn/ArcGIS-practice-2/8.png" alt="生成统计图" style="zoom:60%"></li>
+<li>在统计图上右击选择Add to Layout将统计图添加到制版上，调整至合适的大小和位置。</li>
+</ul>
+<h1 id="地图制版"><a href="#地图制版" class="headerlink" title="地图制版"></a>地图制版</h1><ul>
+<li>在ArcGis的主菜单下选择Insert→Tltle插入地图名：天津市滨海新区，设计合适的大小和位置；</li>
+<li>选择Insert→Legend，在对话框中为必要的图层建立图例，右击新建的图例，选择Properties，设置图例的格式，将图例放置在合适位置；</li>
+<li>选择Insert→Legend，选择Scale Bar为地图选择一个合适的比例尺，设置好其大小和位置；</li>
+<li>为地图设置合适的图标；</li>
+<li>在ArcGis主菜单下选择File→Export Map，选择输出格式为jpg，输出地图。</li>
+</ul>
+<h1 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h1><p><img src="http://source.jiangyayu.cn/ArcGIS-practice-2/9.png" alt="结果图"></p>
 
       
     </div>
@@ -496,9 +522,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/C/" rel="tag"><i class="fa fa-tag"></i> C#</a>
+            <a href="/tags/ArcGIS/" rel="tag"><i class="fa fa-tag"></i> ArcGIS</a>
           
-            <a href="/tags/定积分求解/" rel="tag"><i class="fa fa-tag"></i> 定积分求解</a>
+            <a href="/tags/地图编辑/" rel="tag"><i class="fa fa-tag"></i> 地图编辑</a>
           
         </div>
       
@@ -507,8 +533,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/archives/matlab-nc/" rel="next" title="NetCDF格式存储的栅格数据转换的MATLAB批处理程序">
-                <i class="fa fa-chevron-left"></i> NetCDF格式存储的栅格数据转换的MATLAB批处理程序
+              <a href="/archives/ArcGIS-practice-1.html" rel="next" title="ArcGIS练习1：地形图校正和拼接">
+                <i class="fa fa-chevron-left"></i> ArcGIS练习1：地形图校正和拼接
               </a>
             
           </div>
@@ -517,8 +543,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/archives/tomcat-install/" rel="prev" title="CentOS6.5中Tomcat的安装配置">
-                CentOS6.5中Tomcat的安装配置 <i class="fa fa-chevron-right"></i>
+              <a href="/archives/ArcGIS-practice-3.html" rel="prev" title="ArcGIS练习3：空间分析">
+                ArcGIS练习3：空间分析 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -545,7 +571,7 @@
           
   <div class="comments" id="comments">
     
-      <div id="SOHUCS" sid="/archives/Integrals/"></div>
+      <div id="SOHUCS" sid="/"></div>
     
   </div>
 
@@ -903,7 +929,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#随机投点法（蒙特卡洛算法）"><span class="nav-number">1.</span> <span class="nav-text">随机投点法（蒙特卡洛算法）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定义法求积分"><span class="nav-number">2.</span> <span class="nav-text">定义法求积分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变步长梯形求积分法"><span class="nav-number">3.</span> <span class="nav-text">变步长梯形求积分法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-实现"><span class="nav-number">4.</span> <span class="nav-text">C#实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入"><span class="nav-number">4.1.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出"><span class="nav-number">4.2.</span> <span class="nav-text">输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#显示"><span class="nav-number">4.3.</span> <span class="nav-text">显示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GitHub项目地址"><span class="nav-number">4.4.</span> <span class="nav-text">GitHub项目地址</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#投影与配准"><span class="nav-number">1.</span> <span class="nav-text">投影与配准</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#地图数据"><span class="nav-number">1.1.</span> <span class="nav-text">地图数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#打开图像，设置地图单位"><span class="nav-number">1.2.</span> <span class="nav-text">打开图像，设置地图单位</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#地图配准"><span class="nav-number">1.3.</span> <span class="nav-text">地图配准</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#地图编辑"><span class="nav-number">2.</span> <span class="nav-text">地图编辑</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#统计分析"><span class="nav-number">3.</span> <span class="nav-text">统计分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#地图制版"><span class="nav-number">4.</span> <span class="nav-text">地图制版</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结果"><span class="nav-number">5.</span> <span class="nav-text">结果</span></a></li></ol></div>
             
 
           </div>

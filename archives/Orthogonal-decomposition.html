@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="数字信号,matlab,数字滤波器," />
+  <meta name="keywords" content="正交分解,海洋要素," />
 
 
 
@@ -86,49 +86,22 @@
 
 
 
-<meta name="description" content="实验目的：
-实验类型：设计性实验。 
-掌握通过零、极点设计低阶数字滤波器的设计方法。
-掌握IIR和FIR数字滤波器的设计方法，并利用所设计滤波器解决实际问题。
-通过分析滤波前后信号频谱的变化，深刻理解滤波的概念。
-对两种滤波器设计方法的进行比较。">
+<meta name="description" content="经验正交分解的原理简介&amp;emsp;&amp;emsp;经验正交函数分析方法(empirical orthogonal function,缩写为EOF)，也称特征向量分析(eigen vector analysis)，或者主成分分析(principal component analysis,缩写PCA)，是一种分析矩阵数据中的结构特征，提取主要数据特征量的一种方法。Lorenz在1950年代首次将其引入气象">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数字信号与信息处理2:数字滤波器的设计">
-<meta property="og:url" content="https://blog.jiangyayu.cn/archives/Digital-filter/index.html">
+<meta property="og:title" content="matlab物理场的正交分解">
+<meta property="og:url" content="https://blog.jiangyayu.cn/archives/Orthogonal-decomposition.html">
 <meta property="og:site_name" content="Alex's Blog">
-<meta property="og:description" content="实验目的：
-实验类型：设计性实验。 
-掌握通过零、极点设计低阶数字滤波器的设计方法。
-掌握IIR和FIR数字滤波器的设计方法，并利用所设计滤波器解决实际问题。
-通过分析滤波前后信号频谱的变化，深刻理解滤波的概念。
-对两种滤波器设计方法的进行比较。">
-<meta property="og:image" content="http://source.jiangyayu.cn/Digital-filter/1.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/Digital-filter/2.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/Digital-filter/3.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/Digital-filter/4.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/Digital-filter/5.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/Digital-filter/6.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/Digital-filter/7.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/Digital-filter/8.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/Digital-filter/9.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/Digital-filter/10.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/Digital-filter/11.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/Digital-filter/12.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/Digital-filter/13.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/Digital-filter/14.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/Digital-filter/15.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/Digital-filter/16.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/Digital-filter/17.png">
-<meta property="og:updated_time" content="2017-03-02T14:50:09.100Z">
+<meta property="og:description" content="经验正交分解的原理简介&amp;emsp;&amp;emsp;经验正交函数分析方法(empirical orthogonal function,缩写为EOF)，也称特征向量分析(eigen vector analysis)，或者主成分分析(principal component analysis,缩写PCA)，是一种分析矩阵数据中的结构特征，提取主要数据特征量的一种方法。Lorenz在1950年代首次将其引入气象">
+<meta property="og:image" content="http://source.jiangyayu.cn/Orthogonal-decomposition/1.png">
+<meta property="og:image" content="http://source.jiangyayu.cn/Orthogonal-decomposition/2.png">
+<meta property="og:image" content="http://source.jiangyayu.cn/Orthogonal-decomposition/3.png">
+<meta property="og:image" content="http://source.jiangyayu.cn/Orthogonal-decomposition/4.png">
+<meta property="og:image" content="http://source.jiangyayu.cn/Orthogonal-decomposition/5.png">
+<meta property="og:updated_time" content="2017-03-02T14:50:31.880Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数字信号与信息处理2:数字滤波器的设计">
-<meta name="twitter:description" content="实验目的：
-实验类型：设计性实验。 
-掌握通过零、极点设计低阶数字滤波器的设计方法。
-掌握IIR和FIR数字滤波器的设计方法，并利用所设计滤波器解决实际问题。
-通过分析滤波前后信号频谱的变化，深刻理解滤波的概念。
-对两种滤波器设计方法的进行比较。">
-<meta name="twitter:image" content="http://source.jiangyayu.cn/Digital-filter/1.png">
+<meta name="twitter:title" content="matlab物理场的正交分解">
+<meta name="twitter:description" content="经验正交分解的原理简介&amp;emsp;&amp;emsp;经验正交函数分析方法(empirical orthogonal function,缩写为EOF)，也称特征向量分析(eigen vector analysis)，或者主成分分析(principal component analysis,缩写PCA)，是一种分析矩阵数据中的结构特征，提取主要数据特征量的一种方法。Lorenz在1950年代首次将其引入气象">
+<meta name="twitter:image" content="http://source.jiangyayu.cn/Orthogonal-decomposition/1.png">
 
 
 
@@ -156,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="https://blog.jiangyayu.cn/archives/Digital-filter/"/>
+  <link rel="canonical" href="https://blog.jiangyayu.cn/archives/Orthogonal-decomposition.html"/>
 
 
 
 
 
-  <title> 数字信号与信息处理2:数字滤波器的设计 | Alex's Blog </title>
+  <title> matlab物理场的正交分解 | Alex's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -334,7 +307,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://blog.jiangyayu.cn/archives/Digital-filter/">
+  <link itemprop="mainEntityOfPage" href="https://blog.jiangyayu.cn/archives/Orthogonal-decomposition.html">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Alexander Chiang">
@@ -358,7 +331,7 @@
             
             
               
-                数字信号与信息处理2:数字滤波器的设计
+                matlab物理场的正交分解
               
             
           </h1>
@@ -373,8 +346,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2012-12-14T16:04:22+08:00">
-                2012-12-14
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2013-12-18T14:50:35+08:00">
+                2013-12-18
               </time>
             
 
@@ -396,8 +369,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/数字信号/" itemprop="url" rel="index">
-                    <span itemprop="name">数字信号</span>
+                  <a href="/categories/数据处理分析/" itemprop="url" rel="index">
+                    <span itemprop="name">数据处理分析</span>
                   </a>
                 </span>
 
@@ -415,8 +388,8 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/archives/Digital-filter/#SOHUCS" itemprop="discussionUrl">
-                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="/archives/Digital-filter/" itemprop="commentsCount"></span>
+                <a href="/archives/Orthogonal-decomposition.html#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="/archives/Orthogonal-decomposition.html" itemprop="commentsCount"></span>
                 </a>
               
               </span>
@@ -427,7 +400,7 @@
 
           
           
-             <span id="/archives/Digital-filter/" class="leancloud_visitors" data-flag-title="数字信号与信息处理2:数字滤波器的设计">
+             <span id="/archives/Orthogonal-decomposition.html" class="leancloud_visitors" data-flag-title="matlab物理场的正交分解">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -454,94 +427,26 @@
       
 
       
-        <h1 id="实验目的："><a href="#实验目的：" class="headerlink" title="实验目的："></a>实验目的：</h1><ol>
-<li>实验类型：设计性实验。 </li>
-<li>掌握通过零、极点设计低阶数字滤波器的设计方法。</li>
-<li>掌握IIR和FIR数字滤波器的设计方法，并利用所设计滤波器解决实际问题。</li>
-<li>通过分析滤波前后信号频谱的变化，深刻理解滤波的概念。</li>
-<li>对两种滤波器设计方法的进行比较。<a id="more"></a>
-</li>
-</ol>
-<h1 id="实验主要仪器设备，软件"><a href="#实验主要仪器设备，软件" class="headerlink" title="实验主要仪器设备，软件"></a>实验主要仪器设备，软件</h1><ol>
-<li>硬件准备：PC机</li>
-<li>软件准备：Matlab语言环境</li>
-</ol>
-<h1 id="实验的基本原理与内容"><a href="#实验的基本原理与内容" class="headerlink" title="实验的基本原理与内容"></a>实验的基本原理与内容</h1><h2 id="实验原理"><a href="#实验原理" class="headerlink" title="实验原理"></a>实验原理</h2><p>&emsp;&emsp;数字滤波器是具有某种特定频率特性的线性时不变系统。广义上，任何线性时不变离散系统都是一个数字滤波器。设计数字滤波器的任务就是需求一个因果稳定的线性是不变系统，并使系统函数H(z)具有指定的频率特性。<br><img src="http://source.jiangyayu.cn/Digital-filter/1.png" alt="公式" style="zoom:0.5"><br>&emsp;&emsp;低阶数字滤波器一般指一阶或二阶滤波器。因其阶次较低，可用零极点的分布来调控其频率特性；其好处处理速度快，硬件简单。另外，高阶滤波器在许多情况下由多个低阶滤波器组合来实现。<br>&emsp;&emsp;LTI系统可在z域中用零极点图的形式来描述。这在设计简单的滤波器时很重要，利用其可进行谱分析，只要正确地配置零极点就可达到一定的设计要求。那么，建立零极点与频率特性的关系规律：</p>
-<ol>
-<li>设计滤波器时，一定要保证结构的稳定，因此所有极点应该位于单位圆之内；</li>
-<li>负相位越大引起系统的延时越大，为了减少系统时延，所设计的系统零点最好也在单位圆内(或上)；</li>
-<li>极点在单位圆附近，对应频率幅度会出现波峰；零点在单位圆上，对应频率幅度会出现波谷。</li>
-</ol>
-<p>&emsp;&emsp;基于零极点的低阶数据滤波器模型：</p>
-<p><img src="http://source.jiangyayu.cn/Digital-filter/2.png" alt="公式" style="zoom:0.5"></p>
-<p>&emsp;&emsp;数字滤波器从实现的网络结构或者从单位冲激响应分类，可以分为无限长单位冲激响应（IIR）数字滤波器和有限长单位冲激响应（FIR）数字滤波器。<br>&emsp;&emsp;数字滤波器设计的基本问题：</p>
-<ol>
-<li>根据实际要求确定数字滤波器的性能指标。</li>
-<li>用一个稳定的系统函数去逼近这个指标。</li>
-<li>用一个有限精度的运算去实现这个传输函数。</li>
-</ol>
-<p>&emsp;&emsp;其中IIR数字滤波器主要是借助于模拟滤波器的设计方法。模拟滤波器已有一套成熟的设计方法，充分利用这些资源为IIR数字滤波器设计提供很大方便。但IIR数字滤波器的相位特征一般为非线性的。而在有些实际应用场合，如图像处理，对滤波器线性相位特性要求颇为严格，因此需要选择FIR数字滤波器，且FIR数字滤波器的幅度特征可任意设计，比较IIR数字滤波器的设计更灵活。</p>
-<h2 id="实验内容（一）："><a href="#实验内容（一）：" class="headerlink" title="实验内容（一）："></a>实验内容（一）：</h2><p>&emsp;&emsp;设有一连续信号x(t)=sin(15t)+cos(40t)+cos(200t)，基于零、极点低阶数字滤波器模型，分别设计二阶数字波器和一阶数字滤波器，分别提取三个频率分量。设采样周期T=0.005秒。<br><strong>基本流程：</strong><br>a）    构造连续信号x(t)并显示波形，信号的作用时间设定为：0~10s;<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt;&gt; t = <span class="number">0</span>:<span class="number">0.005</span>:<span class="number">10</span>;</div><div class="line">&gt;&gt; x=<span class="built_in">sin</span>(<span class="number">15</span>*t)+<span class="built_in">cos</span>(<span class="number">40</span>*t)+<span class="built_in">cos</span>(<span class="number">200</span>*t);</div><div class="line">&gt;&gt; plot(x);   <span class="comment">%% 绘出原始信号</span></div></pre></td></tr></table></figure></p>
-<p><img src="http://source.jiangyayu.cn/Digital-filter/3.png" style="zoom:0.7"><br>b）    需求分析并选定滤波的类型【低通，高通，带通，带阻】；基于二阶数字波器和一阶数字滤波器的模型传递函数设计其参数，并画出零、极点分布图及滤波器的频响；<br>c）    用设计出的滤波器分别提取x(t)信号各频率成分；并与参考信号相比。<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">b=[<span class="number">1</span> <span class="number">1</span>];</div><div class="line">a=[<span class="number">20</span> <span class="number">-18</span>];</div><div class="line">y0=filter(b,a,x);  <span class="comment">%%用低通滤除cos（200t）</span></div><div class="line">a1 = poly([<span class="number">0.9</span>,<span class="number">0.9</span>]);</div><div class="line">b1 = poly([exp(<span class="number">0.2</span>j),exp(<span class="number">-0.2</span>j)]);</div><div class="line">w0 = <span class="number">0.2</span>;</div><div class="line">alpha1 = <span class="built_in">sin</span>(w0);</div><div class="line">k1 = (<span class="number">1</span>+alpha1)/<span class="number">2</span> ;</div><div class="line">b1 = k1.*b1;</div><div class="line">y1=filter(b1,a1,y0); <span class="comment">%%用带阻滤除cos（40t）</span></div><div class="line">figure,subplot(<span class="number">3</span>,<span class="number">1</span>,<span class="number">1</span>),zplane(b1,a1); <span class="comment">%%绘制零极点</span></div><div class="line">[H,w] = freqz(b1,a1);</div><div class="line">subplot(<span class="number">3</span>,<span class="number">1</span>,<span class="number">2</span>), plot(w,<span class="built_in">abs</span>(H)); <span class="comment">%%绘制滤波器   </span></div><div class="line">subplot(<span class="number">3</span>,<span class="number">1</span>,<span class="number">3</span>),plot(y1); <span class="comment">%%绘制提取的sin（15t）</span></div><div class="line">hold on ;</div><div class="line">plot(<span class="built_in">sin</span>(<span class="number">15</span>*t),<span class="string">'g'</span>); <span class="comment">%%绘出sin（15t）</span></div></pre></td></tr></table></figure></p>
-<p><img src="http://source.jiangyayu.cn/Digital-filter/4.png" style="zoom:0.7"></p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">alpha2 = <span class="number">0.98</span>;</div><div class="line">beta2 = <span class="built_in">cos</span>(<span class="number">0.2</span>);</div><div class="line">a2 = [<span class="number">1</span> -beta2*(<span class="number">1</span>+alpha2) alpha2];</div><div class="line">k2 = (<span class="number">1</span>-alpha2)/<span class="number">2</span>;</div><div class="line">b2 = k2.*[<span class="number">1</span> <span class="number">0</span> <span class="number">-1</span>];</div><div class="line">y3 =filter(b2,a2,x);</div><div class="line">figure,subplot(<span class="number">3</span>,<span class="number">1</span>,<span class="number">1</span>),zplane(b2,a2);<span class="comment">%%绘制零极点</span></div><div class="line">[H,w] = freqz(b2,a2);</div><div class="line">subplot(<span class="number">3</span>,<span class="number">1</span>,<span class="number">2</span>), plot(w,<span class="built_in">abs</span>(H)); <span class="comment">%%绘制滤波器</span></div><div class="line">subplot(<span class="number">3</span>,<span class="number">1</span>,<span class="number">3</span>),plot(y3);<span class="comment">%%绘制提取的cos（40t）</span></div><div class="line">hold on;</div><div class="line">plot(<span class="built_in">cos</span>(<span class="number">40</span>*t),<span class="string">'g'</span>);   <span class="comment">%%绘出cos（40t）</span></div></pre></td></tr></table></figure>
-<p><img src="http://source.jiangyayu.cn/Digital-filter/5.png" style="zoom:0.7"></p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">alpha3 = <span class="number">0.98</span>;</div><div class="line">beta3 = <span class="built_in">cos</span>(<span class="number">1</span>);</div><div class="line">a3 = [<span class="number">1</span> -beta3*(<span class="number">1</span>+alpha3) alpha3];</div><div class="line">k3 = (<span class="number">1</span>-alpha2)/<span class="number">2</span>;</div><div class="line">b3 = k3.*[<span class="number">1</span> <span class="number">0</span> <span class="number">-1</span>];</div><div class="line">y4 =filter(b3,a3,x);</div><div class="line">figure,subplot(<span class="number">3</span>,<span class="number">1</span>,<span class="number">1</span>),zplane(b3,a3);<span class="comment">%%绘制零极点</span></div><div class="line">[H,w] = freqz(b3,a3);</div><div class="line">subplot(<span class="number">3</span>,<span class="number">1</span>,<span class="number">2</span>),plot(w,<span class="built_in">abs</span>(H));<span class="comment">%%绘制滤波器</span></div><div class="line">subplot(<span class="number">3</span>,<span class="number">1</span>,<span class="number">3</span>),plot(y4);  <span class="comment">%%绘制提取的cos（200t）</span></div><div class="line">hold on;</div><div class="line">plot(<span class="built_in">cos</span>(<span class="number">200</span>*t),<span class="string">'g'</span>);     <span class="comment">%%绘制cos（200t）</span></div><div class="line">axis([<span class="number">0</span>,<span class="number">300</span>,<span class="number">-1.1</span>,<span class="number">1.1</span>]);<span class="comment">%%设置显示范围</span></div><div class="line">hold off;</div></pre></td></tr></table></figure>
-<p><img src="http://source.jiangyayu.cn/Digital-filter/6.png" style="zoom:0.7"></p>
-<h2 id="实验内容（二）"><a href="#实验内容（二）" class="headerlink" title="实验内容（二）"></a>实验内容（二）</h2><p><strong>实验背景:</strong><br>&emsp;&emsp;心电( Electrocardiograph, ECG) 信号是心脏电活动在人体体表的表现，它一般比较微弱，正常的心电信号在0.01Hz-100Hz频带范围内。而90%的ECG频谱能量又集中在0.25-35Hz之间。因此, 心电信号在提取的过程中极易受到内、 外环境的干扰, 而其中最而其中最主要的干扰是近场 50 Hz工频干扰源。因此, 如何消除 50 Hz工频干扰, 成为处理心电信号的首要任务。<br><strong>实验数据：</strong><br>&emsp;&emsp;实验数据是从美国麻省理工学院提供的MIT-BIH数据库下载的212文件格式带工频干扰的心电信号。该212文件格式包括头、数据和注释三个文件，以ASCll码方式存储。其采样率为360Hz，共有30000个样本点，数据文件<a href="http://source.jiangyayu.cn/Digital-filter/xindiandata.xls" target="_blank" rel="external">xindiantu.xls</a>。<br><strong>实验任务：</strong><br>&emsp;&emsp;分别设计IIR数字带阻滤波器（陷波器）和FIR数字带阻滤波器（陷波器），陷波器的模拟指标如下图所示：阻带从49-51Hz间，其中心频率为f 0=50 Hz，过渡带宽B=2Hz，通带的波动控制在1dB内，而阻带的衰减至少到45dB，采样频率为fs=360Hz；并将所设计滤波器对实际被50Hz干扰后的心电图信号进行滤波处理仿真实验，滤除其中的干扰成分。观察总结滤波作用与效果。<br><img src="http://source.jiangyayu.cn/Digital-filter/7.png"></p>
-<p><strong>实验步骤：</strong><br>（1）读取给定心电图信号的数据文件xidiantu.xls，并绘出心电图信号波形图；</p>
-<ul>
-<li>将xindiantu.xls导入matlab，并转换成行向量data。</li>
-<li>运行以下程序绘出原始心电图<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">T=<span class="number">1</span>/<span class="number">360</span>;</div><div class="line">t=<span class="number">0</span>:T:<span class="number">29999</span>*T;</div><div class="line">plot(t,data)；</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><img src="http://source.jiangyayu.cn/Digital-filter/8.png" style="zoom:0.7"></p>
-<p>（2）对心电图信号的频谱进行分析，得出滤波器的设计指标参数；并绘制其模拟域频谱图。<br>根据实验要求，所设计的滤波器阻带为49-51Hz，其中心频率为f 0=50 Hz，过渡带宽B=2Hz，通带的波动控制在1dB内，而阻带的衰减至少到45dB，采样频率为fs=360Hz；所以设计滤波器的阻带为60dB。<br>（3）根据所分析的指标参数，<strong>设计50Hz IIR数字陷波器（带阻滤波器）</strong>；</p>
-<ul>
-<li><p>将数字域频率转化成模拟域频率</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Rp=<span class="number">1</span>;</div><div class="line">As=<span class="number">60</span>;</div><div class="line">fs=<span class="number">360</span>;</div></pre></td></tr></table></figure>
-</li>
-<li><p>设定滤波器各项参数</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">wpl=fs*<span class="number">2</span>*<span class="built_in">tan</span>((<span class="number">47</span>*<span class="built_in">pi</span>/<span class="number">360</span>));</div><div class="line">wph=fs*<span class="number">2</span>*<span class="built_in">tan</span>((<span class="number">53</span>*<span class="built_in">pi</span>/<span class="number">360</span>));</div><div class="line">wsl=fs*<span class="number">2</span>*<span class="built_in">tan</span>((<span class="number">49</span>*<span class="built_in">pi</span>/<span class="number">360</span>));</div><div class="line">wsh=fs*<span class="number">2</span>*<span class="built_in">tan</span>((<span class="number">51</span>*<span class="built_in">pi</span>/<span class="number">360</span>));</div><div class="line">wp=[wpl,wph];</div><div class="line">ws=[wsl,wsh];</div></pre></td></tr></table></figure>
-</li>
-<li><p>设置巴特沃思(Butterworth)低通滤波器原型</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[N,wc]=buttord(wp,ws,rp,as,<span class="string">'s'</span>);</div><div class="line">[z,p,k]=buttap(N);</div><div class="line">[b0,a0]=zp2tf(z,p,k);</div><div class="line">[H,w] = freqs(b0,a0);</div><div class="line">plot(w,<span class="built_in">abs</span>(H));</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><img src="http://source.jiangyayu.cn/Digital-filter/9.png" style="zoom:0.7"></p>
-<ul>
-<li><p>低通滤波器转换成带阻滤波器</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">B=wc(<span class="number">2</span>)-wc(<span class="number">1</span>);</div><div class="line">wz=(wc(<span class="number">2</span>).*wc(<span class="number">1</span>)).^(<span class="number">1</span>/<span class="number">2</span>);</div><div class="line">[bt,at]=lp2bs(b0,a0,wz,B);</div></pre></td></tr></table></figure>
-</li>
-<li><p>绘制滤波器形状</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[b,a]=bilinear(bt,at,fs); </div><div class="line">subplot(<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>) ,zplane(b,a);</div><div class="line">[H,w]=freqz(b,a);</div><div class="line">subplot(<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>),plot(w*<span class="number">360</span>/(<span class="number">2</span>*<span class="built_in">pi</span>),<span class="number">20</span>*<span class="built_in">log10</span>(<span class="built_in">abs</span>(H)));</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><img src="http://source.jiangyayu.cn/Digital-filter/10.png" style="zoom:0.7"></p>
-<ul>
-<li>开始滤波<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">y=filter(b,a,data);</div><div class="line">plot(t,data);</div><div class="line">figure,plot(t,y);</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><a href="http://source.jiangyayu.cn/Digital-filter/11.png" data-fancybox="fancyboxgroup" class="fancybox" target="_blank" rel="external"><img src="http://source.jiangyayu.cn/Digital-filter/11.png"></a></div><div class="group-picture-column" style="width: 50%;"><a href="http://source.jiangyayu.cn/Digital-filter/12.png" data-fancybox="fancyboxgroup" class="fancybox" target="_blank" rel="external"><img src="http://source.jiangyayu.cn/Digital-filter/12.png"></a></div></div></div></div>
-<p>(4)根据所分析的指标参数，<strong>设计50Hz FIR数字陷波器（带阻滤波器）</strong>；用给定指标进行验证设计的合理性。</p>
-<ul>
-<li><p>将信号转到换数字域</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">rp=<span class="number">1</span>;</div><div class="line">As=<span class="number">60</span>;</div><div class="line">fs=<span class="number">360</span>;</div></pre></td></tr></table></figure>
-</li>
-<li><p>设置滤波器参数</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">wp1=<span class="number">47</span>*<span class="number">2</span>*<span class="built_in">pi</span>/<span class="number">360</span>;</div><div class="line">wph=<span class="number">53</span>*<span class="number">2</span>*<span class="built_in">pi</span>/<span class="number">360</span>;</div><div class="line">ws1=<span class="number">49</span>*<span class="number">2</span>*<span class="built_in">pi</span>/<span class="number">360</span>;</div><div class="line">wsh=<span class="number">51</span>*<span class="number">2</span>*<span class="built_in">pi</span>/<span class="number">360</span>;</div></pre></td></tr></table></figure>
-</li>
-<li><p>生成滤波器并绘制出滤波器形状</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">deltaw=<span class="number">2</span>*<span class="number">2</span>*<span class="built_in">pi</span>/<span class="number">360</span>;</div><div class="line">N0=<span class="built_in">ceil</span>(<span class="number">6.6</span>*<span class="built_in">pi</span>/deltaw);</div><div class="line">N=N0+<span class="built_in">mod</span>(N0+<span class="number">1</span>,<span class="number">2</span>);</div><div class="line">wd=(hamming(N));</div><div class="line">wc1=(ws1+wp1)/<span class="number">2</span>; wc2=(wph+wsh)/<span class="number">2</span>;</div><div class="line">hd=[zeros(<span class="number">1</span>,(N<span class="number">-1</span>)/<span class="number">2</span>),<span class="number">1</span>,zeros(<span class="number">1</span>,(N<span class="number">-1</span>)/<span class="number">2</span>)]-ideallp(wc2,N)+ideallp(wc1,N)</div><div class="line"></div><div class="line">h=hd.*wd';</div><div class="line">a=<span class="number">1</span>;</div><div class="line">H=freqz(h,a,<span class="number">0</span>:<span class="number">0.01</span>:<span class="built_in">pi</span>);</div><div class="line">subplot(<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>), zplane(h,a);</div><div class="line">subplot(<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>), plot([<span class="number">0</span>:<span class="number">0.01</span>:pi]*<span class="number">360</span>/(<span class="number">2</span>*<span class="built_in">pi</span>),<span class="built_in">abs</span>(H)) ;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><img src="http://source.jiangyayu.cn/Digital-filter/13.png" style="zoom:0.7"></p>
-<ul>
-<li>进行滤波<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">T=<span class="number">1</span>/<span class="number">360</span>;</div><div class="line">t=<span class="number">0</span>:T:<span class="number">29999</span>*T;</div><div class="line">y=filter(h,a,data);</div><div class="line">plot(t,data);</div><div class="line">figure,plot(t,y);</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><a href="http://source.jiangyayu.cn/Digital-filter/14.png" data-fancybox="fancyboxgroup" class="fancybox" target="_blank" rel="external"><img src="http://source.jiangyayu.cn/Digital-filter/14.png"></a></div><div class="group-picture-column" style="width: 50%;"><a href="http://source.jiangyayu.cn/Digital-filter/15.png" data-fancybox="fancyboxgroup" class="fancybox" target="_blank" rel="external"><img src="http://source.jiangyayu.cn/Digital-filter/15.png"></a></div></div></div></div>
-<p>（5）分别利用两种所设计的数字陷波器对给定的心电图信号进行滤波，滤除50Hz的工频干扰；<br>（6）绘制滤波后信号的频谱图，并原始心电信号的频谱进行比对，分析结果；<br><div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><a href="http://source.jiangyayu.cn/Digital-filter/16.png" data-fancybox="fancyboxgroup" class="fancybox" target="_blank" rel="external"><img src="http://source.jiangyayu.cn/Digital-filter/16.png"></a></div><div class="group-picture-column" style="width: 50%;"><a href="http://source.jiangyayu.cn/Digital-filter/17.png" data-fancybox="fancyboxgroup" class="fancybox" target="_blank" rel="external"><img src="http://source.jiangyayu.cn/Digital-filter/17.png"></a></div></div></div></div><br>（7）两种滤波器设计结果的比对，分析其原因。<br>IIR数字滤波器的设计方法简单方便，但其相位特征一般为非线性的。FIR数字滤波器，具有系统稳定、其幅度特征可任意设计等优点。</p>
+        <h2 id="经验正交分解的原理"><a href="#经验正交分解的原理" class="headerlink" title="经验正交分解的原理"></a>经验正交分解的原理</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>&emsp;&emsp;经验正交函数分析方法(empirical orthogonal function,缩写为EOF)，也称特征向量分析(eigen vector analysis)，或者主成分分析(principal component analysis,缩写PCA)，是一种分析矩阵数据中的结构特征，提取主要数据特征量的一种方法。Lorenz在1950年代首次将其引入气象和气候研究，现在在地学及其他学科中得到了非常广泛的应用。<br><a id="more"></a><br>&emsp;&emsp;分析中通常特征向量对应的是空间样本，称空间特征向量或者空间模态；对应的是时间变化称为时间系数。</p>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><p>&emsp;（1）主要特色：能够有效地体现物理场的主要信息，保留次要信息并排除外来的随机干扰。<br>&emsp;（2）无固定的函数形式：这种正交函数展开不像三角函数展开、球函数展开那样有固定的展开形式。<br>&emsp;（3）图形是由场本身决定的，不是事先人为地给定典型场函数的。<br>&emsp;（4）具有收敛快、能更好地反应出场的基本结构的特征。</p>
+<h3 id="主要应用"><a href="#主要应用" class="headerlink" title="主要应用"></a>主要应用</h3><p>&emsp;（1）可在有限的区域中不规则分布的站点进行：空间不同站点/同一点的不同时间、不同高度的多种要素进行综合分析。<br>&emsp;（2）可用于要素场分析、垂直结构分析、动力模型垂直分层等。</p>
+<h3 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h3><p>&emsp;&emsp;经验正交函数分解的基本思想是把包含m个空间点（或p个变量）的n个时次的观测场的序列（i = 1,2,…,m; j = 1,2,…,n）分解成相互正交的时间函数与相互正交的空间函数的乘积之和，常把空间函数看做典型场，时间函数看做典型场的权重系数，则不同时间的要素场是若干个典型场按不同的权重线性叠加的结果，各个场之间的差别就在于各典型场的系数不同。</p>
+<p>$$ nXm = nEm \times m\Phi_{m}^{T} $$</p>
+<h2 id="EOF函数简介"><a href="#EOF函数简介" class="headerlink" title="EOF函数简介"></a>EOF函数简介</h2><p>&emsp;&emsp;EOF函数的原型为：</p>
+<p> $$ [V,EOFs,EC,error]=EOF(D,p) $$</p>
+<p> 本站提供的下载:<a href="http://source.jiangyayu.cn/Orthogonal-decomposition/EOF.m" target="_blank" rel="external">EOF.m</a></p>
+<h3 id="输入参数"><a href="#输入参数" class="headerlink" title="输入参数"></a>输入参数</h3><p>D：输入的物理场数据，为一个二维矩阵，每一行假定为一个样本，每一列为一个变量。因此D的一列表示一个时间序列的变量。<br>P：可选项，指EOF分析结果的模态数，其取值应小于时间间隔和样本数</p>
+<h3 id="输出参数"><a href="#输出参数" class="headerlink" title="输出参数"></a>输出参数</h3><p>V：与EOFs有关的特征向量；<br>EOFs：时间系数；<br>EC：空间模态，由p个模态的列向量组成的矩阵；<br>error：重建误差；</p>
+<h2 id="经验正交分解实例"><a href="#经验正交分解实例" class="headerlink" title="经验正交分解实例"></a>经验正交分解实例</h2><h3 id="数据下载"><a href="#数据下载" class="headerlink" title="数据下载"></a>数据下载</h3><p>前往<a href="https://climatedataguide.ucar.edu/climate-data/soda-simple-ocean-data-assimilation" target="_blank" rel="external">SODA: Simple Ocean Data Assimilation</a>下载数据<br>选择相关变量，以“TAUY”为例。<br>合理选择研究区域，时间范围等<br><img src="http://source.jiangyayu.cn/Orthogonal-decomposition/1.png"><br>选择合适数据下载后，认真核对数据基本信息<br><img src="http://source.jiangyayu.cn/Orthogonal-decomposition/2.png"><br>在数据下载页选择合适的数据格式，我们选择NetCDF<br><img src="http://source.jiangyayu.cn/Orthogonal-decomposition/3.png"><br>现在开始提取数据，提取的数据名为data.cdf<br>建议根据下载的数据变量名、范围、时间等命名，便于查找。如<a href="http://source.jiangyayu.cn/Orthogonal-decomposition/tauy_1958_2008_NWPacific.cdf" target="_blank" rel="external">tauy_1958_2008_NWPacific.cdf</a></p>
+<h3 id="数据读取"><a href="#数据读取" class="headerlink" title="数据读取"></a>数据读取</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">%% read data</span></div><div class="line">file = <span class="string">'tauy_1958_2008_NWPacific.cdf'</span>;</div><div class="line"><span class="comment">% ncdisp(file);</span></div><div class="line">time = ncread(file,<span class="string">'time'</span>);</div><div class="line">lon = ncread(file,<span class="string">'lon'</span>);</div><div class="line">lat = ncread(file,<span class="string">'lat'</span>);</div><div class="line">tauy = ncread(file,<span class="string">'tauy'</span>);</div><div class="line">missing_value = ncreadatt(file,<span class="string">'tauy'</span>,<span class="string">'missing_value'</span>);</div></pre></td></tr></table></figure>
+<h3 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h3><p>（1）显示数据的范围<br>&emsp;&emsp;使用<a href="http://source.jiangyayu.cn/Orthogonal-decomposition/m_map1.4.zip" target="_blank" rel="external">m_map</a>工具箱进行地图的显示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt;&gt; figure;m_proj(&apos;mercator&apos;,&apos;lat&apos;,[20 60],&apos;lon&apos;,[100 160]);m_coast(&apos;patch&apos;,[0.7 0.7 0.7]);m_grid;</div></pre></td></tr></table></figure></p>
+<p><img src="http://source.jiangyayu.cn/Orthogonal-decomposition/4.png" style="zoom:0.7"><br>（2）选择海区<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">% set range</span></div><div class="line">la = <span class="number">46</span>:<span class="number">59</span>; </div><div class="line">lo = <span class="number">145</span>:<span class="number">155</span>;</div></pre></td></tr></table></figure></p>
+<p>（3）去趋势处理<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">xx = <span class="built_in">find</span>(lon&gt;=min(lo) &amp; lon&lt;=max(lo) );  </div><div class="line">yy = <span class="built_in">find</span>(lat&gt;=min(la) &amp; lat&lt;=max(la));</div><div class="line">tauy_sub = <span class="built_in">zeros</span>(<span class="built_in">length</span>(xx),<span class="built_in">length</span>(yy),<span class="number">612</span>);</div><div class="line">tauy_sub = tauy(xx,yy,:)</div><div class="line"><span class="comment">%% detrend</span></div><div class="line">tauy_de = <span class="built_in">zeros</span>(<span class="built_in">size</span>(tauy_sub));</div><div class="line"><span class="keyword">for</span> ii = <span class="number">1</span>:<span class="built_in">length</span>(xx)</div><div class="line">    <span class="keyword">for</span> jj = <span class="number">1</span>:<span class="built_in">length</span>(yy)</div><div class="line">        tauy_de(ii,jj,:) =  detrend(<span class="built_in">squeeze</span>(tauy_sub(ii,jj,:)));</div><div class="line">    <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure></p>
+<h3 id="EOF计算"><a href="#EOF计算" class="headerlink" title="EOF计算"></a>EOF计算</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">%% EOF</span></div><div class="line">tauy_de = <span class="built_in">reshape</span>(tauy_de,<span class="built_in">length</span>(xx)*<span class="built_in">length</span>(yy),<span class="number">612</span>);</div><div class="line">[V,EOFs,EC,error] = EOF(tauy_de,<span class="number">10</span>);</div><div class="line">EC = <span class="built_in">reshape</span>(EC,<span class="built_in">length</span>(xx),<span class="built_in">length</span>(yy),<span class="number">10</span>);</div></pre></td></tr></table></figure>
+<h3 id="计算方差贡献率"><a href="#计算方差贡献率" class="headerlink" title="计算方差贡献率"></a>计算方差贡献率</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">V = [<span class="number">2.3544</span>  <span class="number">0.1429</span>  <span class="number">0.0625</span>  <span class="number">0.0410</span>  <span class="number">0.0305</span>  <span class="number">0.0085</span>  <span class="number">0.0077</span>  <span class="number">0.0073</span>  <span class="number">0.0024</span>  <span class="number">0.0021</span>]</div></pre></td></tr></table></figure>
+<p>计算各模态的方差贡献率：<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;&gt; V/sum(V)</div><div class="line"><span class="built_in">ans</span> =[<span class="number">0.8853</span>  <span class="number">0.0537</span>  <span class="number">0.0235</span>  <span class="number">0.0154</span>  <span class="number">0.0115</span>  <span class="number">0.0032</span>  <span class="number">0.0029</span>  <span class="number">0.0028</span>  <span class="number">0.0009</span>  <span class="number">0.0008</span>]</div></pre></td></tr></table></figure></p>
+<h3 id="绘图"><a href="#绘图" class="headerlink" title="绘图"></a>绘图</h3><p>根据方差贡献率，画出方差贡献率大于90%的前若干个模态的空间模态和时间系数<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line"><span class="comment">%% figure</span></div><div class="line">figure;</div><div class="line"><span class="comment">% EOF2</span></div><div class="line">plot(EOFs(:,<span class="number">2</span>));</div><div class="line">ylabel(<span class="string">'PC2'</span>,<span class="string">'FontSize'</span>,<span class="number">18</span>);</div><div class="line">xlabel(<span class="string">'Year'</span>,<span class="string">'FontSize'</span>,<span class="number">18</span>)</div><div class="line">axis([<span class="number">1</span> <span class="number">612</span> <span class="number">-0.2</span> <span class="number">0.2</span>]);</div><div class="line">set(gca,<span class="string">'xtick'</span>,<span class="number">25</span>:<span class="number">12</span>*<span class="number">5</span>:<span class="number">576</span>,<span class="string">'xticklabel'</span>,&#123;<span class="number">1960</span>:<span class="number">5</span>:<span class="number">2005</span>&#125;,<span class="string">'FontSize'</span>,<span class="number">14</span>);</div><div class="line">set(gca,<span class="string">'tickdir'</span>,<span class="string">'out'</span> ,<span class="string">'LineWidth'</span>,<span class="number">1.5</span>);</div><div class="line">set(gca,<span class="string">'Position'</span>,[<span class="number">0.075</span> <span class="number">0.125</span> <span class="number">0.875</span> <span class="number">0.15</span>]);</div><div class="line">box off</div><div class="line"></div><div class="line"><span class="comment">% EOF1</span></div><div class="line">subplot(<span class="number">323</span>)</div><div class="line">plot(EOFs(:,<span class="number">1</span>));</div><div class="line">ylabel(<span class="string">'PC1'</span>,<span class="string">'FontSize'</span>,<span class="number">18</span>);</div><div class="line">axis([<span class="number">1</span> <span class="number">612</span> <span class="number">-0.2</span> <span class="number">0.2</span>]);</div><div class="line">set(gca,<span class="string">'xtick'</span>,<span class="number">25</span>:<span class="number">12</span>*<span class="number">5</span>:<span class="number">576</span>,<span class="string">'xticklabel'</span>,&#123;&#125;,<span class="string">'FontSize'</span>,<span class="number">14</span>);</div><div class="line">set(gca,<span class="string">'tickdir'</span>,<span class="string">'out'</span> ,<span class="string">'LineWidth'</span>,<span class="number">1.5</span>);</div><div class="line">set(gca,<span class="string">'Position'</span>,[<span class="number">0.075</span> <span class="number">0.3</span> <span class="number">0.875</span> <span class="number">0.15</span>]);</div><div class="line">box off</div><div class="line"></div><div class="line"><span class="comment">% EC2</span></div><div class="line">subplot(<span class="number">322</span>)</div><div class="line">m_proj(<span class="string">'Mercator'</span>,<span class="string">'lat'</span>,[<span class="number">45</span> <span class="number">60</span>],<span class="string">'lon'</span>,[<span class="number">130</span> <span class="number">160</span>]);</div><div class="line">m_pcolor(lon(xx),lat(yy),EC(:,:,<span class="number">2</span>)');</div><div class="line">caxis([<span class="number">-1.0</span>  <span class="number">2.5</span>])  <span class="comment">%设置颜色映射范围</span></div><div class="line">shading interp;</div><div class="line">m_coast(<span class="string">'patch'</span>,[<span class="number">0.7</span> <span class="number">0.7</span> <span class="number">0.7</span>]);</div><div class="line">m_grid(<span class="string">'linestyle'</span>,<span class="string">'none'</span>,<span class="string">'box'</span>,<span class="string">'fancy'</span>,<span class="string">'tickdir'</span>,<span class="string">'out'</span>);</div><div class="line">set(gca,<span class="string">'Position'</span>,[<span class="number">0.5</span> <span class="number">0.5</span> <span class="number">0.45</span> <span class="number">0.4</span>]);</div><div class="line">title(<span class="string">'EOF2'</span>,<span class="string">'FontSize'</span>,<span class="number">18</span>);</div><div class="line"> </div><div class="line"><span class="comment">% EC1</span></div><div class="line">subplot(<span class="number">321</span>)</div><div class="line">m_proj(<span class="string">'Mercator'</span>,<span class="string">'lat'</span>,[<span class="number">45</span> <span class="number">60</span>],<span class="string">'lon'</span>,[<span class="number">130</span> <span class="number">160</span>]);</div><div class="line">m_pcolor(lon(xx),lat(yy),EC(:,:,<span class="number">1</span>)');</div><div class="line">caxis([<span class="number">-1.0</span>  <span class="number">2.5</span>])</div><div class="line">shading interp;</div><div class="line">m_coast(<span class="string">'patch'</span>,[<span class="number">0.7</span> <span class="number">0.7</span> <span class="number">0.7</span>]);</div><div class="line">m_grid(<span class="string">'linestyle'</span>,<span class="string">'none'</span>,<span class="string">'box'</span>,<span class="string">'fancy'</span>,<span class="string">'tickdir'</span>,<span class="string">'out'</span>);</div><div class="line">set(gca,<span class="string">'Position'</span>,[<span class="number">0.05</span> <span class="number">0.5</span> <span class="number">0.45</span> <span class="number">0.4</span>]);</div><div class="line">title(<span class="string">'EOF1'</span>,<span class="string">'FontSize'</span>,<span class="number">18</span>);</div><div class="line"> </div><div class="line"><span class="comment">% colorbar</span></div><div class="line">h = colorbar;</div><div class="line">caxis([<span class="number">-1.0</span>  <span class="number">2.5</span>])</div><div class="line">set(h,<span class="string">'position'</span>,[<span class="number">0.9</span>,<span class="number">0.5</span>,<span class="number">0.02</span>,<span class="number">0.4</span>])</div><div class="line">set(h,<span class="string">'ytick'</span>,<span class="number">-1.0</span>:<span class="number">0.7</span>:<span class="number">2.5</span>,<span class="string">'yticklabel'</span>,&#123;<span class="number">-1.0</span>:<span class="number">0.7</span>:<span class="number">2.5</span>&#125;)</div></pre></td></tr></table></figure></p>
+<h3 id="结果图"><a href="#结果图" class="headerlink" title="结果图"></a>结果图</h3><p><img src="http://source.jiangyayu.cn/Orthogonal-decomposition/5.png"></p>
 
       
     </div>
@@ -593,11 +498,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/数字信号/" rel="tag"><i class="fa fa-tag"></i> 数字信号</a>
+            <a href="/tags/正交分解/" rel="tag"><i class="fa fa-tag"></i> 正交分解</a>
           
-            <a href="/tags/matlab/" rel="tag"><i class="fa fa-tag"></i> matlab</a>
-          
-            <a href="/tags/数字滤波器/" rel="tag"><i class="fa fa-tag"></i> 数字滤波器</a>
+            <a href="/tags/海洋要素/" rel="tag"><i class="fa fa-tag"></i> 海洋要素</a>
           
         </div>
       
@@ -606,8 +509,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/archives/Digital-Image-Positioning/" rel="next" title="数字信号与信息处理1:图像特征定位">
-                <i class="fa fa-chevron-left"></i> 数字信号与信息处理1:图像特征定位
+              <a href="/archives/tide.html" rel="next" title="海洋要素计算：潮汐调和分析">
+                <i class="fa fa-chevron-left"></i> 海洋要素计算：潮汐调和分析
               </a>
             
           </div>
@@ -616,8 +519,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/archives/ArcGIS-practice-1/" rel="prev" title="ArcGIS练习1：地形图校正和拼接">
-                ArcGIS练习1：地形图校正和拼接 <i class="fa fa-chevron-right"></i>
+              <a href="/archives/hadoop-install.html" rel="prev" title="Centos6.5中安装配置Cloudera CDH Hadoop集群">
+                Centos6.5中安装配置Cloudera CDH Hadoop集群 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -644,7 +547,7 @@
           
   <div class="comments" id="comments">
     
-      <div id="SOHUCS" sid="/archives/Digital-filter/"></div>
+      <div id="SOHUCS" sid="/"></div>
     
   </div>
 
@@ -1002,7 +905,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#实验目的："><span class="nav-number">1.</span> <span class="nav-text">实验目的：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验主要仪器设备，软件"><span class="nav-number">2.</span> <span class="nav-text">实验主要仪器设备，软件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验的基本原理与内容"><span class="nav-number">3.</span> <span class="nav-text">实验的基本原理与内容</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#实验原理"><span class="nav-number">3.1.</span> <span class="nav-text">实验原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实验内容（一）："><span class="nav-number">3.2.</span> <span class="nav-text">实验内容（一）：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实验内容（二）"><span class="nav-number">3.3.</span> <span class="nav-text">实验内容（二）</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#经验正交分解的原理"><span class="nav-number">1.</span> <span class="nav-text">经验正交分解的原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#简介"><span class="nav-number">1.1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特点"><span class="nav-number">1.2.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主要应用"><span class="nav-number">1.3.</span> <span class="nav-text">主要应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本思想"><span class="nav-number">1.4.</span> <span class="nav-text">基本思想</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#EOF函数简介"><span class="nav-number">2.</span> <span class="nav-text">EOF函数简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入参数"><span class="nav-number">2.1.</span> <span class="nav-text">输入参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出参数"><span class="nav-number">2.2.</span> <span class="nav-text">输出参数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#经验正交分解实例"><span class="nav-number">3.</span> <span class="nav-text">经验正交分解实例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据下载"><span class="nav-number">3.1.</span> <span class="nav-text">数据下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据读取"><span class="nav-number">3.2.</span> <span class="nav-text">数据读取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据预处理"><span class="nav-number">3.3.</span> <span class="nav-text">数据预处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#EOF计算"><span class="nav-number">3.4.</span> <span class="nav-text">EOF计算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算方差贡献率"><span class="nav-number">3.5.</span> <span class="nav-text">计算方差贡献率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绘图"><span class="nav-number">3.6.</span> <span class="nav-text">绘图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结果图"><span class="nav-number">3.7.</span> <span class="nav-text">结果图</span></a></li></ol></li></ol></div>
             
 
           </div>

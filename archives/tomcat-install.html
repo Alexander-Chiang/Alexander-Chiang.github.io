@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="大数据,Hadoop,linux,CentOS," />
+  <meta name="keywords" content="服务器,CentOS,Tomcat," />
 
 
 
@@ -86,42 +86,20 @@
 
 
 
-<meta name="description" content="运行环境软硬件环境主机操作系统：Windows 10, 64-bit  (Build 10586) 10.0.10586虚拟软件：VMware®Workstation 11.1.2 build-2780323虚拟机操作系统：CentOS 6.5 64bit，单核，5G内存">
+<meta name="description" content="&amp;emsp;&amp;emsp;Tomcat 服务器是一个免费的开放源代码的Web 应用服务器，属于轻量级应用服务器，在中小型系统和并发访问用户不是很多的场合下被普遍使用，是开发和调试JSP 程序的首选。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Centos6.5中安装配置Cloudera CDH Hadoop集群">
-<meta property="og:url" content="https://blog.jiangyayu.cn/archives/hadoop-install/index.html">
+<meta property="og:title" content="CentOS6.5中Tomcat的安装配置">
+<meta property="og:url" content="https://blog.jiangyayu.cn/archives/tomcat-install.html">
 <meta property="og:site_name" content="Alex's Blog">
-<meta property="og:description" content="运行环境软硬件环境主机操作系统：Windows 10, 64-bit  (Build 10586) 10.0.10586虚拟软件：VMware®Workstation 11.1.2 build-2780323虚拟机操作系统：CentOS 6.5 64bit，单核，5G内存">
-<meta property="og:image" content="http://source.jiangyayu.cn/hadoop-install/1.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/hadoop-install/2.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/hadoop-install/3.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/hadoop-install/4.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/hadoop-install/5.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/hadoop-install/6.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/hadoop-install/7.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/hadoop-install/8.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/hadoop-install/9.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/hadoop-install/10.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/hadoop-install/11.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/hadoop-install/11.add1.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/hadoop-install/12.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/hadoop-install/13.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/hadoop-install/14.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/hadoop-install/15.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/hadoop-install/16.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/hadoop-install/17.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/hadoop-install/18.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/hadoop-install/19.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/hadoop-install/20.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/hadoop-install/21.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/hadoop-install/22.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/hadoop-install/23.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/hadoop-install/24.png">
-<meta property="og:updated_time" content="2017-03-02T14:50:29.565Z">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;Tomcat 服务器是一个免费的开放源代码的Web 应用服务器，属于轻量级应用服务器，在中小型系统和并发访问用户不是很多的场合下被普遍使用，是开发和调试JSP 程序的首选。">
+<meta property="og:image" content="http://source.jiangyayu.cn/tomcat-install/1.png">
+<meta property="og:image" content="http://source.jiangyayu.cn/tomcat-install/2.png">
+<meta property="og:image" content="http://source.jiangyayu.cn/tomcat-install/3.png">
+<meta property="og:updated_time" content="2017-03-02T14:50:20.411Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Centos6.5中安装配置Cloudera CDH Hadoop集群">
-<meta name="twitter:description" content="运行环境软硬件环境主机操作系统：Windows 10, 64-bit  (Build 10586) 10.0.10586虚拟软件：VMware®Workstation 11.1.2 build-2780323虚拟机操作系统：CentOS 6.5 64bit，单核，5G内存">
-<meta name="twitter:image" content="http://source.jiangyayu.cn/hadoop-install/1.png">
+<meta name="twitter:title" content="CentOS6.5中Tomcat的安装配置">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;Tomcat 服务器是一个免费的开放源代码的Web 应用服务器，属于轻量级应用服务器，在中小型系统和并发访问用户不是很多的场合下被普遍使用，是开发和调试JSP 程序的首选。">
+<meta name="twitter:image" content="http://source.jiangyayu.cn/tomcat-install/1.png">
 
 
 
@@ -149,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="https://blog.jiangyayu.cn/archives/hadoop-install/"/>
+  <link rel="canonical" href="https://blog.jiangyayu.cn/archives/tomcat-install.html"/>
 
 
 
 
 
-  <title> Centos6.5中安装配置Cloudera CDH Hadoop集群 | Alex's Blog </title>
+  <title> CentOS6.5中Tomcat的安装配置 | Alex's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -327,7 +305,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://blog.jiangyayu.cn/archives/hadoop-install/">
+  <link itemprop="mainEntityOfPage" href="https://blog.jiangyayu.cn/archives/tomcat-install.html">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Alexander Chiang">
@@ -351,7 +329,7 @@
             
             
               
-                Centos6.5中安装配置Cloudera CDH Hadoop集群
+                CentOS6.5中Tomcat的安装配置
               
             
           </h1>
@@ -366,8 +344,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-01-16T13:11:05+08:00">
-                2016-01-16
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-05T20:26:30+08:00">
+                2016-10-05
               </time>
             
 
@@ -389,8 +367,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/大数据/" itemprop="url" rel="index">
-                    <span itemprop="name">大数据</span>
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
                   </a>
                 </span>
 
@@ -408,8 +386,8 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/archives/hadoop-install/#SOHUCS" itemprop="discussionUrl">
-                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="/archives/hadoop-install/" itemprop="commentsCount"></span>
+                <a href="/archives/tomcat-install.html#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="/archives/tomcat-install.html" itemprop="commentsCount"></span>
                 </a>
               
               </span>
@@ -420,7 +398,7 @@
 
           
           
-             <span id="/archives/hadoop-install/" class="leancloud_visitors" data-flag-title="Centos6.5中安装配置Cloudera CDH Hadoop集群">
+             <span id="/archives/tomcat-install.html" class="leancloud_visitors" data-flag-title="CentOS6.5中Tomcat的安装配置">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -447,45 +425,42 @@
       
 
       
-        <h2 id="运行环境软硬件环境"><a href="#运行环境软硬件环境" class="headerlink" title="运行环境软硬件环境"></a>运行环境软硬件环境</h2><p>主机操作系统：Windows 10, 64-bit  (Build 10586) 10.0.10586<br>虚拟软件：VMware®Workstation 11.1.2 build-2780323<br>虚拟机操作系统：CentOS 6.5 64bit，单核，5G内存<br><a id="more"></a></p>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="设置IP"><a href="#设置IP" class="headerlink" title="设置IP"></a>设置IP</h3><p><img src="http://source.jiangyayu.cn/hadoop-install/1.png" style="zoom:0.8"><br>删除原来的连接信息，新建一个连接，设置该连接为手工方式，设置如下信息（需根据虚拟机设置相应参数以保证可以正常上网）：<br>IP地址：192.168.149.101<br>子网掩码：255.255.255.0<br>网关：192.168.149.2<br>DNS：192.168.149.2<br><img src="http://source.jiangyayu.cn/hadoop-install/2.png" style="zoom:0.8" alter="设置IP地址"> </p>
-<h3 id="设置hosts"><a href="#设置hosts" class="headerlink" title="设置hosts"></a>设置hosts</h3><p>编辑hosts文件，添加如下信息：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">192.168.149.101	hadoop1</div><div class="line">192.168.149.102 hadoop2</div><div class="line">192.168.149.103 hadoop3</div></pre></td></tr></table></figure></p>
-<p><img src="http://source.jiangyayu.cn/hadoop-install/3.png" alter="修改hosts文件"> </p>
-<h3 id="关闭防火墙和Selinux"><a href="#关闭防火墙和Selinux" class="headerlink" title="关闭防火墙和Selinux"></a>关闭防火墙和Selinux</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">chkconfig iptables off</div><div class="line">vi /etc/selinux/config</div></pre></td></tr></table></figure>
-<p>将<code>SELINUX=enforcing</code>改为<code>SELINUX=disabled</code>，执行该命令后重启机器生效<br><img src="http://source.jiangyayu.cn/hadoop-install/4.png" alter="关闭Selinux"> </p>
-<h3 id="设置机器名"><a href="#设置机器名" class="headerlink" title="设置机器名"></a>设置机器名</h3><p>以<code>root</code>用户登录，使用<code>vi /etc/sysconfig/network</code> 打开配置文件，修改主机名称为<code>hadoop1</code>。<br><img src="http://source.jiangyayu.cn/hadoop-install/5.png" alter="修改主机名" 、=""></p>
-<h3 id="下载并安装Oracle-JDK"><a href="#下载并安装Oracle-JDK" class="headerlink" title="下载并安装Oracle JDK"></a>下载并安装Oracle JDK</h3><p>下载说明：<br>•    CDH 5 - <a href="https://www.cloudera.com/documentation/enterprise/latest/topics/cdh_ig_jdk_installation.html#topic_29" target="_blank" rel="external">Java Development Kit Installation</a>.<br>•    CDH 4 - <a href="http://www.cloudera.com/documentation/archive/cdh/4-x/4-7-1/CDH4-Installation-Guide/cdh4ig_topic_29.html" target="_blank" rel="external">Java Development Kit Installation</a>.<br>本操作手册中使用：<code>jdk-8u60-linux-x64.rpm</code><br>进入下载文件存放文件夹中：<br>执行：<code>yum localinstall –nogpgcheck jdk*.rpm</code><br><img src="http://source.jiangyayu.cn/hadoop-install/6.png" alter="本地安装jdk"><br>安装完成后设置java环境变量：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">export JAVA_HOME=/usr/java/default</div></pre></td></tr></table></figure></p>
-<p><img src="http://source.jiangyayu.cn/hadoop-install/7.png" alter="配置java环境变量"></p>
-<h2 id="安装Cloudera-Manager"><a href="#安装Cloudera-Manager" class="headerlink" title="安装Cloudera Manager"></a>安装Cloudera Manager</h2><h3 id="下载相关安装文件"><a href="#下载相关安装文件" class="headerlink" title="下载相关安装文件"></a>下载相关安装文件</h3><p><strong>下载Cloudera Manager安装文件</strong><br>Cloudera Manager的可以从如下网址获得：<br><a href="http://archive.cloudera.com/cm5/installer/" target="_blank" rel="external">http://archive.cloudera.com/cm5/installer/</a><br>这里选择Cloudera Manager 最新版5.0.1<br><a href="http://archive.cloudera.com/cm5/installer/latest/cloudera-manager-installer.bin" target="_blank" rel="external">http://archive.cloudera.com/cm5/installer/latest/cloudera-manager-installer.bin</a><br>下载Cloudera Manager所需的rpm包<br><a href="http://archive.cloudera.com/cm5/redhat/6/x86_64/cm/5.5/RPMS/x86_64/" target="_blank" rel="external">http://archive.cloudera.com/cm5/redhat/6/x86_64/cm/5.5/RPMS/x86_64/</a><br><img src="http://source.jiangyayu.cn/hadoop-install/8.png" alter="Cloudera Manager离线安装包"></p>
-<h3 id="安装相关软件包"><a href="#安装相关软件包" class="headerlink" title="安装相关软件包"></a>安装相关软件包</h3><p>将下载的RPM安装包放入文件夹rmp中(文件夹名称随意)<br>终端执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum localinstall --nogpgcheck *.rpm</div></pre></td></tr></table></figure></p>
-<p><img src="http://source.jiangyayu.cn/hadoop-install/9.png" alter="安装rpm包"></p>
-<h3 id="配置agent-启动服务"><a href="#配置agent-启动服务" class="headerlink" title="配置agent,启动服务"></a>配置agent,启动服务</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim /etc/cloudera-scm-agent/config.ini</div></pre></td></tr></table></figure>
-<p>修改主机名:<br><img src="http://source.jiangyayu.cn/hadoop-install/10.png" alter="修改主机名"><br>启动相关服务：</p>
-<p> 启动db：<code>service cloudera-scm-server-db start</code><br> <del>启动agent:<code>service cloudera-scm-agent start</code></del><br> (2017.2.28 纠正：agent在安装完manger后启动，感谢清华同学的提醒！)</p>
-<h3 id="安装manager"><a href="#安装manager" class="headerlink" title="安装manager"></a>安装manager</h3><p>进入cloudera-manager-installer.bin的下载目录,执行以下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">chmod u+x cloudera-manager-installer.bin</div><div class="line">./cloudera-manager-installer.bin</div></pre></td></tr></table></figure></p>
-<p><img src="http://source.jiangyayu.cn/hadoop-install/11.png" alter="安装manager"><br>安装过程：<br><img src="http://source.jiangyayu.cn/hadoop-install/11.add1.png" alter="安装过程"></p>
-<p><div style="color:red">安装过程若遇到以下错误：</div><br><img src="http://source.jiangyayu.cn/hadoop-install/12.png" alter="安装错误"><br>请删除db.properties文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rm /etc/cloudera-scm-server/db.properties</div></pre></td></tr></table></figure></p>
-<p><img src="http://source.jiangyayu.cn/hadoop-install/13.png" alter="解决安装错误"></p>
-<h3 id="配置本地源"><a href="#配置本地源" class="headerlink" title="配置本地源"></a>配置本地源</h3><p>下载CDH parcels安装包，Parcel的可以从如下网址获得，下载.parcel文件、.sha（若为.sha1则需修改一下文件名）文件和manifest.json文件：<br><a href="http://archive.cloudera.com/cdh5/parcels/5.5.0/" target="_blank" rel="external">http://archive.cloudera.com/cdh5/parcels/5.5.0/</a><br>把以下载的.parcel、.sha文件和manifest.json文件拷贝到/opt/cloudera/parcel-repo/文件夹下<br><img src="http://source.jiangyayu.cn/hadoop-install/14.png" alter="复制文件"><br>重启系统</p>
-<h2 id="配置集群"><a href="#配置集群" class="headerlink" title="配置集群"></a>配置集群</h2><h3 id="登陆CM"><a href="#登陆CM" class="headerlink" title="登陆CM"></a>登陆CM</h3><p>启动相关服务:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">service cloudera-scm-server-db start</div><div class="line">service cloudera-scm-agent start</div></pre></td></tr></table></figure></p>
-<p>浏览器输入<code>localhost：7180</code>初次登录 用户名：<code>admin</code> 密码：<code>admin</code><br><img src="http://source.jiangyayu.cn/hadoop-install/15.png" alter="登陆cloudera manager"></p>
-<h3 id="安装主机"><a href="#安装主机" class="headerlink" title="安装主机"></a>安装主机</h3><p><img src="http://source.jiangyayu.cn/hadoop-install/16.png"></p>
-<h3 id="选择安装CDH版本"><a href="#选择安装CDH版本" class="headerlink" title="选择安装CDH版本"></a>选择安装CDH版本</h3><p>这里选择前面下载的parcel对应版本的CDH：<br><img src="http://source.jiangyayu.cn/hadoop-install/17.png"><br>点击继续进行安装：<br><img src="http://source.jiangyayu.cn/hadoop-install/18.png"></p>
-<h3 id="主机检查"><a href="#主机检查" class="headerlink" title="主机检查"></a>主机检查</h3><p>系统将进行主机检查，检查结果可能会出现下面两个问题：<br><img src="http://source.jiangyayu.cn/hadoop-install/19.png"><br><strong>对于swappiness值不为零的问题</strong></p>
-<blockquote>
-<p>Cloudera 建议将 /proc/sys/vm/swappiness 设置为 0。当前设置为 60。使用 sysctl 命令在运行时更改该设置并编辑 /etc/sysctl.conf 以在重启后保存该设置。您可以继续进行安装，但可能会遇到问题，Cloudera Manager 报告您的主机由于交换运行状况不佳。以下主机受到影响：hadoop1</p>
-</blockquote>
-<p>首先执行：<code>sysctl vm.swappiness=0</code><br>将<code>swappiness</code>值设置成<code>0</code>；<br>然后执行：<code>vim /etc/sysctl.conf</code><br>编辑<code>sysctl.conf</code>文件，添加下面代码，使之下次开机时直接生效：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># Search for the vm.swappiness setting.  Uncomment and change it as necessary.</div><div class="line">vm.swappiness=0</div></pre></td></tr></table></figure></p>
-<p><strong>对于“透明大页面”的问题</strong></p>
-<blockquote>
-<p>已启用“透明大页面”，它可能会导致重大的性能问题。版本为“/sys/kernel/mm/transparent_hugepage”且发行版为“{1}”的Kernel已 enabled设置为“{2}”，并将defrag设置为“{3}”。请运行“echo never &gt; /sys/kernel/mm/redhat_transparent_hugepage/defrag”以禁用此设置，然后将同一命令添加到一个init脚本中，如/etc/rc.local，这样当系统重启时就会予以设置。或者，升级到 RHEL 6.5 或更新版本，它们不存在此错误。将会影响到以下主机：hadoop1</p>
-</blockquote>
-<p>执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">echo never &gt;/sys/kernel/mm/redhat_transparent_hugepage/defrag</div><div class="line">echo &apos;echo never &gt;/sys/kernel/mm/redhat_transparent_hugepage/defrag&apos;&gt;&gt; /etc/rc.local</div></pre></td></tr></table></figure></p>
-<h3 id="选择内核"><a href="#选择内核" class="headerlink" title="选择内核"></a>选择内核</h3><p>选择安装含Spark的内核：<br><img src="http://source.jiangyayu.cn/hadoop-install/20.png"></p>
-<h3 id="角色分配"><a href="#角色分配" class="headerlink" title="角色分配"></a>角色分配</h3><p>默认即可：<br><img src="http://source.jiangyayu.cn/hadoop-install/21.png"></p>
-<h3 id="数据库设置"><a href="#数据库设置" class="headerlink" title="数据库设置"></a>数据库设置</h3><p>默认：<br><img src="http://source.jiangyayu.cn/hadoop-install/22.png"></p>
-<h3 id="首次运行"><a href="#首次运行" class="headerlink" title="首次运行"></a>首次运行</h3><p>首次运行，等待部署：<br><img src="http://source.jiangyayu.cn/hadoop-install/23.png"><br><strong>注：</strong>该过程若出现错误，可能导致的原因是内存不足，本次安装虚拟机分配5G内存，可以正常部署。</p>
-<h3 id="安装成功"><a href="#安装成功" class="headerlink" title="安装成功"></a>安装成功</h3><p><img src="http://source.jiangyayu.cn/hadoop-install/24.png"></p>
+        <p>&emsp;&emsp;Tomcat 服务器是一个免费的开放源代码的Web 应用服务器，属于轻量级应用服务器，在中小型系统和并发访问用户不是很多的场合下被普遍使用，是开发和调试JSP 程序的首选。<br><a id="more"></a></p>
+<h2 id="JDK的安装配置"><a href="#JDK的安装配置" class="headerlink" title="JDK的安装配置"></a>JDK的安装配置</h2><p>&emsp;&emsp;tomcat的运行依赖于Java jdk，所以安装Tomcat前需要先安装jdk，已安装的可以跳过此步骤。判断主机是否安装jdk的方法：输入命令<code>java -version</code>，如果显示jdk版本号，则证明已经安装，如果不显示，则证明没有安装，如果没有安装则按照以下方法下载安装。</p>
+<ol>
+<li>下载对应版本的JDK：<br><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="external">http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</a></li>
+<li>解压或安装到指定路径<br><code>tar -zxv -f  jdk-8u65-linux-i586.gz</code></li>
+<li><p>配置环境变量<br><code>vim /etc/profile</code><br>将下面的内容复制到<code>profile</code>文件的底部：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">JAVA_HOME=/usr/java/jdk1.8.0_101</div><div class="line">PATH=$JAVA_HOME/bin:$PATH</div><div class="line">CLASSPATH=$JAVA_HOME/jre/lib/ext:$JAVA_HOME/lib/tools.jar</div><div class="line">export PATH JAVA_HOME CLASSPATH</div></pre></td></tr></table></figure>
+</li>
+<li><p>保存并退出</p>
+</li>
+<li>使<code>profile</code>文件立即生效：<br><code>source /etc/profile</code></li>
+</ol>
+<h2 id="Tomcat安装配置"><a href="#Tomcat安装配置" class="headerlink" title="Tomcat安装配置"></a>Tomcat安装配置</h2><ol>
+<li>下载对应版本的Tomcat：<br> <a href="http://tomcat.apache.org/download-80.cgi" target="_blank" rel="external">http://tomcat.apache.org/download-80.cgi</a></li>
+<li>解压到指定路径</li>
+<li><p>关闭防火墙、关闭SELinux：<br><code>chkconfig iptables off</code><br><code>vim /etc/selinux/config</code><br>将<code>SELINUX</code>改为<code>disabled</code><br>&emsp;&emsp;通过以上设置，运行<code>/usr/local/ /tomcat/bin/startup.sh</code>，出现以下情况，表示已成功启动Tomcat<br><img src="http://source.jiangyayu.cn/tomcat-install/1.png"><br>此时，在浏览器中访问：localhost:8080，应有一下界面：<br><img src="http://source.jiangyayu.cn/tomcat-install/2.png"></p>
+</li>
+<li><p>设置tomcat的服务器启动和关闭<br>执行命令：<code>vim /etc/rc.d/init.d/tomcat</code>，创建脚本文件，在文件中写入如下代码，保存并且退出</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">#!/bin/bash</div><div class="line"># /etc/rc.d/init.d/tomcat</div><div class="line"># init script for tomcat precesses</div><div class="line"># processname: tomcat</div><div class="line"># description: tomcat is a j2se server</div><div class="line"># chkconfig: 2345 86 16</div><div class="line"># description: Start up the Tomcat servlet engine.</div><div class="line"></div><div class="line">if [ -f /etc/init.d/functions ]; then</div><div class="line">. /etc/init.d/functions</div><div class="line">elif [ -f /etc/rc.d/init.d/functions ]; then</div><div class="line">. /etc/rc.d/init.d/functions</div><div class="line">else</div><div class="line">echo -e &quot;\atomcat: unable to locate functions lib. Cannot continue.&quot;</div><div class="line">exit -1</div><div class="line">fi</div><div class="line">RETVAL=$?</div><div class="line">CATALINA_HOME=&quot;/usr/local /tomcat&quot;   </div><div class="line">#tomcat安装目录，你安装在什么目录下就复制什么目录</div><div class="line">case &quot;$1&quot; in</div><div class="line">start)</div><div class="line">if [ -f $CATALINA_HOME/bin/startup.sh ];</div><div class="line">then</div><div class="line">echo $&quot;Starting Tomcat&quot;</div><div class="line">$CATALINA_HOME/bin/startup.sh</div><div class="line">fi</div><div class="line">;;</div><div class="line">stop)</div><div class="line">if [ -f $CATALINA_HOME/bin/shutdown.sh ];</div><div class="line">then</div><div class="line">echo $&quot;Stopping Tomcat&quot;</div><div class="line">$CATALINA_HOME/bin/shutdown.sh</div><div class="line">fi</div><div class="line">;;</div><div class="line">*)</div><div class="line">echo $&quot;Usage: $0 &#123;start|stop&#125;&quot;</div><div class="line">exit 1</div><div class="line">;;</div><div class="line">esac</div><div class="line">exit $RETVAL </div><div class="line"></div><div class="line">Linux</div></pre></td></tr></table></figure>
+</li>
+<li><p>给文件添加权限，使得脚本文件可以执行，命令为 <code>chmod 755 /etc/rc.d/init.d/tomcat</code></p>
+</li>
+<li>将其添加到服务中，命令为 <code>chkconfig --add /etc/rc.d/init.d/tomcat</code></li>
+<li><p>然后将下面的配置文件加到tomcat中的<code>catalina.sh</code>文件中的最后面，命令为：<br> <code>vim /usr/local/kencery/tomcat/bin/catalina.sh</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">export JAVA_HOME=/usr/java/jdk1.8.0_101</div><div class="line"># javajdk的安装路径，使用echo $JAVA_HOME命令可以读取</div><div class="line">export CATALINA_HOME=/usr/local/kencery/tomcat</div><div class="line">export CATALINA_BASE=/usr/local/kencery/tomcat</div><div class="line">export CATALINA_TMPDIR=/usr/local/kencery/tomcat/temp</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>&emsp;&emsp;通过以上设置，可以通过：<code>service tomcat start</code> 和 <code>service tomcat stop</code>来启动和停止tomcat服务了<br><img src="http://source.jiangyayu.cn/tomcat-install/3.png"></p>
+<ol>
+<li><p>设置tomcat的开机启动<br>打开linux设置开启启动的文件，将下面的配置文件写入此文件的最后，命令为：<br><code>vim /etc/rc.d/rc.local</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">export JAVA_HOME=/usr/java/jdk1.8.0_101</div><div class="line">export CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</div><div class="line">export PATH=$PATH:$JAVA_HOME/bin</div><div class="line">export CATALINA_HOME=/usr/local/kencery/tomcat/</div><div class="line">#tomcat自启动</div><div class="line">/usr/local /tomcat/bin/startup</div></pre></td></tr></table></figure>
+</li>
+<li><p>设置tomcat用户名和密码<br> 在tomcat安装包下面的conf文件下含有一个<code>tomcat-user.xml</code>文件，修改此文件即可，命令为：<code>vim tomcat-users.xml</code><br>在打开的xml配置文件最后面写入下面这段配置文件之后保存并且退出即可。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">role</span> <span class="attr">rolename</span>=<span class="string">"admin-gui"</span>/&gt;</span>   </div><div class="line"><span class="tag">&lt;<span class="name">role</span> <span class="attr">rolename</span>=<span class="string">"manager-gui"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">user</span> <span class="attr">username</span>=<span class="string">"admin"</span> <span class="attr">password</span>=<span class="string">"admin"</span> <span class="attr">roles</span>=<span class="string">"manager-gui,admin-gui"</span>/&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
 
       
     </div>
@@ -537,13 +512,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/大数据/" rel="tag"><i class="fa fa-tag"></i> 大数据</a>
-          
-            <a href="/tags/Hadoop/" rel="tag"><i class="fa fa-tag"></i> Hadoop</a>
-          
-            <a href="/tags/linux/" rel="tag"><i class="fa fa-tag"></i> linux</a>
+            <a href="/tags/服务器/" rel="tag"><i class="fa fa-tag"></i> 服务器</a>
           
             <a href="/tags/CentOS/" rel="tag"><i class="fa fa-tag"></i> CentOS</a>
+          
+            <a href="/tags/Tomcat/" rel="tag"><i class="fa fa-tag"></i> Tomcat</a>
           
         </div>
       
@@ -552,8 +525,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/archives/Orthogonal-decomposition/" rel="next" title="matlab物理场的正交分解">
-                <i class="fa fa-chevron-left"></i> matlab物理场的正交分解
+              <a href="/archives/Integrals.html" rel="next" title="C#实现定积分求解">
+                <i class="fa fa-chevron-left"></i> C#实现定积分求解
               </a>
             
           </div>
@@ -562,8 +535,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/archives/linear-equation/" rel="prev" title="迭代法求解线性方程组--C#实现Jacobi、Gauss-Seidel、SOR迭代法">
-                迭代法求解线性方程组--C#实现Jacobi、Gauss-Seidel、SOR迭代法 <i class="fa fa-chevron-right"></i>
+              <a href="/archives/CAS-Single-Sign-On.html" rel="prev" title="CAS4.0单点登录服务器的配置">
+                CAS4.0单点登录服务器的配置 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -590,7 +563,7 @@
           
   <div class="comments" id="comments">
     
-      <div id="SOHUCS" sid="/archives/hadoop-install/"></div>
+      <div id="SOHUCS" sid="/"></div>
     
   </div>
 
@@ -948,7 +921,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#运行环境软硬件环境"><span class="nav-number">1.</span> <span class="nav-text">运行环境软硬件环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">2.</span> <span class="nav-text">准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#设置IP"><span class="nav-number">2.1.</span> <span class="nav-text">设置IP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置hosts"><span class="nav-number">2.2.</span> <span class="nav-text">设置hosts</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关闭防火墙和Selinux"><span class="nav-number">2.3.</span> <span class="nav-text">关闭防火墙和Selinux</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置机器名"><span class="nav-number">2.4.</span> <span class="nav-text">设置机器名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载并安装Oracle-JDK"><span class="nav-number">2.5.</span> <span class="nav-text">下载并安装Oracle JDK</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Cloudera-Manager"><span class="nav-number">3.</span> <span class="nav-text">安装Cloudera Manager</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载相关安装文件"><span class="nav-number">3.1.</span> <span class="nav-text">下载相关安装文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装相关软件包"><span class="nav-number">3.2.</span> <span class="nav-text">安装相关软件包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置agent-启动服务"><span class="nav-number">3.3.</span> <span class="nav-text">配置agent,启动服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装manager"><span class="nav-number">3.4.</span> <span class="nav-text">安装manager</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置本地源"><span class="nav-number">3.5.</span> <span class="nav-text">配置本地源</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置集群"><span class="nav-number">4.</span> <span class="nav-text">配置集群</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#登陆CM"><span class="nav-number">4.1.</span> <span class="nav-text">登陆CM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装主机"><span class="nav-number">4.2.</span> <span class="nav-text">安装主机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择安装CDH版本"><span class="nav-number">4.3.</span> <span class="nav-text">选择安装CDH版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主机检查"><span class="nav-number">4.4.</span> <span class="nav-text">主机检查</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择内核"><span class="nav-number">4.5.</span> <span class="nav-text">选择内核</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#角色分配"><span class="nav-number">4.6.</span> <span class="nav-text">角色分配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库设置"><span class="nav-number">4.7.</span> <span class="nav-text">数据库设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#首次运行"><span class="nav-number">4.8.</span> <span class="nav-text">首次运行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装成功"><span class="nav-number">4.9.</span> <span class="nav-text">安装成功</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JDK的安装配置"><span class="nav-number">1.</span> <span class="nav-text">JDK的安装配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tomcat安装配置"><span class="nav-number">2.</span> <span class="nav-text">Tomcat安装配置</span></a></li></ol></div>
             
 
           </div>

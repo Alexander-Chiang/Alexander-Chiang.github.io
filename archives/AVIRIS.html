@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="matlab,NetCDF," />
+  <meta name="keywords" content="RS,影像波谱," />
 
 
 
@@ -86,21 +86,35 @@
 
 
 
-<meta name="description" content="处理环境操作系统：Windows 10 64bit软件：MATLAB R2016a&amp;emsp;&amp;emsp;&amp;emsp;ArcGIS Desktop 10.2数据下载：链接：http://pan.baidu.com/s/1slIZ5nR 密码：2z3f">
+<meta name="description" content="实验目的
+理解卫星及实验室高光谱概念，初步了解辐亮度、反射率的概念；
+能够打开并处理卫星高光谱数据；
+能够加载不同波谱库的反射率波谱曲线，并学会处理；
+学会判读不同地物的光谱曲线特征，了解其与相应的卫星光谱的比较，并解释差异原因。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="NetCDF格式存储的栅格数据转换的MATLAB批处理程序">
-<meta property="og:url" content="https://blog.jiangyayu.cn/archives/matlab-nc/index.html">
+<meta property="og:title" content="AVIRIS卫星影像波谱与实验室波谱库波谱曲线的比较">
+<meta property="og:url" content="https://blog.jiangyayu.cn/archives/AVIRIS.html">
 <meta property="og:site_name" content="Alex's Blog">
-<meta property="og:description" content="处理环境操作系统：Windows 10 64bit软件：MATLAB R2016a&amp;emsp;&amp;emsp;&amp;emsp;ArcGIS Desktop 10.2数据下载：链接：http://pan.baidu.com/s/1slIZ5nR 密码：2z3f">
-<meta property="og:image" content="http://source.jiangyayu.cn/matlab-nc/1.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/matlab-nc/2.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/matlab-nc/3.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/matlab-nc/4.png">
-<meta property="og:updated_time" content="2017-03-02T14:50:05.261Z">
+<meta property="og:description" content="实验目的
+理解卫星及实验室高光谱概念，初步了解辐亮度、反射率的概念；
+能够打开并处理卫星高光谱数据；
+能够加载不同波谱库的反射率波谱曲线，并学会处理；
+学会判读不同地物的光谱曲线特征，了解其与相应的卫星光谱的比较，并解释差异原因。">
+<meta property="og:image" content="http://source.jiangyayu.cn/AVIRIS/1.png">
+<meta property="og:image" content="http://source.jiangyayu.cn/AVIRIS/2.png">
+<meta property="og:image" content="http://source.jiangyayu.cn/AVIRIS/3.png">
+<meta property="og:image" content="http://source.jiangyayu.cn/AVIRIS/4.png">
+<meta property="og:image" content="http://source.jiangyayu.cn/AVIRIS/5.png">
+<meta property="og:image" content="http://source.jiangyayu.cn/AVIRIS/6.png">
+<meta property="og:updated_time" content="2017-03-02T14:50:39.225Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="NetCDF格式存储的栅格数据转换的MATLAB批处理程序">
-<meta name="twitter:description" content="处理环境操作系统：Windows 10 64bit软件：MATLAB R2016a&amp;emsp;&amp;emsp;&amp;emsp;ArcGIS Desktop 10.2数据下载：链接：http://pan.baidu.com/s/1slIZ5nR 密码：2z3f">
-<meta name="twitter:image" content="http://source.jiangyayu.cn/matlab-nc/1.png">
+<meta name="twitter:title" content="AVIRIS卫星影像波谱与实验室波谱库波谱曲线的比较">
+<meta name="twitter:description" content="实验目的
+理解卫星及实验室高光谱概念，初步了解辐亮度、反射率的概念；
+能够打开并处理卫星高光谱数据；
+能够加载不同波谱库的反射率波谱曲线，并学会处理；
+学会判读不同地物的光谱曲线特征，了解其与相应的卫星光谱的比较，并解释差异原因。">
+<meta name="twitter:image" content="http://source.jiangyayu.cn/AVIRIS/1.png">
 
 
 
@@ -128,13 +142,13 @@
 
 
 
-  <link rel="canonical" href="https://blog.jiangyayu.cn/archives/matlab-nc/"/>
+  <link rel="canonical" href="https://blog.jiangyayu.cn/archives/AVIRIS.html"/>
 
 
 
 
 
-  <title> NetCDF格式存储的栅格数据转换的MATLAB批处理程序 | Alex's Blog </title>
+  <title> AVIRIS卫星影像波谱与实验室波谱库波谱曲线的比较 | Alex's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -306,7 +320,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://blog.jiangyayu.cn/archives/matlab-nc/">
+  <link itemprop="mainEntityOfPage" href="https://blog.jiangyayu.cn/archives/AVIRIS.html">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Alexander Chiang">
@@ -330,7 +344,7 @@
             
             
               
-                NetCDF格式存储的栅格数据转换的MATLAB批处理程序
+                AVIRIS卫星影像波谱与实验室波谱库波谱曲线的比较
               
             
           </h1>
@@ -345,8 +359,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-04-20T12:53:40+08:00">
-                2016-04-20
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2012-12-17T15:27:10+08:00">
+                2012-12-17
               </time>
             
 
@@ -368,8 +382,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/数据处理分析/" itemprop="url" rel="index">
-                    <span itemprop="name">数据处理分析</span>
+                  <a href="/categories/RS/" itemprop="url" rel="index">
+                    <span itemprop="name">RS</span>
                   </a>
                 </span>
 
@@ -387,8 +401,8 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/archives/matlab-nc/#SOHUCS" itemprop="discussionUrl">
-                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="/archives/matlab-nc/" itemprop="commentsCount"></span>
+                <a href="/archives/AVIRIS.html#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="/archives/AVIRIS.html" itemprop="commentsCount"></span>
                 </a>
               
               </span>
@@ -399,7 +413,7 @@
 
           
           
-             <span id="/archives/matlab-nc/" class="leancloud_visitors" data-flag-title="NetCDF格式存储的栅格数据转换的MATLAB批处理程序">
+             <span id="/archives/AVIRIS.html" class="leancloud_visitors" data-flag-title="AVIRIS卫星影像波谱与实验室波谱库波谱曲线的比较">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -426,15 +440,63 @@
       
 
       
-        <h2 id="处理环境"><a href="#处理环境" class="headerlink" title="处理环境"></a>处理环境</h2><p>操作系统：Windows 10 64bit<br>软件：MATLAB R2016a<br>&emsp;&emsp;&emsp;ArcGIS Desktop 10.2<br>数据下载：链接：<a href="http://pan.baidu.com/s/1slIZ5nR" target="_blank" rel="external">http://pan.baidu.com/s/1slIZ5nR</a> 密码：2z3f<br><a id="more"></a></p>
-<h2 id="MATLAB批量处理NetCDF文件"><a href="#MATLAB批量处理NetCDF文件" class="headerlink" title="MATLAB批量处理NetCDF文件"></a>MATLAB批量处理NetCDF文件</h2><h3 id="设置输入输出"><a href="#设置输入输出" class="headerlink" title="设置输入输出"></a>设置输入输出</h3><p>&emsp;&emsp;将待处理的*.nc文件统一放在NDVI文件夹中，在MATLAB中设置输入输出路径：<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">pathinput = <span class="string">'D:\Program Files\MATLAB\Work\NDVI'</span>;</div><div class="line">pathoutput = <span class="string">'D:\output\';</span></div></pre></td></tr></table></figure></p>
-<h3 id="获取输入文件名"><a href="#获取输入文件名" class="headerlink" title="获取输入文件名"></a>获取输入文件名</h3><p>&emsp;&emsp;执行以下命令，可将输入文件夹NDVI中的所有文件信息存储到<code>files</code>变量中：<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">filedir = dir(pathinput);</div><div class="line">files = filedir(<span class="number">3</span>:<span class="keyword">end</span>);</div></pre></td></tr></table></figure></p>
-<p><img src="http://source.jiangyayu.cn/matlab-nc/1.png"></p>
-<h3 id="查看NetCDF文件内部格式"><a href="#查看NetCDF文件内部格式" class="headerlink" title="查看NetCDF文件内部格式"></a>查看NetCDF文件内部格式</h3><p>&emsp;&emsp;查看NetCDF文件内部格式以读取其中存储的数据：<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div></pre></td><td class="code"><pre><div class="line">&gt;&gt; ncdisp(files(<span class="number">1</span>).name);</div><div class="line">Source:</div><div class="line">           D:\Program Files\MATLAB\Work\NDVI\A_19810816.nc</div><div class="line">Format:</div><div class="line">           netcdf4</div><div class="line">Global Attributes:</div><div class="line">           title                                 = <span class="string">'Normalized Difference Vegetation Index parameters derived from NOAA-07 GAC data for day 1981/228'</span></div><div class="line">           institution                           = <span class="string">'NASA/GSFC/SED/ESD/HBSL/TIS/MODIS-LAND &gt; MODIS Land Science Team, Terrestrial Information Systems,  Hydrospheric and Biospheric Science Laboratory, Earth Sciences Division, Science and Exploration Directorate, Goddard Space Flight Center, NASA'</span></div><div class="line">           Conventions                           = <span class="string">'CF-1.6'</span></div><div class="line">           Metadata_Conventions                  = <span class="string">'CF-1.6, Unidata Dataset Discovery v1.0'</span></div><div class="line">           standard_name_vocabulary              = <span class="string">'CF Standard Name Table (v25, 05 July 2013)'</span></div><div class="line">           naming_authority                      = <span class="string">'gov.noaa.ncdc'</span></div><div class="line">           license                               = <span class="string">'No constraints on data access or use'</span></div><div class="line">           cdm_data_type                         = <span class="string">'Grid'</span></div><div class="line">           time_coverage_start                   = <span class="string">'1981-08-16T00:00:00Z'</span></div><div class="line">           time_coverage_end                     = <span class="string">'1981-08-16T23:59:00Z'</span></div><div class="line">           product_version                       = <span class="string">'v4r0'</span></div><div class="line">           platform                              = <span class="string">'NOAA-4 &gt; National Oceanic &amp; Atmospheric Administration-4'</span></div><div class="line">           sensor                                = <span class="string">'AVHRR &gt; Advanced Very High Resolution Radiometer'</span></div><div class="line">           keywords_vocabulary                   = <span class="string">'NASA Global Change Master Directory (GCMD) Earth Science Keywords, Version 8.0'</span></div><div class="line">           keywords                              = <span class="string">'EARTH SCIENCE &gt; BIOSPHERE &gt; VEGETATION &gt; VEGETATION INDEX'</span></div><div class="line">           source                                = <span class="string">'NSS.GHRR.NC.D81227.S2221.E0015.B0075556.GC, NSS.GHRR.NC.D81228.S0016.E0210.B0075657.WI, NSS.GHRR.NC.D81228.S0205.E0359.B0075758.WI, NSS.GHRR.NC.D81228.S0354.E0548.B0075859.WI, NSS.GHRR.NC.D81228.S0545.E0718.B0075960.WI, NSS.GHRR.NC.D81228.S0713.E0859.B0076061.WI, NSS.GHRR.NC.D81228.S0854.E1036.B0076162.GC, NSS.GHRR.NC.D81228.S1031.E1157.B0076263.GC, NSS.GHRR.NC.D81228.S1157.E1217.B0076363.GC, NSS.GHRR.NC.D81228.S1212.E1357.B0076364.GC, NSS.GHRR.NC.D81228.S1354.E1546.B0076465.WI, NSS.GHRR.NC.D81228.S1542.E1735.B0076566.WI, NSS.GHRR.NC.D81228.S1731.E1846.B0076667.WI, NSS.GHRR.NC.D81228.S1842.E2025.B0076768.WI, NSS.GHRR.NC.D81228.S2020.E2214.B0076769.GC, NSS.GHRR.NC.D81228.S2210.E2356.B0076970.GC, NSS.GHRR.NC.D81228.S2351.E0140.B0077071.GC, NCEP_REANALYSIS_SURFACE_1981228.hdf, NCEP_REANALYSIS_SURFACE_1981228.hdf, TOMS_1981228.hdf, GLOBAL_LAND_SEA.4KM, ephemeris.ccar.23Oct2007'</span></div><div class="line">           date_created                          = <span class="string">'2013-08-17T18:43:40Z'</span></div><div class="line">           spatial_resolution                    = <span class="string">'0.050000 degrees per pixel'</span></div><div class="line">           geospatial_lat_min                    = <span class="number">-90</span></div><div class="line">           geospatial_lat_max                    = <span class="number">90</span></div><div class="line">           geospatial_lon_min                    = <span class="number">-180</span></div><div class="line">           geospatial_lon_max                    = <span class="number">180</span></div><div class="line">           metadata_link                         = <span class="string">'gov.noaa.ncdc:C00813'</span></div><div class="line">           cdr_program                           = <span class="string">'NOAA Climate Data Record Program for satellites'</span></div><div class="line">           cdr_variable                          = <span class="string">'NDVI'</span></div><div class="line">           Process                               = <span class="string">'LTDR_GAPS'</span></div><div class="line">           PostProcessingVersion                 = <span class="string">'2.3'</span></div><div class="line">           PFIIVersion                           = <span class="string">'3.5.28'</span></div><div class="line">           Satellite                             = <span class="string">'NOAA-07'</span></div><div class="line">           Instrument                            = <span class="string">'AVHRR'</span></div><div class="line">           InputDataType                         = <span class="string">'GAC'</span></div><div class="line">           summary                               = <span class="string">'AVHRR GAC data from NOAA-07 for 1981, days 228 to 228, processed by the Long-Term Land Data Record (LTDR) project (v3.5.28) into normalized difference vegetation index (NDVI) and quality-control flags'</span></div><div class="line">           ProductionDate                        = <span class="string">'2013-08-17T18:43:40.000000Z'</span></div><div class="line">           grid_mapping_name                     = <span class="string">'latitude_longitude'</span></div><div class="line">           ESDT                                  = <span class="string">'AVH13C1'</span></div><div class="line">           LocalGranuleId                        = <span class="string">'AVHRR-Land_v004_AVH13C1_NOAA-07_19810816_c20130817184340.nc'</span></div><div class="line">           id                                    = <span class="string">'AVHRR-Land_v004_AVH13C1_NOAA-07_19810816_c20130817184340.nc'</span></div><div class="line">           RangeBeginningDate                    = <span class="string">'1981-228'</span></div><div class="line">           RangeBeginningTime                    = <span class="string">'00:00:00.0000'</span></div><div class="line">           RangeEndingDate                       = <span class="string">'1981-228'</span></div><div class="line">           RangeEndingTime                       = <span class="string">'23:59:59.9999'</span></div><div class="line">           PercentMissingData                    = <span class="string">'11.46'</span></div><div class="line">           PercentValidDaytimeData               = <span class="string">'26.85'</span></div><div class="line">           PercentValidDaytimeLand               = <span class="string">'26.85'</span></div><div class="line">           PercentValidClearDaytimeLand          = <span class="string">'6.95'</span></div><div class="line">           PercentValidDaytimeLandInCloudShadow  = <span class="string">'1.21'</span></div><div class="line">           PercentValidClearDaytimeWater         = <span class="string">'0.00'</span></div><div class="line">           PercentValidDaytimeWaterInCloudShadow = <span class="string">'0.00'</span></div><div class="line">Dimensions:</div><div class="line">           latitude  = <span class="number">3600</span></div><div class="line">           longitude = <span class="number">7200</span></div><div class="line">           time      = <span class="number">1</span></div><div class="line">Variables:</div><div class="line">    latitude </div><div class="line">           Size:       <span class="number">3600</span>x1</div><div class="line">           Dimensions: latitude</div><div class="line">           Datatype:   single</div><div class="line">           Attributes:</div><div class="line">                       units         = <span class="string">'degrees_north'</span></div><div class="line">                       long_name     = <span class="string">'latitude'</span></div><div class="line">                       axis          = <span class="string">'Y'</span></div><div class="line">                       standard_name = <span class="string">'latitude'</span></div><div class="line">    longitude</div><div class="line">           Size:       <span class="number">7200</span>x1</div><div class="line">           Dimensions: longitude</div><div class="line">           Datatype:   single</div><div class="line">           Attributes:</div><div class="line">                       units         = <span class="string">'degrees_east'</span></div><div class="line">                       long_name     = <span class="string">'longitude'</span></div><div class="line">                       axis          = <span class="string">'X'</span></div><div class="line">                       standard_name = <span class="string">'longitude'</span></div><div class="line">    time     </div><div class="line">           Size:       <span class="number">1</span>x1</div><div class="line">           Dimensions: time</div><div class="line">           Datatype:   single</div><div class="line">           Attributes:</div><div class="line">                       units         = <span class="string">'days since 1981-01-01 00:00:00'</span></div><div class="line">                       long_name     = <span class="string">'time'</span></div><div class="line">                       axis          = <span class="string">'T'</span></div><div class="line">                       standard_name = <span class="string">'time'</span></div><div class="line">                       calendar      = <span class="string">'gregorian'</span></div><div class="line">    NDVI     </div><div class="line">           Size:       <span class="number">7200</span>x3600x1</div><div class="line">           Dimensions: longitude,latitude,time</div><div class="line">           Datatype:   int16</div><div class="line">           Attributes:</div><div class="line">                       scale_factor  = <span class="number">0.0001</span></div><div class="line">                       add_offset    = <span class="number">0</span></div><div class="line">                       long_name     = <span class="string">'NOAA Climate Data Record of Normalized Difference Vegetation Index'</span></div><div class="line">                       units         = <span class="string">'1'</span></div><div class="line">                       valid_range   = [<span class="number">-1000</span>  <span class="number">10000</span>]</div><div class="line">                       _FillValue    = <span class="number">-9999</span></div><div class="line">                       standard_name = <span class="string">'normalized_difference_vegetation_index'</span></div><div class="line">    TIMEOFDAY</div><div class="line">           Size:       <span class="number">7200</span>x3600x1</div><div class="line">           Dimensions: longitude,latitude,time</div><div class="line">           Datatype:   int16</div><div class="line">           Attributes:</div><div class="line">                       scale_factor = <span class="number">0.01</span></div><div class="line">                       add_offset   = <span class="number">0</span></div><div class="line">                       long_name    = <span class="string">'Time since Start of Data Day'</span></div><div class="line">                       units        = <span class="string">'h since 1981-08-16 00:00:00'</span></div><div class="line">                       valid_range  = [<span class="number">0</span>  <span class="number">2399</span>]</div><div class="line">                       _FillValue   = <span class="number">-9999</span></div><div class="line">    QA       </div><div class="line">           Size:       <span class="number">7200</span>x3600x1</div><div class="line">           Dimensions: longitude,latitude,time</div><div class="line">           Datatype:   int16</div><div class="line">           Attributes:</div><div class="line">                       flag_masks    = [<span class="number">2</span>      <span class="number">4</span>      <span class="number">8</span>     <span class="number">16</span>     <span class="number">32</span>     <span class="number">64</span>    <span class="number">128</span>    <span class="number">256</span>    <span class="number">512</span>   <span class="number">1024</span>   <span class="number">2048</span>   <span class="number">4096</span>   <span class="number">8192</span>  <span class="number">16384</span> <span class="number">-32768</span>]</div><div class="line">                       flag_meanings = <span class="string">'cloudy cloud_shadow water sunglint dense_dark_vegetation night ch1_to_5_valid ch1_invalid ch2_invalid ch3_invalid ch4_invalid ch5_invalid rho3_invalid BRDF_corr_problem polar_flag'</span></div><div class="line">                       long_name     = <span class="string">'Quality Assurance'</span></div></pre></td></tr></table></figure></p>
-<h3 id="批量读取变量并另存为txt"><a href="#批量读取变量并另存为txt" class="headerlink" title="批量读取变量并另存为txt"></a>批量读取变量并另存为txt</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>:<span class="built_in">length</span>(files)</div><div class="line"></div><div class="line">        fileinput = [pathinput,<span class="string">'\',files(i).name];</span></div><div class="line">        NDVI = ncread(fileinput,'NDVI<span class="string">');</span></div><div class="line">        FillValue = ncreadatt(fileinput,'NDVI<span class="string">','</span>_FillValue<span class="string">');</span></div><div class="line">        longitude = ncread(fileinput,'longitude<span class="string">');</span></div><div class="line">        latitude = ncread(fileinput,'latitude<span class="string">');</span></div><div class="line">        </div><div class="line">        NDVI(isnan(NDVI))=FillValue;</div><div class="line">        [m, n] = size(NDVI);</div><div class="line">        </div><div class="line">        fileoutput = [pathoutput,files(i).name(1:end-3),'.txt<span class="string">'];</span></div><div class="line">        ncols = ['ncols <span class="string">' num2str(m)];</span></div><div class="line">        nrows = ['nrows <span class="string">' num2str(n)];</span></div><div class="line">        xllcorner =  ['xllcorner <span class="string">' num2str(min(longitude))];</span></div><div class="line">        yllcorner = ['yllcorner <span class="string">' num2str(min(latitude))];</span></div><div class="line">        cellsize = ['cellsize <span class="string">' num2str(0.05)];</span></div><div class="line">        NODATA_value = ['NODATA_value <span class="string">' num2str(FillValue)];</span></div><div class="line">        </div><div class="line">        //写入栅格数据的头文件</div><div class="line">        dlmwrite(fileoutput,ncols,'delimiter<span class="string">', '','</span>newline<span class="string">','</span>pc<span class="string">','</span>-append<span class="string">');</span></div><div class="line">        dlmwrite(fileoutput,nrows,'delimiter<span class="string">', '','</span>newline<span class="string">','</span>pc<span class="string">','</span>-append<span class="string">');</span></div><div class="line">        dlmwrite(fileoutput,xllcorner,'delimiter<span class="string">', '','</span>newline<span class="string">','</span>pc<span class="string">','</span>-append<span class="string">');</span></div><div class="line">        dlmwrite(fileoutput,yllcorner,'delimiter<span class="string">', '','</span>newline<span class="string">','</span>pc<span class="string">','</span>-append<span class="string">');</span></div><div class="line">        dlmwrite(fileoutput,cellsize,'delimiter<span class="string">', '','</span>newline<span class="string">','</span>pc<span class="string">','</span>-append<span class="string">');</span></div><div class="line">        dlmwrite(fileoutput,NODATA_value,'delimiter<span class="string">', '','</span>newline<span class="string">','</span>pc<span class="string">','</span>-append<span class="string">');</span></div><div class="line">        //写入数据</div><div class="line">        dlmwrite(fileoutput,fliplr(rot90(NDVI,3)),'delimiter<span class="string">','</span>\t<span class="string">','</span>newline<span class="string">','</span>pc<span class="string">','</span>-append<span class="string">');</span></div><div class="line">end</div></pre></td></tr></table></figure>
-<p><img src="http://source.jiangyayu.cn/matlab-nc/2.png"></p>
-<h2 id="ArcMap中另存为栅格数据"><a href="#ArcMap中另存为栅格数据" class="headerlink" title="ArcMap中另存为栅格数据"></a>ArcMap中另存为栅格数据</h2><p>&emsp;&emsp;在ArcMap中加载txt格式的栅格数据：<br><img src="http://source.jiangyayu.cn/matlab-nc/3.png"><br>&emsp;&emsp;使用工具箱中的ASCIIToRaster工具导出数据：<br><img src="http://source.jiangyayu.cn/matlab-nc/4.png"></p>
-<h2 id="附"><a href="#附" class="headerlink" title="附"></a>附</h2><p>数据下载：链接：<a href="http://pan.baidu.com/s/1slIZ5nR" target="_blank" rel="external">http://pan.baidu.com/s/1slIZ5nR</a> 密码：2z3f<br>完整代码：<a href="http://source.jiangyayu.cn/matlab-nc/ndvi2raster.m" target="_blank" rel="external">ndvi2raster.m</a></p>
+        <h1 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h1><ol>
+<li>理解卫星及实验室高光谱概念，初步了解辐亮度、反射率的概念；</li>
+<li>能够打开并处理卫星高光谱数据；</li>
+<li>能够加载不同波谱库的反射率波谱曲线，并学会处理；</li>
+<li>学会判读不同地物的光谱曲线特征，了解其与相应的卫星光谱的比较，并解释差异原因。<a id="more"></a>
+<h1 id="实验要求"><a href="#实验要求" class="headerlink" title="实验要求"></a>实验要求</h1></li>
+<li>打开AVIRIS影像光谱，确定点（448,505）、（502,589）、（531,541）以及（260,613）。要求：显示完整的曲线名称对照课本及影像，确定该区的主要岩性，并判读光谱曲线主要特征及其区别。</li>
+<li>打开JPL1.sli光谱库，绘制alunite so-4a，buddingtonite felds ts-11a，calcite c-3d，kaolinite well ordered ps-1a。要求：显示完整的波谱曲线名称，确定横纵坐标，并判读光谱主要特征及区别。</li>
+<li>打开usgs_min.sli光谱库。要求：在该波谱库中找出与JPL波谱库中对应的上述四种矿物波谱曲线最大相似度的四种矿物，并在同一个窗口中绘制其波谱廓线，显示完整的名称。</li>
+<li>将calcite（明矾石）的AVIRIS卫星影像及JPL、USGS波谱库中的光谱曲线放在同一个窗口中显示，并进行光谱形状上的比较，简要说明其差别的原因。</li>
+</ol>
+<h1 id="实验内容"><a href="#实验内容" class="headerlink" title="实验内容"></a>实验内容</h1><h2 id="实验一："><a href="#实验一：" class="headerlink" title="实验一："></a>实验一：</h2><h3 id="实验步骤"><a href="#实验步骤" class="headerlink" title="实验步骤"></a>实验步骤</h3><ol>
+<li>打开c95avsub文件夹中的cup95_rd.int文件，按顺序点击 Band 183、Band 193 和Band 207（波长分别为2.10、2.20 和2.35μm)，加载一幅彩色影像。</li>
+<li>从主影像显示窗口菜单栏中，选择 Tools → Pixel Locator。在 Pixel Locator 对话框中输入像素的坐标定位到所指定的点。</li>
+<li>选择 Tools → Profiles → Z-Profile (Spectrum)，来提取这个位置的辐亮度波谱曲线。</li>
+<li>选择 Options → Collect Spectra。然后再在Pixel Locator 对话框中输入像素的坐标，按照实验要求依次提取以下位置的辐亮度波谱曲线。</li>
+<li>选择 Options → Stack Plots，分别查看每一条波谱曲线。在绘图窗口中点击右键，并在弹出的快捷菜单中选择Plot Key 来显示波谱曲线的图例。<br><img src="http://source.jiangyayu.cn/AVIRIS/1.png" alt="波谱曲线"></li>
+</ol>
+<h3 id="结果分析"><a href="#结果分析" class="headerlink" title="结果分析"></a>结果分析</h3><ol>
+<li>岩性分析：<br>（448,505）：Buddingtonite Zone<br>（502,589）：Strongly Argillized Zone with Kaolinite<br>（531,541）：Opalite Zone with Alunite<br>（260,613）：Calcite</li>
+<li>主要特征：<br>图像的横坐标表示波段，纵坐标表示辐亮度。<br>这四种岩石有着同样趋势光谱曲线：在2.015μm处附近出现谷值，在2.04μm附近出现了峰值，在2.06μm附近再一次出现谷值，之后曲线上升，从2.1μm之后开始缓慢下降，在2.2μm附近有一个较小的吸收，2.3μm之后波谱呈现波动状态。</li>
+<li>区别：<br>波谱曲线在两个较大的峰值和谷值处的大小有区别，其次在2.2μm处的小的吸收特性能够反映不同岩石的特性。</li>
+</ol>
+<h2 id="实验二："><a href="#实验二：" class="headerlink" title="实验二："></a>实验二：</h2><h3 id="实验步骤-1"><a href="#实验步骤-1" class="headerlink" title="实验步骤"></a>实验步骤</h3><ol>
+<li>从 ENVI 主菜单中选择Spectral → Spectral Libraries → Spectral Library Viewer。</li>
+<li>当 Spectral Library Input File 对话框出现后，点击Open Spec Lib，并从spec_lib/jpl_lib子目录中选择jpl1.sli 文件。</li>
+<li>点击 OK。jpl1.sli 文件将会出现在对话框的Select Input File 区域。</li>
+<li>点击该文件名，再点击 OK，打开Spectral Library Viewer 对话框。</li>
+<li>在 Spectral Library Viewer 对话框所列出的波谱曲线中，点击相应的矿物质名称，绘制下列矿物质的波谱曲线：<ul>
+<li>ALUNITE SO-4A</li>
+<li>BUDDINGTONITE FELDS TS-11A</li>
+<li>CALCITE C-3D</li>
+<li>KAOLINITE WELL ORDERED PS-1A<br><img src="http://source.jiangyayu.cn/AVIRIS/2.png" alt="波谱曲线"></li>
+</ul>
+</li>
+</ol>
+<h3 id="结果分析-1"><a href="#结果分析-1" class="headerlink" title="结果分析"></a>结果分析</h3><ol>
+<li>主要特征：<br>横坐标为波段，做坐标为反射率。<br>光谱曲线整体比较平缓，在1.4μm左右和2.2μm左右有比较明显的吸收。</li>
+<li>区别：<br>KAOLINITE WELL ORDERED PS-1A 和ALUNITE SO-4A在1.4μm处的吸收比较明显，形成比较大的谷值，两者相对应的波段来说KAOLINITE WELL ORDERED PS-1A在1.4μm左右，而ALUNITE SO-4A则在1.5μm左右；BUDDINGTONITE FELDS TS-11A在1.4μm左右的吸收很小，CALCITE C-3D则几乎没有；在2.2μm左右以上四种岩石波谱均有所吸收，其中CALCITE C-3D对应的吸收波段值则更大一些，且吸收幅度相对小一些。</li>
+</ol>
+<h2 id="实验三："><a href="#实验三：" class="headerlink" title="实验三："></a>实验三：</h2><h3 id="实验步骤-2"><a href="#实验步骤-2" class="headerlink" title="实验步骤"></a>实验步骤</h3><ol>
+<li>从 ENVI 主菜单中选择Spectral →Spectral Analyst</li>
+<li>当Spectral Analyst Input Spectral Library对话框出现后，点击Open Spec Lib，并从spec_lib/ usgs_min子目录中选择usgs_min.sli 文件。</li>
+<li>点击 OK。将会弹出Edit Identify Methods Weighting窗口，在这里我们选择合适的权重（本实验取0.35），点击OK。</li>
+<li>在Spectral Analyst窗口点击Apply，在弹出的Spectral Analyst Input窗口中选择ALUNITE SO-4A并点击OK。这是ENVI会对光谱匹配度进行分析。结果会显示在Spectral Analyst中，其中第一项为匹配度最高的。</li>
+<li>双击第一项，会将匹配的两条光谱曲线显示在一起。<div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><a href="http://source.jiangyayu.cn/AVIRIS/3.png" data-fancybox="fancyboxgroup" class="fancybox" target="_blank" rel="external"><img src="http://source.jiangyayu.cn/AVIRIS/3.png" alt="Spectral Analyst" style="zoom:40%"></a></div><div class="group-picture-column" style="width: 50%;"><a href="http://source.jiangyayu.cn/AVIRIS/4.png" data-fancybox="fancyboxgroup" class="fancybox" target="_blank" rel="external"><img src="http://source.jiangyayu.cn/AVIRIS/4.png" alt="波谱曲线"></a></div></div></div></div></li>
+<li>用同样的方法找到与其他三种矿物波谱曲线匹配度最高的矿物，并将这些波谱曲线显示在同一窗口。<br><img src="http://source.jiangyayu.cn/AVIRIS/5.png" alt="波谱曲线"></li>
+</ol>
+<h2 id="实验四："><a href="#实验四：" class="headerlink" title="实验四："></a>实验四：</h2><h3 id="实验步骤-3"><a href="#实验步骤-3" class="headerlink" title="实验步骤"></a>实验步骤</h3><ol>
+<li>在打开的Spectral Library Viewer窗口菜单下Options→Edit（x，y）Scale Factors，在弹出的Edit Display Scale窗口中设置Y Multiplier值为850，使得接下来绘出的波谱曲线与影像中获取的波谱曲线的纵坐标一致。</li>
+<li>在jpl1光谱库中选择CALCITE C-3D，点击绘出其光谱曲线。</li>
+<li>类似于步骤1、2，在usgs_min光谱库中选择carnall.spc Carnallite NMNH98011绘出光谱曲线。</li>
+<li>在波谱曲线窗口的菜单下，依次Options→New Windows:Blank，打开一个新窗口。</li>
+<li>将步骤2、3中绘制的光谱曲线和实验一中的X:260 Y:613拖到新建的绘图窗口中。</li>
+<li>设置相应的参数是结果如图所示：<br><img src="http://source.jiangyayu.cn/AVIRIS/6.png" alt="波谱曲线"></li>
+</ol>
+<h3 id="结果分析-2"><a href="#结果分析-2" class="headerlink" title="结果分析"></a>结果分析</h3><p>两个实验室得到的光谱图像有一定的差别，主要原因可能是因为两者的环境存在着差异。但两者的共同特性很明显：2.34μm处均有比较明显的光谱吸收。两个实验室得到的结果与卫星影像上的光谱曲线的差别都很大，这主要是因为受太阳辐射和大气辐射共同作用的影响。但是其光谱曲线在2.34μm处被吸收的趋势还是能够看出来的。</p>
 
       
     </div>
@@ -486,9 +548,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/matlab/" rel="tag"><i class="fa fa-tag"></i> matlab</a>
+            <a href="/tags/RS/" rel="tag"><i class="fa fa-tag"></i> RS</a>
           
-            <a href="/tags/NetCDF/" rel="tag"><i class="fa fa-tag"></i> NetCDF</a>
+            <a href="/tags/影像波谱/" rel="tag"><i class="fa fa-tag"></i> 影像波谱</a>
           
         </div>
       
@@ -497,8 +559,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/archives/linear-equation/" rel="next" title="迭代法求解线性方程组--C#实现Jacobi、Gauss-Seidel、SOR迭代法">
-                <i class="fa fa-chevron-left"></i> 迭代法求解线性方程组--C#实现Jacobi、Gauss-Seidel、SOR迭代法
+              <a href="/archives/ArcGIS-practice-3.html" rel="next" title="ArcGIS练习3：空间分析">
+                <i class="fa fa-chevron-left"></i> ArcGIS练习3：空间分析
               </a>
             
           </div>
@@ -507,8 +569,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/archives/Integrals/" rel="prev" title="C#实现定积分求解">
-                C#实现定积分求解 <i class="fa fa-chevron-right"></i>
+              <a href="/archives/Hyperspectral-RS-image-Processing.html" rel="prev" title="高级高光谱遥感应用">
+                高级高光谱遥感应用 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -535,7 +597,7 @@
           
   <div class="comments" id="comments">
     
-      <div id="SOHUCS" sid="/archives/matlab-nc/"></div>
+      <div id="SOHUCS" sid="/"></div>
     
   </div>
 
@@ -893,7 +955,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#处理环境"><span class="nav-number">1.</span> <span class="nav-text">处理环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MATLAB批量处理NetCDF文件"><span class="nav-number">2.</span> <span class="nav-text">MATLAB批量处理NetCDF文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#设置输入输出"><span class="nav-number">2.1.</span> <span class="nav-text">设置输入输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取输入文件名"><span class="nav-number">2.2.</span> <span class="nav-text">获取输入文件名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看NetCDF文件内部格式"><span class="nav-number">2.3.</span> <span class="nav-text">查看NetCDF文件内部格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#批量读取变量并另存为txt"><span class="nav-number">2.4.</span> <span class="nav-text">批量读取变量并另存为txt</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ArcMap中另存为栅格数据"><span class="nav-number">3.</span> <span class="nav-text">ArcMap中另存为栅格数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#附"><span class="nav-number">4.</span> <span class="nav-text">附</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#实验目的"><span class="nav-number">1.</span> <span class="nav-text">实验目的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验要求"><span class="nav-number">2.</span> <span class="nav-text">实验要求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验内容"><span class="nav-number">3.</span> <span class="nav-text">实验内容</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#实验一："><span class="nav-number">3.1.</span> <span class="nav-text">实验一：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实验步骤"><span class="nav-number">3.1.1.</span> <span class="nav-text">实验步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结果分析"><span class="nav-number">3.1.2.</span> <span class="nav-text">结果分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实验二："><span class="nav-number">3.2.</span> <span class="nav-text">实验二：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实验步骤-1"><span class="nav-number">3.2.1.</span> <span class="nav-text">实验步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结果分析-1"><span class="nav-number">3.2.2.</span> <span class="nav-text">结果分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实验三："><span class="nav-number">3.3.</span> <span class="nav-text">实验三：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实验步骤-2"><span class="nav-number">3.3.1.</span> <span class="nav-text">实验步骤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实验四："><span class="nav-number">3.4.</span> <span class="nav-text">实验四：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实验步骤-3"><span class="nav-number">3.4.1.</span> <span class="nav-text">实验步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结果分析-2"><span class="nav-number">3.4.2.</span> <span class="nav-text">结果分析</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

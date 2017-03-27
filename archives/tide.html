@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="服务器,单点登录,CAS," />
+  <meta name="keywords" content="matlab,海洋数据分析,潮汐调和分析," />
 
 
 
@@ -86,28 +86,22 @@
 
 
 
-<meta name="description" content="SSO和CAS&amp;emsp;&amp;emsp;单点登录（SingleSign On , 简称 SSO ）是目前比较流行的服务于企业业务整合的解决方案之一， SSO使得在多个应用系统中，用户只需要登录一次就可以访问所有相互信任的应用系统。">
+<meta name="description" content="使用matlab进行潮汐调和分析，判别潮汐类型。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CAS4.0单点登录服务器的配置">
-<meta property="og:url" content="https://blog.jiangyayu.cn/archives/CAS-Single-Sign-On/index.html">
+<meta property="og:title" content="海洋要素计算：潮汐调和分析">
+<meta property="og:url" content="https://blog.jiangyayu.cn/archives/tide.html">
 <meta property="og:site_name" content="Alex's Blog">
-<meta property="og:description" content="SSO和CAS&amp;emsp;&amp;emsp;单点登录（SingleSign On , 简称 SSO ）是目前比较流行的服务于企业业务整合的解决方案之一， SSO使得在多个应用系统中，用户只需要登录一次就可以访问所有相互信任的应用系统。">
-<meta property="og:image" content="http://source.jiangyayu.cn/CAS-Single-Sign-On/1.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/CAS-Single-Sign-On/2.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/CAS-Single-Sign-On/3.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/CAS-Single-Sign-On/4.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/CAS-Single-Sign-On/5.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/CAS-Single-Sign-On/6.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/CAS-Single-Sign-On/7.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/CAS-Single-Sign-On/8.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/CAS-Single-Sign-On/9.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/CAS-Single-Sign-On/10.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/CAS-Single-Sign-On/11.png">
-<meta property="og:updated_time" content="2017-03-02T14:50:12.951Z">
+<meta property="og:description" content="使用matlab进行潮汐调和分析，判别潮汐类型。">
+<meta property="og:image" content="http://source.jiangyayu.cn/tide/1.png">
+<meta property="og:image" content="http://source.jiangyayu.cn/tide/2.png">
+<meta property="og:image" content="http://source.jiangyayu.cn/tide/3.png">
+<meta property="og:image" content="http://source.jiangyayu.cn/tide/4.png">
+<meta property="og:image" content="http://source.jiangyayu.cn/tide/5.png">
+<meta property="og:updated_time" content="2017-03-02T14:50:26.367Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CAS4.0单点登录服务器的配置">
-<meta name="twitter:description" content="SSO和CAS&amp;emsp;&amp;emsp;单点登录（SingleSign On , 简称 SSO ）是目前比较流行的服务于企业业务整合的解决方案之一， SSO使得在多个应用系统中，用户只需要登录一次就可以访问所有相互信任的应用系统。">
-<meta name="twitter:image" content="http://source.jiangyayu.cn/CAS-Single-Sign-On/1.png">
+<meta name="twitter:title" content="海洋要素计算：潮汐调和分析">
+<meta name="twitter:description" content="使用matlab进行潮汐调和分析，判别潮汐类型。">
+<meta name="twitter:image" content="http://source.jiangyayu.cn/tide/1.png">
 
 
 
@@ -135,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="https://blog.jiangyayu.cn/archives/CAS-Single-Sign-On/"/>
+  <link rel="canonical" href="https://blog.jiangyayu.cn/archives/tide.html"/>
 
 
 
 
 
-  <title> CAS4.0单点登录服务器的配置 | Alex's Blog </title>
+  <title> 海洋要素计算：潮汐调和分析 | Alex's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -313,7 +307,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://blog.jiangyayu.cn/archives/CAS-Single-Sign-On/">
+  <link itemprop="mainEntityOfPage" href="https://blog.jiangyayu.cn/archives/tide.html">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Alexander Chiang">
@@ -337,7 +331,7 @@
             
             
               
-                CAS4.0单点登录服务器的配置
+                海洋要素计算：潮汐调和分析
               
             
           </h1>
@@ -352,8 +346,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-06T10:01:02+08:00">
-                2016-10-06
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2013-12-10T13:54:39+08:00">
+                2013-12-10
               </time>
             
 
@@ -375,8 +369,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
+                  <a href="/categories/数据处理分析/" itemprop="url" rel="index">
+                    <span itemprop="name">数据处理分析</span>
                   </a>
                 </span>
 
@@ -394,8 +388,8 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/archives/CAS-Single-Sign-On/#SOHUCS" itemprop="discussionUrl">
-                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="/archives/CAS-Single-Sign-On/" itemprop="commentsCount"></span>
+                <a href="/archives/tide.html#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="/archives/tide.html" itemprop="commentsCount"></span>
                 </a>
               
               </span>
@@ -406,7 +400,7 @@
 
           
           
-             <span id="/archives/CAS-Single-Sign-On/" class="leancloud_visitors" data-flag-title="CAS4.0单点登录服务器的配置">
+             <span id="/archives/tide.html" class="leancloud_visitors" data-flag-title="海洋要素计算：潮汐调和分析">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -433,28 +427,18 @@
       
 
       
-        <h2 id="SSO和CAS"><a href="#SSO和CAS" class="headerlink" title="SSO和CAS"></a>SSO和CAS</h2><p>&emsp;&emsp;单点登录（SingleSign On , 简称 SSO ）是目前比较流行的服务于企业业务整合的解决方案之一， SSO使得在多个应用系统中，用户只需要登录一次就可以访问所有相互信任的应用系统。<br><a id="more"></a><br>&emsp;&emsp;CAS是中央认证服务Central Authentication Service的简称，是对单点登录SSO（Single Sign On）的一种实现。最初由耶鲁大学的Shawn Bayern 开发，后由Jasig社区维护，经过十多年发展，目前已成为影响最大、广泛使用的、基于Java实现的、开源SSO解决方案。CAS由Cas Server和Cas Client两部分组成，Cas Server是核心，而Cas Client通常就对应于我们的应用。一个Cas Server可以对应于多个Cas Client。它允许我们在一个Client进行登录以后无需再让用户输入用户名和密码进行认证即可访问其它Client应用。</p>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>安装JDK和Tomcat：<br>&emsp;&emsp;已经配置好Tomcat的可以跳过此步骤，未安装配置的可以参考另外一篇博客：<a href="https://blog.jiangyayu.cn//archives/tomcat-install">CentOS6.5中Tomcat的安装配置</a></p>
-<h2 id="启用HTTPS传输协议"><a href="#启用HTTPS传输协议" class="headerlink" title="启用HTTPS传输协议"></a>启用HTTPS传输协议</h2><p>（1）    生成证书<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">keytool -genkey -alias tomcat -keyalg RSA -keystore /root/keystore</div></pre></td></tr></table></figure></p>
-<p><img src="http://source.jiangyayu.cn/CAS-Single-Sign-On/1.png"></p>
-<p><strong>注：</strong> 名字与姓氏一项需输入域名。<br>（2）    导出证书文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">keytool -export -file /opt/tomcat.crt -alias tomcat -keystore /root/keystore</div></pre></td></tr></table></figure></p>
-<p><img src="http://source.jiangyayu.cn/CAS-Single-Sign-On/2.png"></p>
-<p>（3）    将证书tomcat.crt导入到JVM中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">keytool -import -keystore /usr/java/jdk1.8.0_101/jre/lib/security/cacerts -file /opt/tomcat.crt -alias tomcat</div></pre></td></tr></table></figure></p>
-<p><img src="http://source.jiangyayu.cn/CAS-Single-Sign-On/3.png"></p>
-<p>（4）    tomcat中配置https传输<br>&emsp;&emsp;在tomcat下找到<code>/conf/server.xml</code>,默认tomcat是没有打开https的:<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">Connector</span> <span class="attr">SSLEnabled</span>=<span class="string">"true"</span> <span class="attr">clientAuth</span>=<span class="string">"false"</span> <span class="attr">keystoreFile</span>=<span class="string">"/root/keystore"</span> <span class="attr">keystorePass</span>=<span class="string">"changeit"</span> <span class="attr">maxThreads</span>=<span class="string">"150"</span> <span class="attr">port</span>=<span class="string">"443"</span> <span class="attr">protocol</span>=<span class="string">"HTTP/1.1"</span> <span class="attr">scheme</span>=<span class="string">"https"</span> <span class="attr">secure</span>=<span class="string">"true"</span> <span class="attr">sslProtocol</span>=<span class="string">"TLS"</span>/&gt;</span></div></pre></td></tr></table></figure></p>
-<p>（5）    配置域名<br>&emsp;&emsp;在测试环境中，为了能使用域名<a href="https://www.jiangyayu.com" target="_blank" rel="external">https://www.jiangyayu.com</a> 访问CAS服务器，需要简单配置一下客户端的<code>hosts</code>文件，在<code>hosts</code>文件末添加：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">192.168.31.110 www.jiangyayu.com</div></pre></td></tr></table></figure></p>
-<p>（6）    启动tomcat，在客户端访问：<a href="https://www.jiangyayu.com" target="_blank" rel="external">https://www.jiangyayu.com</a><br>&emsp;&emsp;浏览器给出警告：<br><img src="http://source.jiangyayu.cn/CAS-Single-Sign-On/4.png"><br>选择高级-&gt;继续前往，则通过HTTPS加密协议访问到tomcat的主页：<br><img src="http://source.jiangyayu.cn/CAS-Single-Sign-On/5.png"></p>
-<h2 id="配置CAS服务器"><a href="#配置CAS服务器" class="headerlink" title="配置CAS服务器"></a>配置CAS服务器</h2><p>（1）    CAS服务器端配置<br>&emsp;&emsp;CAS服务端下载：<a href="https://developer.jasig.org/cas/" target="_blank" rel="external">https://developer.jasig.org/cas/</a><br>&emsp;&emsp;下载完成后将<code>cas-server-4.0.0-release.zip</code>解压，解压<code>cas-server-4.0.0-release/modules/cas-server-webapp-4.0.0.war</code>，改名为<code>cas.war</code>，然后复制cas目录到你的<code>tomcat/webapp</code>目录下。<br>（2）    访问CAS应用<br>&emsp;&emsp;<a href="https://www.jiangyayu.com/cas" target="_blank" rel="external">https://www.jiangyayu.com/cas</a><br>&emsp;&emsp;打开了CAS服务器的页面输入账户/密码：casuser/Mellon<br><strong>注：</strong>cas4.0后默认的密码验证不是简单的相同了。在配置文件里， 默认是 casuser：Mellon。<br><img src="http://source.jiangyayu.cn/CAS-Single-Sign-On/6.png"></p>
-<h2 id="配置应用服务器"><a href="#配置应用服务器" class="headerlink" title="配置应用服务器"></a>配置应用服务器</h2><p>（1）配置环境<br>&emsp;&emsp;再应用服务器上安装配置好JDK、Tomcat，并启用HTTPS传输协议，并在客户端<code>hosts</code>文件中为客户端服务器指定域名：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">192.168.31.110 www.app1.com</div></pre></td></tr></table></figure></p>
-<p>（2）    部署客户端webapp<br>&emsp;&emsp;此处使用Tomcat自带的<code>examples</code>。进入Tomcat安装目录下的<code>webapp</code>文件夹，将其中的<code>examples</code>文件夹复制一份并重命名为<code>test</code>。<br>（3）    下载<code>cas-client-3.3.3-release.zip</code>。<br>（4）    添加所需jar<br>&emsp;&emsp;进入<code>test</code>文件夹，删除<code>WEB-INF/lib</code>中的所有jar包。解压<code>cas-client-3.3.3-release.zip</code>，将<code>modules</code>中的所有jar文件复制到<code>WEB-INF</code>中。<br><img src="http://source.jiangyayu.cn/CAS-Single-Sign-On/7.png"><br>（5）    修改<code>WEB-INF/web.xml</code>，添加以下内容：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- ==================== 单点登录开始 ===================== --&gt;</span></div><div class="line">    <span class="comment">&lt;!--用于单点退出，该过滤器用于实现单点登出功能，可选配置 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">listener</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">listener-class</span>&gt;</span>org.jasig.cas.client.session.SingleSignOutHttpSessionListener<span class="tag">&lt;/<span class="name">listener-class</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">listener</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!--该过滤器用于实现单点登出功能，可选配置。 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">filter</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>CASSingle Sign OutFilter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">filter-class</span>&gt;</span>org.jasig.cas.client.session.SingleSignOutFilter<span class="tag">&lt;/<span class="name">filter-class</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">filter</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">filter-mapping</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>CASSingle Sign OutFilter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/*<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">filter-mapping</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">filter</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>CASFilter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">filter-class</span>&gt;</span>org.jasig.cas.client.authentication.AuthenticationFilter<span class="tag">&lt;/<span class="name">filter-class</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>casServerLoginUrl<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>https://www.jiangyayu.com/cas/login<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>serverName<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>https://www.app1.com<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">filter</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">filter-mapping</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>CASFilter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/*<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">filter-mapping</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!--该过滤器负责对Ticket的校验工作，必须启用它 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">filter</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>CASValidationFilter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">filter-class</span>&gt;</span></div><div class="line">            org.jasig.cas.client.validation.Cas20ProxyReceivingTicketValidationFilter</div><div class="line">        <span class="tag">&lt;/<span class="name">filter-class</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>casServerUrlPrefix<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>https://www.jiangyayu.com/cas<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>serverName<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>https://www.app1.com<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">filter</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">filter-mapping</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>CASValidationFilter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/*<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">filter-mapping</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- 该过滤器负责实现HttpServletRequest请求的包裹， 比如允许开发者通过HttpServletRequest的getRemoteUser()方法获得SSO登录用户的登录名，可选配置。 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">filter</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>CASHttpServletRequest WrapperFilter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">filter-class</span>&gt;</span></div><div class="line">            org.jasig.cas.client.util.HttpServletRequestWrapperFilter</div><div class="line">        <span class="tag">&lt;/<span class="name">filter-class</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">filter</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">filter-mapping</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>CASHttpServletRequest WrapperFilter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/*<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">filter-mapping</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- 该过滤器使得开发者可以通过org.jasig.cas.client.util.AssertionHolder来获取用户的登录名。 比如AssertionHolder.getAssertion().getPrincipal().getName()。 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">filter</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>CASAssertion Thread LocalFilter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">filter-class</span>&gt;</span>org.jasig.cas.client.util.AssertionThreadLocalFilter<span class="tag">&lt;/<span class="name">filter-class</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">filter</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">filter-mapping</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>CASAssertion Thread LocalFilter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/*<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">filter-mapping</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- ========================单点登录结束 ======================== --&gt;</span></div></pre></td></tr></table></figure></p>
-<p>（6）    重启Tomcat<br>（7）    测试<br>&emsp;&emsp;打开客户机浏览器，访问<a href="https://www.app1.com/test" target="_blank" rel="external">https://www.app1.com/test</a> ，跳转到地址：<a href="https://www.jiangyayu.com/cas/login?service=https%3A%2F%2Fwww.app1.com%2Ftest%2F" target="_blank" rel="external">https://www.jiangyayu.com/cas/login?service=https%3A%2F%2Fwww.app1.com%2Ftest%2F</a><br><img src="http://source.jiangyayu.cn/CAS-Single-Sign-On/8.png"><br>&emsp;&emsp;输入CAS的用户/密码（casuser/Mellon），跳转回访问界面：<br><img src="http://source.jiangyayu.cn/CAS-Single-Sign-On/9.png"><br>&emsp;&emsp;表示CAS验证通过。此时新建标签页，再次访问<a href="https://www.app1.com/test，发现无需再次验证可以直接访问：" target="_blank" rel="external">https://www.app1.com/test，发现无需再次验证可以直接访问：</a><br><img src="http://source.jiangyayu.cn/CAS-Single-Sign-On/10.png"></p>
-<h2 id="通过数据库中的用户密码认证"><a href="#通过数据库中的用户密码认证" class="headerlink" title="通过数据库中的用户密码认证"></a>通过数据库中的用户密码认证</h2><p>（1）    mysql中创建用户数据库<br>&emsp;&emsp;创建用于存放用户数据的数据库：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> db_user;</div></pre></td></tr></table></figure></p>
-<p>（2）    创建用户表<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="string">` t_user`</span> (</div><div class="line"> 		 <span class="string">`Id`</span> <span class="built_in">int</span>(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT,</div><div class="line"> 		 <span class="string">`username`</span> <span class="built_in">varchar</span>(<span class="number">50</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</div><div class="line"> 		 <span class="string">`password`</span> <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</div><div class="line"> 	 PRIMARY <span class="keyword">KEY</span> (<span class="string">`Id`</span>)</div><div class="line">) <span class="keyword">ENGINE</span>=MyISAM <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8;</div></pre></td></tr></table></figure></p>
-<p>（3）    创建用户表<br>&emsp;&emsp;向表中插入以下数据：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`sso_t_user`</span> <span class="keyword">VALUES</span> (<span class="number">1</span>,<span class="string">'admin'</span>,<span class="string">'96e79218965eb72c92a549dd5a330112'</span>);</div></pre></td></tr></table></figure></p>
-<p><strong>注：</strong>密码以MD5 加密后存放数据库中为例<br>“111111”的MD5值为：“96e79218965eb72c92a549dd5a330112”<br>（4）    修改cas服务端配置<br>&emsp;&emsp;在<code>%tomcat_cas%/webapps/cas/WEB_INF/deployerConfigContext.xml</code> 找到如下信息：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"primaryAuthenticationHandler"</span></span></div><div class="line">          <span class="attr">class</span>=<span class="string">"org.jasig.cas.authentication.AcceptUsersAuthenticationHandler"</span>&gt;</div><div class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"users"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">map</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">entry</span> <span class="attr">key</span>=<span class="string">"casuser"</span> <span class="attr">value</span>=<span class="string">"Mellon"</span>/&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">map</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">property</span>&gt;</span></div><div class="line"> <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>&emsp;&emsp;修改成如下：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"primaryAuthenticationHandler"</span> <span class="attr">class</span>=<span class="string">"org.jasig.cas.adaptors.jdbc.QueryDatabaseAuthenticationHandler"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"dataSource"</span> <span class="attr">ref</span>=<span class="string">"dataSource"</span> &gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"sql"</span> <span class="attr">value</span>=<span class="string">"select password from t_user where username=?"</span> &gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"passwordEncoder"</span> <span class="attr">ref</span>=<span class="string">"MD5PasswordEncoder"</span> &gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>&emsp;&emsp;同时增加datasource和加密处理两个bean的定义：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"dataSource"</span></span></div><div class="line">		<span class="attr">class</span>=<span class="string">"org.springframework.jdbc.datasource.DriverManagerDataSource"</span>&gt;</div><div class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"driverClassName"</span> <span class="attr">value</span>=<span class="string">"com.mysql.jdbc.Driver"</span> /&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"url"</span> <span class="attr">value</span>=<span class="string">" jdbc:mysql://localhost:3306/db_user"</span> /&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">value</span>=<span class="string">"root"</span> /&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"password"</span> <span class="attr">value</span>=<span class="string">"1qaz2wsx"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"MD5PasswordEncoder"</span></span></div><div class="line">		<span class="attr">class</span>=<span class="string">"org.jasig.cas.authentication.handler.DefaultPasswordEncoder"</span>&gt;</div><div class="line">		<span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">index</span>=<span class="string">"0"</span> <span class="attr">value</span>=<span class="string">"MD5"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>（5）    添加相关的jar包<br>&emsp;&emsp;需要在cas的web项目lib文件夹下添加两个包：<code>cas-server-support-jdbc-x.x.x.jar</code> 和 <code>mysql-connector-java-x.x.x-bin.jar</code>。<br>（6）    访问CAS主页<br>&emsp;&emsp;通过账号密码：admin/111111访问CAS主页 通过验证<br><img src="http://source.jiangyayu.cn/CAS-Single-Sign-On/11.png"></p>
+        <p>使用matlab进行潮汐调和分析，判别潮汐类型。<br><a id="more"></a></p>
+<h2 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h2><h3 id="数据来源"><a href="#数据来源" class="headerlink" title="数据来源"></a>数据来源</h3><p>&emsp;&emsp;本次实验采用的数据来自夏威夷大学海平面中心（University of Hawaii Sea Level Center）：<a href="http://ilikai.soest.hawaii.edu/uhslc/datai.html" target="_blank" rel="external">http://ilikai.soest.hawaii.edu/uhslc/datai.html</a><br>本站提供下载：<br><br>&emsp;&emsp;厦门站：<a href="http://source.jiangyayu.cn/tide/h376a95.dat" target="_blank" rel="external">h376a95.dat</a></p>
+<h3 id="站点数据信息"><a href="#站点数据信息" class="headerlink" title="站点数据信息"></a>站点数据信息</h3><p>站点：厦门站<br>坐标：Latitude: 24-27N , Longitude: 118-04E<br>时区：120E (GMT + 8 hr)<br>观测时间范围：1954—1997<br>观测手段：Gauge rods (1954-1964);<br>&emsp;&emsp;&emsp;&emsp;&emsp;HCJ1, float gauge (1965-1990);<br>&emsp;&emsp;&emsp;&emsp;&emsp;SCA1-2 (1990-)<br>现有数据：Hourly   Daily   Monthly<br><img src="http://source.jiangyayu.cn/tide/1.png"></p>
+<h3 id="数据质量控制"><a href="#数据质量控制" class="headerlink" title="数据质量控制"></a>数据质量控制</h3><p>&emsp;&emsp;质量评估主要是基于每小时数据的残差（观察到的数据减去预测潮汐）。该评估也适用由质量控制的每小时数据得到的每日和每月的数据。<br>&emsp;&emsp;对每小时数据的订正：<br>（1）对于时间跨度小于25小时的存在差异或明显错误的数据，使用潮流预测方法*进行填充。<br>（2）对于一小时确切的增量存在的时序错误通过移动数据的方法来进行校正。<br>（3）在确定水尺读数或者固定准基点相对读数确定参考水位变化不是一个自然事件之后，参考水位的变化才被更正。如果对比读数缺失或不完整，将数据与邻近的站位进行比较或许能保证对那些明显变化进行调节的正确性。<br>（4）基准面变化没有解决的数据不使用。然而，如果数据在未解决的变化之前或之后，数据的充足的时间跨度是可用的，那么质量保证的数据的一个子集是可以使用的。因此，质量评估的跨度领域可能不与分散数据集的跨度匹配。随着有问题的基准面变化被解决，这数据集也将被更新。虽然这个政策增加了一些复杂性，但是它允许在质量保证下更快速的传播。<br>&emsp;&emsp;每年,以下信息从质量控制每小时记录的数据和日期作为第n个天从今年1月1日:<br>（5）完整性指数(CI)基于可用的时间比例数据；<br>（6）差距超过一天的列表；<br>（7）总结的时间跨度超过6但少雨25小时的连续缺失或明显错误的数据已经更换；<br>（8）总结剩余系列中有问题的波动。如果大于25厘米，指出残差波动。</p>
+<h3 id="水位随时间变化"><a href="#水位随时间变化" class="headerlink" title="水位随时间变化"></a>水位随时间变化</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">%% input the data</span></div><div class="line">fid = fopen(<span class="string">'h376a95.dat'</span>);</div><div class="line">data_cell = textscan...,</div><div class="line">    (fid,<span class="string">'%s%s%f%f%f%f%f%f%f%f%f%f%f%f%f'</span>,<span class="string">'headerlines'</span>,<span class="number">1</span>);</div><div class="line">fclose(fid);</div><div class="line">data = cell2mat(data_cell(<span class="number">3</span>:<span class="number">15</span>));</div><div class="line">elev = data(:,<span class="number">2</span>:<span class="number">13</span>)';</div><div class="line">elev = elev(:);</div><div class="line"> </div><div class="line"><span class="comment">%% plot the Hourly Elevation</span></div><div class="line">plot(elev(<span class="number">1</span>:<span class="number">31</span>*<span class="number">24</span>)/<span class="number">1000</span>);</div><div class="line">title(<span class="string">'Hourly Elevation (Xiamen Station 1995.01)'</span>,<span class="string">'FontSize'</span>,<span class="number">14</span>);</div><div class="line">xlabel(<span class="string">'date'</span>,<span class="string">'FontSize'</span>,<span class="number">12</span>);</div><div class="line">ylabel(<span class="string">'Elevation /m'</span>,<span class="string">'FontSize'</span>,<span class="number">12</span>);</div><div class="line">set(gca,<span class="string">'XTick'</span>,<span class="number">0</span>:<span class="number">24</span>:<span class="number">31</span>*<span class="number">24</span>);  </div><div class="line">set(gca,<span class="string">'XTickLabel'</span>,<span class="number">0</span>:<span class="number">31</span>);</div></pre></td></tr></table></figure>
+<p><img src="http://source.jiangyayu.cn/tide/2.png"></p>
+<h2 id="调和分析"><a href="#调和分析" class="headerlink" title="调和分析"></a>调和分析</h2><h3 id="分析工具"><a href="#分析工具" class="headerlink" title="分析工具"></a>分析工具</h3><p>t_tide潮汐调和分析工具下载：<a href="http://nccoos.org/projects/long-bay-wintertime-blooms/code/toolboxes/t_tide" target="_blank" rel="external">http://nccoos.org/projects/long-bay-wintertime-blooms/code/toolboxes/t_tide</a><br>本站下载：<a href="http://source.jiangyayu.cn/tide/t_tide_v1.3beta.zip" target="_blank" rel="external">t_tide_v1.3beta.zip</a></p>
+<h3 id="t-tide调和分析"><a href="#t-tide调和分析" class="headerlink" title="t_tide调和分析"></a>t_tide调和分析</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">t_tide(elev,<span class="string">'star ttime'</span>,[<span class="number">1995</span>,<span class="number">01</span>,<span class="number">01</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>],...</div><div class="line"><span class="string">'latitude'</span>,<span class="number">24.45</span>,<span class="string">'shallow'</span>,<span class="string">''</span>,<span class="string">'synthesis'</span>,<span class="number">1</span>);</div></pre></td></tr></table></figure>
+<div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><a href="http://source.jiangyayu.cn/tide/3.png" data-fancybox="fancyboxgroup" class="fancybox" target="_blank" rel="external"><img src="http://source.jiangyayu.cn/tide/3.png"></a></div><div class="group-picture-column" style="width: 50%;"><a href="http://source.jiangyayu.cn/tide/4.png" data-fancybox="fancyboxgroup" class="fancybox" target="_blank" rel="external"><img src="http://source.jiangyayu.cn/tide/4.png"></a></div></div></div></div>
+<h3 id="通过显著性检验的分潮"><a href="#通过显著性检验的分潮" class="headerlink" title="通过显著性检验的分潮"></a>通过显著性检验的分潮</h3><p>2Q1  SIG  RHO  TAU  BET  NO1  PHI  THE  J1  SO1  PS  2N2  MU2  NU2  LDA  L2  MSN     MO3  M3  SO3     MK3     SK3  MN4  M4  MS4  MK4     2MN     M6  2MS     2MK  2SM  MSK  3MK  M8</p>
+<h3 id="主要分潮的调和常数"><a href="#主要分潮的调和常数" class="headerlink" title="主要分潮的调和常数"></a>主要分潮的调和常数</h3><p><img src="http://source.jiangyayu.cn/tide/5.png" style="zoom:0.7"></p>
+<h3 id="潮型系数"><a href="#潮型系数" class="headerlink" title="潮型系数"></a>潮型系数</h3><p>&emsp;&emsp;计算公式：<br>$$A=\dfrac {H_{K_{1}}+H_{O_{1}}} {H_{M_{2}}}$$<br>&emsp;&emsp;由调和分析结果得：$H_{K_{1}}=341.3936$，$H_{O_{1}}= 281.1318$， $H_{M_{2}}= 1834.2106$ 。<br>&emsp;&emsp;代入公式求得：<br>$$A = 0.3394 &lt; 0.5$$<br>故：厦门站潮汐类型为半日潮。</p>
 
       
     </div>
@@ -506,11 +490,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/服务器/" rel="tag"><i class="fa fa-tag"></i> 服务器</a>
+            <a href="/tags/matlab/" rel="tag"><i class="fa fa-tag"></i> matlab</a>
           
-            <a href="/tags/单点登录/" rel="tag"><i class="fa fa-tag"></i> 单点登录</a>
+            <a href="/tags/海洋数据分析/" rel="tag"><i class="fa fa-tag"></i> 海洋数据分析</a>
           
-            <a href="/tags/CAS/" rel="tag"><i class="fa fa-tag"></i> CAS</a>
+            <a href="/tags/潮汐调和分析/" rel="tag"><i class="fa fa-tag"></i> 潮汐调和分析</a>
           
         </div>
       
@@ -519,8 +503,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/archives/tomcat-install/" rel="next" title="CentOS6.5中Tomcat的安装配置">
-                <i class="fa fa-chevron-left"></i> CentOS6.5中Tomcat的安装配置
+              <a href="/archives/temp-salin.html" rel="next" title="海洋要素计算：温盐跃层的分析">
+                <i class="fa fa-chevron-left"></i> 海洋要素计算：温盐跃层的分析
               </a>
             
           </div>
@@ -529,8 +513,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/archives/csharp-excel-to-shape/" rel="prev" title="基于Arcobject二次开发的Excel数据转换Shape文件的C#批处理应用程序">
-                基于Arcobject二次开发的Excel数据转换Shape文件的C#批处理应用程序 <i class="fa fa-chevron-right"></i>
+              <a href="/archives/Orthogonal-decomposition.html" rel="prev" title="matlab物理场的正交分解">
+                matlab物理场的正交分解 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -557,7 +541,7 @@
           
   <div class="comments" id="comments">
     
-      <div id="SOHUCS" sid="/archives/CAS-Single-Sign-On/"></div>
+      <div id="SOHUCS" sid="/"></div>
     
   </div>
 
@@ -915,7 +899,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SSO和CAS"><span class="nav-number">1.</span> <span class="nav-text">SSO和CAS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">2.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启用HTTPS传输协议"><span class="nav-number">3.</span> <span class="nav-text">启用HTTPS传输协议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置CAS服务器"><span class="nav-number">4.</span> <span class="nav-text">配置CAS服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置应用服务器"><span class="nav-number">5.</span> <span class="nav-text">配置应用服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通过数据库中的用户密码认证"><span class="nav-number">6.</span> <span class="nav-text">通过数据库中的用户密码认证</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据处理"><span class="nav-number">1.</span> <span class="nav-text">数据处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据来源"><span class="nav-number">1.1.</span> <span class="nav-text">数据来源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#站点数据信息"><span class="nav-number">1.2.</span> <span class="nav-text">站点数据信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据质量控制"><span class="nav-number">1.3.</span> <span class="nav-text">数据质量控制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#水位随时间变化"><span class="nav-number">1.4.</span> <span class="nav-text">水位随时间变化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调和分析"><span class="nav-number">2.</span> <span class="nav-text">调和分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#分析工具"><span class="nav-number">2.1.</span> <span class="nav-text">分析工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#t-tide调和分析"><span class="nav-number">2.2.</span> <span class="nav-text">t_tide调和分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过显著性检验的分潮"><span class="nav-number">2.3.</span> <span class="nav-text">通过显著性检验的分潮</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主要分潮的调和常数"><span class="nav-number">2.4.</span> <span class="nav-text">主要分潮的调和常数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#潮型系数"><span class="nav-number">2.5.</span> <span class="nav-text">潮型系数</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="matlab,海洋数据分析,温盐跃层," />
+  <meta name="keywords" content="C#,线性方程组," />
 
 
 
@@ -86,36 +86,33 @@
 
 
 
-<meta name="description" content="摘要&amp;emsp;&amp;emsp;提供某次海洋观测的RBR-CTD测得的海洋要素数据，要求完成以下内容：
-
-根据数据的头文件，给出观测的基本信息。
-进行异常数据的剔除，仅保留“下放（Down-casting）”时观测的数据。
-去尖峰。
-将数据处理成1m平均的形式。保存数据文件。
-绘制温度和盐度的剖面图。">
+<meta name="description" content="当直接求解方程组 $Ax = b$ 较困难时, 我们可以求解一个近似方程组$$Mx = b$$设其解为 $x^{(1)}$易知它与真解之间的误差满足$$A\left(x_{*}-x^{(1)}\right) = b-Ax^{(1)}$$如果 $x^{(1)}$ 已经满足精度要求, 则停止计算, 否则需要修正。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="海洋要素计算：温盐跃层的分析">
-<meta property="og:url" content="https://blog.jiangyayu.cn/archives/temp-salin/index.html">
+<meta property="og:title" content="迭代法求解线性方程组--C#实现Jacobi、Gauss-Seidel、SOR迭代法">
+<meta property="og:url" content="https://blog.jiangyayu.cn/archives/linear-equation.html">
 <meta property="og:site_name" content="Alex's Blog">
-<meta property="og:description" content="摘要&amp;emsp;&amp;emsp;提供某次海洋观测的RBR-CTD测得的海洋要素数据，要求完成以下内容：
-
-根据数据的头文件，给出观测的基本信息。
-进行异常数据的剔除，仅保留“下放（Down-casting）”时观测的数据。
-去尖峰。
-将数据处理成1m平均的形式。保存数据文件。
-绘制温度和盐度的剖面图。">
-<meta property="og:image" content="http://source.jiangyayu.cn/temp-salin/temp-salin.jpg">
-<meta property="og:updated_time" content="2017-03-02T14:50:22.716Z">
+<meta property="og:description" content="当直接求解方程组 $Ax = b$ 较困难时, 我们可以求解一个近似方程组$$Mx = b$$设其解为 $x^{(1)}$易知它与真解之间的误差满足$$A\left(x_{*}-x^{(1)}\right) = b-Ax^{(1)}$$如果 $x^{(1)}$ 已经满足精度要求, 则停止计算, 否则需要修正。">
+<meta property="og:image" content="http://source.jiangyayu.cn/linear-equation/1.png">
+<meta property="og:image" content="http://source.jiangyayu.cn/linear-equation/2.png">
+<meta property="og:image" content="http://source.jiangyayu.cn/linear-equation/4.png">
+<meta property="og:image" content="http://source.jiangyayu.cn/linear-equation/5.png">
+<meta property="og:image" content="http://source.jiangyayu.cn/linear-equation/6.png">
+<meta property="og:image" content="http://source.jiangyayu.cn/linear-equation/8.png">
+<meta property="og:image" content="http://source.jiangyayu.cn/linear-equation/4.png">
+<meta property="og:image" content="http://source.jiangyayu.cn/linear-equation/9.png">
+<meta property="og:image" content="http://source.jiangyayu.cn/linear-equation/10.png">
+<meta property="og:image" content="http://source.jiangyayu.cn/linear-equation/11.png">
+<meta property="og:image" content="http://source.jiangyayu.cn/linear-equation/5.png">
+<meta property="og:image" content="http://source.jiangyayu.cn/linear-equation/12.png">
+<meta property="og:image" content="http://source.jiangyayu.cn/linear-equation/13.png">
+<meta property="og:image" content="http://source.jiangyayu.cn/linear-equation/14.png">
+<meta property="og:image" content="http://source.jiangyayu.cn/linear-equation/15.png">
+<meta property="og:image" content="http://source.jiangyayu.cn/linear-equation/16.png">
+<meta property="og:updated_time" content="2017-03-20T11:41:46.539Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="海洋要素计算：温盐跃层的分析">
-<meta name="twitter:description" content="摘要&amp;emsp;&amp;emsp;提供某次海洋观测的RBR-CTD测得的海洋要素数据，要求完成以下内容：
-
-根据数据的头文件，给出观测的基本信息。
-进行异常数据的剔除，仅保留“下放（Down-casting）”时观测的数据。
-去尖峰。
-将数据处理成1m平均的形式。保存数据文件。
-绘制温度和盐度的剖面图。">
-<meta name="twitter:image" content="http://source.jiangyayu.cn/temp-salin/temp-salin.jpg">
+<meta name="twitter:title" content="迭代法求解线性方程组--C#实现Jacobi、Gauss-Seidel、SOR迭代法">
+<meta name="twitter:description" content="当直接求解方程组 $Ax = b$ 较困难时, 我们可以求解一个近似方程组$$Mx = b$$设其解为 $x^{(1)}$易知它与真解之间的误差满足$$A\left(x_{*}-x^{(1)}\right) = b-Ax^{(1)}$$如果 $x^{(1)}$ 已经满足精度要求, 则停止计算, 否则需要修正。">
+<meta name="twitter:image" content="http://source.jiangyayu.cn/linear-equation/1.png">
 
 
 
@@ -143,13 +140,13 @@
 
 
 
-  <link rel="canonical" href="https://blog.jiangyayu.cn/archives/temp-salin/"/>
+  <link rel="canonical" href="https://blog.jiangyayu.cn/archives/linear-equation.html"/>
 
 
 
 
 
-  <title> 海洋要素计算：温盐跃层的分析 | Alex's Blog </title>
+  <title> 迭代法求解线性方程组--C#实现Jacobi、Gauss-Seidel、SOR迭代法 | Alex's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -321,7 +318,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://blog.jiangyayu.cn/archives/temp-salin/">
+  <link itemprop="mainEntityOfPage" href="https://blog.jiangyayu.cn/archives/linear-equation.html">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Alexander Chiang">
@@ -345,7 +342,7 @@
             
             
               
-                海洋要素计算：温盐跃层的分析
+                迭代法求解线性方程组--C#实现Jacobi、Gauss-Seidel、SOR迭代法
               
             
           </h1>
@@ -360,8 +357,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2013-10-15T13:54:39+08:00">
-                2013-10-15
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-04-12T09:26:25+08:00">
+                2016-04-12
               </time>
             
 
@@ -383,8 +380,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/数据处理分析/" itemprop="url" rel="index">
-                    <span itemprop="name">数据处理分析</span>
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
                   </a>
                 </span>
 
@@ -402,8 +399,8 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/archives/temp-salin/#SOHUCS" itemprop="discussionUrl">
-                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="/archives/temp-salin/" itemprop="commentsCount"></span>
+                <a href="/archives/linear-equation.html#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="/archives/linear-equation.html" itemprop="commentsCount"></span>
                 </a>
               
               </span>
@@ -414,7 +411,7 @@
 
           
           
-             <span id="/archives/temp-salin/" class="leancloud_visitors" data-flag-title="海洋要素计算：温盐跃层的分析">
+             <span id="/archives/linear-equation.html" class="leancloud_visitors" data-flag-title="迭代法求解线性方程组--C#实现Jacobi、Gauss-Seidel、SOR迭代法">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -441,22 +438,21 @@
       
 
       
-        <h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>&emsp;&emsp;提供某次海洋观测的RBR-CTD测得的海洋要素数据，要求完成以下内容：</p>
-<ol>
-<li>根据数据的头文件，给出观测的基本信息。</li>
-<li>进行异常数据的剔除，仅保留“下放（Down-casting）”时观测的数据。</li>
-<li>去尖峰。</li>
-<li>将数据处理成1m平均的形式。保存数据文件。</li>
-<li>绘制温度和盐度的剖面图。<a id="more"></a>
-</li>
+        <p>当直接求解方程组 $Ax = b$ 较困难时, 我们可以求解一个近似方程组<br>$$Mx = b$$<br>设其解为 $x^{(1)}$<br>易知它与真解之间的误差满足<br>$$A\left(x_{*}-x^{(1)}\right) = b-Ax^{(1)}$$<br>如果 $x^{(1)}$ 已经满足精度要求, 则停止计算, 否则需要修正。<br><a id="more"></a><br>设修正量为$\Delta x$ 显然$\Delta x$满足方程 $A\Delta x = b-Ax^{(1)}$. 但由于直接求解该方程比较困难, 因此我们还是求解近似<br>$$M\Delta x = b − Ax^{(1)}$$<br>于是得到修正后的近似解<br>$$ x^{(2)}= x^{(1)}+\Delta x = x^{(1)}+M^{-1}\left(b-Ax^{(1)}\right) $$<br>若$x^{(2)}$已经满足精度要求, 则停止计算, 否则继续按以上的方式进行修正。<br>不断重复以上步骤, 于是, 我们就得到一个序列<br>$$x^{(1)},x^{(2)},…,x^{(k)},…$$<br>满足以下递推关系:<br>$$x^{(k+1)}=x^{(k)}+M^{-1}\left(b-Ax^{(k)}\right),  k=1,2,…$$<br>由于每次迭代的格式是一样的, 因此称为定常迭代。</p>
+<p><strong>注：</strong>通常, 构造一个好的定常迭代, 需要考虑以下两点:<br>(1) 以$M$为系数矩阵的线性方程组必须要比原线性方程组容易求解;<br>(2) $M$应该是$A$的一个很好的近似, 或者迭代序列${x^{k}}$要收敛</p>
+<h2 id="C-实现"><a href="#C-实现" class="headerlink" title="C#实现"></a>C#实现</h2><h3 id="应用程序界面"><a href="#应用程序界面" class="headerlink" title="应用程序界面"></a>应用程序界面</h3><p>&emsp;&emsp;应用程序包含菜单、输入输出、设置和日志模块，如图所示：<br><img src="http://source.jiangyayu.cn/linear-equation/1.png"></p>
+<h3 id="数据说明"><a href="#数据说明" class="headerlink" title="数据说明"></a>数据说明</h3><ol>
+<li>路径说明<br>&emsp;&emsp;程序启动时，会自动读取所在路径，默认的输入输出路径为应用程序目录下的input和output文件夹(下图所示)。程序计算所需的输入数据存应存放于input文件夹中，最终计算结果将输出到output文件夹中。<br>也可以通过修改输入输出路径的方法，重新指定输入数据存放的位置和最终计算结果的输出位置。<br><img src="http://source.jiangyayu.cn/linear-equation/2.png"></li>
+<li>数据格式<br>（1）输入数据<br>&emsp;&emsp;位于应用程序所在路径下的input文件夹的.txt文本文件，其数据格式为：<br><img src="http://source.jiangyayu.cn/linear-equation/4.png"><br>第一行为线性方程组的未知数个数；<br>第二行起的数据代表线性方程组系数的增广矩阵，每一行表示一个线性方程。</li>
 </ol>
-<h2 id="文件下载"><a href="#文件下载" class="headerlink" title="文件下载"></a>文件下载</h2><p>RBR-CTD观测数据：<a href="http://source.jiangyayu.cn/temp-salin/G4.txt" download="" target="_blank" rel="external">G4.txt</a><br>去尖峰函数：<a href="http://source.jiangyayu.cn/temp-salin/despike.m" target="_blank" rel="external">despike.m</a></p>
-<h2 id="处理流程"><a href="#处理流程" class="headerlink" title="处理流程"></a>处理流程</h2><h3 id="打开文件"><a href="#打开文件" class="headerlink" title="打开文件"></a>打开文件</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">% file open</span></div><div class="line">fid1 = fopen(<span class="string">'G4.txt'</span>);</div><div class="line"><span class="comment">% display the information of the data </span></div><div class="line"><span class="keyword">for</span> ii = <span class="number">1</span>:<span class="number">4</span></div><div class="line">    hdata&#123;ii&#125; = fgets(fid1);</div><div class="line">    <span class="built_in">disp</span>(hdata&#123;ii&#125;)   </div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<h3 id="读取数据"><a href="#读取数据" class="headerlink" title="读取数据"></a>读取数据</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">% Read Data </span></div><div class="line"></div><div class="line"><span class="comment">% [Date,Time,Cond,Temp,Pres,D_O2,PAR,FlC_a,Depth,Salin,SpecCond,DensAnom,SoS,xdO2C] = ...,</span></div><div class="line"><span class="comment">% textread('G4.txt','%s%s%f%f%f%f%f%f%f%f%f%f%f%f','headerlines',51);</span></div><div class="line">data_cell = textscan(fid1,<span class="string">'%s%s%f%f%f%f%f%f%f%f%f%f%f%f'</span>,<span class="string">'headerlines'</span>,<span class="number">51</span>);</div><div class="line">fclose(fid1);</div></pre></td></tr></table></figure>
-<h3 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="comment">%% data processing</span></div><div class="line"><span class="comment">% cell to mat</span></div><div class="line">data = cell2mat(data_cell(<span class="number">3</span>:<span class="number">14</span>));</div><div class="line">Depth = data(:,<span class="number">9</span>);</div><div class="line"><span class="comment">% find the data during Down-casting</span></div><div class="line">index = <span class="built_in">find</span>(Depth &gt; <span class="number">0</span> &amp; Depth &lt; max(Depth));</div><div class="line">mod_data = data(index,:);</div><div class="line"><span class="comment">% despike</span></div><div class="line">dsp_data=despike(mod_data,<span class="number">3</span>);</div><div class="line"><span class="comment">% write to text file</span></div><div class="line"><span class="comment">% fprintf(fid2,'%f  %f  %f  %f  %f  %f  %f  %f  %f  %f  %f  %f\n',dsp_data');</span></div><div class="line"></div><div class="line"><span class="comment">% get depth temp and salin</span></div><div class="line">dsp_depth = dsp_data(:,<span class="number">7</span>)';</div><div class="line">dsp_temp = dsp_data(:,<span class="number">2</span>)';</div><div class="line">dsp_salin = dsp_data(:,<span class="number">8</span>)';</div><div class="line"></div><div class="line"><span class="comment">% 	initializing the variables</span></div><div class="line">yi = <span class="number">0</span>:<span class="number">1.0</span>:max(dsp_depth);</div><div class="line">ave_temp = <span class="built_in">zeros</span>(<span class="number">1</span>,<span class="built_in">length</span>(yi));</div><div class="line">ave_salin = <span class="built_in">zeros</span>(<span class="number">1</span>,<span class="built_in">length</span>(yi));</div><div class="line"><span class="comment">% the average of temp and salin in each meters</span></div><div class="line"><span class="keyword">for</span> ii = <span class="number">1</span>:<span class="built_in">length</span>(yi)</div><div class="line">   ave_temp(ii) = mean( dsp_temp(<span class="built_in">find</span>(dsp_depth &gt; ii<span class="number">-1</span> &amp; dsp_depth &lt;ii)));</div><div class="line">   ave_salin(ii) = mean( dsp_salin(<span class="built_in">find</span>(dsp_depth &gt; ii<span class="number">-1</span> &amp; dsp_depth &lt;ii)));</div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<h3 id="数据导出"><a href="#数据导出" class="headerlink" title="数据导出"></a>数据导出</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">%% output new data to a text file</span></div><div class="line">fid2 = fopen(<span class="string">'new_Data.txt'</span>,<span class="string">'a+'</span>);</div><div class="line"><span class="keyword">for</span> ii = <span class="number">1</span>:<span class="number">4</span></div><div class="line">fprintf(fid2,hdata&#123;ii&#125;);</div><div class="line"><span class="keyword">end</span></div><div class="line">fprintf(fid2,<span class="string">'%s\n'</span>,<span class="string">' '</span>);</div><div class="line">fprintf(fid2,<span class="string">'%s%s%s\n'</span>,<span class="string">'depth    temp     salin '</span>);</div><div class="line">new_data = [yi;ave_temp;ave_salin];</div><div class="line">fprintf(fid2,<span class="string">'%s\n'</span>,<span class="string">' '</span>);</div><div class="line">fprintf(fid2,<span class="string">'%6.4f  %6.4f  %6.4f\n'</span>,new_data);</div><div class="line">fclose(fid2);</div></pre></td></tr></table></figure>
-<h3 id="绘制温盐跃层图"><a href="#绘制温盐跃层图" class="headerlink" title="绘制温盐跃层图"></a>绘制温盐跃层图</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">%% plot</span></div><div class="line">h1 = plot(ave_temp,-yi,<span class="string">'--m'</span>);</div><div class="line">xlabel(<span class="string">'Temperature  /\circC'</span>);</div><div class="line">ylabel(<span class="string">'Depth /m'</span>);</div><div class="line">set(gca,<span class="string">'position'</span>,<span class="string">'default'</span>);</div><div class="line">set(gca,<span class="string">'YTickLabel'</span>,&#123;[<span class="number">70</span>:<span class="number">-10</span>:<span class="number">0</span>]&#125;);  <span class="comment">% change the y axis label</span></div><div class="line">box off;</div><div class="line">axes;</div><div class="line">h2 = plot(ave_salin,-yi,<span class="string">'b'</span>);</div><div class="line">xlabel(<span class="string">'Salinity'</span>);</div><div class="line">set(gca,<span class="string">'position'</span>,<span class="string">'default'</span>,<span class="string">'xaxislocation'</span>,<span class="string">'top'</span>,<span class="string">'color'</span>,<span class="string">'none'</span>);</div><div class="line">set(gca,<span class="string">'YTickLabel'</span>,&#123;&#125;,<span class="string">'yaxislocation'</span>,<span class="string">'right'</span>);</div><div class="line">box off;</div><div class="line"><span class="comment">% show the legend</span></div><div class="line">legend([h1,h2],<span class="string">'Temperature'</span>,<span class="string">'Salinity'</span>,<span class="string">'Location'</span>, <span class="string">'NorthWest'</span>);</div><div class="line"><span class="comment">% save as jpg file</span></div><div class="line">saveas(gcf,<span class="string">'temp-salin'</span>,<span class="string">'jpg'</span>);</div></pre></td></tr></table></figure>
-<h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><p><img src="http://source.jiangyayu.cn/temp-salin/temp-salin.jpg"></p>
+<p>（2）输出结果<br>&emsp;&emsp;位于应用程序所在路径下的output文件夹的.txt文本文件，其数据格式为：<br>从第一行开始分别表示线性方程组的解x1,x2,x3,…的值，最后两行分别标识所使用迭代方法和迭代次数。<br><img src="http://source.jiangyayu.cn/linear-equation/5.png"></p>
+<h3 id="参数设置"><a href="#参数设置" class="headerlink" title="参数设置"></a>参数设置</h3><p><img src="http://source.jiangyayu.cn/linear-equation/6.png"><br>如图所示部分为迭代求解过程中的参数数值的设定，<br><strong>最大迭代次数：</strong>指示迭代过程中，最大迭代的次数。迭代次数超过该值时停止迭代。<br><strong>收敛标准（ε）:</strong>当两次迭代所得数值之差的绝对值均小于某一给定的数ε时，视为已求得近似解。此时停止迭代，输出结果。<br>(<strong>注：</strong>以上条件满足其一，即停止迭代。)<br><strong>迭代方法：</strong>求解使用的迭代方法。该程序内置迭代方法有：Jacobi迭代法、Gauss-Seidel迭代法、逐次超松弛迭代法(SOR法)。<br><strong>松弛因子(ω)：</strong>SOR迭代法的参数，一般1&lt;ω&lt;2；</p>
+<p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;0&lt;ω&lt;1时，称为亚松弛法；</p>
+<p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;ω &gt; 1时，称为超松弛法；</p>
+<p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Ω=1时，即为高斯-塞德尔迭代；</p>
+<h3 id="计算说明"><a href="#计算说明" class="headerlink" title="计算说明"></a>计算说明</h3><p>（1）    应用程序会遍历输入文件夹中的所有.txt文件，按照指定的数据格式读取文件<br><img src="http://source.jiangyayu.cn/linear-equation/8.png"><br>读取的输入文件格式为：<br><img src="http://source.jiangyayu.cn/linear-equation/4.png"><br>第一行为线性方程组的未知数个数；<br>第二行起的数据代表线性方程组系数的增广矩阵，每一行表示一个线性方程。<br>（2）    可以根据文件内容生成并显示方程<br><img src="http://source.jiangyayu.cn/linear-equation/9.png"><br>（3）    根据指定的参数和迭代方法求解方程组<br>（4）    显示求解结果<br><img src="http://source.jiangyayu.cn/linear-equation/10.png"><br>（5）    将最终结果存放至输出文件夹中，并命名为xxx_solution.txt<br><img src="http://source.jiangyayu.cn/linear-equation/11.png"><br><img src="http://source.jiangyayu.cn/linear-equation/5.png"><br>从第一行开始分别表示线性方程组的解x1,x2,x3,…的值，最后两行分别标识所使用迭代方法和迭代次数。</p>
+<h3 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h3><p>（1）    路径错误<br><img src="http://source.jiangyayu.cn/linear-equation/12.png"><br>（2） 文件为空<br><img src="http://source.jiangyayu.cn/linear-equation/13.png"><br>（3） 数据内容错误<br><img src="http://source.jiangyayu.cn/linear-equation/14.png"><br><img src="http://source.jiangyayu.cn/linear-equation/15.png"><br>（4） 解不收敛<br><img src="http://source.jiangyayu.cn/linear-equation/16.png"></p>
+<h3 id="关键步骤代码"><a href="#关键步骤代码" class="headerlink" title="关键步骤代码"></a>关键步骤代码</h3><p>迭代部分的源码：<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div></pre></td><td class="code"><pre><div class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></div><div class="line"><span class="comment"><span class="doctag">///</span> 方程组系数增广矩阵等价变换</span></div><div class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></div><div class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="c"&gt;</span>输入增广矩阵<span class="doctag">&lt;/param&gt;</span></span></div><div class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;returns&gt;</span>等价变换后的增广矩阵<span class="doctag">&lt;/returns&gt;</span></span></div><div class="line"><span class="keyword">private</span> <span class="keyword">static</span> List&lt;<span class="keyword">double</span>[]&gt;  matTrans(List&lt;<span class="keyword">double</span>[]&gt; c)</div><div class="line">&#123;</div><div class="line">    List&lt;<span class="keyword">double</span>[]&gt; cTrans = <span class="keyword">new</span> List&lt;<span class="keyword">double</span>[]&gt;();</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; c.Count; i++)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">double</span>[] ci = <span class="keyword">new</span> <span class="keyword">double</span>[c[i].Length];</div><div class="line">        c[i].CopyTo(ci, <span class="number">0</span>);</div><div class="line">        <span class="keyword">if</span> (ci[i] == <span class="number">0</span>)</div><div class="line">        &#123;</div><div class="line">            ci = c[i];</div><div class="line">            ci[i] = <span class="number">1</span>;</div><div class="line">            ci[ci.Length - <span class="number">1</span>] = -ci[ci.Length - <span class="number">1</span>];</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span></div><div class="line">        &#123;</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; ci.Length ; j++)</div><div class="line">            &#123;</div><div class="line">                ci[j] = -ci[j] / c[i][i];</div><div class="line">            &#125;</div><div class="line">            ci[i] = <span class="number">0</span>;</div><div class="line">            ci[ci.Length - <span class="number">1</span>] = -ci[ci.Length - <span class="number">1</span>];</div><div class="line">        &#125;</div><div class="line">        cTrans.Add(ci);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> cTrans;</div><div class="line"></div><div class="line">&#125;</div><div class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></div><div class="line"><span class="comment"><span class="doctag">///</span> Jacobi迭代法求解线性方程组</span></div><div class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></div><div class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="c"&gt;</span>方程组系数的增广矩阵<span class="doctag">&lt;/param&gt;</span></span></div><div class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="IterativeTimes"&gt;</span>最大迭代次数<span class="doctag">&lt;/param&gt;</span></span></div><div class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="Epsilon"&gt;</span>收敛标准<span class="doctag">&lt;/param&gt;</span></span></div><div class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="t"&gt;</span>迭代次数<span class="doctag">&lt;/param&gt;</span></span></div><div class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="solution"&gt;</span>求解结果<span class="doctag">&lt;/param&gt;</span></span></div><div class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;returns&gt;</span>执行结果，0表示求解成功<span class="doctag">&lt;/returns&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">Jacobi</span>(<span class="params">List&lt;<span class="keyword">double</span>[]&gt; c, <span class="keyword">int</span> IterativeTimes, <span class="keyword">double</span> Epsilon, <span class="keyword">out</span> <span class="keyword">int</span> t, <span class="keyword">double</span>[] solution</span>)</span></div><div class="line">&#123;</div><div class="line">    List&lt;<span class="keyword">double</span>[]&gt; cTrans = matTrans(c);</div><div class="line">    <span class="keyword">double</span>[] history = <span class="keyword">new</span> <span class="keyword">double</span>[cTrans.Count];</div><div class="line">    <span class="keyword">double</span>[] now = <span class="keyword">new</span> <span class="keyword">double</span>[cTrans.Count];</div><div class="line">    <span class="keyword">int</span> times = <span class="number">0</span>;</div><div class="line">    <span class="keyword">bool</span> isTrueSolution = <span class="literal">false</span>;</div><div class="line">    <span class="keyword">while</span> (times &lt;= IterativeTimes &amp;&amp; !isTrueSolution)</div><div class="line">    &#123;</div><div class="line">        <span class="comment">//迭代一次</span></div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; cTrans.Count; i++)</div><div class="line">        &#123;</div><div class="line">            now[i] = <span class="number">0</span>;</div><div class="line">            <span class="keyword">double</span>[] Con = cTrans[i];</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; Con.Length - <span class="number">1</span>; j++)</div><div class="line">            &#123;</div><div class="line">                now[i] += Con[j] * history[j];</div><div class="line">            &#125;</div><div class="line">            now[i] += Con[Con.Length - <span class="number">1</span>];</div><div class="line">            <span class="keyword">if</span> (Double.IsNaN(now[i]) || Double.IsInfinity(now[i]))</div><div class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> Exception(<span class="string">"错误：方程解出现NaN或者无穷大,请验证方程组的收敛性！"</span>);</div><div class="line">        &#125;</div><div class="line">        times++;</div><div class="line">        <span class="comment">//解是否符合条件</span></div><div class="line">        isTrueSolution = <span class="literal">true</span>;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; now.Length; i++)</div><div class="line">        &#123;</div><div class="line">            <span class="keyword">if</span> (Math.Abs(now[i] - history[i]) &gt; Epsilon)</div><div class="line">            &#123;</div><div class="line">                isTrueSolution = <span class="literal">false</span>;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">//更新旧解</span></div><div class="line">        now.CopyTo(history, <span class="number">0</span>);</div><div class="line">    &#125;</div><div class="line">    t = times;</div><div class="line">    now.CopyTo(solution, <span class="number">0</span>);</div><div class="line">    <span class="comment">//超出迭代次数求解失败</span></div><div class="line">    <span class="keyword">if</span> (times &gt; IterativeTimes) <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    <span class="keyword">else</span></div><div class="line">        <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></div><div class="line"><span class="comment"><span class="doctag">///</span> SOR迭代法求解线性方程组</span></div><div class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></div><div class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="c"&gt;</span>方程组系数的增广矩阵<span class="doctag">&lt;/param&gt;</span></span></div><div class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="IterativeTimes"&gt;</span>最大迭代次数<span class="doctag">&lt;/param&gt;</span></span></div><div class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="Epsilon"&gt;</span>收敛标准<span class="doctag">&lt;/param&gt;</span></span></div><div class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="omega"&gt;</span>松弛因子<span class="doctag">&lt;/param&gt;</span></span></div><div class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="t"&gt;</span>迭代次数<span class="doctag">&lt;/param&gt;</span></span></div><div class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="solution"&gt;</span>求解结果<span class="doctag">&lt;/param&gt;</span></span></div><div class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;returns&gt;</span>执行结果，0表示求解成功<span class="doctag">&lt;/returns&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">SOR</span>(<span class="params">List&lt;<span class="keyword">double</span>[]&gt; c, <span class="keyword">int</span> IterativeTimes, <span class="keyword">double</span> Epsilon,<span class="keyword">double</span> omega,  <span class="keyword">out</span> <span class="keyword">int</span> t, <span class="keyword">double</span>[] solution</span>)</span></div><div class="line">&#123;</div><div class="line">    List&lt;<span class="keyword">double</span>[]&gt; cTrans = matTrans(c);</div><div class="line">    <span class="keyword">double</span>[] history = <span class="keyword">new</span> <span class="keyword">double</span>[cTrans.Count];</div><div class="line">    <span class="keyword">double</span>[] now = <span class="keyword">new</span> <span class="keyword">double</span>[cTrans.Count];</div><div class="line">    <span class="keyword">int</span> times = <span class="number">0</span>;</div><div class="line">    <span class="keyword">bool</span> isTrueSolution = <span class="literal">false</span>;</div><div class="line">    <span class="keyword">while</span> (times &lt;= IterativeTimes &amp;&amp; !isTrueSolution)</div><div class="line">    &#123;        <span class="comment">//一次迭代</span></div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; cTrans.Count; i++)</div><div class="line">        &#123;</div><div class="line">            now.CopyTo(history, <span class="number">0</span>);</div><div class="line">            now[i] = (<span class="number">1</span>-omega)*history[i];</div><div class="line">            <span class="keyword">double</span>[] Con = cTrans[i];</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; Con.Length - <span class="number">1</span>; j++)</div><div class="line">            &#123;</div><div class="line">                now[i] += omega * Con[j] * history[j];</div><div class="line">            &#125;</div><div class="line">            now[i] += omega * Con[Con.Length - <span class="number">1</span>];</div><div class="line">            <span class="keyword">if</span> (Double.IsNaN(now[i]) || Double.IsInfinity(now[i]))</div><div class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> Exception(<span class="string">"错误：方程解出现NaN或者无穷大,请验证方程组的收敛性！"</span>);</div><div class="line">            </div><div class="line">        &#125;</div><div class="line">        times++;</div><div class="line">        <span class="comment">//解是否符合条件</span></div><div class="line">        isTrueSolution = <span class="literal">true</span>;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; now.Length; i++)</div><div class="line">        &#123;</div><div class="line">            <span class="keyword">if</span> (Math.Abs(now[i] - history[i]) &gt; Epsilon)</div><div class="line">            &#123;</div><div class="line">                isTrueSolution = <span class="literal">false</span>;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">//更新旧解</span></div><div class="line">        now.CopyTo(history, <span class="number">0</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//超出迭代次数求解失败</span></div><div class="line">    t = times;</div><div class="line">    now.CopyTo(solution, <span class="number">0</span>);</div><div class="line">    <span class="keyword">if</span> (times &gt; IterativeTimes) <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    <span class="keyword">else</span></div><div class="line">        <span class="keyword">return</span> <span class="number">0</span>;&#125;</div><div class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></div><div class="line"><span class="comment"><span class="doctag">///</span> Gauss-Seidel迭代法求解线性方程组</span></div><div class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></div><div class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="c"&gt;</span>方程组系数的增广矩阵<span class="doctag">&lt;/param&gt;</span></span></div><div class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="IterativeTimes"&gt;</span>最大迭代次数<span class="doctag">&lt;/param&gt;</span></span></div><div class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="Epsilon"&gt;</span>收敛标准<span class="doctag">&lt;/param&gt;</span></span></div><div class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="t"&gt;</span>迭代次数<span class="doctag">&lt;/param&gt;</span></span></div><div class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="solution"&gt;</span>求解结果<span class="doctag">&lt;/param&gt;</span></span></div><div class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;returns&gt;</span>执行结果，0表示求解成功<span class="doctag">&lt;/returns&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">Gauss_Seidel</span>(<span class="params">List&lt;<span class="keyword">double</span>[]&gt; c, <span class="keyword">int</span> IterativeTimes, <span class="keyword">double</span> Epsilon, <span class="keyword">out</span> <span class="keyword">int</span> t, <span class="keyword">double</span>[] solution</span>)</span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">return</span> SOR(c, IterativeTimes, Epsilon, <span class="number">1</span>, <span class="keyword">out</span> t, solution);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -508,11 +504,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/matlab/" rel="tag"><i class="fa fa-tag"></i> matlab</a>
+            <a href="/tags/C/" rel="tag"><i class="fa fa-tag"></i> C#</a>
           
-            <a href="/tags/海洋数据分析/" rel="tag"><i class="fa fa-tag"></i> 海洋数据分析</a>
-          
-            <a href="/tags/温盐跃层/" rel="tag"><i class="fa fa-tag"></i> 温盐跃层</a>
+            <a href="/tags/线性方程组/" rel="tag"><i class="fa fa-tag"></i> 线性方程组</a>
           
         </div>
       
@@ -521,8 +515,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/archives/matlab-Visualization/" rel="next" title="matlab可视化综合实验">
-                <i class="fa fa-chevron-left"></i> matlab可视化综合实验
+              <a href="/archives/hadoop-install.html" rel="next" title="Centos6.5中安装配置Cloudera CDH Hadoop集群">
+                <i class="fa fa-chevron-left"></i> Centos6.5中安装配置Cloudera CDH Hadoop集群
               </a>
             
           </div>
@@ -531,8 +525,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/archives/tide/" rel="prev" title="海洋要素计算：潮汐调和分析">
-                海洋要素计算：潮汐调和分析 <i class="fa fa-chevron-right"></i>
+              <a href="/archives/matlab-nc.html" rel="prev" title="NetCDF格式存储的栅格数据转换的MATLAB批处理程序">
+                NetCDF格式存储的栅格数据转换的MATLAB批处理程序 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -559,7 +553,7 @@
           
   <div class="comments" id="comments">
     
-      <div id="SOHUCS" sid="/archives/temp-salin/"></div>
+      <div id="SOHUCS" sid="/"></div>
     
   </div>
 
@@ -917,7 +911,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#摘要"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件下载"><span class="nav-number">2.</span> <span class="nav-text">文件下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#处理流程"><span class="nav-number">3.</span> <span class="nav-text">处理流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#打开文件"><span class="nav-number">3.1.</span> <span class="nav-text">打开文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#读取数据"><span class="nav-number">3.2.</span> <span class="nav-text">读取数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据处理"><span class="nav-number">3.3.</span> <span class="nav-text">数据处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据导出"><span class="nav-number">3.4.</span> <span class="nav-text">数据导出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绘制温盐跃层图"><span class="nav-number">3.5.</span> <span class="nav-text">绘制温盐跃层图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结果"><span class="nav-number">4.</span> <span class="nav-text">结果</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#C-实现"><span class="nav-number">1.</span> <span class="nav-text">C#实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#应用程序界面"><span class="nav-number">1.1.</span> <span class="nav-text">应用程序界面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据说明"><span class="nav-number">1.2.</span> <span class="nav-text">数据说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数设置"><span class="nav-number">1.3.</span> <span class="nav-text">参数设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算说明"><span class="nav-number">1.4.</span> <span class="nav-text">计算说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异常处理"><span class="nav-number">1.5.</span> <span class="nav-text">异常处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关键步骤代码"><span class="nav-number">1.6.</span> <span class="nav-text">关键步骤代码</span></a></li></ol></li></ol></div>
             
 
           </div>
