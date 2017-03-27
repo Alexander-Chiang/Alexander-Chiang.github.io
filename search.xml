@@ -5,7 +5,7 @@
     
     <entry>
       <title><![CDATA[相册]]></title>
-      <url>https://blog.jiangyayu.cn/archives/photos/</url>
+      <url>https://blog.jiangyayu.cn//archives/photos/</url>
       <content type="html"><![CDATA[<div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 33.333333333333336%;"><a href="http://source.jiangyayu.cn/photos/33.小溪.jpg" data-fancybox="fancyboxgroup" class="fancybox" target="_blank" rel="external"><img src="http://source.jiangyayu.cn/photos/33.小溪.jpg" title="小溪"></a></div><div class="group-picture-column" style="width: 33.333333333333336%;"><a href="http://source.jiangyayu.cn/photos/32.玄武湖日出.jpg" data-fancybox="fancyboxgroup" class="fancybox" target="_blank" rel="external"><img src="http://source.jiangyayu.cn/photos/32.玄武湖日出.jpg" title="玄武湖日出"></a></div><div class="group-picture-column" style="width: 33.333333333333336%;"><a href="http://source.jiangyayu.cn/photos/30.上海.jpg" data-fancybox="fancyboxgroup" class="fancybox" target="_blank" rel="external"><img src="http://source.jiangyayu.cn/photos/30.上海.jpg" title="上海外滩夜景"></a></div></div></div></div>
 <div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 33.333333333333336%;"><a href="http://source.jiangyayu.cn/photos/29.南师雪景.jpg" data-fancybox="fancyboxgroup" class="fancybox" target="_blank" rel="external"><img src="http://source.jiangyayu.cn/photos/29.南师雪景.jpg" title="南师雪景"></a></div><div class="group-picture-column" style="width: 33.333333333333336%;"><a href="http://source.jiangyayu.cn/photos/27.南师随园.jpg" data-fancybox="fancyboxgroup" class="fancybox" target="_blank" rel="external"><img src="http://source.jiangyayu.cn/photos/27.南师随园.jpg" title="南师随园"></a></div><div class="group-picture-column" style="width: 33.333333333333336%;"><a href="http://source.jiangyayu.cn/photos/25.如琴湖.jpg" data-fancybox="fancyboxgroup" class="fancybox" target="_blank" rel="external"><img src="http://source.jiangyayu.cn/photos/25.如琴湖.jpg" title="如琴湖"></a></div></div></div></div>
 <div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 25%;"><a href="http://source.jiangyayu.cn/photos/31.上海外滩夜景.jpg" data-fancybox="fancyboxgroup" class="fancybox" target="_blank" rel="external"><img src="http://source.jiangyayu.cn/photos/31.上海外滩夜景.jpg" title="上海外滩夜景"></a></div><div class="group-picture-column" style="width: 25%;"><a href="http://source.jiangyayu.cn/photos/28.昙花.jpg" data-fancybox="fancyboxgroup" class="fancybox" target="_blank" rel="external"><img src="http://source.jiangyayu.cn/photos/28.昙花.jpg" title="昙花"></a></div><div class="group-picture-column" style="width: 25%;"><a href="http://source.jiangyayu.cn/photos/24.三叠泉.jpg" data-fancybox="fancyboxgroup" class="fancybox" target="_blank" rel="external"><img src="http://source.jiangyayu.cn/photos/24.三叠泉.jpg" title="三叠泉"></a></div><div class="group-picture-column" style="width: 25%;"><a href="http://source.jiangyayu.cn/photos/23.五老峰.jpg" data-fancybox="fancyboxgroup" class="fancybox" target="_blank" rel="external"><img src="http://source.jiangyayu.cn/photos/23.五老峰.jpg" title="五老峰"></a></div></div></div></div>
@@ -22,7 +22,7 @@
     
     <entry>
       <title><![CDATA[基于Arcobject二次开发的Excel数据转换Shape文件的C#批处理应用程序]]></title>
-      <url>https://blog.jiangyayu.cn/archives/csharp-excel-to-shape/</url>
+      <url>https://blog.jiangyayu.cn//archives/csharp-excel-to-shape/</url>
       <content type="html"></content>
       
         
@@ -38,7 +38,7 @@
     
     <entry>
       <title><![CDATA[CAS4.0单点登录服务器的配置]]></title>
-      <url>https://blog.jiangyayu.cn/archives/CAS-Single-Sign-On/</url>
+      <url>https://blog.jiangyayu.cn//archives/CAS-Single-Sign-On/</url>
       <content type="html"><![CDATA[<h2 id="SSO和CAS"><a href="#SSO和CAS" class="headerlink" title="SSO和CAS"></a>SSO和CAS</h2><p>&emsp;&emsp;单点登录（SingleSign On , 简称 SSO ）是目前比较流行的服务于企业业务整合的解决方案之一， SSO使得在多个应用系统中，用户只需要登录一次就可以访问所有相互信任的应用系统。<br><a id="more"></a><br>&emsp;&emsp;CAS是中央认证服务Central Authentication Service的简称，是对单点登录SSO（Single Sign On）的一种实现。最初由耶鲁大学的Shawn Bayern 开发，后由Jasig社区维护，经过十多年发展，目前已成为影响最大、广泛使用的、基于Java实现的、开源SSO解决方案。CAS由Cas Server和Cas Client两部分组成，Cas Server是核心，而Cas Client通常就对应于我们的应用。一个Cas Server可以对应于多个Cas Client。它允许我们在一个Client进行登录以后无需再让用户输入用户名和密码进行认证即可访问其它Client应用。</p>
 <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>安装JDK和Tomcat：<br>&emsp;&emsp;已经配置好Tomcat的可以跳过此步骤，未安装配置的可以参考另外一篇博客：<a href="https://blog.jiangyayu.cn//archives/tomcat-install">CentOS6.5中Tomcat的安装配置</a></p>
 <h2 id="启用HTTPS传输协议"><a href="#启用HTTPS传输协议" class="headerlink" title="启用HTTPS传输协议"></a>启用HTTPS传输协议</h2><p>（1）    生成证书<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">keytool -genkey -alias tomcat -keyalg RSA -keystore /root/keystore</div></pre></td></tr></table></figure></p>
@@ -84,7 +84,7 @@
     
     <entry>
       <title><![CDATA[CentOS6.5中Tomcat的安装配置]]></title>
-      <url>https://blog.jiangyayu.cn/archives/tomcat-install/</url>
+      <url>https://blog.jiangyayu.cn//archives/tomcat-install/</url>
       <content type="html"><![CDATA[<p>&emsp;&emsp;Tomcat 服务器是一个免费的开放源代码的Web 应用服务器，属于轻量级应用服务器，在中小型系统和并发访问用户不是很多的场合下被普遍使用，是开发和调试JSP 程序的首选。<br><a id="more"></a></p>
 <h2 id="JDK的安装配置"><a href="#JDK的安装配置" class="headerlink" title="JDK的安装配置"></a>JDK的安装配置</h2><p>&emsp;&emsp;tomcat的运行依赖于Java jdk，所以安装Tomcat前需要先安装jdk，已安装的可以跳过此步骤。判断主机是否安装jdk的方法：输入命令<code>java -version</code>，如果显示jdk版本号，则证明已经安装，如果不显示，则证明没有安装，如果没有安装则按照以下方法下载安装。</p>
 <ol>
@@ -144,7 +144,7 @@
     
     <entry>
       <title><![CDATA[C#实现定积分求解]]></title>
-      <url>https://blog.jiangyayu.cn/archives/Integrals/</url>
+      <url>https://blog.jiangyayu.cn//archives/Integrals/</url>
       <content type="html"><![CDATA[<p>&emsp;&emsp;在科学研究和实际生产中，经常遇到求积分的计算问题。我们知道在高等数学中，可以通过牛顿-莱布尼兹公式推导原函数的方法求得积分。而本篇博客中将从定积分的物理意义出发，通过原函数的图像的手段来近似地求解给定函数的定积分。<br><a id="more"></a></p>
 <h2 id="随机投点法（蒙特卡洛算法）"><a href="#随机投点法（蒙特卡洛算法）" class="headerlink" title="随机投点法（蒙特卡洛算法）"></a>随机投点法（蒙特卡洛算法）</h2><p>&emsp;&emsp;在a到b和函数组成的矩形的范围内，随机投N个点，落到绿色阴影点的个数为M个，对于此图来说便可以容易得知积分的值（绿色阴影）为(M/N)*矩形面积。<br><img src="http://source.jiangyayu.cn/integrals/1.png" alter="蒙特卡洛算法原理"><br>&emsp;&emsp;考虑到积分的正负性，随机点落到积分面积内时，分为两种情况：当随机点落在x轴上方时，计数加一，随机点落在x轴下方时，计数减一。<br><img src="http://source.jiangyayu.cn/integrals/2.png" alter="蒙特卡洛算法原理"><br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">double</span> <span class="title">methodMTK</span>(<span class="params"> <span class="keyword">double</span> upLimit, <span class="keyword">double</span> lowLimit</span>)</span></div><div class="line">&#123;</div><div class="line">    Random randx = <span class="keyword">new</span> Random();</div><div class="line">    Random randy = <span class="keyword">new</span> Random();</div><div class="line">    <span class="keyword">double</span> result = <span class="number">0</span>;</div><div class="line">    <span class="keyword">int</span> N = <span class="number">1000000</span>;  </div><div class="line">    <span class="keyword">int</span> count = <span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; i++)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">double</span> x = lowLimit + (upLimit - lowLimit) * randx.NextDouble();</div><div class="line">        <span class="keyword">double</span> y = yMin + (yMax - yMin) * randx.NextDouble(); ;</div><div class="line">        <span class="keyword">if</span> (f(x) &gt; <span class="number">0</span> &amp;&amp; f(x) &gt;= y &amp;&amp; y &gt;= <span class="number">0</span>)</div><div class="line">            count++;</div><div class="line">        <span class="keyword">if</span> (f(x) &lt; <span class="number">0</span> &amp;&amp; f(x) &lt;= y &amp;&amp; y &lt;= <span class="number">0</span>)</div><div class="line">            count--;</div><div class="line">    &#125;</div><div class="line">    result = Math.Abs(((<span class="keyword">double</span>)count / N) * ((yMax-yMin)*(upLimit-lowLimit)));</div><div class="line">    <span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h2 id="定义法求积分"><a href="#定义法求积分" class="headerlink" title="定义法求积分"></a>定义法求积分</h2><p>&emsp;&emsp;把一块面积分解成N个小矩形，然后求面积和，最后求极限。我们就利用这种方式来实现它，但我们的N毕竟有限，为了结果更准确，把求矩形面积改成求梯形面积（当然矩形也是可以的），如下图：<br><img src="http://source.jiangyayu.cn/integrals/3.png" alter="定义法求解定积分"><br>&emsp;&emsp;把$\left(a,b\right)$分成$N$等分，积分值等于$S_{1}+S_{2}+….+S_{n}$，其中 $S_{i} = \left(f\left(x_{i}\right) + f\left(x_{i+1}\right)\right) * \left(b-a\right)/n / 2$ (矩形面积公式）。<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">double</span> <span class="title">methodDY</span>(<span class="params"><span class="keyword">double</span> upLimit, <span class="keyword">double</span> lowLimit</span>)</span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> N = <span class="number">1000000</span>;</div><div class="line">    <span class="keyword">double</span> step = (upLimit - lowLimit) / N;</div><div class="line">    <span class="keyword">double</span> result = <span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; i++)</div><div class="line">    &#123;</div><div class="line">        result += f(lowLimit+step*i) * step;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
@@ -179,7 +179,7 @@
     
     <entry>
       <title><![CDATA[NetCDF格式存储的栅格数据转换的MATLAB批处理程序]]></title>
-      <url>https://blog.jiangyayu.cn/archives/matlab-nc/</url>
+      <url>https://blog.jiangyayu.cn//archives/matlab-nc/</url>
       <content type="html"><![CDATA[<h2 id="处理环境"><a href="#处理环境" class="headerlink" title="处理环境"></a>处理环境</h2><p>操作系统：Windows 10 64bit<br>软件：MATLAB R2016a<br>&emsp;&emsp;&emsp;ArcGIS Desktop 10.2<br>数据下载：链接：<a href="http://pan.baidu.com/s/1slIZ5nR" target="_blank" rel="external">http://pan.baidu.com/s/1slIZ5nR</a> 密码：2z3f<br><a id="more"></a></p>
 <h2 id="MATLAB批量处理NetCDF文件"><a href="#MATLAB批量处理NetCDF文件" class="headerlink" title="MATLAB批量处理NetCDF文件"></a>MATLAB批量处理NetCDF文件</h2><h3 id="设置输入输出"><a href="#设置输入输出" class="headerlink" title="设置输入输出"></a>设置输入输出</h3><p>&emsp;&emsp;将待处理的*.nc文件统一放在NDVI文件夹中，在MATLAB中设置输入输出路径：<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">pathinput = <span class="string">'D:\Program Files\MATLAB\Work\NDVI'</span>;</div><div class="line">pathoutput = <span class="string">'D:\output\';</span></div></pre></td></tr></table></figure></p>
 <h3 id="获取输入文件名"><a href="#获取输入文件名" class="headerlink" title="获取输入文件名"></a>获取输入文件名</h3><p>&emsp;&emsp;执行以下命令，可将输入文件夹NDVI中的所有文件信息存储到<code>files</code>变量中：<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">filedir = dir(pathinput);</div><div class="line">files = filedir(<span class="number">3</span>:<span class="keyword">end</span>);</div></pre></td></tr></table></figure></p>
@@ -210,7 +210,7 @@
     
     <entry>
       <title><![CDATA[迭代法求解线性方程组--C#实现Jacobi、Gauss-Seidel、SOR迭代法]]></title>
-      <url>https://blog.jiangyayu.cn/archives/linear-equation/</url>
+      <url>https://blog.jiangyayu.cn//archives/linear-equation/</url>
       <content type="html"><![CDATA[<p>当直接求解方程组 $Ax = b$ 较困难时, 我们可以求解一个近似方程组<br>$$Mx = b$$<br>设其解为 $x^{(1)}$<br>易知它与真解之间的误差满足<br>$$A\left(x_{*}-x^{(1)}\right) = b-Ax^{(1)}$$<br>如果 $x^{(1)}$ 已经满足精度要求, 则停止计算, 否则需要修正。<br><a id="more"></a><br>设修正量为$\Delta x$ 显然$\Delta x$满足方程 $A\Delta x = b-Ax^{(1)}$. 但由于直接求解该方程比较困难, 因此我们还是求解近似<br>$$M\Delta x = b − Ax^{(1)}$$<br>于是得到修正后的近似解<br>$$ x^{(2)}= x^{(1)}+\Delta x = x^{(1)}+M^{-1}\left(b-Ax^{(1)}\right) $$<br>若$x^{(2)}$已经满足精度要求, 则停止计算, 否则继续按以上的方式进行修正。<br>不断重复以上步骤, 于是, 我们就得到一个序列<br>$$x^{(1)},x^{(2)},…,x^{(k)},…$$<br>满足以下递推关系:<br>$$x^{(k+1)}=x^{(k)}+M^{-1}\left(b-Ax^{(k)}\right),  k=1,2,…$$<br>由于每次迭代的格式是一样的, 因此称为定常迭代。</p>
 <p><strong>注：</strong>通常, 构造一个好的定常迭代, 需要考虑以下两点:<br>(1) 以$M$为系数矩阵的线性方程组必须要比原线性方程组容易求解;<br>(2) $M$应该是$A$的一个很好的近似, 或者迭代序列${x^{k}}$要收敛</p>
 <h2 id="C-实现"><a href="#C-实现" class="headerlink" title="C#实现"></a>C#实现</h2><h3 id="应用程序界面"><a href="#应用程序界面" class="headerlink" title="应用程序界面"></a>应用程序界面</h3><p>&emsp;&emsp;应用程序包含菜单、输入输出、设置和日志模块，如图所示：<br><img src="http://source.jiangyayu.cn/linear-equation/1.png"></p>
@@ -247,7 +247,7 @@
     
     <entry>
       <title><![CDATA[Centos6.5中安装配置Cloudera CDH Hadoop集群]]></title>
-      <url>https://blog.jiangyayu.cn/archives/hadoop-install/</url>
+      <url>https://blog.jiangyayu.cn//archives/hadoop-install/</url>
       <content type="html"><![CDATA[<h2 id="运行环境软硬件环境"><a href="#运行环境软硬件环境" class="headerlink" title="运行环境软硬件环境"></a>运行环境软硬件环境</h2><p>主机操作系统：Windows 10, 64-bit  (Build 10586) 10.0.10586<br>虚拟软件：VMware®Workstation 11.1.2 build-2780323<br>虚拟机操作系统：CentOS 6.5 64bit，单核，5G内存<br><a id="more"></a></p>
 <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="设置IP"><a href="#设置IP" class="headerlink" title="设置IP"></a>设置IP</h3><p><img src="http://source.jiangyayu.cn/hadoop-install/1.png" style="zoom:0.8"><br>删除原来的连接信息，新建一个连接，设置该连接为手工方式，设置如下信息（需根据虚拟机设置相应参数以保证可以正常上网）：<br>IP地址：192.168.149.101<br>子网掩码：255.255.255.0<br>网关：192.168.149.2<br>DNS：192.168.149.2<br><img src="http://source.jiangyayu.cn/hadoop-install/2.png" style="zoom:0.8" alter="设置IP地址"> </p>
 <h3 id="设置hosts"><a href="#设置hosts" class="headerlink" title="设置hosts"></a>设置hosts</h3><p>编辑hosts文件，添加如下信息：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">192.168.149.101	hadoop1</div><div class="line">192.168.149.102 hadoop2</div><div class="line">192.168.149.103 hadoop3</div></pre></td></tr></table></figure></p>
@@ -312,7 +312,7 @@
     
     <entry>
       <title><![CDATA[matlab物理场的正交分解]]></title>
-      <url>https://blog.jiangyayu.cn/archives/Orthogonal-decomposition/</url>
+      <url>https://blog.jiangyayu.cn//archives/Orthogonal-decomposition/</url>
       <content type="html"><![CDATA[<h2 id="经验正交分解的原理"><a href="#经验正交分解的原理" class="headerlink" title="经验正交分解的原理"></a>经验正交分解的原理</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>&emsp;&emsp;经验正交函数分析方法(empirical orthogonal function,缩写为EOF)，也称特征向量分析(eigen vector analysis)，或者主成分分析(principal component analysis,缩写PCA)，是一种分析矩阵数据中的结构特征，提取主要数据特征量的一种方法。Lorenz在1950年代首次将其引入气象和气候研究，现在在地学及其他学科中得到了非常广泛的应用。<br><a id="more"></a><br>&emsp;&emsp;分析中通常特征向量对应的是空间样本，称空间特征向量或者空间模态；对应的是时间变化称为时间系数。</p>
 <h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><p>&emsp;（1）主要特色：能够有效地体现物理场的主要信息，保留次要信息并排除外来的随机干扰。<br>&emsp;（2）无固定的函数形式：这种正交函数展开不像三角函数展开、球函数展开那样有固定的展开形式。<br>&emsp;（3）图形是由场本身决定的，不是事先人为地给定典型场函数的。<br>&emsp;（4）具有收敛快、能更好地反应出场的基本结构的特征。</p>
 <h3 id="主要应用"><a href="#主要应用" class="headerlink" title="主要应用"></a>主要应用</h3><p>&emsp;（1）可在有限的区域中不规则分布的站点进行：空间不同站点/同一点的不同时间、不同高度的多种要素进行综合分析。<br>&emsp;（2）可用于要素场分析、垂直结构分析、动力模型垂直分层等。</p>
@@ -354,7 +354,7 @@
     
     <entry>
       <title><![CDATA[海洋要素计算：潮汐调和分析]]></title>
-      <url>https://blog.jiangyayu.cn/archives/tide/</url>
+      <url>https://blog.jiangyayu.cn//archives/tide/</url>
       <content type="html"><![CDATA[<p>使用matlab进行潮汐调和分析，判别潮汐类型。<br><a id="more"></a></p>
 <h2 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h2><h3 id="数据来源"><a href="#数据来源" class="headerlink" title="数据来源"></a>数据来源</h3><p>&emsp;&emsp;本次实验采用的数据来自夏威夷大学海平面中心（University of Hawaii Sea Level Center）：<a href="http://ilikai.soest.hawaii.edu/uhslc/datai.html" target="_blank" rel="external">http://ilikai.soest.hawaii.edu/uhslc/datai.html</a><br>本站提供下载：<br><br>&emsp;&emsp;厦门站：<a href="http://source.jiangyayu.cn/tide/h376a95.dat" target="_blank" rel="external">h376a95.dat</a></p>
 <h3 id="站点数据信息"><a href="#站点数据信息" class="headerlink" title="站点数据信息"></a>站点数据信息</h3><p>站点：厦门站<br>坐标：Latitude: 24-27N , Longitude: 118-04E<br>时区：120E (GMT + 8 hr)<br>观测时间范围：1954—1997<br>观测手段：Gauge rods (1954-1964);<br>&emsp;&emsp;&emsp;&emsp;&emsp;HCJ1, float gauge (1965-1990);<br>&emsp;&emsp;&emsp;&emsp;&emsp;SCA1-2 (1990-)<br>现有数据：Hourly   Daily   Monthly<br><img src="http://source.jiangyayu.cn/tide/1.png"></p>
@@ -390,7 +390,7 @@
     
     <entry>
       <title><![CDATA[海洋要素计算：温盐跃层的分析]]></title>
-      <url>https://blog.jiangyayu.cn/archives/temp-salin/</url>
+      <url>https://blog.jiangyayu.cn//archives/temp-salin/</url>
       <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>&emsp;&emsp;提供某次海洋观测的RBR-CTD测得的海洋要素数据，要求完成以下内容：</p>
 <ol>
 <li>根据数据的头文件，给出观测的基本信息。</li>
@@ -430,7 +430,7 @@
     
     <entry>
       <title><![CDATA[matlab可视化综合实验]]></title>
-      <url>https://blog.jiangyayu.cn/archives/matlab-Visualization/</url>
+      <url>https://blog.jiangyayu.cn//archives/matlab-Visualization/</url>
       <content type="html"><![CDATA[<h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><p>1.了解科学数据netcdf的存储模式，学会读取和创建netcdf等科学数据。<br>2.学会应用Matlab对数据进行处理分析。<br>3.应用Matlab和Surfer等软件对已有数据进行可视化显示。<br>4.学会应用contour绘制等值线图和pcolor绘制伪彩色图。<br>5.掌握Matlab句柄操作和对图像显示的控制。<br><a id="more"></a></p>
 <h2 id="主要内容"><a href="#主要内容" class="headerlink" title="主要内容"></a>主要内容</h2><p>1.NetCDF格式的读取<br>2.NetCDF格式的写入<br>3.Matlab绘图与格式化<br>4.Surfer绘图</p>
 <h2 id="实验主要仪器设备、软件"><a href="#实验主要仪器设备、软件" class="headerlink" title="实验主要仪器设备、软件"></a>实验主要仪器设备、软件</h2><p>1.硬件准备：PC机；<br>2.操作系统：Linux系统或Windows 2k以上系统；<br>3.软件开发工具：Matlab 2013a 、Surfer  80<br>4.使用数据：ECMWF 1965年全年海表压强(Mean sea level pressure)和皮温(skin temperature)的netcdf文件。</p>
@@ -474,9 +474,9 @@
             
             <tag> matlab </tag>
             
-            <tag> NetCDF </tag>
-            
             <tag> 可视化 </tag>
+            
+            <tag> NetCDF </tag>
             
         </tags>
         
@@ -484,7 +484,7 @@
     
     <entry>
       <title><![CDATA[利用IDL从TRMM/TMI卫星数据反演全球SST]]></title>
-      <url>https://blog.jiangyayu.cn/archives/IDL-SST/</url>
+      <url>https://blog.jiangyayu.cn//archives/IDL-SST/</url>
       <content type="html"><![CDATA[<h1 id="实验目的："><a href="#实验目的：" class="headerlink" title="实验目的："></a>实验目的：</h1><p>&emsp;&emsp;理论与实验课的综合运用，提高课堂与实践相结合的分析能力</p>
 <ol>
 <li>了解海洋卫星反演SST的物理原理以及两种类型（热红外与微波辐射计）的卫星传感器；</li>
@@ -568,7 +568,7 @@
     
     <entry>
       <title><![CDATA[数字图像处理综合实验]]></title>
-      <url>https://blog.jiangyayu.cn/archives/Digital-Image-Processing/</url>
+      <url>https://blog.jiangyayu.cn//archives/Digital-Image-Processing/</url>
       <content type="html"><![CDATA[<h1 id="实验目的："><a href="#实验目的：" class="headerlink" title="实验目的："></a>实验目的：</h1><ol>
 <li>实验类型：综合性实验；             </li>
 <li>了解图像技术软件如matlab，ERDAS的软硬件环境、数据采集；</li>
@@ -696,7 +696,7 @@
     
     <entry>
       <title><![CDATA[高级高光谱遥感应用]]></title>
-      <url>https://blog.jiangyayu.cn/archives/Hyperspectral-RS-image-Processing/</url>
+      <url>https://blog.jiangyayu.cn//archives/Hyperspectral-RS-image-Processing/</url>
       <content type="html"><![CDATA[<h1 id="实习目的："><a href="#实习目的：" class="headerlink" title="实习目的："></a>实习目的：</h1><ol>
 <li>理解高光谱概念、地物光谱仪、光谱数据库、高光谱传感器；</li>
 <li>掌握ENVI软件的基本功能；</li>
@@ -852,7 +852,7 @@
     
     <entry>
       <title><![CDATA[AVIRIS卫星影像波谱与实验室波谱库波谱曲线的比较]]></title>
-      <url>https://blog.jiangyayu.cn/archives/AVIRIS/</url>
+      <url>https://blog.jiangyayu.cn//archives/AVIRIS/</url>
       <content type="html"><![CDATA[<h1 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h1><ol>
 <li>理解卫星及实验室高光谱概念，初步了解辐亮度、反射率的概念；</li>
 <li>能够打开并处理卫星高光谱数据；</li>
@@ -931,7 +931,7 @@
     
     <entry>
       <title><![CDATA[ArcGIS练习3：空间分析]]></title>
-      <url>https://blog.jiangyayu.cn/archives/ArcGIS-practice-3/</url>
+      <url>https://blog.jiangyayu.cn//archives/ArcGIS-practice-3/</url>
       <content type="html"><![CDATA[<p>本文将简单记述如何应用ArcGIS实现一个空间分析功能。<br><a id="more"></a></p>
 <h1 id="城市化的影响范围分析"><a href="#城市化的影响范围分析" class="headerlink" title="城市化的影响范围分析"></a>城市化的影响范围分析</h1><h2 id="加载数据"><a href="#加载数据" class="headerlink" title="加载数据"></a>加载数据</h2><p>加载图层<a href="http://source.jiangyayu.cn/ArcGIS-practice-3/urban.zip" target="_blank" rel="external">urban</a>。</p>
 <h2 id="缓冲区分析"><a href="#缓冲区分析" class="headerlink" title="缓冲区分析"></a>缓冲区分析</h2><ol>
@@ -983,7 +983,7 @@
     
     <entry>
       <title><![CDATA[ArcGIS练习2：地图投影与编辑]]></title>
-      <url>https://blog.jiangyayu.cn/archives/ArcGIS-practice-2/</url>
+      <url>https://blog.jiangyayu.cn//archives/ArcGIS-practice-2/</url>
       <content type="html"><![CDATA[<p>本文将简单记述如何应用ArcGIS软件对天津地形图进行校正和矢量化操作，并作必要的统计分析和数据处理工作。<br><a id="more"></a></p>
 <h1 id="投影与配准"><a href="#投影与配准" class="headerlink" title="投影与配准"></a>投影与配准</h1><h2 id="地图数据"><a href="#地图数据" class="headerlink" title="地图数据"></a>地图数据</h2><p><img src="http://source.jiangyayu.cn/ArcGIS-practice-2/1.%E5%A4%A9%E6%B4%A5%E5%B8%82%E6%BB%A8%E6%B5%B7%E6%96%B0%E5%8C%BA%E5%9B%BE.jpg" alt="天津市滨海新区图" style="zoom:15%"></p>
 <h2 id="打开图像，设置地图单位"><a href="#打开图像，设置地图单位" class="headerlink" title="打开图像，设置地图单位"></a>打开图像，设置地图单位</h2><ol>
@@ -1045,7 +1045,7 @@
     
     <entry>
       <title><![CDATA[ArcGIS练习1：地形图校正和拼接]]></title>
-      <url>https://blog.jiangyayu.cn/archives/ArcGIS-practice-1/</url>
+      <url>https://blog.jiangyayu.cn//archives/ArcGIS-practice-1/</url>
       <content type="html"><![CDATA[<p>本文将简单记述如何应用ArcGIS软件对天津塘沽地形图进行配准和拼接。<br><a id="more"></a></p>
 <h1 id="地形图校正和拼接"><a href="#地形图校正和拼接" class="headerlink" title="地形图校正和拼接"></a>地形图校正和拼接</h1><h2 id="原始地形图文件"><a href="#原始地形图文件" class="headerlink" title="原始地形图文件"></a>原始地形图文件</h2> <div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><a href="http://source.jiangyayu.cn/ArcGIS-practice-1/2.tanggu2.jpg" data-fancybox="fancyboxgroup" class="fancybox" target="_blank" rel="external"><img src="http://source.jiangyayu.cn/ArcGIS-practice-1/2.tanggu2.jpg"></a></div><div class="group-picture-column" style="width: 50%;"><a href="http://source.jiangyayu.cn/ArcGIS-practice-1/1.tanggu1.jpg" data-fancybox="fancyboxgroup" class="fancybox" target="_blank" rel="external"><img src="http://source.jiangyayu.cn/ArcGIS-practice-1/1.tanggu1.jpg"></a></div></div></div></div>
 <h2 id="打开图像，设置地图单位"><a href="#打开图像，设置地图单位" class="headerlink" title="打开图像，设置地图单位"></a>打开图像，设置地图单位</h2><p>  添加数据tanggu1，tanggu2（扫描地形图）。选中两图层，在ArcMap主菜单下选择View→Data Frame Properties，打开的Data Frame Properties窗口，在General标签中设置地图单位为Meters。</p>
@@ -1091,7 +1091,7 @@
     
     <entry>
       <title><![CDATA[数字信号与信息处理2:数字滤波器的设计]]></title>
-      <url>https://blog.jiangyayu.cn/archives/Digital-filter/</url>
+      <url>https://blog.jiangyayu.cn//archives/Digital-filter/</url>
       <content type="html"><![CDATA[<h1 id="实验目的："><a href="#实验目的：" class="headerlink" title="实验目的："></a>实验目的：</h1><ol>
 <li>实验类型：设计性实验。 </li>
 <li>掌握通过零、极点设计低阶数字滤波器的设计方法。</li>
@@ -1203,7 +1203,7 @@
     
     <entry>
       <title><![CDATA[数字信号与信息处理1:图像特征定位]]></title>
-      <url>https://blog.jiangyayu.cn/archives/Digital-Image-Positioning/</url>
+      <url>https://blog.jiangyayu.cn//archives/Digital-Image-Positioning/</url>
       <content type="html"><![CDATA[<h1 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h1><ol>
 <li>实验类型：设计性实验；             </li>
 <li>掌握卷积和相关运算的基本原理与主要应用；</li>

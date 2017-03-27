@@ -17,8 +17,8 @@
   
   <entry>
     <title>相册</title>
-    <link href="https://blog.jiangyayu.cn/archives/photos/"/>
-    <id>https://blog.jiangyayu.cn/archives/photos/</id>
+    <link href="https://blog.jiangyayu.cn//archives/photos/"/>
+    <id>https://blog.jiangyayu.cn//archives/photos/</id>
     <published>2017-03-06T13:50:47.987Z</published>
     <updated>2017-03-06T15:20:39.167Z</updated>
     
@@ -44,8 +44,8 @@
   
   <entry>
     <title>基于Arcobject二次开发的Excel数据转换Shape文件的C#批处理应用程序</title>
-    <link href="https://blog.jiangyayu.cn/archives/csharp-excel-to-shape/"/>
-    <id>https://blog.jiangyayu.cn/archives/csharp-excel-to-shape/</id>
+    <link href="https://blog.jiangyayu.cn//archives/csharp-excel-to-shape/"/>
+    <id>https://blog.jiangyayu.cn//archives/csharp-excel-to-shape/</id>
     <published>2017-03-04T00:40:38.000Z</published>
     <updated>2017-03-24T02:41:02.561Z</updated>
     
@@ -62,8 +62,8 @@
   
   <entry>
     <title>CAS4.0单点登录服务器的配置</title>
-    <link href="https://blog.jiangyayu.cn/archives/CAS-Single-Sign-On/"/>
-    <id>https://blog.jiangyayu.cn/archives/CAS-Single-Sign-On/</id>
+    <link href="https://blog.jiangyayu.cn//archives/CAS-Single-Sign-On/"/>
+    <id>https://blog.jiangyayu.cn//archives/CAS-Single-Sign-On/</id>
     <published>2016-10-06T02:01:02.000Z</published>
     <updated>2017-03-02T14:50:12.951Z</updated>
     
@@ -110,8 +110,8 @@
   
   <entry>
     <title>CentOS6.5中Tomcat的安装配置</title>
-    <link href="https://blog.jiangyayu.cn/archives/tomcat-install/"/>
-    <id>https://blog.jiangyayu.cn/archives/tomcat-install/</id>
+    <link href="https://blog.jiangyayu.cn//archives/tomcat-install/"/>
+    <id>https://blog.jiangyayu.cn//archives/tomcat-install/</id>
     <published>2016-10-05T12:26:30.000Z</published>
     <updated>2017-03-02T14:50:20.411Z</updated>
     
@@ -172,8 +172,8 @@
   
   <entry>
     <title>C#实现定积分求解</title>
-    <link href="https://blog.jiangyayu.cn/archives/Integrals/"/>
-    <id>https://blog.jiangyayu.cn/archives/Integrals/</id>
+    <link href="https://blog.jiangyayu.cn//archives/Integrals/"/>
+    <id>https://blog.jiangyayu.cn//archives/Integrals/</id>
     <published>2016-09-12T01:26:25.000Z</published>
     <updated>2017-03-20T14:06:36.213Z</updated>
     
@@ -209,8 +209,8 @@
   
   <entry>
     <title>NetCDF格式存储的栅格数据转换的MATLAB批处理程序</title>
-    <link href="https://blog.jiangyayu.cn/archives/matlab-nc/"/>
-    <id>https://blog.jiangyayu.cn/archives/matlab-nc/</id>
+    <link href="https://blog.jiangyayu.cn//archives/matlab-nc/"/>
+    <id>https://blog.jiangyayu.cn//archives/matlab-nc/</id>
     <published>2016-04-20T04:53:40.000Z</published>
     <updated>2017-03-02T14:50:05.261Z</updated>
     
@@ -242,8 +242,8 @@
   
   <entry>
     <title>迭代法求解线性方程组--C#实现Jacobi、Gauss-Seidel、SOR迭代法</title>
-    <link href="https://blog.jiangyayu.cn/archives/linear-equation/"/>
-    <id>https://blog.jiangyayu.cn/archives/linear-equation/</id>
+    <link href="https://blog.jiangyayu.cn//archives/linear-equation/"/>
+    <id>https://blog.jiangyayu.cn//archives/linear-equation/</id>
     <published>2016-04-12T01:26:25.000Z</published>
     <updated>2017-03-20T11:41:46.539Z</updated>
     
@@ -281,8 +281,8 @@
   
   <entry>
     <title>Centos6.5中安装配置Cloudera CDH Hadoop集群</title>
-    <link href="https://blog.jiangyayu.cn/archives/hadoop-install/"/>
-    <id>https://blog.jiangyayu.cn/archives/hadoop-install/</id>
+    <link href="https://blog.jiangyayu.cn//archives/hadoop-install/"/>
+    <id>https://blog.jiangyayu.cn//archives/hadoop-install/</id>
     <published>2016-01-16T05:11:05.000Z</published>
     <updated>2017-03-02T14:50:29.565Z</updated>
     
@@ -348,8 +348,8 @@
   
   <entry>
     <title>matlab物理场的正交分解</title>
-    <link href="https://blog.jiangyayu.cn/archives/Orthogonal-decomposition/"/>
-    <id>https://blog.jiangyayu.cn/archives/Orthogonal-decomposition/</id>
+    <link href="https://blog.jiangyayu.cn//archives/Orthogonal-decomposition/"/>
+    <id>https://blog.jiangyayu.cn//archives/Orthogonal-decomposition/</id>
     <published>2013-12-18T06:50:35.000Z</published>
     <updated>2017-03-02T14:50:31.880Z</updated>
     
@@ -392,8 +392,8 @@
   
   <entry>
     <title>海洋要素计算：潮汐调和分析</title>
-    <link href="https://blog.jiangyayu.cn/archives/tide/"/>
-    <id>https://blog.jiangyayu.cn/archives/tide/</id>
+    <link href="https://blog.jiangyayu.cn//archives/tide/"/>
+    <id>https://blog.jiangyayu.cn//archives/tide/</id>
     <published>2013-12-10T05:54:39.000Z</published>
     <updated>2017-03-02T14:50:26.367Z</updated>
     
@@ -430,8 +430,8 @@
   
   <entry>
     <title>海洋要素计算：温盐跃层的分析</title>
-    <link href="https://blog.jiangyayu.cn/archives/temp-salin/"/>
-    <id>https://blog.jiangyayu.cn/archives/temp-salin/</id>
+    <link href="https://blog.jiangyayu.cn//archives/temp-salin/"/>
+    <id>https://blog.jiangyayu.cn//archives/temp-salin/</id>
     <published>2013-10-15T05:54:39.000Z</published>
     <updated>2017-03-02T14:50:22.716Z</updated>
     
@@ -478,8 +478,8 @@
   
   <entry>
     <title>matlab可视化综合实验</title>
-    <link href="https://blog.jiangyayu.cn/archives/matlab-Visualization/"/>
-    <id>https://blog.jiangyayu.cn/archives/matlab-Visualization/</id>
+    <link href="https://blog.jiangyayu.cn//archives/matlab-Visualization/"/>
+    <id>https://blog.jiangyayu.cn//archives/matlab-Visualization/</id>
     <published>2013-09-10T00:25:33.000Z</published>
     <updated>2017-03-02T14:49:57.362Z</updated>
     
@@ -526,16 +526,16 @@
     
       <category term="matlab" scheme="https://blog.jiangyayu.cn/tags/matlab/"/>
     
-      <category term="NetCDF" scheme="https://blog.jiangyayu.cn/tags/NetCDF/"/>
-    
       <category term="可视化" scheme="https://blog.jiangyayu.cn/tags/%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
+    
+      <category term="NetCDF" scheme="https://blog.jiangyayu.cn/tags/NetCDF/"/>
     
   </entry>
   
   <entry>
     <title>利用IDL从TRMM/TMI卫星数据反演全球SST</title>
-    <link href="https://blog.jiangyayu.cn/archives/IDL-SST/"/>
-    <id>https://blog.jiangyayu.cn/archives/IDL-SST/</id>
+    <link href="https://blog.jiangyayu.cn//archives/IDL-SST/"/>
+    <id>https://blog.jiangyayu.cn//archives/IDL-SST/</id>
     <published>2013-07-10T09:26:30.000Z</published>
     <updated>2017-03-02T14:49:56.010Z</updated>
     
@@ -630,8 +630,8 @@
   
   <entry>
     <title>数字图像处理综合实验</title>
-    <link href="https://blog.jiangyayu.cn/archives/Digital-Image-Processing/"/>
-    <id>https://blog.jiangyayu.cn/archives/Digital-Image-Processing/</id>
+    <link href="https://blog.jiangyayu.cn//archives/Digital-Image-Processing/"/>
+    <id>https://blog.jiangyayu.cn//archives/Digital-Image-Processing/</id>
     <published>2013-05-22T07:27:10.000Z</published>
     <updated>2017-03-02T14:50:17.752Z</updated>
     
@@ -765,8 +765,8 @@
   
   <entry>
     <title>高级高光谱遥感应用</title>
-    <link href="https://blog.jiangyayu.cn/archives/Hyperspectral-RS-image-Processing/"/>
-    <id>https://blog.jiangyayu.cn/archives/Hyperspectral-RS-image-Processing/</id>
+    <link href="https://blog.jiangyayu.cn//archives/Hyperspectral-RS-image-Processing/"/>
+    <id>https://blog.jiangyayu.cn//archives/Hyperspectral-RS-image-Processing/</id>
     <published>2013-01-04T08:04:22.000Z</published>
     <updated>2017-03-02T14:49:58.366Z</updated>
     
@@ -929,8 +929,8 @@
   
   <entry>
     <title>AVIRIS卫星影像波谱与实验室波谱库波谱曲线的比较</title>
-    <link href="https://blog.jiangyayu.cn/archives/AVIRIS/"/>
-    <id>https://blog.jiangyayu.cn/archives/AVIRIS/</id>
+    <link href="https://blog.jiangyayu.cn//archives/AVIRIS/"/>
+    <id>https://blog.jiangyayu.cn//archives/AVIRIS/</id>
     <published>2012-12-17T07:27:10.000Z</published>
     <updated>2017-03-02T14:50:39.225Z</updated>
     
@@ -1014,8 +1014,8 @@
   
   <entry>
     <title>ArcGIS练习3：空间分析</title>
-    <link href="https://blog.jiangyayu.cn/archives/ArcGIS-practice-3/"/>
-    <id>https://blog.jiangyayu.cn/archives/ArcGIS-practice-3/</id>
+    <link href="https://blog.jiangyayu.cn//archives/ArcGIS-practice-3/"/>
+    <id>https://blog.jiangyayu.cn//archives/ArcGIS-practice-3/</id>
     <published>2012-12-16T14:45:12.000Z</published>
     <updated>2017-03-04T21:31:01.685Z</updated>
     
@@ -1068,8 +1068,8 @@
   
   <entry>
     <title>ArcGIS练习2：地图投影与编辑</title>
-    <link href="https://blog.jiangyayu.cn/archives/ArcGIS-practice-2/"/>
-    <id>https://blog.jiangyayu.cn/archives/ArcGIS-practice-2/</id>
+    <link href="https://blog.jiangyayu.cn//archives/ArcGIS-practice-2/"/>
+    <id>https://blog.jiangyayu.cn//archives/ArcGIS-practice-2/</id>
     <published>2012-12-16T13:58:08.000Z</published>
     <updated>2017-03-04T21:30:55.349Z</updated>
     
@@ -1132,8 +1132,8 @@
   
   <entry>
     <title>ArcGIS练习1：地形图校正和拼接</title>
-    <link href="https://blog.jiangyayu.cn/archives/ArcGIS-practice-1/"/>
-    <id>https://blog.jiangyayu.cn/archives/ArcGIS-practice-1/</id>
+    <link href="https://blog.jiangyayu.cn//archives/ArcGIS-practice-1/"/>
+    <id>https://blog.jiangyayu.cn//archives/ArcGIS-practice-1/</id>
     <published>2012-12-16T13:10:49.000Z</published>
     <updated>2017-03-04T21:30:49.278Z</updated>
     
@@ -1180,8 +1180,8 @@
   
   <entry>
     <title>数字信号与信息处理2:数字滤波器的设计</title>
-    <link href="https://blog.jiangyayu.cn/archives/Digital-filter/"/>
-    <id>https://blog.jiangyayu.cn/archives/Digital-filter/</id>
+    <link href="https://blog.jiangyayu.cn//archives/Digital-filter/"/>
+    <id>https://blog.jiangyayu.cn//archives/Digital-filter/</id>
     <published>2012-12-14T08:04:22.000Z</published>
     <updated>2017-03-02T14:50:09.100Z</updated>
     
