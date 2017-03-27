@@ -104,7 +104,7 @@
     fancybox: true,
     motion: true,
     duoshuo: {
-      userId: '6373080329548202754',
+      userId: 'undefined',
       author: '博主'
     },
     algolia: {
@@ -731,13 +731,10 @@
       </div>
     </footer>
     
-    <!--原始回到顶部按钮 class="back-to-top"-->
-    <div class="changetheclass">
-      <i class="fa fa-arrow-up"></i>
-      <span id="scrollIndicator"></span>
-    </div>
+    <!--原始回到顶部按钮 <div class="back-to-top"><i class="fa fa-arrow-up"></i><span id="scrollIndicator"></span></div>-->
     
 
+    <div class="back-to-top"><span id="scrollIndicator" style="display:none"></span></div>
     <div id="rocket-to-top">
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 64 64">
             <path fill="#ccc" d="M42.057,37.732c0,0,4.139-25.58-9.78-36.207c-0.307-0.233-0.573-0.322-0.802-0.329
@@ -829,38 +826,46 @@
 
   
 
-  
-    
+
+
   
 
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"alexanderblog"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+
+
+
+  
+    <script type="text/javascript">
+    (function(){
+      var appid = 'cysULAhB7';
+      var conf = '9cc1a3eeb93693b9ce591e1c47832f16';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      if (width < 960) {
+      window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){
+        window.changyan.api.config({appid:appid,conf:conf})});
+      }
     })();
-  </script>
-
+    </script>
+    <script type="text/javascript" src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
   
-    
-      
-      <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-      <script src="/js/src/hook-duoshuo.js?v=5.1.0"></script>
-    
-  
-
-
-
-
-
-
-
-
 
 
 
