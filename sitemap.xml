@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.jiangyayu.cn/guestbook/index.html</loc>
+    
+    <lastmod>2017-03-28T09:22:45.084Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.jiangyayu.cn/categories/index.html</loc>
     
     <lastmod>2017-03-26T08:17:07.341Z</lastmod>
@@ -159,13 +166,6 @@
     <loc>https://blog.jiangyayu.cn//archives/IDL-SST.html</loc>
     
     <lastmod>2017-03-02T14:49:56.010Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.jiangyayu.cn/guestbook/index.html</loc>
-    
-    <lastmod>2017-03-02T08:13:45.566Z</lastmod>
     
   </url>
   
