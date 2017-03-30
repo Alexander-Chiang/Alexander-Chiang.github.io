@@ -92,14 +92,14 @@
 <meta property="og:url" content="https://blog.jiangyayu.cn/archives/tomcat-install.html">
 <meta property="og:site_name" content="Alex's Blog">
 <meta property="og:description" content="&amp;emsp;&amp;emsp;Tomcat 服务器是一个免费的开放源代码的Web 应用服务器，属于轻量级应用服务器，在中小型系统和并发访问用户不是很多的场合下被普遍使用，是开发和调试JSP 程序的首选。">
-<meta property="og:image" content="http://source.jiangyayu.cn/tomcat-install/1.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/tomcat-install/2.png">
-<meta property="og:image" content="http://source.jiangyayu.cn/tomcat-install/3.png">
-<meta property="og:updated_time" content="2017-03-28T13:33:40.021Z">
+<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/tomcat-install/1.png">
+<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/tomcat-install/2.png">
+<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/tomcat-install/3.png">
+<meta property="og:updated_time" content="2017-03-30T15:35:05.871Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS6.5中Tomcat的安装配置">
 <meta name="twitter:description" content="&amp;emsp;&amp;emsp;Tomcat 服务器是一个免费的开放源代码的Web 应用服务器，属于轻量级应用服务器，在中小型系统和并发访问用户不是很多的场合下被普遍使用，是开发和调试JSP 程序的首选。">
-<meta name="twitter:image" content="http://source.jiangyayu.cn/tomcat-install/1.png">
+<meta name="twitter:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/tomcat-install/1.png">
 
 
 
@@ -440,7 +440,7 @@
 <h2 id="Tomcat安装配置"><a href="#Tomcat安装配置" class="headerlink" title="Tomcat安装配置"></a>Tomcat安装配置</h2><ol>
 <li>下载对应版本的Tomcat：<br> <a href="http://tomcat.apache.org/download-80.cgi" target="_blank" rel="external">http://tomcat.apache.org/download-80.cgi</a></li>
 <li>解压到指定路径</li>
-<li><p>关闭防火墙、关闭SELinux：<br><code>chkconfig iptables off</code><br><code>vim /etc/selinux/config</code><br>将<code>SELINUX</code>改为<code>disabled</code><br>&emsp;&emsp;通过以上设置，运行<code>/usr/local/ /tomcat/bin/startup.sh</code>，出现以下情况，表示已成功启动Tomcat<br><img src="http://source.jiangyayu.cn/tomcat-install/1.png"><br>此时，在浏览器中访问：localhost:8080，应有一下界面：<br><img src="http://source.jiangyayu.cn/tomcat-install/2.png"></p>
+<li><p>关闭防火墙、关闭SELinux：<br><code>chkconfig iptables off</code><br><code>vim /etc/selinux/config</code><br>将<code>SELINUX</code>改为<code>disabled</code><br>&emsp;&emsp;通过以上设置，运行<code>/usr/local/ /tomcat/bin/startup.sh</code>，出现以下情况，表示已成功启动Tomcat<br><img src="//source.jiangyayu.cn/tomcat-install/1.png"><br>此时，在浏览器中访问：localhost:8080，应有一下界面：<br><img src="//source.jiangyayu.cn/tomcat-install/2.png"></p>
 </li>
 <li><p>设置tomcat的服务器启动和关闭<br>执行命令：<code>vim /etc/rc.d/init.d/tomcat</code>，创建脚本文件，在文件中写入如下代码，保存并且退出</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">#!/bin/bash</div><div class="line"># /etc/rc.d/init.d/tomcat</div><div class="line"># init script for tomcat precesses</div><div class="line"># processname: tomcat</div><div class="line"># description: tomcat is a j2se server</div><div class="line"># chkconfig: 2345 86 16</div><div class="line"># description: Start up the Tomcat servlet engine.</div><div class="line"></div><div class="line">if [ -f /etc/init.d/functions ]; then</div><div class="line">. /etc/init.d/functions</div><div class="line">elif [ -f /etc/rc.d/init.d/functions ]; then</div><div class="line">. /etc/rc.d/init.d/functions</div><div class="line">else</div><div class="line">echo -e &quot;\atomcat: unable to locate functions lib. Cannot continue.&quot;</div><div class="line">exit -1</div><div class="line">fi</div><div class="line">RETVAL=$?</div><div class="line">CATALINA_HOME=&quot;/usr/local /tomcat&quot;   </div><div class="line">#tomcat安装目录，你安装在什么目录下就复制什么目录</div><div class="line">case &quot;$1&quot; in</div><div class="line">start)</div><div class="line">if [ -f $CATALINA_HOME/bin/startup.sh ];</div><div class="line">then</div><div class="line">echo $&quot;Starting Tomcat&quot;</div><div class="line">$CATALINA_HOME/bin/startup.sh</div><div class="line">fi</div><div class="line">;;</div><div class="line">stop)</div><div class="line">if [ -f $CATALINA_HOME/bin/shutdown.sh ];</div><div class="line">then</div><div class="line">echo $&quot;Stopping Tomcat&quot;</div><div class="line">$CATALINA_HOME/bin/shutdown.sh</div><div class="line">fi</div><div class="line">;;</div><div class="line">*)</div><div class="line">echo $&quot;Usage: $0 &#123;start|stop&#125;&quot;</div><div class="line">exit 1</div><div class="line">;;</div><div class="line">esac</div><div class="line">exit $RETVAL </div><div class="line"></div><div class="line">Linux</div></pre></td></tr></table></figure>
@@ -452,7 +452,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">export JAVA_HOME=/usr/java/jdk1.8.0_101</div><div class="line"># javajdk的安装路径，使用echo $JAVA_HOME命令可以读取</div><div class="line">export CATALINA_HOME=/usr/local/kencery/tomcat</div><div class="line">export CATALINA_BASE=/usr/local/kencery/tomcat</div><div class="line">export CATALINA_TMPDIR=/usr/local/kencery/tomcat/temp</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>&emsp;&emsp;通过以上设置，可以通过：<code>service tomcat start</code> 和 <code>service tomcat stop</code>来启动和停止tomcat服务了<br><img src="http://source.jiangyayu.cn/tomcat-install/3.png"></p>
+<p>&emsp;&emsp;通过以上设置，可以通过：<code>service tomcat start</code> 和 <code>service tomcat stop</code>来启动和停止tomcat服务了<br><img src="//source.jiangyayu.cn/tomcat-install/3.png"></p>
 <ol>
 <li><p>设置tomcat的开机启动<br>打开linux设置开启启动的文件，将下面的配置文件写入此文件的最后，命令为：<br><code>vim /etc/rc.d/rc.local</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">export JAVA_HOME=/usr/java/jdk1.8.0_101</div><div class="line">export CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</div><div class="line">export PATH=$PATH:$JAVA_HOME/bin</div><div class="line">export CATALINA_HOME=/usr/local/kencery/tomcat/</div><div class="line">#tomcat自启动</div><div class="line">/usr/local /tomcat/bin/startup</div></pre></td></tr></table></figure>
