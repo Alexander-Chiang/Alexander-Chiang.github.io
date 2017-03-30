@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.jiangyayu.cn/guestbook/index.html</loc>
+    
+    <lastmod>2017-03-29T02:01:53.352Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.jiangyayu.cn//archives/ArcGIS-practice-1.html</loc>
     
     <lastmod>2017-03-28T13:33:40.043Z</lastmod>
@@ -23,14 +30,14 @@
   </url>
   
   <url>
-    <loc>https://blog.jiangyayu.cn//archives/matlab-nc.html</loc>
+    <loc>https://blog.jiangyayu.cn//archives/Hyperspectral-RS-image-Processing.html</loc>
     
     <lastmod>2017-03-28T13:33:40.026Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.jiangyayu.cn//archives/Hyperspectral-RS-image-Processing.html</loc>
+    <loc>https://blog.jiangyayu.cn//archives/matlab-nc.html</loc>
     
     <lastmod>2017-03-28T13:33:40.026Z</lastmod>
     
@@ -65,14 +72,14 @@
   </url>
   
   <url>
-    <loc>https://blog.jiangyayu.cn//archives/tomcat-install.html</loc>
+    <loc>https://blog.jiangyayu.cn//archives/Digital-Image-Processing.html</loc>
     
     <lastmod>2017-03-28T13:33:40.021Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.jiangyayu.cn//archives/Digital-Image-Processing.html</loc>
+    <loc>https://blog.jiangyayu.cn//archives/tomcat-install.html</loc>
     
     <lastmod>2017-03-28T13:33:40.021Z</lastmod>
     
@@ -107,13 +114,6 @@
   </url>
   
   <url>
-    <loc>https://blog.jiangyayu.cn//archives/Digital-Image-Positioning.html</loc>
-    
-    <lastmod>2017-03-28T13:33:40.018Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.jiangyayu.cn//archives/photos.html</loc>
     
     <lastmod>2017-03-28T13:33:40.018Z</lastmod>
@@ -121,14 +121,14 @@
   </url>
   
   <url>
-    <loc>https://blog.jiangyayu.cn//archives/ArcGIS-practice-3.html</loc>
+    <loc>https://blog.jiangyayu.cn//archives/Digital-Image-Positioning.html</loc>
     
-    <lastmod>2017-03-28T13:33:40.016Z</lastmod>
+    <lastmod>2017-03-28T13:33:40.018Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.jiangyayu.cn//archives/AVIRIS.html</loc>
+    <loc>https://blog.jiangyayu.cn//archives/ArcGIS-practice-3.html</loc>
     
     <lastmod>2017-03-28T13:33:40.016Z</lastmod>
     
@@ -149,9 +149,9 @@
   </url>
   
   <url>
-    <loc>https://blog.jiangyayu.cn/guestbook/index.html</loc>
+    <loc>https://blog.jiangyayu.cn//archives/AVIRIS.html</loc>
     
-    <lastmod>2017-03-28T09:22:45.084Z</lastmod>
+    <lastmod>2017-03-28T13:33:40.016Z</lastmod>
     
   </url>
   
