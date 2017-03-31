@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>https://blog.jiangyayu.cn//archives/CAS-Single-Sign-On.html</loc>
+    <lastmod>2017-03-31T00:25:57.577Z</lastmod>
+    <data>
+        <display>
+        <title>CAS4.0单点登录服务器的配置</title>
+        <pubTime>2016-10-06T02:01:02.000Z</pubTime>
+        
+        <tag>服务器</tag>
+         
+        <tag>单点登录</tag>
+         
+        <tag>CAS</tag>
+         
+         
+           
+             
+              <breadCrumb title="Linux" url="https://blog.jiangyayu.cn/categories/Linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.jiangyayu.cn//archives/AVIRIS.html</loc>
     <lastmod>2017-03-30T15:35:05.898Z</lastmod>
     <data>
@@ -203,30 +227,6 @@
            
              
               <breadCrumb title="数字信号" url="https://blog.jiangyayu.cn/categories/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.jiangyayu.cn//archives/CAS-Single-Sign-On.html</loc>
-    <lastmod>2017-03-30T15:35:05.872Z</lastmod>
-    <data>
-        <display>
-        <title>CAS4.0单点登录服务器的配置</title>
-        <pubTime>2016-10-06T02:01:02.000Z</pubTime>
-        
-        <tag>服务器</tag>
-         
-        <tag>单点登录</tag>
-         
-        <tag>CAS</tag>
-         
-         
-           
-             
-              <breadCrumb title="Linux" url="https://blog.jiangyayu.cn/categories/Linux/"/>
           
         </display>
     </data>

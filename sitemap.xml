@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.jiangyayu.cn//archives/CAS-Single-Sign-On.html</loc>
+    
+    <lastmod>2017-03-31T00:25:57.577Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.jiangyayu.cn//archives/AVIRIS.html</loc>
     
     <lastmod>2017-03-30T15:35:05.898Z</lastmod>
@@ -61,13 +68,6 @@
     <loc>https://blog.jiangyayu.cn//archives/Digital-filter.html</loc>
     
     <lastmod>2017-03-30T15:35:05.873Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.jiangyayu.cn//archives/CAS-Single-Sign-On.html</loc>
-    
-    <lastmod>2017-03-30T15:35:05.872Z</lastmod>
     
   </url>
   
