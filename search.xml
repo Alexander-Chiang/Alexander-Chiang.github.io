@@ -706,9 +706,9 @@
             
             <tag> 图像处理 </tag>
             
-            <tag> matlab </tag>
-            
             <tag> Erdas </tag>
+            
+            <tag> matlab </tag>
             
         </tags>
         
@@ -1211,9 +1211,9 @@
         
         <tags>
             
-            <tag> 数字信号 </tag>
-            
             <tag> matlab </tag>
+            
+            <tag> 数字信号 </tag>
             
             <tag> 数字滤波器 </tag>
             
@@ -1296,11 +1296,11 @@
         
         <tags>
             
-            <tag> 数字信号 </tag>
-            
             <tag> 图像处理 </tag>
             
             <tag> matlab </tag>
+            
+            <tag> 数字信号 </tag>
             
         </tags>
         
