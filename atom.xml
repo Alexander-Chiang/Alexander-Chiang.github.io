@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.jiangyayu.cn/"/>
-  <updated>2017-04-10T08:51:56.451Z</updated>
+  <updated>2017-04-10T12:40:08.487Z</updated>
   <id>https://blog.jiangyayu.cn/</id>
   
   <author>
@@ -20,9 +20,14 @@
     <link href="https://blog.jiangyayu.cn//archives/arcmap-count-by-spatial.html"/>
     <id>https://blog.jiangyayu.cn//archives/arcmap-count-by-spatial.html</id>
     <published>2017-03-30T09:12:28.000Z</published>
-    <updated>2017-04-10T08:51:56.451Z</updated>
+    <updated>2017-04-10T12:40:08.487Z</updated>
+    
+    <content type="html"><![CDATA[<p>&emsp;&emsp;在使用ArcMap做数据统计分析的时候，我们经常会遇到这样一类问题：分区域计算各区域数据的和、平均值、最大值、最小值等统计量。如：有两个shape文件，一个是省界图(polygon)，另一个是代表各个市的点(point),每个点表示一个市，其属性包含了该市年GDP生产总值，现要统计每个省的GDP生产总值。本文就简单介绍如何通过ArcMap中添加和连接工具(Joins and Relates)实现这一功能。<br><a id="more"></a><br>首先加载数据<code>地级市_point.shp</code>和<code>省界.shp</code>：<br><img src="//source.jiangyayu.cn/arcmap-count-by-spatial/1.png"><br>分别查看这两者的属性表：<br><img src="//source.jiangyayu.cn/arcmap-count-by-spatial/2.png"><br><img src="//source.jiangyayu.cn/arcmap-count-by-spatial/3.png"><br>在<code>省界</code>图层上右键，选择<code>Joins and Relates</code>-&gt;<code>Join</code>:<br><img src="//source.jiangyayu.cn/arcmap-count-by-spatial/4.png"><br>设置如下：<br><img src="//source.jiangyayu.cn/arcmap-count-by-spatial/5.png"><br><strong>注:</strong>可以看到，此处可以设置，进行和、最大、最小、平均值等统计量的计算。<br>点击OK即可将计算结果输出到新图层，此时可以看到输出图层的属性表中有字段<code>Sum_GDP</code>,即为各省的GDP总值：<br><img src="//source.jiangyayu.cn/arcmap-count-by-spatial/6.png"></p>
+]]></content>
     
     <summary type="html">
+    
+      &lt;p&gt;&amp;emsp;&amp;emsp;在使用ArcMap做数据统计分析的时候，我们经常会遇到这样一类问题：分区域计算各区域数据的和、平均值、最大值、最小值等统计量。如：有两个shape文件，一个是省界图(polygon)，另一个是代表各个市的点(point),每个点表示一个市，其属性包含了该市年GDP生产总值，现要统计每个省的GDP生产总值。本文就简单介绍如何通过ArcMap中添加和连接工具(Joins and Relates)实现这一功能。&lt;br&gt;
     
     </summary>
     
