@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.jiangyayu.cn/"/>
-  <updated>2017-03-30T15:35:05.869Z</updated>
+  <updated>2017-04-09T15:21:46.430Z</updated>
   <id>https://blog.jiangyayu.cn/</id>
   
   <author>
@@ -14,6 +14,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ArcMap分区统计的方法</title>
+    <link href="https://blog.jiangyayu.cn//archives/arcmap-count-by-spatial.html"/>
+    <id>https://blog.jiangyayu.cn//archives/arcmap-count-by-spatial.html</id>
+    <published>2017-03-30T09:12:28.000Z</published>
+    <updated>2017-04-09T15:21:46.430Z</updated>
+    
+    <content type="html"><![CDATA[<p>&emsp;&emsp;在使用ArcMap做数据统计分析的时候，我们可能会遇到这样的问题：分区域计算各区域数据的和、平均值、最大值、最小值等统计量。如：有两个shape文件，一个是省界图(polygon)，另一个是代表各个市的点(point),每个点表示一个市，其属性包含了该市年GDP生产总值，现要统计每个省的GDP生产总值。本文就简单介绍如何通过ArcMap中添加和连接工具(Joins and Relates)实现这一功能。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&amp;emsp;&amp;emsp;在使用ArcMap做数据统计分析的时候，我们可能会遇到这样的问题：分区域计算各区域数据的和、平均值、最大值、最小值等统计量。如：有两个shape文件，一个是省界图(polygon)，另一个是代表各个市的点(point),每个点表示一个市，其属性包含了
+    
+    </summary>
+    
+      <category term="GIS" scheme="https://blog.jiangyayu.cn/categories/GIS/"/>
+    
+    
+      <category term="ArcGIS" scheme="https://blog.jiangyayu.cn/tags/ArcGIS/"/>
+    
+  </entry>
   
   <entry>
     <title>相册</title>
@@ -1175,125 +1198,6 @@
       <category term="ArcGIS" scheme="https://blog.jiangyayu.cn/tags/ArcGIS/"/>
     
       <category term="地图拼接" scheme="https://blog.jiangyayu.cn/tags/%E5%9C%B0%E5%9B%BE%E6%8B%BC%E6%8E%A5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数字信号与信息处理2:数字滤波器的设计</title>
-    <link href="https://blog.jiangyayu.cn//archives/Digital-filter.html"/>
-    <id>https://blog.jiangyayu.cn//archives/Digital-filter.html</id>
-    <published>2012-12-14T08:04:22.000Z</published>
-    <updated>2017-03-30T15:35:05.873Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="实验目的："><a href="#实验目的：" class="headerlink" title="实验目的："></a>实验目的：</h1><ol>
-<li>实验类型：设计性实验。 </li>
-<li>掌握通过零、极点设计低阶数字滤波器的设计方法。</li>
-<li>掌握IIR和FIR数字滤波器的设计方法，并利用所设计滤波器解决实际问题。</li>
-<li>通过分析滤波前后信号频谱的变化，深刻理解滤波的概念。</li>
-<li>对两种滤波器设计方法的进行比较。<a id="more"></a>
-</li>
-</ol>
-<h1 id="实验主要仪器设备，软件"><a href="#实验主要仪器设备，软件" class="headerlink" title="实验主要仪器设备，软件"></a>实验主要仪器设备，软件</h1><ol>
-<li>硬件准备：PC机</li>
-<li>软件准备：Matlab语言环境</li>
-</ol>
-<h1 id="实验的基本原理与内容"><a href="#实验的基本原理与内容" class="headerlink" title="实验的基本原理与内容"></a>实验的基本原理与内容</h1><h2 id="实验原理"><a href="#实验原理" class="headerlink" title="实验原理"></a>实验原理</h2><p>&emsp;&emsp;数字滤波器是具有某种特定频率特性的线性时不变系统。广义上，任何线性时不变离散系统都是一个数字滤波器。设计数字滤波器的任务就是需求一个因果稳定的线性是不变系统，并使系统函数H(z)具有指定的频率特性。<br><img src="//source.jiangyayu.cn/Digital-filter/1.png" alt="公式" style="zoom:0.5"><br>&emsp;&emsp;低阶数字滤波器一般指一阶或二阶滤波器。因其阶次较低，可用零极点的分布来调控其频率特性；其好处处理速度快，硬件简单。另外，高阶滤波器在许多情况下由多个低阶滤波器组合来实现。<br>&emsp;&emsp;LTI系统可在z域中用零极点图的形式来描述。这在设计简单的滤波器时很重要，利用其可进行谱分析，只要正确地配置零极点就可达到一定的设计要求。那么，建立零极点与频率特性的关系规律：</p>
-<ol>
-<li>设计滤波器时，一定要保证结构的稳定，因此所有极点应该位于单位圆之内；</li>
-<li>负相位越大引起系统的延时越大，为了减少系统时延，所设计的系统零点最好也在单位圆内(或上)；</li>
-<li>极点在单位圆附近，对应频率幅度会出现波峰；零点在单位圆上，对应频率幅度会出现波谷。</li>
-</ol>
-<p>&emsp;&emsp;基于零极点的低阶数据滤波器模型：</p>
-<p><img src="//source.jiangyayu.cn/Digital-filter/2.png" alt="公式" style="zoom:0.5"></p>
-<p>&emsp;&emsp;数字滤波器从实现的网络结构或者从单位冲激响应分类，可以分为无限长单位冲激响应（IIR）数字滤波器和有限长单位冲激响应（FIR）数字滤波器。<br>&emsp;&emsp;数字滤波器设计的基本问题：</p>
-<ol>
-<li>根据实际要求确定数字滤波器的性能指标。</li>
-<li>用一个稳定的系统函数去逼近这个指标。</li>
-<li>用一个有限精度的运算去实现这个传输函数。</li>
-</ol>
-<p>&emsp;&emsp;其中IIR数字滤波器主要是借助于模拟滤波器的设计方法。模拟滤波器已有一套成熟的设计方法，充分利用这些资源为IIR数字滤波器设计提供很大方便。但IIR数字滤波器的相位特征一般为非线性的。而在有些实际应用场合，如图像处理，对滤波器线性相位特性要求颇为严格，因此需要选择FIR数字滤波器，且FIR数字滤波器的幅度特征可任意设计，比较IIR数字滤波器的设计更灵活。</p>
-<h2 id="实验内容（一）："><a href="#实验内容（一）：" class="headerlink" title="实验内容（一）："></a>实验内容（一）：</h2><p>&emsp;&emsp;设有一连续信号x(t)=sin(15t)+cos(40t)+cos(200t)，基于零、极点低阶数字滤波器模型，分别设计二阶数字波器和一阶数字滤波器，分别提取三个频率分量。设采样周期T=0.005秒。<br><strong>基本流程：</strong><br>a）    构造连续信号x(t)并显示波形，信号的作用时间设定为：0~10s;<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt;&gt; t = <span class="number">0</span>:<span class="number">0.005</span>:<span class="number">10</span>;</div><div class="line">&gt;&gt; x=<span class="built_in">sin</span>(<span class="number">15</span>*t)+<span class="built_in">cos</span>(<span class="number">40</span>*t)+<span class="built_in">cos</span>(<span class="number">200</span>*t);</div><div class="line">&gt;&gt; plot(x);   <span class="comment">%% 绘出原始信号</span></div></pre></td></tr></table></figure></p>
-<p><img src="//source.jiangyayu.cn/Digital-filter/3.png" style="zoom:0.7"><br>b）    需求分析并选定滤波的类型【低通，高通，带通，带阻】；基于二阶数字波器和一阶数字滤波器的模型传递函数设计其参数，并画出零、极点分布图及滤波器的频响；<br>c）    用设计出的滤波器分别提取x(t)信号各频率成分；并与参考信号相比。<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">b=[<span class="number">1</span> <span class="number">1</span>];</div><div class="line">a=[<span class="number">20</span> <span class="number">-18</span>];</div><div class="line">y0=filter(b,a,x);  <span class="comment">%%用低通滤除cos（200t）</span></div><div class="line">a1 = poly([<span class="number">0.9</span>,<span class="number">0.9</span>]);</div><div class="line">b1 = poly([exp(<span class="number">0.2</span>j),exp(<span class="number">-0.2</span>j)]);</div><div class="line">w0 = <span class="number">0.2</span>;</div><div class="line">alpha1 = <span class="built_in">sin</span>(w0);</div><div class="line">k1 = (<span class="number">1</span>+alpha1)/<span class="number">2</span> ;</div><div class="line">b1 = k1.*b1;</div><div class="line">y1=filter(b1,a1,y0); <span class="comment">%%用带阻滤除cos（40t）</span></div><div class="line">figure,subplot(<span class="number">3</span>,<span class="number">1</span>,<span class="number">1</span>),zplane(b1,a1); <span class="comment">%%绘制零极点</span></div><div class="line">[H,w] = freqz(b1,a1);</div><div class="line">subplot(<span class="number">3</span>,<span class="number">1</span>,<span class="number">2</span>), plot(w,<span class="built_in">abs</span>(H)); <span class="comment">%%绘制滤波器   </span></div><div class="line">subplot(<span class="number">3</span>,<span class="number">1</span>,<span class="number">3</span>),plot(y1); <span class="comment">%%绘制提取的sin（15t）</span></div><div class="line">hold on ;</div><div class="line">plot(<span class="built_in">sin</span>(<span class="number">15</span>*t),<span class="string">'g'</span>); <span class="comment">%%绘出sin（15t）</span></div></pre></td></tr></table></figure></p>
-<p><img src="//source.jiangyayu.cn/Digital-filter/4.png" style="zoom:0.7"></p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">alpha2 = <span class="number">0.98</span>;</div><div class="line">beta2 = <span class="built_in">cos</span>(<span class="number">0.2</span>);</div><div class="line">a2 = [<span class="number">1</span> -beta2*(<span class="number">1</span>+alpha2) alpha2];</div><div class="line">k2 = (<span class="number">1</span>-alpha2)/<span class="number">2</span>;</div><div class="line">b2 = k2.*[<span class="number">1</span> <span class="number">0</span> <span class="number">-1</span>];</div><div class="line">y3 =filter(b2,a2,x);</div><div class="line">figure,subplot(<span class="number">3</span>,<span class="number">1</span>,<span class="number">1</span>),zplane(b2,a2);<span class="comment">%%绘制零极点</span></div><div class="line">[H,w] = freqz(b2,a2);</div><div class="line">subplot(<span class="number">3</span>,<span class="number">1</span>,<span class="number">2</span>), plot(w,<span class="built_in">abs</span>(H)); <span class="comment">%%绘制滤波器</span></div><div class="line">subplot(<span class="number">3</span>,<span class="number">1</span>,<span class="number">3</span>),plot(y3);<span class="comment">%%绘制提取的cos（40t）</span></div><div class="line">hold on;</div><div class="line">plot(<span class="built_in">cos</span>(<span class="number">40</span>*t),<span class="string">'g'</span>);   <span class="comment">%%绘出cos（40t）</span></div></pre></td></tr></table></figure>
-<p><img src="//source.jiangyayu.cn/Digital-filter/5.png" style="zoom:0.7"></p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">alpha3 = <span class="number">0.98</span>;</div><div class="line">beta3 = <span class="built_in">cos</span>(<span class="number">1</span>);</div><div class="line">a3 = [<span class="number">1</span> -beta3*(<span class="number">1</span>+alpha3) alpha3];</div><div class="line">k3 = (<span class="number">1</span>-alpha2)/<span class="number">2</span>;</div><div class="line">b3 = k3.*[<span class="number">1</span> <span class="number">0</span> <span class="number">-1</span>];</div><div class="line">y4 =filter(b3,a3,x);</div><div class="line">figure,subplot(<span class="number">3</span>,<span class="number">1</span>,<span class="number">1</span>),zplane(b3,a3);<span class="comment">%%绘制零极点</span></div><div class="line">[H,w] = freqz(b3,a3);</div><div class="line">subplot(<span class="number">3</span>,<span class="number">1</span>,<span class="number">2</span>),plot(w,<span class="built_in">abs</span>(H));<span class="comment">%%绘制滤波器</span></div><div class="line">subplot(<span class="number">3</span>,<span class="number">1</span>,<span class="number">3</span>),plot(y4);  <span class="comment">%%绘制提取的cos（200t）</span></div><div class="line">hold on;</div><div class="line">plot(<span class="built_in">cos</span>(<span class="number">200</span>*t),<span class="string">'g'</span>);     <span class="comment">%%绘制cos（200t）</span></div><div class="line">axis([<span class="number">0</span>,<span class="number">300</span>,<span class="number">-1.1</span>,<span class="number">1.1</span>]);<span class="comment">%%设置显示范围</span></div><div class="line">hold off;</div></pre></td></tr></table></figure>
-<p><img src="//source.jiangyayu.cn/Digital-filter/6.png" style="zoom:0.7"></p>
-<h2 id="实验内容（二）"><a href="#实验内容（二）" class="headerlink" title="实验内容（二）"></a>实验内容（二）</h2><p><strong>实验背景:</strong><br>&emsp;&emsp;心电( Electrocardiograph, ECG) 信号是心脏电活动在人体体表的表现，它一般比较微弱，正常的心电信号在0.01Hz-100Hz频带范围内。而90%的ECG频谱能量又集中在0.25-35Hz之间。因此, 心电信号在提取的过程中极易受到内、 外环境的干扰, 而其中最而其中最主要的干扰是近场 50 Hz工频干扰源。因此, 如何消除 50 Hz工频干扰, 成为处理心电信号的首要任务。<br><strong>实验数据：</strong><br>&emsp;&emsp;实验数据是从美国麻省理工学院提供的MIT-BIH数据库下载的212文件格式带工频干扰的心电信号。该212文件格式包括头、数据和注释三个文件，以ASCll码方式存储。其采样率为360Hz，共有30000个样本点，数据文件<a href="//source.jiangyayu.cn/Digital-filter/xindiandata.xls">xindiantu.xls</a>。<br><strong>实验任务：</strong><br>&emsp;&emsp;分别设计IIR数字带阻滤波器（陷波器）和FIR数字带阻滤波器（陷波器），陷波器的模拟指标如下图所示：阻带从49-51Hz间，其中心频率为f 0=50 Hz，过渡带宽B=2Hz，通带的波动控制在1dB内，而阻带的衰减至少到45dB，采样频率为fs=360Hz；并将所设计滤波器对实际被50Hz干扰后的心电图信号进行滤波处理仿真实验，滤除其中的干扰成分。观察总结滤波作用与效果。<br><img src="//source.jiangyayu.cn/Digital-filter/7.png"></p>
-<p><strong>实验步骤：</strong><br>（1）读取给定心电图信号的数据文件xidiantu.xls，并绘出心电图信号波形图；</p>
-<ul>
-<li>将xindiantu.xls导入matlab，并转换成行向量data。</li>
-<li>运行以下程序绘出原始心电图<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">T=<span class="number">1</span>/<span class="number">360</span>;</div><div class="line">t=<span class="number">0</span>:T:<span class="number">29999</span>*T;</div><div class="line">plot(t,data)；</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><img src="//source.jiangyayu.cn/Digital-filter/8.png" style="zoom:0.7"></p>
-<p>（2）对心电图信号的频谱进行分析，得出滤波器的设计指标参数；并绘制其模拟域频谱图。<br>根据实验要求，所设计的滤波器阻带为49-51Hz，其中心频率为f 0=50 Hz，过渡带宽B=2Hz，通带的波动控制在1dB内，而阻带的衰减至少到45dB，采样频率为fs=360Hz；所以设计滤波器的阻带为60dB。<br>（3）根据所分析的指标参数，<strong>设计50Hz IIR数字陷波器（带阻滤波器）</strong>；</p>
-<ul>
-<li><p>将数字域频率转化成模拟域频率</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Rp=<span class="number">1</span>;</div><div class="line">As=<span class="number">60</span>;</div><div class="line">fs=<span class="number">360</span>;</div></pre></td></tr></table></figure>
-</li>
-<li><p>设定滤波器各项参数</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">wpl=fs*<span class="number">2</span>*<span class="built_in">tan</span>((<span class="number">47</span>*<span class="built_in">pi</span>/<span class="number">360</span>));</div><div class="line">wph=fs*<span class="number">2</span>*<span class="built_in">tan</span>((<span class="number">53</span>*<span class="built_in">pi</span>/<span class="number">360</span>));</div><div class="line">wsl=fs*<span class="number">2</span>*<span class="built_in">tan</span>((<span class="number">49</span>*<span class="built_in">pi</span>/<span class="number">360</span>));</div><div class="line">wsh=fs*<span class="number">2</span>*<span class="built_in">tan</span>((<span class="number">51</span>*<span class="built_in">pi</span>/<span class="number">360</span>));</div><div class="line">wp=[wpl,wph];</div><div class="line">ws=[wsl,wsh];</div></pre></td></tr></table></figure>
-</li>
-<li><p>设置巴特沃思(Butterworth)低通滤波器原型</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[N,wc]=buttord(wp,ws,rp,as,<span class="string">'s'</span>);</div><div class="line">[z,p,k]=buttap(N);</div><div class="line">[b0,a0]=zp2tf(z,p,k);</div><div class="line">[H,w] = freqs(b0,a0);</div><div class="line">plot(w,<span class="built_in">abs</span>(H));</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><img src="//source.jiangyayu.cn/Digital-filter/9.png" style="zoom:0.7"></p>
-<ul>
-<li><p>低通滤波器转换成带阻滤波器</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">B=wc(<span class="number">2</span>)-wc(<span class="number">1</span>);</div><div class="line">wz=(wc(<span class="number">2</span>).*wc(<span class="number">1</span>)).^(<span class="number">1</span>/<span class="number">2</span>);</div><div class="line">[bt,at]=lp2bs(b0,a0,wz,B);</div></pre></td></tr></table></figure>
-</li>
-<li><p>绘制滤波器形状</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[b,a]=bilinear(bt,at,fs); </div><div class="line">subplot(<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>) ,zplane(b,a);</div><div class="line">[H,w]=freqz(b,a);</div><div class="line">subplot(<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>),plot(w*<span class="number">360</span>/(<span class="number">2</span>*<span class="built_in">pi</span>),<span class="number">20</span>*<span class="built_in">log10</span>(<span class="built_in">abs</span>(H)));</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><img src="//source.jiangyayu.cn/Digital-filter/10.png" style="zoom:0.7"></p>
-<ul>
-<li>开始滤波<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">y=filter(b,a,data);</div><div class="line">plot(t,data);</div><div class="line">figure,plot(t,y);</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><a href="//source.jiangyayu.cn/Digital-filter/11.png" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/Digital-filter/11.png"></a></div><div class="group-picture-column" style="width: 50%;"><a href="//source.jiangyayu.cn/Digital-filter/12.png" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/Digital-filter/12.png"></a></div></div></div></div>
-<p>(4)根据所分析的指标参数，<strong>设计50Hz FIR数字陷波器（带阻滤波器）</strong>；用给定指标进行验证设计的合理性。</p>
-<ul>
-<li><p>将信号转到换数字域</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">rp=<span class="number">1</span>;</div><div class="line">As=<span class="number">60</span>;</div><div class="line">fs=<span class="number">360</span>;</div></pre></td></tr></table></figure>
-</li>
-<li><p>设置滤波器参数</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">wp1=<span class="number">47</span>*<span class="number">2</span>*<span class="built_in">pi</span>/<span class="number">360</span>;</div><div class="line">wph=<span class="number">53</span>*<span class="number">2</span>*<span class="built_in">pi</span>/<span class="number">360</span>;</div><div class="line">ws1=<span class="number">49</span>*<span class="number">2</span>*<span class="built_in">pi</span>/<span class="number">360</span>;</div><div class="line">wsh=<span class="number">51</span>*<span class="number">2</span>*<span class="built_in">pi</span>/<span class="number">360</span>;</div></pre></td></tr></table></figure>
-</li>
-<li><p>生成滤波器并绘制出滤波器形状</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">deltaw=<span class="number">2</span>*<span class="number">2</span>*<span class="built_in">pi</span>/<span class="number">360</span>;</div><div class="line">N0=<span class="built_in">ceil</span>(<span class="number">6.6</span>*<span class="built_in">pi</span>/deltaw);</div><div class="line">N=N0+<span class="built_in">mod</span>(N0+<span class="number">1</span>,<span class="number">2</span>);</div><div class="line">wd=(hamming(N));</div><div class="line">wc1=(ws1+wp1)/<span class="number">2</span>; wc2=(wph+wsh)/<span class="number">2</span>;</div><div class="line">hd=[zeros(<span class="number">1</span>,(N<span class="number">-1</span>)/<span class="number">2</span>),<span class="number">1</span>,zeros(<span class="number">1</span>,(N<span class="number">-1</span>)/<span class="number">2</span>)]-ideallp(wc2,N)+ideallp(wc1,N)</div><div class="line"></div><div class="line">h=hd.*wd';</div><div class="line">a=<span class="number">1</span>;</div><div class="line">H=freqz(h,a,<span class="number">0</span>:<span class="number">0.01</span>:<span class="built_in">pi</span>);</div><div class="line">subplot(<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>), zplane(h,a);</div><div class="line">subplot(<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>), plot([<span class="number">0</span>:<span class="number">0.01</span>:pi]*<span class="number">360</span>/(<span class="number">2</span>*<span class="built_in">pi</span>),<span class="built_in">abs</span>(H)) ;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><img src="//source.jiangyayu.cn/Digital-filter/13.png" style="zoom:0.7"></p>
-<ul>
-<li>进行滤波<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">T=<span class="number">1</span>/<span class="number">360</span>;</div><div class="line">t=<span class="number">0</span>:T:<span class="number">29999</span>*T;</div><div class="line">y=filter(h,a,data);</div><div class="line">plot(t,data);</div><div class="line">figure,plot(t,y);</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><a href="//source.jiangyayu.cn/Digital-filter/14.png" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/Digital-filter/14.png"></a></div><div class="group-picture-column" style="width: 50%;"><a href="//source.jiangyayu.cn/Digital-filter/15.png" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/Digital-filter/15.png"></a></div></div></div></div>
-<p>（5）分别利用两种所设计的数字陷波器对给定的心电图信号进行滤波，滤除50Hz的工频干扰；<br>（6）绘制滤波后信号的频谱图，并原始心电信号的频谱进行比对，分析结果；<br><div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><a href="//source.jiangyayu.cn/Digital-filter/16.png" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/Digital-filter/16.png"></a></div><div class="group-picture-column" style="width: 50%;"><a href="//source.jiangyayu.cn/Digital-filter/17.png" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/Digital-filter/17.png"></a></div></div></div></div><br>（7）两种滤波器设计结果的比对，分析其原因。<br>IIR数字滤波器的设计方法简单方便，但其相位特征一般为非线性的。FIR数字滤波器，具有系统稳定、其幅度特征可任意设计等优点。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;实验目的：&quot;&gt;&lt;a href=&quot;#实验目的：&quot; class=&quot;headerlink&quot; title=&quot;实验目的：&quot;&gt;&lt;/a&gt;实验目的：&lt;/h1&gt;&lt;ol&gt;
-&lt;li&gt;实验类型：设计性实验。 &lt;/li&gt;
-&lt;li&gt;掌握通过零、极点设计低阶数字滤波器的设计方法。&lt;/li&gt;
-&lt;li&gt;掌握IIR和FIR数字滤波器的设计方法，并利用所设计滤波器解决实际问题。&lt;/li&gt;
-&lt;li&gt;通过分析滤波前后信号频谱的变化，深刻理解滤波的概念。&lt;/li&gt;
-&lt;li&gt;对两种滤波器设计方法的进行比较。
-    
-    </summary>
-    
-      <category term="数字信号" scheme="https://blog.jiangyayu.cn/categories/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7/"/>
-    
-    
-      <category term="数字信号" scheme="https://blog.jiangyayu.cn/tags/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7/"/>
-    
-      <category term="matlab" scheme="https://blog.jiangyayu.cn/tags/matlab/"/>
-    
-      <category term="数字滤波器" scheme="https://blog.jiangyayu.cn/tags/%E6%95%B0%E5%AD%97%E6%BB%A4%E6%B3%A2%E5%99%A8/"/>
     
   </entry>
   

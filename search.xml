@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title><![CDATA[ArcMap分区统计的方法]]></title>
+      <url>https://blog.jiangyayu.cn//archives/arcmap-count-by-spatial.html</url>
+      <content type="html"><![CDATA[<p>&emsp;&emsp;在使用ArcMap做数据统计分析的时候，我们可能会遇到这样的问题：分区域计算各区域数据的和、平均值、最大值、最小值等统计量。如：有两个shape文件，一个是省界图(polygon)，另一个是代表各个市的点(point),每个点表示一个市，其属性包含了该市年GDP生产总值，现要统计每个省的GDP生产总值。本文就简单介绍如何通过ArcMap中添加和连接工具(Joins and Relates)实现这一功能。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> GIS </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> ArcGIS </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[相册]]></title>
       <url>https://blog.jiangyayu.cn//archives/photos.html</url>
       <content type="html"><![CDATA[<div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 33.333333333333336%;"><a href="//source.jiangyayu.cn/photos/33.小溪.jpg" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/photos/33.小溪.jpg" title="小溪"></a></div><div class="group-picture-column" style="width: 33.333333333333336%;"><a href="//source.jiangyayu.cn/photos/32.玄武湖日出.jpg" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/photos/32.玄武湖日出.jpg" title="玄武湖日出"></a></div><div class="group-picture-column" style="width: 33.333333333333336%;"><a href="//source.jiangyayu.cn/photos/30.上海.jpg" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/photos/30.上海.jpg" title="上海外滩夜景"></a></div></div></div></div>
