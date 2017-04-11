@@ -58,6 +58,150 @@
     </entry>
     
     <entry>
+      <title><![CDATA[Hexo搭建静态博客]]></title>
+      <url>https://blog.jiangyayu.cn//archives/hexo-build-blog.html</url>
+      <content type="html"><![CDATA[<blockquote>
+<p><a href="https://hexo.io/zh-cn/" target="_blank" rel="external">Hexo</a> 是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="http://daringfireball.net/projects/markdown/" target="_blank" rel="external">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。  </p>
+</blockquote>
+<p>本文将简单介绍如何快速搭建一个Hexo，并部署到GitHub和云主机上。<br><a id="more"></a></p>
+<h1 id="运行环境搭建"><a href="#运行环境搭建" class="headerlink" title="运行环境搭建"></a>运行环境搭建</h1><p>Hexo博客的编译运行需要<a href="https://git-scm.com/" target="_blank" rel="external">Git</a>和<a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a>的支持，若电脑上没有安装，请</p>
+<h2 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h2><p>请前往Git官网下载安装Git：<a href="https://git-scm.com/download" target="_blank" rel="external">https://git-scm.com/download</a><br>安装十分简单，均选择默认即可。</p>
+<h2 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h2><p>请前往Node.js的官网下载安装：<a href="http://nodejs.cn/download/" target="_blank" rel="external">http://nodejs.cn/download/</a><br>安装时，请勾选<code>Add to PATH</code>选项。</p>
+<h1 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h1><p>&emsp;&emsp;运行环境搭建好了之后，首先在本地创建一个存放Hexo博客系统的文件夹<code>blog</code>，打开<code>blog</code>文件夹，右键选择<code>Git Bash Here</code>，在Git Bash中通过命令行下载并初始化Hexo：</p>
+<ol>
+<li><p>安装hexo：  </p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo-cli</div></pre></td></tr></table></figure>
+</li>
+<li><p>初始化hexo:</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo init</div></pre></td></tr></table></figure>
+<pre><code>此时，我们的hexo博客系统就已经初步的搭建完成了。
+</code></pre></li>
+<li><p>生成博文</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo generate</div></pre></td></tr></table></figure>
+<pre><code>也可简写成：
+</code></pre> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo g</div></pre></td></tr></table></figure>
+</li>
+<li><p>本地调试预览<br> 安装hexo-server模块：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-server --save</div></pre></td></tr></table></figure>
+<pre><code>然后启动本地服务： 
+</code></pre> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo server</div></pre></td></tr></table></figure>
+<pre><code>此命令也可简写成：
+</code></pre> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo s</div></pre></td></tr></table></figure>
+<p> 打开浏览器，输入地址：<a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> ，即可调试预览博客：<br><img src="//source.jiangyayu.cn/hexo-build-blog/1.png"></p>
+</li>
+</ol>
+<h1 id="使用Next主题"><a href="#使用Next主题" class="headerlink" title="使用Next主题"></a>使用Next主题</h1><p>本文中以<a href="http://theme-next.iissnan.com/" target="_blank" rel="external">Next</a>主题为例，介绍如何使用主题.</p>
+<ol>
+<li><p>下载主题</p>
+<blockquote>
+<p>如果你熟悉 Git， 建议你使用 克隆最新版本 的方式，之后的更新可以通过 git pull 来快速更新， 而不用再次下载压缩包替换。<br>在终端窗口下，定位到 Hexo 站点目录下。使用 Git checkout 代码：  </p>
+</blockquote>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git clone https://github.com/iissnan/hexo-theme-next themes/next</div></pre></td></tr></table></figure>
+</li>
+<li><p>启用主题</p>
+<blockquote>
+<p>与所有 Hexo 主题启用的模式一样。 当 克隆/下载 完成后，打开 站点配置文件， 找到 theme 字段，并将其值更改为 next。</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">theme: next</div></pre></td></tr></table></figure>
+<p>到此，NexT 主题安装完成。下一步我们将验证主题是否正确启用。在切换主题之后、验证之前， 我们最好使用 hexo clean 来清除 Hexo 的缓存。</p>
+</blockquote>
+</li>
+<li><p>验证主题</p>
+<blockquote>
+<p>首先启动 Hexo 本地站点，并开启调试模式（即加上 <code>--debug</code>），整个命令是 <code>hexo s --debug</code>。 在服务启动的过程，注意观察命令行输出是否有任何异常信息，如果你碰到问题，这些信息将帮助他人更好的定位错误。 当命令行输出中提示出：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">INFO  Hexo is running at http://0.0.0.0:4000/. Press Ctrl+C to stop.</div></pre></td></tr></table></figure>
+<p>此时即可使用浏览器访问 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> ，检查站点是否正确运行。  </p>
+</blockquote>
+<p> <img src="//source.jiangyayu.cn/hexo-build-blog/2.png"></p>
+</li>
+</ol>
+<h1 id="发布博客"><a href="#发布博客" class="headerlink" title="发布博客"></a>发布博客</h1><h2 id="部署到GitHub"><a href="#部署到GitHub" class="headerlink" title="部署到GitHub"></a>部署到GitHub</h2><h3 id="创建GitHub仓库"><a href="#创建GitHub仓库" class="headerlink" title="创建GitHub仓库"></a>创建GitHub仓库</h3><p>在<a href="https://github.com/" target="_blank" rel="external">GitHub</a>上注册账户，创建一个名称为<code>usename.github.io</code>(<strong>注：</strong>其中usename为你的用户名，不得使用其他命名)的仓库。<br><img src="//source.jiangyayu.cn/hexo-build-blog/3.png"></p>
+<h3 id="配置SSH链接"><a href="#配置SSH链接" class="headerlink" title="配置SSH链接"></a>配置SSH链接</h3><p>已经在GitHub上添加SSH Key的可以跳过此步骤，否则可以参考<a href="http://www.cnblogs.com/ayseeing/p/3572582.html" target="_blank" rel="external">《github设置添加SSH》</a>进行设置。<br>以下是添加步骤：</p>
+<ol>
+<li><p>检查是否已经有 SSH key<br> 运行 git Bash 客户端，输入如下代码：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ cd ~/.ssh</div><div class="line">$ ls</div></pre></td></tr></table></figure>
+<p> 这两个命令就是检查是否已经存在 <code>id_rsa.pub</code> 或 <code>id_dsa.pub</code> 文件，如果文件已经存在，可以直接跳过创建SSH Key，进行部署。</p>
+</li>
+<li><p>创建一个 SSH key</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C &quot;your_email@example.com&quot;</div></pre></td></tr></table></figure>
+</li>
+<li><p>添加你的 SSH key 到 github上面去<br> a、首先你需要拷贝 <code>id_rsa.pub</code> 文件的内容，你可以用编辑器打开文件复制，也可以用git命令复制该文件的内容，如：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ clip &lt; ~/.ssh/id_rsa.pub</div></pre></td></tr></table></figure>
+<p> b、登录你的github账号，从又上角的设置（ Account Settings ）进入，然后点击菜单栏的 SSH key 进入页面添加 SSH key。<br> c、点击 Add SSH key 按钮添加一个 SSH key 。把你复制的 SSH key 代码粘贴到 key 所对应的输入框中，记得 SSH key 代码的前后不要留有空格或者回车。<br> <img src="//source.jiangyayu.cn/hexo-build-blog/4.png"></p>
+</li>
+</ol>
+<h3 id="Hexo部署到GitHub"><a href="#Hexo部署到GitHub" class="headerlink" title="Hexo部署到GitHub"></a>Hexo部署到GitHub</h3><p>使用<code>hexo deploy</code>部署到GitHub：</p>
+<pre><code>1. 安装`hexo-deployer-git`插件
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
+</code></pre><ol>
+<li><p>在Hexo配置文件<code>_config.xml</code>中作如下修改：</p>
+ <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">    type: git</div><div class="line">    repo: git@github.com:usename/username.github.io.git</div><div class="line">    branch: master</div></pre></td></tr></table></figure>
+</li>
+<li><p>部署</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p> 该命令也可简写成：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo d</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="部署到云服务器"><a href="#部署到云服务器" class="headerlink" title="部署到云服务器"></a>部署到云服务器</h2><p>部署到云服务器很简单，只需要将生成的<code>public</code>文件夹的内容拷贝到服务器的网站根目录下即可。在这里，再介绍一种使用git的方法将Hexo部署到云服务器上。</p>
+<h3 id="安装Git-1"><a href="#安装Git-1" class="headerlink" title="安装Git"></a>安装Git</h3><p>本文中使用的云服务器为<a href="https://www.qcloud.com/" target="_blank" rel="external">腾讯云主机</a>,操作系统为CentOS 6.5，安装Git可以通过以下两种方法安装：</p>
+<h4 id="yum安装"><a href="#yum安装" class="headerlink" title="yum安装"></a>yum安装</h4><p>使用yum安装Git十分简单：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># yum install git</div></pre></td></tr></table></figure></p>
+<h4 id="编译安装"><a href="#编译安装" class="headerlink" title="编译安装"></a>编译安装</h4><ol>
+<li><p>安装依赖包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel</div><div class="line"># yum install  gcc perl-ExtUtils-MakeMaker</div></pre></td></tr></table></figure>
+</li>
+<li><p>下载解压</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># cd /usr/src</div><div class="line"># wget https://codeload.github.com/git/git/tar.gz/v2.12.0</div><div class="line"># tar -zxvf git-2.12.0.tar.gz</div></pre></td></tr></table></figure>
+</li>
+<li><p>编译安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># cd git-2.12.0</div><div class="line"># make prefix=/usr/local/git all</div><div class="line"># make prefix=/usr/local/git install</div><div class="line"># echo &quot;export PATH=$PATH:/usr/local/git/bin&quot; &gt;&gt; /etc/bashrc</div><div class="line"># source /etc/bashrc</div></pre></td></tr></table></figure>
+</li>
+<li><p>安装完成</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># git --version</div><div class="line">git version 2.12.0</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="创建git用户"><a href="#创建git用户" class="headerlink" title="创建git用户"></a>创建git用户</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># useradd -m git  # 创建 git 用户，也可以用 adduser</div><div class="line"># passwd git # 设置密码</div><div class="line"># chmod 740 /etc/sudoers  #将新建的用户添加sudo权限</div><div class="line"># vi /etc/sudoers</div></pre></td></tr></table></figure>
+<h3 id="导入用户的公钥"><a href="#导入用户的公钥" class="headerlink" title="导入用户的公钥"></a>导入用户的公钥</h3><ol>
+<li>查询本地ssh<br>以windows下为例，打开Git Bash,输入<code>cd ~/.ssh</code>,如果返回<code>“… No such file or directory”</code>，说明没有生成过SSH Key。则使用3中方法生成，否则按照2中方法查询公钥。</li>
+<li>若已存在ssh密钥对，则输入<code>cat id_rsa.pub</code>,将查询到的结果复制下来，在服务器端,<strong>切换到git用户</strong> ，执行<code>vim ~/.ssh/authorized_keys</code>,导入刚刚复制的公钥，一行一个。</li>
+<li><p>生成新的Key：（引号内的内容替换为你自己的邮箱）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C &quot;your_email@youremail.com&quot;</div></pre></td></tr></table></figure>
+<p>输出显示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Generating public/private rsa key pair. Enter file in which to save the key (/Users/your_user_directory/.ssh/id_rsa):</div></pre></td></tr></table></figure>
+<p>直接回车，不要修改默认路径。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Enter passphrase (empty for no passphrase): Enter same passphrase again:</div></pre></td></tr></table></figure>
+<p>设置一个密码短语，在每次远程操作之前会要求输入密码短语！闲麻烦可以直接回车，不设置。 </p>
+</li>
+</ol>
+<h3 id="初始化服务器端的仓库"><a href="#初始化服务器端的仓库" class="headerlink" title="初始化服务器端的仓库"></a>初始化服务器端的仓库</h3><p>创建一个目录作为Git仓库，<strong>切换到root用户</strong>，执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkdir /var/www/html/hexo.git</div></pre></td></tr></table></figure></p>
+<p>然后给文件夹赋予git用户组权限：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chown git:git -R /var/www/html/hexo.git</div></pre></td></tr></table></figure></p>
+<p>同时给博客根目录赋予git用户组的权限，以便git能够写入(本文中为hexo文件夹)：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chown git:git -R /var/www/html/hexo</div></pre></td></tr></table></figure></p>
+<p><strong>切换到git用户</strong>，初始化git仓库，执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">su git</div><div class="line">git init --bare /var/www/html/hexo.git</div></pre></td></tr></table></figure></p>
+<h3 id="配置git-hooks"><a href="#配置git-hooks" class="headerlink" title="配置git hooks"></a>配置git hooks</h3><p>新建并编辑刚刚初始化过的仓库里的<code>hooks/post-receive</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim /var/www/html/hexo.git/hooks/post-receive</div></pre></td></tr></table></figure>
+<p>输入如下内容:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">#!/bin/bash</div><div class="line">GIT_REPO=/var/www/html/hexo.git #git仓库</div><div class="line">TMP_GIT_CLONE=/tmp/hexo</div><div class="line">PUBLIC_WWW=/var/www/html/hexo #网站目录</div><div class="line">rm -rf $&#123;TMP_GIT_CLONE&#125;</div><div class="line">git clone $GIT_REPO $TMP_GIT_CLONE</div><div class="line">rm -rf $&#123;PUBLIC_WWW&#125;/*</div><div class="line">cp -rf $&#123;TMP_GIT_CLONE&#125;/* $&#123;PUBLIC_WWW&#125;</div></pre></td></tr></table></figure></p>
+<p>此文件用于每次push之后，将git仓库中的静态博客复制到网站根目录下。<br>还需新建一个<code>/tmp/hexo</code>文件用于交换数据，同样应赋予git用户组权限,<strong>切换到root用户</strong>，执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mkdir /tmp/hexo</div><div class="line">chown git:git -R /tmp/hexo</div></pre></td></tr></table></figure></p>
+<h3 id="Hexo中配置"><a href="#Hexo中配置" class="headerlink" title="Hexo中配置"></a>Hexo中配置</h3><p>在hexo配置文件中修改deploy:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git </div><div class="line">  repo: </div><div class="line">    github: </div><div class="line">    vps: git@vps的ip地址:/var/www/html/hexo.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure></p>
+<h3 id="Hexo部署到云主机"><a href="#Hexo部署到云主机" class="headerlink" title="Hexo部署到云主机"></a>Hexo部署到云主机</h3><p>通过以上的配置，同样通过<code>hexo d</code>即可将生成的博客推送到云主机上。同时配置GitHub和vps可以将博客同步地发布到GitHub Pages和云主机上。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> Web </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> hexo </tag>
+            
+            <tag> blog </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[CAS4.0单点登录服务器的配置]]></title>
       <url>https://blog.jiangyayu.cn//archives/CAS-Single-Sign-On.html</url>
       <content type="html"><![CDATA[<h2 id="SSO和CAS"><a href="#SSO和CAS" class="headerlink" title="SSO和CAS"></a>SSO和CAS</h2><p>&emsp;&emsp;单点登录（SingleSign On , 简称 SSO ）是目前比较流行的服务于企业业务整合的解决方案之一， SSO使得在多个应用系统中，用户只需要登录一次就可以访问所有相互信任的应用系统。<br><a id="more"></a><br>&emsp;&emsp;CAS是中央认证服务Central Authentication Service的简称，是对单点登录SSO（Single Sign On）的一种实现。最初由耶鲁大学的Shawn Bayern 开发，后由Jasig社区维护，经过十多年发展，目前已成为影响最大、广泛使用的、基于Java实现的、开源SSO解决方案。CAS由Cas Server和Cas Client两部分组成，Cas Server是核心，而Cas Client通常就对应于我们的应用。一个Cas Server可以对应于多个Cas Client。它允许我们在一个Client进行登录以后无需再让用户输入用户名和密码进行认证即可访问其它Client应用。</p>
@@ -707,9 +851,9 @@
             
             <tag> 图像处理 </tag>
             
-            <tag> Erdas </tag>
-            
             <tag> matlab </tag>
+            
+            <tag> Erdas </tag>
             
         </tags>
         
@@ -1212,9 +1356,9 @@
         
         <tags>
             
-            <tag> matlab </tag>
-            
             <tag> 数字信号 </tag>
+            
+            <tag> matlab </tag>
             
             <tag> 数字滤波器 </tag>
             
@@ -1297,11 +1441,11 @@
         
         <tags>
             
+            <tag> 数字信号 </tag>
+            
             <tag> 图像处理 </tag>
             
             <tag> matlab </tag>
-            
-            <tag> 数字信号 </tag>
             
         </tags>
         
