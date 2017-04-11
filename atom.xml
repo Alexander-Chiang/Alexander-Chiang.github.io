@@ -88,7 +88,7 @@
     <link href="https://blog.jiangyayu.cn//archives/hexo-build-blog.html"/>
     <id>https://blog.jiangyayu.cn//archives/hexo-build-blog.html</id>
     <published>2017-01-10T14:16:55.000Z</published>
-    <updated>2017-04-11T08:52:29.320Z</updated>
+    <updated>2017-04-11T10:10:19.304Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p><a href="https://hexo.io/zh-cn/" target="_blank" rel="external">Hexo</a> 是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="http://daringfireball.net/projects/markdown/" target="_blank" rel="external">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。  </p>
@@ -176,9 +176,11 @@
 <ol>
 <li>新建<code>CNAME</code>文件<br> 内容为自定义的域名，将<code>CNAME</code>文件放到<code>\themes\next\source</code>即主题文件夹下的<code>source</code>文件夹中。</li>
 <li>推送到GitHub<br> 使用<code>hexo d -g</code>生成并部署到GitHub。</li>
-<li>设置域名解析<br> 前往域名解析商，添加CNAME解析，将自定义的域名解析到GitHub。如下所示为腾讯云的域名解析设置，记录值<code>usename.github.io</code>为GitHub提供的默认域名：<br><img src="//source.jiangyayu.cn/hexo-build-blog/5.png"><br><strong>注：</strong>设置自定义域名后将不能通过GitHub默认域名进行访问。<h2 id="部署到云服务器"><a href="#部署到云服务器" class="headerlink" title="部署到云服务器"></a>部署到云服务器</h2>部署到云服务器很简单，只需要将生成的<code>public</code>文件夹的内容拷贝到服务器的网站根目录下即可。在这里，再介绍一种使用git的方法将Hexo部署到云服务器上。<h3 id="安装Git-1"><a href="#安装Git-1" class="headerlink" title="安装Git"></a>安装Git</h3>本文中使用的云服务器为<a href="https://www.qcloud.com/" target="_blank" rel="external">腾讯云主机</a>,操作系统为CentOS 6.5，安装Git可以通过以下两种方法安装：<h4 id="yum安装"><a href="#yum安装" class="headerlink" title="yum安装"></a>yum安装</h4>使用yum安装Git十分简单：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># yum install git</div></pre></td></tr></table></figure>
-</li>
+<li>设置域名解析<br> 前往域名解析商，添加CNAME解析，将自定义的域名解析到GitHub。如下所示为腾讯云的域名解析设置，记录值<code>usename.github.io</code>为GitHub提供的默认域名：<br><img src="//source.jiangyayu.cn/hexo-build-blog/5.png"><br><strong>注：</strong>设置自定义域名后将不能通过GitHub默认域名进行访问。  </li>
 </ol>
+<h2 id="部署到云服务器"><a href="#部署到云服务器" class="headerlink" title="部署到云服务器"></a>部署到云服务器</h2><p>部署到云服务器很简单，只需要将生成的<code>public</code>文件夹的内容拷贝到服务器的网站根目录下即可。在这里，再介绍一种使用git的方法将Hexo部署到云服务器上。</p>
+<h3 id="安装Git-1"><a href="#安装Git-1" class="headerlink" title="安装Git"></a>安装Git</h3><p>本文中使用的云服务器为<a href="https://www.qcloud.com/" target="_blank" rel="external">腾讯云主机</a>,操作系统为CentOS 6.5，安装Git可以通过以下两种方法安装：</p>
+<h4 id="yum安装"><a href="#yum安装" class="headerlink" title="yum安装"></a>yum安装</h4><p>使用yum安装Git十分简单：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># yum install git</div></pre></td></tr></table></figure></p>
 <h4 id="编译安装"><a href="#编译安装" class="headerlink" title="编译安装"></a>编译安装</h4><ol>
 <li><p>安装依赖包</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel</div><div class="line"># yum install  gcc perl-ExtUtils-MakeMaker</div></pre></td></tr></table></figure>
