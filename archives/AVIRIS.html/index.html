@@ -1,0 +1,1476 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="RS,影像波谱," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Alex's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="实验目的
+理解卫星及实验室高光谱概念，初步了解辐亮度、反射率的概念；
+能够打开并处理卫星高光谱数据；
+能够加载不同波谱库的反射率波谱曲线，并学会处理；
+学会判读不同地物的光谱曲线特征，了解其与相应的卫星光谱的比较，并解释差异原因。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AVIRIS卫星影像波谱与实验室波谱库波谱曲线的比较">
+<meta property="og:url" content="https://blog.jiangyayu.cn/archives/AVIRIS.html/index.html">
+<meta property="og:site_name" content="Alex's Blog">
+<meta property="og:description" content="实验目的
+理解卫星及实验室高光谱概念，初步了解辐亮度、反射率的概念；
+能够打开并处理卫星高光谱数据；
+能够加载不同波谱库的反射率波谱曲线，并学会处理；
+学会判读不同地物的光谱曲线特征，了解其与相应的卫星光谱的比较，并解释差异原因。">
+<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/AVIRIS/1.png">
+<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/AVIRIS/2.png">
+<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/AVIRIS/3.png">
+<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/AVIRIS/4.png">
+<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/AVIRIS/5.png">
+<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/AVIRIS/6.png">
+<meta property="og:updated_time" content="2017-03-30T15:35:05.898Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AVIRIS卫星影像波谱与实验室波谱库波谱曲线的比较">
+<meta name="twitter:description" content="实验目的
+理解卫星及实验室高光谱概念，初步了解辐亮度、反射率的概念；
+能够打开并处理卫星高光谱数据；
+能够加载不同波谱库的反射率波谱曲线，并学会处理；
+学会判读不同地物的光谱曲线特征，了解其与相应的卫星光谱的比较，并解释差异原因。">
+<meta name="twitter:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/AVIRIS/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 'undefined',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://blog.jiangyayu.cn/archives/AVIRIS.html/"/>
+
+
+
+
+
+  <title> AVIRIS卫星影像波谱与实验室波谱库波谱曲线的比较 | Alex's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=1261165488&web_id=1261165488" language="JavaScript"></script>
+  </div>
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Alex's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle"></p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-photos">
+          <a href="/archives/photos.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-picture-o"></i> <br />
+            
+            相册
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-comments"></i> <br />
+            
+            留言
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://blog.jiangyayu.cn/archives/AVIRIS.html/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Alexander Chiang">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.png">
+  </span>
+
+  <span class="logospan" style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Alex's Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Alex's Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                AVIRIS卫星影像波谱与实验室波谱库波谱曲线的比较
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2012-12-17T15:27:10+08:00">
+                2012-12-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/RS/" itemprop="url" rel="index">
+                    <span itemprop="name">RS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/archives/AVIRIS.html/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="/archives/AVIRIS.html/" itemprop="commentsCount"></span>
+                </a>
+              
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/archives/AVIRIS.html/" class="leancloud_visitors" data-flag-title="AVIRIS卫星影像波谱与实验室波谱库波谱曲线的比较">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h1><ol>
+<li>理解卫星及实验室高光谱概念，初步了解辐亮度、反射率的概念；</li>
+<li>能够打开并处理卫星高光谱数据；</li>
+<li>能够加载不同波谱库的反射率波谱曲线，并学会处理；</li>
+<li>学会判读不同地物的光谱曲线特征，了解其与相应的卫星光谱的比较，并解释差异原因。<a id="more"></a>
+<h1 id="实验要求"><a href="#实验要求" class="headerlink" title="实验要求"></a>实验要求</h1></li>
+<li>打开AVIRIS影像光谱，确定点（448,505）、（502,589）、（531,541）以及（260,613）。要求：显示完整的曲线名称对照课本及影像，确定该区的主要岩性，并判读光谱曲线主要特征及其区别。</li>
+<li>打开JPL1.sli光谱库，绘制alunite so-4a，buddingtonite felds ts-11a，calcite c-3d，kaolinite well ordered ps-1a。要求：显示完整的波谱曲线名称，确定横纵坐标，并判读光谱主要特征及区别。</li>
+<li>打开usgs_min.sli光谱库。要求：在该波谱库中找出与JPL波谱库中对应的上述四种矿物波谱曲线最大相似度的四种矿物，并在同一个窗口中绘制其波谱廓线，显示完整的名称。</li>
+<li>将calcite（明矾石）的AVIRIS卫星影像及JPL、USGS波谱库中的光谱曲线放在同一个窗口中显示，并进行光谱形状上的比较，简要说明其差别的原因。</li>
+</ol>
+<h1 id="实验内容"><a href="#实验内容" class="headerlink" title="实验内容"></a>实验内容</h1><h2 id="实验一："><a href="#实验一：" class="headerlink" title="实验一："></a>实验一：</h2><h3 id="实验步骤"><a href="#实验步骤" class="headerlink" title="实验步骤"></a>实验步骤</h3><ol>
+<li>打开c95avsub文件夹中的cup95_rd.int文件，按顺序点击 Band 183、Band 193 和Band 207（波长分别为2.10、2.20 和2.35μm)，加载一幅彩色影像。</li>
+<li>从主影像显示窗口菜单栏中，选择 Tools → Pixel Locator。在 Pixel Locator 对话框中输入像素的坐标定位到所指定的点。</li>
+<li>选择 Tools → Profiles → Z-Profile (Spectrum)，来提取这个位置的辐亮度波谱曲线。</li>
+<li>选择 Options → Collect Spectra。然后再在Pixel Locator 对话框中输入像素的坐标，按照实验要求依次提取以下位置的辐亮度波谱曲线。</li>
+<li>选择 Options → Stack Plots，分别查看每一条波谱曲线。在绘图窗口中点击右键，并在弹出的快捷菜单中选择Plot Key 来显示波谱曲线的图例。<br><img src="//source.jiangyayu.cn/AVIRIS/1.png" alt="波谱曲线"></li>
+</ol>
+<h3 id="结果分析"><a href="#结果分析" class="headerlink" title="结果分析"></a>结果分析</h3><ol>
+<li>岩性分析：<br>（448,505）：Buddingtonite Zone<br>（502,589）：Strongly Argillized Zone with Kaolinite<br>（531,541）：Opalite Zone with Alunite<br>（260,613）：Calcite</li>
+<li>主要特征：<br>图像的横坐标表示波段，纵坐标表示辐亮度。<br>这四种岩石有着同样趋势光谱曲线：在2.015μm处附近出现谷值，在2.04μm附近出现了峰值，在2.06μm附近再一次出现谷值，之后曲线上升，从2.1μm之后开始缓慢下降，在2.2μm附近有一个较小的吸收，2.3μm之后波谱呈现波动状态。</li>
+<li>区别：<br>波谱曲线在两个较大的峰值和谷值处的大小有区别，其次在2.2μm处的小的吸收特性能够反映不同岩石的特性。</li>
+</ol>
+<h2 id="实验二："><a href="#实验二：" class="headerlink" title="实验二："></a>实验二：</h2><h3 id="实验步骤-1"><a href="#实验步骤-1" class="headerlink" title="实验步骤"></a>实验步骤</h3><ol>
+<li>从 ENVI 主菜单中选择Spectral → Spectral Libraries → Spectral Library Viewer。</li>
+<li>当 Spectral Library Input File 对话框出现后，点击Open Spec Lib，并从spec_lib/jpl_lib子目录中选择jpl1.sli 文件。</li>
+<li>点击 OK。jpl1.sli 文件将会出现在对话框的Select Input File 区域。</li>
+<li>点击该文件名，再点击 OK，打开Spectral Library Viewer 对话框。</li>
+<li>在 Spectral Library Viewer 对话框所列出的波谱曲线中，点击相应的矿物质名称，绘制下列矿物质的波谱曲线：<ul>
+<li>ALUNITE SO-4A</li>
+<li>BUDDINGTONITE FELDS TS-11A</li>
+<li>CALCITE C-3D</li>
+<li>KAOLINITE WELL ORDERED PS-1A<br><img src="//source.jiangyayu.cn/AVIRIS/2.png" alt="波谱曲线"></li>
+</ul>
+</li>
+</ol>
+<h3 id="结果分析-1"><a href="#结果分析-1" class="headerlink" title="结果分析"></a>结果分析</h3><ol>
+<li>主要特征：<br>横坐标为波段，做坐标为反射率。<br>光谱曲线整体比较平缓，在1.4μm左右和2.2μm左右有比较明显的吸收。</li>
+<li>区别：<br>KAOLINITE WELL ORDERED PS-1A 和ALUNITE SO-4A在1.4μm处的吸收比较明显，形成比较大的谷值，两者相对应的波段来说KAOLINITE WELL ORDERED PS-1A在1.4μm左右，而ALUNITE SO-4A则在1.5μm左右；BUDDINGTONITE FELDS TS-11A在1.4μm左右的吸收很小，CALCITE C-3D则几乎没有；在2.2μm左右以上四种岩石波谱均有所吸收，其中CALCITE C-3D对应的吸收波段值则更大一些，且吸收幅度相对小一些。</li>
+</ol>
+<h2 id="实验三："><a href="#实验三：" class="headerlink" title="实验三："></a>实验三：</h2><h3 id="实验步骤-2"><a href="#实验步骤-2" class="headerlink" title="实验步骤"></a>实验步骤</h3><ol>
+<li>从 ENVI 主菜单中选择Spectral →Spectral Analyst</li>
+<li>当Spectral Analyst Input Spectral Library对话框出现后，点击Open Spec Lib，并从spec_lib/ usgs_min子目录中选择usgs_min.sli 文件。</li>
+<li>点击 OK。将会弹出Edit Identify Methods Weighting窗口，在这里我们选择合适的权重（本实验取0.35），点击OK。</li>
+<li>在Spectral Analyst窗口点击Apply，在弹出的Spectral Analyst Input窗口中选择ALUNITE SO-4A并点击OK。这是ENVI会对光谱匹配度进行分析。结果会显示在Spectral Analyst中，其中第一项为匹配度最高的。</li>
+<li>双击第一项，会将匹配的两条光谱曲线显示在一起。<div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><a href="//source.jiangyayu.cn/AVIRIS/3.png" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/AVIRIS/3.png" alt="Spectral Analyst" style="zoom:40%"></a></div><div class="group-picture-column" style="width: 50%;"><a href="//source.jiangyayu.cn/AVIRIS/4.png" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/AVIRIS/4.png" alt="波谱曲线"></a></div></div></div></div></li>
+<li>用同样的方法找到与其他三种矿物波谱曲线匹配度最高的矿物，并将这些波谱曲线显示在同一窗口。<br><img src="//source.jiangyayu.cn/AVIRIS/5.png" alt="波谱曲线"></li>
+</ol>
+<h2 id="实验四："><a href="#实验四：" class="headerlink" title="实验四："></a>实验四：</h2><h3 id="实验步骤-3"><a href="#实验步骤-3" class="headerlink" title="实验步骤"></a>实验步骤</h3><ol>
+<li>在打开的Spectral Library Viewer窗口菜单下Options→Edit（x，y）Scale Factors，在弹出的Edit Display Scale窗口中设置Y Multiplier值为850，使得接下来绘出的波谱曲线与影像中获取的波谱曲线的纵坐标一致。</li>
+<li>在jpl1光谱库中选择CALCITE C-3D，点击绘出其光谱曲线。</li>
+<li>类似于步骤1、2，在usgs_min光谱库中选择carnall.spc Carnallite NMNH98011绘出光谱曲线。</li>
+<li>在波谱曲线窗口的菜单下，依次Options→New Windows:Blank，打开一个新窗口。</li>
+<li>将步骤2、3中绘制的光谱曲线和实验一中的X:260 Y:613拖到新建的绘图窗口中。</li>
+<li>设置相应的参数是结果如图所示：<br><img src="//source.jiangyayu.cn/AVIRIS/6.png" alt="波谱曲线"></li>
+</ol>
+<h3 id="结果分析-2"><a href="#结果分析-2" class="headerlink" title="结果分析"></a>结果分析</h3><p>两个实验室得到的光谱图像有一定的差别，主要原因可能是因为两者的环境存在着差异。但两者的共同特性很明显：2.34μm处均有比较明显的光谱吸收。两个实验室得到的结果与卫星影像上的光谱曲线的差别都很大，这主要是因为受太阳辐射和大气辐射共同作用的影响。但是其光谱曲线在2.34μm处被吸收的趋势还是能够看出来的。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div><div class="preview-item shake-little shake-constant shake-constant--hover">若本文对您有帮助，请打赏鼓励本人！</div></div>
+    <button id="rewardButton" class="preview-item shake-slow shake-constant shake-constant--hover" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechat-reward-image.png" alt="Alexander Chiang WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay-reward-image.png" alt="Alexander Chiang Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+      
+    </div>
+		
+		<div>
+		  
+		    
+<div style="text-align:center;color: #ccc;font-size:14px;">
+----------------   End   ----------------</div>
+
+		  
+		</div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/RS/" rel="tag"><i class="fa fa-tag"></i> RS</a>
+          
+            <a href="/tags/影像波谱/" rel="tag"><i class="fa fa-tag"></i> 影像波谱</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/archives/ArcGIS-practice-3.html/" rel="next" title="ArcGIS练习3：空间分析">
+                <i class="fa fa-chevron-left"></i> ArcGIS练习3：空间分析
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/archives/Hyperspectral-RS-image-Processing.html/" rel="prev" title="高级高光谱遥感应用">
+                高级高光谱遥感应用 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?'];
+</script>
+
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="SOHUCS" sid="/archives/AVIRIS.html/"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="Alexander Chiang" />
+          <p class="site-author-name" itemprop="name">Alexander Chiang</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">35</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+            
+						  <a title="点击图标High起来" rel="alternate" class="mw-harlem_shake_slow wobble shake" href='javascript:(
+    /*
+     * Copyright (C) 2015 Rocko (rocko.xyz) <rocko.zxp@gmail.com>
+     *
+     * Licensed under the Apache License, Version 2.0 (the "License");
+     * you may not use this file except in compliance with the License.
+     * You may obtain a copy of the License at
+     *
+     *      http://www.apache.org/licenses/LICENSE-2.0
+     *
+     * Unless required by applicable law or agreed to in writing, software
+     * distributed under the License is distributed on an "AS IS" BASIS,
+     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     * See the License for the specific language governing permissions and
+     * limitations under the License.
+     */
+    function go() {
+
+
+    var songs = [
+                "https://blog.jiangyayu.cn/harlem-shake.mp3",
+                "......"
+    ];
+
+    
+    function c() {
+        var e = document.createElement("link");
+        e.setAttribute("type", "text/css");
+        e.setAttribute("rel", "stylesheet");
+        e.setAttribute("href", f);
+        e.setAttribute("class", l);
+        document.body.appendChild(e)
+    }
+ 
+    function h() {
+        var e = document.getElementsByClassName(l);
+        for (var t = 0; t < e.length; t++) {
+            document.body.removeChild(e[t])
+        }
+    }
+ 
+    function p() {
+        var e = document.createElement("div");
+        e.setAttribute("class", a);
+        document.body.appendChild(e);
+        setTimeout(function() {
+            document.body.removeChild(e)
+        }, 100)
+    }
+ 
+    function d(e) {
+        return {
+            height : e.offsetHeight,
+            width : e.offsetWidth
+        }
+    }
+ 
+    function v(i) {
+        var s = d(i);
+        return s.height > e && s.height < n && s.width > t && s.width < r
+    }
+ 
+    function m(e) {
+        var t = e;
+        var n = 0;
+        while (!!t) {
+            n += t.offsetTop;
+            t = t.offsetParent
+        }
+        return n
+    }
+ 
+    function g() {
+        var e = document.documentElement;
+        if (!!window.innerWidth) {
+            return window.innerHeight
+        } else if (e && !isNaN(e.clientHeight)) {
+            return e.clientHeight
+        }
+        return 0
+    }
+ 
+    function y() {
+        if (window.pageYOffset) {
+            return window.pageYOffset
+        }
+        return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+    }
+ 
+    function E(e) {
+        var t = m(e);
+        return t >= w && t <= b + w
+    }
+
+    function S() {
+        var e = document.getElementById("audio_element_id");
+        if(e != null){
+            var index = parseInt(e.getAttribute("curSongIndex"));
+            if(index > songs.length - 2) {
+                index = 0;
+            } else {
+                index++;
+            }
+            e.setAttribute("curSongIndex", index);
+            N();
+        }
+
+        e.src = i;
+        e.play()
+    }
+ 
+    function x(e) {
+        e.className += " " + s + " " + o
+    }
+ 
+    function T(e) {
+        e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+    }
+ 
+    function N() {
+        var e = document.getElementsByClassName(s);
+        var t = new RegExp("\\b" + s + "\\b");
+        for (var n = 0; n < e.length; ) {
+            e[n].className = e[n].className.replace(t, "")
+        }
+    }
+
+    function initAudioEle() {
+        var e = document.getElementById("audio_element_id");
+        if(e === null){
+            e = document.createElement("audio");
+            e.setAttribute("class", l);
+            e.setAttribute("curSongIndex", 0);
+            e.id = "audio_element_id";
+            e.loop = false;
+            e.bgcolor = 0;
+            e.addEventListener("canplay", function() {
+            setTimeout(function() {
+                x(k)
+            }, 500);
+            setTimeout(function() {
+                N();
+                p();
+                for (var e = 0; e < O.length; e++) {
+                    T(O[e])
+                }
+            }, 15500)
+        }, true);
+        e.addEventListener("ended", function() {
+            N();
+            h();
+            go();
+        }, true);
+        e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+        document.body.appendChild(e);
+        }
+    }
+    
+    initAudioEle();
+    var e = 30;
+    var t = 30;
+    var n = 350;
+    var r = 350;
+
+    var curSongIndex = parseInt(document.getElementById("audio_element_id").getAttribute("curSongIndex"));
+    var i = songs[curSongIndex];
+    
+    var s = "mw-harlem_shake_me";
+    var o = "im_first";
+    var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+    var a = "mw-strobe_light";
+
+    /* harlem-shake-style.css，替换成你的位置，也可以直接使用：//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css */
+    var f = "//dl.lancdn.com/landian/dev/high/src/high.css";
+    
+    var l = "mw_added_css";
+    var b = g();
+    var w = y();
+    var C = document.getElementsByTagName("*");
+    var k = null;
+    for (var L = 0; L < C.length; L++) {
+        var A = C[L];
+        if (v(A)) {
+            if (E(A)) {
+                k = A;
+                break
+            }
+        }
+    }
+    if (A === null) {
+        console.warn("Could not find a node of the right size. Please try a different page.");
+        return
+    }
+    c();
+    S();
+    var O = [];
+    for (var L = 0; L < C.length; L++) {
+        var A = C[L];
+        if (v(A)) {
+            O.push(A)
+        }
+    }
+})()'><i class="fa fa-music"></i> High</a>
+						
+          </div>
+        
+
+        
+          <div class="swf_clock" align="center">
+            <embed name="honehoneclock" width="160" height="70" align="middle" pluginspage="http://www.macromedia.com/go/getflashplayer" src="https://blog.jiangyayu.cn/honehone_clock01.swf" type="application/x-shockwave-flash" wmode="transparent" quality="high"
+            bgcolor="#ffffff" allowscriptaccess="always">
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Alexander-Chiang" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/2350168841/profile?topnav=1&wvr=6&is_all=1" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-link"></i>
+              友情链接
+            </div>
+            
+						  <span class="links-of-author-item" style="text-align:left">
+						    <a href="https://www.jiangyayu.cn" title="JiaBlog" target="_blank">
+						      JiaBlog
+						    </a>
+						  </span>
+						
+						  <span class="links-of-author-item" style="text-align:left">
+						    <a href="http://www.katouspace.com" title="Ka Tou Space" target="_blank">
+						      Ka Tou Space
+						    </a>
+						  </span>
+						
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#实验目的"><span class="nav-number">1.</span> <span class="nav-text">实验目的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验要求"><span class="nav-number">2.</span> <span class="nav-text">实验要求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验内容"><span class="nav-number">3.</span> <span class="nav-text">实验内容</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#实验一："><span class="nav-number">3.1.</span> <span class="nav-text">实验一：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实验步骤"><span class="nav-number">3.1.1.</span> <span class="nav-text">实验步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结果分析"><span class="nav-number">3.1.2.</span> <span class="nav-text">结果分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实验二："><span class="nav-number">3.2.</span> <span class="nav-text">实验二：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实验步骤-1"><span class="nav-number">3.2.1.</span> <span class="nav-text">实验步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结果分析-1"><span class="nav-number">3.2.2.</span> <span class="nav-text">结果分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实验三："><span class="nav-number">3.3.</span> <span class="nav-text">实验三：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实验步骤-2"><span class="nav-number">3.3.1.</span> <span class="nav-text">实验步骤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实验四："><span class="nav-number">3.4.</span> <span class="nav-text">实验四：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实验步骤-3"><span class="nav-number">3.4.1.</span> <span class="nav-text">实验步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结果分析-2"><span class="nav-number">3.4.2.</span> <span class="nav-text">结果分析</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  All Right Reserved &copy;  2012 - 
+  <span itemprop="copyrightYear">2017 &nbsp | &nbsp</span>
+  <span class="with-love">
+    <i class="fa fa-superpowers"></i>
+    <span class="author" itemprop="copyrightHolder">Alexander Chiang</span>
+  </span>
+  
+  </br>皖ICP备17001662号 &nbsp
+  
+  
+		 <span class="site-pv">
+		   <script type="text/javascript">
+		   		var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+		   		document.write(unescape("%3Cspan id='cnzz_stat_icon_1261165488'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1261165488%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+		   </script>
+		 </span>
+  
+  
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+    
+    <!--原始回到顶部按钮 <div class="back-to-top"><i class="fa fa-arrow-up"></i><span id="scrollIndicator"></span></div>-->
+    
+
+    <div class="back-to-top"><span id="scrollIndicator" style="display:none"></span></div>
+    <div id="rocket-to-top">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 64 64">
+            <path fill="#ccc" d="M42.057,37.732c0,0,4.139-25.58-9.78-36.207c-0.307-0.233-0.573-0.322-0.802-0.329
+            c-0.227,0.002-0.493,0.083-0.796,0.311c-13.676,10.31-8.95,35.992-8.95,35.992c-10.18,8-7.703,9.151-1.894,23.262
+            c1.108,2.693,3.048,2.06,3.926,0.115c0.877-1.943,2.815-6.232,2.815-6.232l11.029,0.128c0,0,2.035,4.334,2.959,6.298
+            c0.922,1.965,2.877,2.644,3.924-0.024C49.974,47.064,52.423,45.969,42.057,37.732z M31.726,23.155
+            c-2.546-0.03-4.633-2.118-4.664-4.665c-0.029-2.547,2.012-4.587,4.559-4.558c2.546,0.029,4.634,2.117,4.663,4.664
+            C36.314,21.143,34.272,23.184,31.726,23.155z"></path>
+        </svg>
+    </div>
+    
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+
+
+
+  
+    <script type="text/javascript">
+    (function(){
+      var appid = 'cysULAhB7';
+      var conf = '9cc1a3eeb93693b9ce591e1c47832f16';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      if (width < 960) {
+      window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){
+        window.changyan.api.config({appid:appid,conf:conf})});
+      }
+    })();
+    </script>
+    <script type="text/javascript" src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
+  
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("kifD93te5BbhFRHTPcnGUap9-gzGzoHsz", "fYgh3e3eF6QRqDJzJ1TYSi63");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+  
+  
+
+
+	</script>
+
+</body>
+
+<!--显示滚动进度百分比-->
+<script type="text/javascript">
+$(window).scroll(function() {
+        var wintop = $(window).scrollTop(),
+            docheight =$(document).height(),
+            winheight = $(window).height();
+        var scrolled = (wintop / (docheight - winheight)) * 100;
+        $('.scroll-line').css('width', (scrolled + '%')); 
+        document.getElementById('scrollIndicator').innerHTML = Math.round(scrolled).toString()+'%'; 
+});
+</script>
+
+
+</html>

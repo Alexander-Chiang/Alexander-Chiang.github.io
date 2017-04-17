@@ -1,0 +1,1426 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="正交分解,海洋要素," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Alex's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="经验正交分解的原理简介&amp;emsp;&amp;emsp;经验正交函数分析方法(empirical orthogonal function,缩写为EOF)，也称特征向量分析(eigen vector analysis)，或者主成分分析(principal component analysis,缩写PCA)，是一种分析矩阵数据中的结构特征，提取主要数据特征量的一种方法。Lorenz在1950年代首次将其引入气象">
+<meta property="og:type" content="article">
+<meta property="og:title" content="matlab物理场的正交分解">
+<meta property="og:url" content="https://blog.jiangyayu.cn/archives/Orthogonal-decomposition.html/index.html">
+<meta property="og:site_name" content="Alex's Blog">
+<meta property="og:description" content="经验正交分解的原理简介&amp;emsp;&amp;emsp;经验正交函数分析方法(empirical orthogonal function,缩写为EOF)，也称特征向量分析(eigen vector analysis)，或者主成分分析(principal component analysis,缩写PCA)，是一种分析矩阵数据中的结构特征，提取主要数据特征量的一种方法。Lorenz在1950年代首次将其引入气象">
+<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/Orthogonal-decomposition/1.png">
+<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/Orthogonal-decomposition/2.png">
+<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/Orthogonal-decomposition/3.png">
+<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/Orthogonal-decomposition/4.png">
+<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/Orthogonal-decomposition/5.png">
+<meta property="og:updated_time" content="2017-03-30T15:35:05.869Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="matlab物理场的正交分解">
+<meta name="twitter:description" content="经验正交分解的原理简介&amp;emsp;&amp;emsp;经验正交函数分析方法(empirical orthogonal function,缩写为EOF)，也称特征向量分析(eigen vector analysis)，或者主成分分析(principal component analysis,缩写PCA)，是一种分析矩阵数据中的结构特征，提取主要数据特征量的一种方法。Lorenz在1950年代首次将其引入气象">
+<meta name="twitter:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/Orthogonal-decomposition/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 'undefined',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://blog.jiangyayu.cn/archives/Orthogonal-decomposition.html/"/>
+
+
+
+
+
+  <title> matlab物理场的正交分解 | Alex's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=1261165488&web_id=1261165488" language="JavaScript"></script>
+  </div>
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Alex's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle"></p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-photos">
+          <a href="/archives/photos.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-picture-o"></i> <br />
+            
+            相册
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-comments"></i> <br />
+            
+            留言
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://blog.jiangyayu.cn/archives/Orthogonal-decomposition.html/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Alexander Chiang">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.png">
+  </span>
+
+  <span class="logospan" style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Alex's Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Alex's Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                matlab物理场的正交分解
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2013-12-18T14:50:35+08:00">
+                2013-12-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据处理分析/" itemprop="url" rel="index">
+                    <span itemprop="name">数据处理分析</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/archives/Orthogonal-decomposition.html/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="/archives/Orthogonal-decomposition.html/" itemprop="commentsCount"></span>
+                </a>
+              
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/archives/Orthogonal-decomposition.html/" class="leancloud_visitors" data-flag-title="matlab物理场的正交分解">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="经验正交分解的原理"><a href="#经验正交分解的原理" class="headerlink" title="经验正交分解的原理"></a>经验正交分解的原理</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>&emsp;&emsp;经验正交函数分析方法(empirical orthogonal function,缩写为EOF)，也称特征向量分析(eigen vector analysis)，或者主成分分析(principal component analysis,缩写PCA)，是一种分析矩阵数据中的结构特征，提取主要数据特征量的一种方法。Lorenz在1950年代首次将其引入气象和气候研究，现在在地学及其他学科中得到了非常广泛的应用。<br><a id="more"></a><br>&emsp;&emsp;分析中通常特征向量对应的是空间样本，称空间特征向量或者空间模态；对应的是时间变化称为时间系数。</p>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><p>&emsp;（1）主要特色：能够有效地体现物理场的主要信息，保留次要信息并排除外来的随机干扰。<br>&emsp;（2）无固定的函数形式：这种正交函数展开不像三角函数展开、球函数展开那样有固定的展开形式。<br>&emsp;（3）图形是由场本身决定的，不是事先人为地给定典型场函数的。<br>&emsp;（4）具有收敛快、能更好地反应出场的基本结构的特征。</p>
+<h3 id="主要应用"><a href="#主要应用" class="headerlink" title="主要应用"></a>主要应用</h3><p>&emsp;（1）可在有限的区域中不规则分布的站点进行：空间不同站点/同一点的不同时间、不同高度的多种要素进行综合分析。<br>&emsp;（2）可用于要素场分析、垂直结构分析、动力模型垂直分层等。</p>
+<h3 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h3><p>&emsp;&emsp;经验正交函数分解的基本思想是把包含m个空间点（或p个变量）的n个时次的观测场的序列（i = 1,2,…,m; j = 1,2,…,n）分解成相互正交的时间函数与相互正交的空间函数的乘积之和，常把空间函数看做典型场，时间函数看做典型场的权重系数，则不同时间的要素场是若干个典型场按不同的权重线性叠加的结果，各个场之间的差别就在于各典型场的系数不同。</p>
+<p>$$ nXm = nEm \times m\Phi_{m}^{T} $$</p>
+<h2 id="EOF函数简介"><a href="#EOF函数简介" class="headerlink" title="EOF函数简介"></a>EOF函数简介</h2><p>&emsp;&emsp;EOF函数的原型为：</p>
+<p> $$ [V,EOFs,EC,error]=EOF(D,p) $$</p>
+<p> 本站提供的下载:<a href="//source.jiangyayu.cn/Orthogonal-decomposition/EOF.m">EOF.m</a></p>
+<h3 id="输入参数"><a href="#输入参数" class="headerlink" title="输入参数"></a>输入参数</h3><p>D：输入的物理场数据，为一个二维矩阵，每一行假定为一个样本，每一列为一个变量。因此D的一列表示一个时间序列的变量。<br>P：可选项，指EOF分析结果的模态数，其取值应小于时间间隔和样本数</p>
+<h3 id="输出参数"><a href="#输出参数" class="headerlink" title="输出参数"></a>输出参数</h3><p>V：与EOFs有关的特征向量；<br>EOFs：时间系数；<br>EC：空间模态，由p个模态的列向量组成的矩阵；<br>error：重建误差；</p>
+<h2 id="经验正交分解实例"><a href="#经验正交分解实例" class="headerlink" title="经验正交分解实例"></a>经验正交分解实例</h2><h3 id="数据下载"><a href="#数据下载" class="headerlink" title="数据下载"></a>数据下载</h3><p>前往<a href="https://climatedataguide.ucar.edu/climate-data/soda-simple-ocean-data-assimilation" target="_blank" rel="external">SODA: Simple Ocean Data Assimilation</a>下载数据<br>选择相关变量，以“TAUY”为例。<br>合理选择研究区域，时间范围等<br><img src="//source.jiangyayu.cn/Orthogonal-decomposition/1.png"><br>选择合适数据下载后，认真核对数据基本信息<br><img src="//source.jiangyayu.cn/Orthogonal-decomposition/2.png"><br>在数据下载页选择合适的数据格式，我们选择NetCDF<br><img src="//source.jiangyayu.cn/Orthogonal-decomposition/3.png"><br>现在开始提取数据，提取的数据名为data.cdf<br>建议根据下载的数据变量名、范围、时间等命名，便于查找。如<a href="//source.jiangyayu.cn/Orthogonal-decomposition/tauy_1958_2008_NWPacific.cdf">tauy_1958_2008_NWPacific.cdf</a></p>
+<h3 id="数据读取"><a href="#数据读取" class="headerlink" title="数据读取"></a>数据读取</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">%% read data</span></div><div class="line">file = <span class="string">'tauy_1958_2008_NWPacific.cdf'</span>;</div><div class="line"><span class="comment">% ncdisp(file);</span></div><div class="line">time = ncread(file,<span class="string">'time'</span>);</div><div class="line">lon = ncread(file,<span class="string">'lon'</span>);</div><div class="line">lat = ncread(file,<span class="string">'lat'</span>);</div><div class="line">tauy = ncread(file,<span class="string">'tauy'</span>);</div><div class="line">missing_value = ncreadatt(file,<span class="string">'tauy'</span>,<span class="string">'missing_value'</span>);</div></pre></td></tr></table></figure>
+<h3 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h3><p>（1）显示数据的范围<br>&emsp;&emsp;使用<a href="//source.jiangyayu.cn/Orthogonal-decomposition/m_map1.4.zip">m_map</a>工具箱进行地图的显示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt;&gt; figure;m_proj(&apos;mercator&apos;,&apos;lat&apos;,[20 60],&apos;lon&apos;,[100 160]);m_coast(&apos;patch&apos;,[0.7 0.7 0.7]);m_grid;</div></pre></td></tr></table></figure></p>
+<p><img src="//source.jiangyayu.cn/Orthogonal-decomposition/4.png" style="zoom:0.7"><br>（2）选择海区<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">% set range</span></div><div class="line">la = <span class="number">46</span>:<span class="number">59</span>; </div><div class="line">lo = <span class="number">145</span>:<span class="number">155</span>;</div></pre></td></tr></table></figure></p>
+<p>（3）去趋势处理<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">xx = <span class="built_in">find</span>(lon&gt;=min(lo) &amp; lon&lt;=max(lo) );  </div><div class="line">yy = <span class="built_in">find</span>(lat&gt;=min(la) &amp; lat&lt;=max(la));</div><div class="line">tauy_sub = <span class="built_in">zeros</span>(<span class="built_in">length</span>(xx),<span class="built_in">length</span>(yy),<span class="number">612</span>);</div><div class="line">tauy_sub = tauy(xx,yy,:)</div><div class="line"><span class="comment">%% detrend</span></div><div class="line">tauy_de = <span class="built_in">zeros</span>(<span class="built_in">size</span>(tauy_sub));</div><div class="line"><span class="keyword">for</span> ii = <span class="number">1</span>:<span class="built_in">length</span>(xx)</div><div class="line">    <span class="keyword">for</span> jj = <span class="number">1</span>:<span class="built_in">length</span>(yy)</div><div class="line">        tauy_de(ii,jj,:) =  detrend(<span class="built_in">squeeze</span>(tauy_sub(ii,jj,:)));</div><div class="line">    <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure></p>
+<h3 id="EOF计算"><a href="#EOF计算" class="headerlink" title="EOF计算"></a>EOF计算</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">%% EOF</span></div><div class="line">tauy_de = <span class="built_in">reshape</span>(tauy_de,<span class="built_in">length</span>(xx)*<span class="built_in">length</span>(yy),<span class="number">612</span>);</div><div class="line">[V,EOFs,EC,error] = EOF(tauy_de,<span class="number">10</span>);</div><div class="line">EC = <span class="built_in">reshape</span>(EC,<span class="built_in">length</span>(xx),<span class="built_in">length</span>(yy),<span class="number">10</span>);</div></pre></td></tr></table></figure>
+<h3 id="计算方差贡献率"><a href="#计算方差贡献率" class="headerlink" title="计算方差贡献率"></a>计算方差贡献率</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">V = [<span class="number">2.3544</span>  <span class="number">0.1429</span>  <span class="number">0.0625</span>  <span class="number">0.0410</span>  <span class="number">0.0305</span>  <span class="number">0.0085</span>  <span class="number">0.0077</span>  <span class="number">0.0073</span>  <span class="number">0.0024</span>  <span class="number">0.0021</span>]</div></pre></td></tr></table></figure>
+<p>计算各模态的方差贡献率：<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;&gt; V/sum(V)</div><div class="line"><span class="built_in">ans</span> =[<span class="number">0.8853</span>  <span class="number">0.0537</span>  <span class="number">0.0235</span>  <span class="number">0.0154</span>  <span class="number">0.0115</span>  <span class="number">0.0032</span>  <span class="number">0.0029</span>  <span class="number">0.0028</span>  <span class="number">0.0009</span>  <span class="number">0.0008</span>]</div></pre></td></tr></table></figure></p>
+<h3 id="绘图"><a href="#绘图" class="headerlink" title="绘图"></a>绘图</h3><p>根据方差贡献率，画出方差贡献率大于90%的前若干个模态的空间模态和时间系数<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line"><span class="comment">%% figure</span></div><div class="line">figure;</div><div class="line"><span class="comment">% EOF2</span></div><div class="line">plot(EOFs(:,<span class="number">2</span>));</div><div class="line">ylabel(<span class="string">'PC2'</span>,<span class="string">'FontSize'</span>,<span class="number">18</span>);</div><div class="line">xlabel(<span class="string">'Year'</span>,<span class="string">'FontSize'</span>,<span class="number">18</span>)</div><div class="line">axis([<span class="number">1</span> <span class="number">612</span> <span class="number">-0.2</span> <span class="number">0.2</span>]);</div><div class="line">set(gca,<span class="string">'xtick'</span>,<span class="number">25</span>:<span class="number">12</span>*<span class="number">5</span>:<span class="number">576</span>,<span class="string">'xticklabel'</span>,&#123;<span class="number">1960</span>:<span class="number">5</span>:<span class="number">2005</span>&#125;,<span class="string">'FontSize'</span>,<span class="number">14</span>);</div><div class="line">set(gca,<span class="string">'tickdir'</span>,<span class="string">'out'</span> ,<span class="string">'LineWidth'</span>,<span class="number">1.5</span>);</div><div class="line">set(gca,<span class="string">'Position'</span>,[<span class="number">0.075</span> <span class="number">0.125</span> <span class="number">0.875</span> <span class="number">0.15</span>]);</div><div class="line">box off</div><div class="line"></div><div class="line"><span class="comment">% EOF1</span></div><div class="line">subplot(<span class="number">323</span>)</div><div class="line">plot(EOFs(:,<span class="number">1</span>));</div><div class="line">ylabel(<span class="string">'PC1'</span>,<span class="string">'FontSize'</span>,<span class="number">18</span>);</div><div class="line">axis([<span class="number">1</span> <span class="number">612</span> <span class="number">-0.2</span> <span class="number">0.2</span>]);</div><div class="line">set(gca,<span class="string">'xtick'</span>,<span class="number">25</span>:<span class="number">12</span>*<span class="number">5</span>:<span class="number">576</span>,<span class="string">'xticklabel'</span>,&#123;&#125;,<span class="string">'FontSize'</span>,<span class="number">14</span>);</div><div class="line">set(gca,<span class="string">'tickdir'</span>,<span class="string">'out'</span> ,<span class="string">'LineWidth'</span>,<span class="number">1.5</span>);</div><div class="line">set(gca,<span class="string">'Position'</span>,[<span class="number">0.075</span> <span class="number">0.3</span> <span class="number">0.875</span> <span class="number">0.15</span>]);</div><div class="line">box off</div><div class="line"></div><div class="line"><span class="comment">% EC2</span></div><div class="line">subplot(<span class="number">322</span>)</div><div class="line">m_proj(<span class="string">'Mercator'</span>,<span class="string">'lat'</span>,[<span class="number">45</span> <span class="number">60</span>],<span class="string">'lon'</span>,[<span class="number">130</span> <span class="number">160</span>]);</div><div class="line">m_pcolor(lon(xx),lat(yy),EC(:,:,<span class="number">2</span>)');</div><div class="line">caxis([<span class="number">-1.0</span>  <span class="number">2.5</span>])  <span class="comment">%设置颜色映射范围</span></div><div class="line">shading interp;</div><div class="line">m_coast(<span class="string">'patch'</span>,[<span class="number">0.7</span> <span class="number">0.7</span> <span class="number">0.7</span>]);</div><div class="line">m_grid(<span class="string">'linestyle'</span>,<span class="string">'none'</span>,<span class="string">'box'</span>,<span class="string">'fancy'</span>,<span class="string">'tickdir'</span>,<span class="string">'out'</span>);</div><div class="line">set(gca,<span class="string">'Position'</span>,[<span class="number">0.5</span> <span class="number">0.5</span> <span class="number">0.45</span> <span class="number">0.4</span>]);</div><div class="line">title(<span class="string">'EOF2'</span>,<span class="string">'FontSize'</span>,<span class="number">18</span>);</div><div class="line"> </div><div class="line"><span class="comment">% EC1</span></div><div class="line">subplot(<span class="number">321</span>)</div><div class="line">m_proj(<span class="string">'Mercator'</span>,<span class="string">'lat'</span>,[<span class="number">45</span> <span class="number">60</span>],<span class="string">'lon'</span>,[<span class="number">130</span> <span class="number">160</span>]);</div><div class="line">m_pcolor(lon(xx),lat(yy),EC(:,:,<span class="number">1</span>)');</div><div class="line">caxis([<span class="number">-1.0</span>  <span class="number">2.5</span>])</div><div class="line">shading interp;</div><div class="line">m_coast(<span class="string">'patch'</span>,[<span class="number">0.7</span> <span class="number">0.7</span> <span class="number">0.7</span>]);</div><div class="line">m_grid(<span class="string">'linestyle'</span>,<span class="string">'none'</span>,<span class="string">'box'</span>,<span class="string">'fancy'</span>,<span class="string">'tickdir'</span>,<span class="string">'out'</span>);</div><div class="line">set(gca,<span class="string">'Position'</span>,[<span class="number">0.05</span> <span class="number">0.5</span> <span class="number">0.45</span> <span class="number">0.4</span>]);</div><div class="line">title(<span class="string">'EOF1'</span>,<span class="string">'FontSize'</span>,<span class="number">18</span>);</div><div class="line"> </div><div class="line"><span class="comment">% colorbar</span></div><div class="line">h = colorbar;</div><div class="line">caxis([<span class="number">-1.0</span>  <span class="number">2.5</span>])</div><div class="line">set(h,<span class="string">'position'</span>,[<span class="number">0.9</span>,<span class="number">0.5</span>,<span class="number">0.02</span>,<span class="number">0.4</span>])</div><div class="line">set(h,<span class="string">'ytick'</span>,<span class="number">-1.0</span>:<span class="number">0.7</span>:<span class="number">2.5</span>,<span class="string">'yticklabel'</span>,&#123;<span class="number">-1.0</span>:<span class="number">0.7</span>:<span class="number">2.5</span>&#125;)</div></pre></td></tr></table></figure></p>
+<h3 id="结果图"><a href="#结果图" class="headerlink" title="结果图"></a>结果图</h3><p><img src="//source.jiangyayu.cn/Orthogonal-decomposition/5.png"></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div><div class="preview-item shake-little shake-constant shake-constant--hover">若本文对您有帮助，请打赏鼓励本人！</div></div>
+    <button id="rewardButton" class="preview-item shake-slow shake-constant shake-constant--hover" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechat-reward-image.png" alt="Alexander Chiang WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay-reward-image.png" alt="Alexander Chiang Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+      
+    </div>
+		
+		<div>
+		  
+		    
+<div style="text-align:center;color: #ccc;font-size:14px;">
+----------------   End   ----------------</div>
+
+		  
+		</div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/正交分解/" rel="tag"><i class="fa fa-tag"></i> 正交分解</a>
+          
+            <a href="/tags/海洋要素/" rel="tag"><i class="fa fa-tag"></i> 海洋要素</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/archives/tide.html/" rel="next" title="海洋要素计算：潮汐调和分析">
+                <i class="fa fa-chevron-left"></i> 海洋要素计算：潮汐调和分析
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/archives/hadoop-install.html/" rel="prev" title="Centos6.5中安装配置Cloudera CDH Hadoop集群">
+                Centos6.5中安装配置Cloudera CDH Hadoop集群 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?'];
+</script>
+
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="SOHUCS" sid="/archives/Orthogonal-decomposition.html/"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="Alexander Chiang" />
+          <p class="site-author-name" itemprop="name">Alexander Chiang</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">35</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+            
+						  <a title="点击图标High起来" rel="alternate" class="mw-harlem_shake_slow wobble shake" href='javascript:(
+    /*
+     * Copyright (C) 2015 Rocko (rocko.xyz) <rocko.zxp@gmail.com>
+     *
+     * Licensed under the Apache License, Version 2.0 (the "License");
+     * you may not use this file except in compliance with the License.
+     * You may obtain a copy of the License at
+     *
+     *      http://www.apache.org/licenses/LICENSE-2.0
+     *
+     * Unless required by applicable law or agreed to in writing, software
+     * distributed under the License is distributed on an "AS IS" BASIS,
+     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     * See the License for the specific language governing permissions and
+     * limitations under the License.
+     */
+    function go() {
+
+
+    var songs = [
+                "https://blog.jiangyayu.cn/harlem-shake.mp3",
+                "......"
+    ];
+
+    
+    function c() {
+        var e = document.createElement("link");
+        e.setAttribute("type", "text/css");
+        e.setAttribute("rel", "stylesheet");
+        e.setAttribute("href", f);
+        e.setAttribute("class", l);
+        document.body.appendChild(e)
+    }
+ 
+    function h() {
+        var e = document.getElementsByClassName(l);
+        for (var t = 0; t < e.length; t++) {
+            document.body.removeChild(e[t])
+        }
+    }
+ 
+    function p() {
+        var e = document.createElement("div");
+        e.setAttribute("class", a);
+        document.body.appendChild(e);
+        setTimeout(function() {
+            document.body.removeChild(e)
+        }, 100)
+    }
+ 
+    function d(e) {
+        return {
+            height : e.offsetHeight,
+            width : e.offsetWidth
+        }
+    }
+ 
+    function v(i) {
+        var s = d(i);
+        return s.height > e && s.height < n && s.width > t && s.width < r
+    }
+ 
+    function m(e) {
+        var t = e;
+        var n = 0;
+        while (!!t) {
+            n += t.offsetTop;
+            t = t.offsetParent
+        }
+        return n
+    }
+ 
+    function g() {
+        var e = document.documentElement;
+        if (!!window.innerWidth) {
+            return window.innerHeight
+        } else if (e && !isNaN(e.clientHeight)) {
+            return e.clientHeight
+        }
+        return 0
+    }
+ 
+    function y() {
+        if (window.pageYOffset) {
+            return window.pageYOffset
+        }
+        return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+    }
+ 
+    function E(e) {
+        var t = m(e);
+        return t >= w && t <= b + w
+    }
+
+    function S() {
+        var e = document.getElementById("audio_element_id");
+        if(e != null){
+            var index = parseInt(e.getAttribute("curSongIndex"));
+            if(index > songs.length - 2) {
+                index = 0;
+            } else {
+                index++;
+            }
+            e.setAttribute("curSongIndex", index);
+            N();
+        }
+
+        e.src = i;
+        e.play()
+    }
+ 
+    function x(e) {
+        e.className += " " + s + " " + o
+    }
+ 
+    function T(e) {
+        e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+    }
+ 
+    function N() {
+        var e = document.getElementsByClassName(s);
+        var t = new RegExp("\\b" + s + "\\b");
+        for (var n = 0; n < e.length; ) {
+            e[n].className = e[n].className.replace(t, "")
+        }
+    }
+
+    function initAudioEle() {
+        var e = document.getElementById("audio_element_id");
+        if(e === null){
+            e = document.createElement("audio");
+            e.setAttribute("class", l);
+            e.setAttribute("curSongIndex", 0);
+            e.id = "audio_element_id";
+            e.loop = false;
+            e.bgcolor = 0;
+            e.addEventListener("canplay", function() {
+            setTimeout(function() {
+                x(k)
+            }, 500);
+            setTimeout(function() {
+                N();
+                p();
+                for (var e = 0; e < O.length; e++) {
+                    T(O[e])
+                }
+            }, 15500)
+        }, true);
+        e.addEventListener("ended", function() {
+            N();
+            h();
+            go();
+        }, true);
+        e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+        document.body.appendChild(e);
+        }
+    }
+    
+    initAudioEle();
+    var e = 30;
+    var t = 30;
+    var n = 350;
+    var r = 350;
+
+    var curSongIndex = parseInt(document.getElementById("audio_element_id").getAttribute("curSongIndex"));
+    var i = songs[curSongIndex];
+    
+    var s = "mw-harlem_shake_me";
+    var o = "im_first";
+    var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+    var a = "mw-strobe_light";
+
+    /* harlem-shake-style.css，替换成你的位置，也可以直接使用：//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css */
+    var f = "//dl.lancdn.com/landian/dev/high/src/high.css";
+    
+    var l = "mw_added_css";
+    var b = g();
+    var w = y();
+    var C = document.getElementsByTagName("*");
+    var k = null;
+    for (var L = 0; L < C.length; L++) {
+        var A = C[L];
+        if (v(A)) {
+            if (E(A)) {
+                k = A;
+                break
+            }
+        }
+    }
+    if (A === null) {
+        console.warn("Could not find a node of the right size. Please try a different page.");
+        return
+    }
+    c();
+    S();
+    var O = [];
+    for (var L = 0; L < C.length; L++) {
+        var A = C[L];
+        if (v(A)) {
+            O.push(A)
+        }
+    }
+})()'><i class="fa fa-music"></i> High</a>
+						
+          </div>
+        
+
+        
+          <div class="swf_clock" align="center">
+            <embed name="honehoneclock" width="160" height="70" align="middle" pluginspage="http://www.macromedia.com/go/getflashplayer" src="https://blog.jiangyayu.cn/honehone_clock01.swf" type="application/x-shockwave-flash" wmode="transparent" quality="high"
+            bgcolor="#ffffff" allowscriptaccess="always">
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Alexander-Chiang" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/2350168841/profile?topnav=1&wvr=6&is_all=1" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-link"></i>
+              友情链接
+            </div>
+            
+						  <span class="links-of-author-item" style="text-align:left">
+						    <a href="https://www.jiangyayu.cn" title="JiaBlog" target="_blank">
+						      JiaBlog
+						    </a>
+						  </span>
+						
+						  <span class="links-of-author-item" style="text-align:left">
+						    <a href="http://www.katouspace.com" title="Ka Tou Space" target="_blank">
+						      Ka Tou Space
+						    </a>
+						  </span>
+						
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#经验正交分解的原理"><span class="nav-number">1.</span> <span class="nav-text">经验正交分解的原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#简介"><span class="nav-number">1.1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特点"><span class="nav-number">1.2.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主要应用"><span class="nav-number">1.3.</span> <span class="nav-text">主要应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本思想"><span class="nav-number">1.4.</span> <span class="nav-text">基本思想</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#EOF函数简介"><span class="nav-number">2.</span> <span class="nav-text">EOF函数简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入参数"><span class="nav-number">2.1.</span> <span class="nav-text">输入参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出参数"><span class="nav-number">2.2.</span> <span class="nav-text">输出参数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#经验正交分解实例"><span class="nav-number">3.</span> <span class="nav-text">经验正交分解实例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据下载"><span class="nav-number">3.1.</span> <span class="nav-text">数据下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据读取"><span class="nav-number">3.2.</span> <span class="nav-text">数据读取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据预处理"><span class="nav-number">3.3.</span> <span class="nav-text">数据预处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#EOF计算"><span class="nav-number">3.4.</span> <span class="nav-text">EOF计算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算方差贡献率"><span class="nav-number">3.5.</span> <span class="nav-text">计算方差贡献率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绘图"><span class="nav-number">3.6.</span> <span class="nav-text">绘图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结果图"><span class="nav-number">3.7.</span> <span class="nav-text">结果图</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  All Right Reserved &copy;  2012 - 
+  <span itemprop="copyrightYear">2017 &nbsp | &nbsp</span>
+  <span class="with-love">
+    <i class="fa fa-superpowers"></i>
+    <span class="author" itemprop="copyrightHolder">Alexander Chiang</span>
+  </span>
+  
+  </br>皖ICP备17001662号 &nbsp
+  
+  
+		 <span class="site-pv">
+		   <script type="text/javascript">
+		   		var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+		   		document.write(unescape("%3Cspan id='cnzz_stat_icon_1261165488'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1261165488%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+		   </script>
+		 </span>
+  
+  
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+    
+    <!--原始回到顶部按钮 <div class="back-to-top"><i class="fa fa-arrow-up"></i><span id="scrollIndicator"></span></div>-->
+    
+
+    <div class="back-to-top"><span id="scrollIndicator" style="display:none"></span></div>
+    <div id="rocket-to-top">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 64 64">
+            <path fill="#ccc" d="M42.057,37.732c0,0,4.139-25.58-9.78-36.207c-0.307-0.233-0.573-0.322-0.802-0.329
+            c-0.227,0.002-0.493,0.083-0.796,0.311c-13.676,10.31-8.95,35.992-8.95,35.992c-10.18,8-7.703,9.151-1.894,23.262
+            c1.108,2.693,3.048,2.06,3.926,0.115c0.877-1.943,2.815-6.232,2.815-6.232l11.029,0.128c0,0,2.035,4.334,2.959,6.298
+            c0.922,1.965,2.877,2.644,3.924-0.024C49.974,47.064,52.423,45.969,42.057,37.732z M31.726,23.155
+            c-2.546-0.03-4.633-2.118-4.664-4.665c-0.029-2.547,2.012-4.587,4.559-4.558c2.546,0.029,4.634,2.117,4.663,4.664
+            C36.314,21.143,34.272,23.184,31.726,23.155z"></path>
+        </svg>
+    </div>
+    
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+
+
+
+  
+    <script type="text/javascript">
+    (function(){
+      var appid = 'cysULAhB7';
+      var conf = '9cc1a3eeb93693b9ce591e1c47832f16';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      if (width < 960) {
+      window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){
+        window.changyan.api.config({appid:appid,conf:conf})});
+      }
+    })();
+    </script>
+    <script type="text/javascript" src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
+  
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("kifD93te5BbhFRHTPcnGUap9-gzGzoHsz", "fYgh3e3eF6QRqDJzJ1TYSi63");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+  
+  
+
+
+	</script>
+
+</body>
+
+<!--显示滚动进度百分比-->
+<script type="text/javascript">
+$(window).scroll(function() {
+        var wintop = $(window).scrollTop(),
+            docheight =$(document).height(),
+            winheight = $(window).height();
+        var scrolled = (wintop / (docheight - winheight)) * 100;
+        $('.scroll-line').css('width', (scrolled + '%')); 
+        document.getElementById('scrollIndicator').innerHTML = Math.round(scrolled).toString()+'%'; 
+});
+</script>
+
+
+</html>
