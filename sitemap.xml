@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.jiangyayu.cn//archives/Least-squares.html</loc>
+    
+    <lastmod>2017-04-17T08:43:49.897Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.jiangyayu.cn//archives/Integrals.html</loc>
+    
+    <lastmod>2017-04-17T07:40:58.689Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.jiangyayu.cn//archives/hexo-build-blog.html</loc>
     
     <lastmod>2017-04-11T10:10:19.304Z</lastmod>
@@ -58,13 +72,6 @@
   </url>
   
   <url>
-    <loc>https://blog.jiangyayu.cn//archives/Integrals.html</loc>
-    
-    <lastmod>2017-03-30T15:35:05.876Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.jiangyayu.cn//archives/matlab-nc.html</loc>
     
     <lastmod>2017-03-30T15:35:05.875Z</lastmod>
@@ -107,6 +114,13 @@
   </url>
   
   <url>
+    <loc>https://blog.jiangyayu.cn//archives/photos.html</loc>
+    
+    <lastmod>2017-03-30T15:35:05.869Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.jiangyayu.cn//archives/Orthogonal-decomposition.html</loc>
     
     <lastmod>2017-03-30T15:35:05.869Z</lastmod>
@@ -128,13 +142,6 @@
   </url>
   
   <url>
-    <loc>https://blog.jiangyayu.cn//archives/photos.html</loc>
-    
-    <lastmod>2017-03-30T15:35:05.869Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.jiangyayu.cn//archives/hadoop-install.html</loc>
     
     <lastmod>2017-03-30T15:35:05.868Z</lastmod>
@@ -149,14 +156,14 @@
   </url>
   
   <url>
-    <loc>https://blog.jiangyayu.cn//archives/Digital-Image-Positioning.html</loc>
+    <loc>https://blog.jiangyayu.cn//archives/ArcGIS-practice-3.html</loc>
     
     <lastmod>2017-03-30T15:35:05.867Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.jiangyayu.cn//archives/ArcGIS-practice-3.html</loc>
+    <loc>https://blog.jiangyayu.cn//archives/Digital-Image-Positioning.html</loc>
     
     <lastmod>2017-03-30T15:35:05.867Z</lastmod>
     
