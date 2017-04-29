@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.jiangyayu.cn/"/>
-  <updated>2017-04-17T12:15:37.803Z</updated>
+  <updated>2017-04-29T14:29:27.851Z</updated>
   <id>https://blog.jiangyayu.cn/</id>
   
   <author>
@@ -14,6 +14,77 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>拯救你的16GB iPhone&lt;/br&gt;利用Seafile创建私有云将照片同步到PC上</title>
+    <link href="https://blog.jiangyayu.cn//archives/install-seafile-server-on-personal-computer.html/"/>
+    <id>https://blog.jiangyayu.cn//archives/install-seafile-server-on-personal-computer.html/</id>
+    <published>2017-04-28T13:15:16.000Z</published>
+    <updated>2017-04-29T14:29:27.851Z</updated>
+    
+    <content type="html"><![CDATA[<p>&emsp;&emsp;随着现在手机软件原来越大，手机像素越来越高。16GB的iPhone存储容量感人，安装不了几个APP，要是存上一些宝贵的照片，存储空间根本不够用，甚至一些64GB的手机用户也感觉越来越力不从心了。而iCloud也仅仅提供5GB的存储空间，对于我们这些16GB的iPhone用户来说简直是杯水车薪。而国内各大免费云盘也都纷纷停止服务，剩下的一下网盘也都限速限的厉害，再加上安全考虑，也就不在考虑范围内了。<br>&emsp;&emsp;本文就向大家介绍一款私有云盘软件——<a href="https://www.seafile.com" target="_blank" rel="external">Seafile</a>，以及如何通过这款私有云盘软件打造自己的私有云盘，并实现在网络环境下手机照片实时地自动同步到自己的电脑上，从而释放你的手机存储空间。<br><a id="more"></a></p>
+<h1 id="Seafile服务端的安装"><a href="#Seafile服务端的安装" class="headerlink" title="Seafile服务端的安装"></a>Seafile服务端的安装</h1><h2 id="Seafile简介"><a href="#Seafile简介" class="headerlink" title="Seafile简介"></a>Seafile简介</h2><blockquote>
+<p>&emsp;&emsp;Seafile，是一套中国国产的开源、专业、可靠的云存储项目管理软件，解决文件集中存储、共享和跨平台访问等问题。正式发布于2012年10月。除了一般网盘所提供的云存储以及共享功能外，Seafile还提供消息通信、群组讨论等辅助功能，帮助员工更好的围绕文件展开协同工作，已有10多万用户使用。  </p>
+</blockquote>
+<p>&emsp;&emsp;目前，Seafile提供服务器端包括有Linux，树莓派端和Windows端的，客户端也支持Windows、Mac和Linux等桌面端，移动端也有Android和iPhone两大主流平台。<br>下载页面：<br><a href="https://www.seafile.com/download/" target="_blank" rel="external">https://www.seafile.com/download/</a></p>
+<h2 id="安装Seafile服务器端"><a href="#安装Seafile服务器端" class="headerlink" title="安装Seafile服务器端"></a>安装Seafile服务器端</h2><p>&emsp;&emsp;首先我们需要一台平时很少关机的PC作为服务器端，我在实验室有台台式机平时常开，因此比较合适作为Seafile的服务器端。由于这台台式机的操作系统是Windows的，所以我们下载与其对应的Windows服务器端的Seafile。对于有自己的云服务器的用户，当然也可以将其部署到云服务器上，若云服务器的系统为Linux，请下载Linux版本的Seafile服务器端，部署方法请移步Seafile官网的《<a href="https://manual-cn.seafile.com/deploy/" target="_blank" rel="external">Seafile服务器手册中文版</a>》。<br>&emsp;&emsp;Windows服务器端的Seafile部署可以参考<a href="https://manual-cn.seafile.com/deploy_windows/deploy_with_windows.html" target="_blank" rel="external">Windows下部署Seafile服务器</a>,本文也将我的安装过程简单描述(参考<a href="https://manual-cn.seafile.com/deploy_windows/deploy_with_windows.html" target="_blank" rel="external">Windows下部署Seafile服务器</a>)：</p>
+<h3 id="安装-Python-2-7-11-32-位版本"><a href="#安装-Python-2-7-11-32-位版本" class="headerlink" title="安装 Python 2.7.11 32 位版本"></a>安装 <code>Python 2.7.11</code> 32 位版本</h3><p>下载并安装 <a href="http://python.org/ftp/python/2.7.11/python-2.7.11.msi" target="_blank" rel="external">python 2.7.11 32 位版本</a><br>安装过程中请选择将<code>python.exe</code>添加到<strong>环境变量</strong>。</p>
+<p><img src="//source.jiangyayu.cn/install-seafile-server-on-personal-computer/1.png" style="zoom:0.7"></p>
+<p><strong>注意</strong>：一定要使用 <code>Python 2.7.11</code> 32 位版本。64 位版本或不是 2.7.11 的版本不能工作。</p>
+<h3 id="下载并解压-Seafile-服务器"><a href="#下载并解压-Seafile-服务器" class="headerlink" title="下载并解压 Seafile 服务器"></a>下载并解压 Seafile 服务器</h3><ul>
+<li>获取 <a href="http://seafile.com/download/" target="_blank" rel="external">Seafile 服务器</a>的最新版本。</li>
+<li>为 Seafile 服务器程序创建一个新的文件夹，比如<code>C:\SeafileProgram\</code>。请记住此文件夹的位置，我们将在以后用到它。</li>
+<li>将<strong>seafile-server_5.0.3_win32.tar.gz</strong>解压到<code>C:\SeafileProgram\</code>目录下。</li>
+</ul>
+<p>现在，您的目录结构应该像如下这样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">C:\SeafileProgram</div><div class="line">         |__ seafile-server-5.0.3</div></pre></td></tr></table></figure></p>
+<h3 id="启动与初始化"><a href="#启动与初始化" class="headerlink" title="启动与初始化"></a>启动与初始化</h3><ol>
+<li><p>启动 Seafile 服务器<br> &emsp;&emsp;在<code>C:\SeafileProgram\seafile-server-5.0.3\</code>文件夹下，找到<code>run.bat</code>文件并双击，以启动 Seafile 服务器。此时，您应该注意到 Seafile 服务器的图标已经出现在您的系统托盘中。</p>
+</li>
+<li><p>选择一个磁盘作为 Seafile 服务器数据的存储位置<br> &emsp;&emsp;现在，您可以在弹出的对话框中选择一个磁盘，以便存储 Seafile 服务器的数据：</p>
+<ul>
+<li>请确保选择的磁盘拥有足够的剩余空间；</li>
+<li>点击确认按钮后， Seafile 将会在您选择的磁盘下为您创建一个名为<code>seafile-server</code>的文件夹。这个文件夹就是 Seafile 服务器的数据文件夹。如果您选择D盘，那么数据文件夹为<code>D:\seafile-server</code>。</li>
+</ul>
+</li>
+<li><p>添加管理员帐号<br> &emsp;&emsp;右击 Seafile 服务器的系统托盘图标， 选择<strong>“添加管理员帐号”</strong>选项。在弹出的对话框中输入您的管理员用户名和密码。<br> <img src="//source.jiangyayu.cn/install-seafile-server-on-personal-computer/2.png" style="zoom:0.7"><br> &emsp;&emsp;如果操作成功， Seafile 服务器托盘图标处会弹出一个气泡提示您”添加 Seahub 管理员账户成功”。</p>
+</li>
+<li><p>配置 Seafile 服务器<br> &emsp;&emsp;初始化服务器之后，还需配置以下选项，<strong>否则不能进行文件的上传下载</strong>:</p>
+<ul>
+<li>访问服务器的 Web 界面 (打开 <code>http://&lt;您的 IP 地址&gt;:8000</code>)，用管理员账号登录；<br><img src="//source.jiangyayu.cn/install-seafile-server-on-personal-computer/3.png" style="zoom:0.5"></li>
+<li>点击左上角的扳手图标，进入管理员界面，在进入”设置”标签；</li>
+<li>将<strong>SERVICE_URL</strong>的值配置成<code>http://&lt;您的 IP 地址&gt;:8000</code>。比如您的 Windows 服务器地址为 <code>192.168.48.128</code>， 那么配置成<code>SERVICE_URL = http://192.168.48.128:8000</code>；</li>
+<li>将<strong>FILE_SERVER_ROOT</strong>的值配置成<code>http://&lt;您的 IP 地址&gt;:8082</code>。比如您的 Windows 服务器地址为 <code>192.168.48.128</code>， 那么配置成<code>SERVICE_URL = http://192.168.48.128:8082</code>。<br><img src="//source.jiangyayu.cn/install-seafile-server-on-personal-computer/4.png" style="zoom:0.5"></li>
+</ul>
+</li>
+</ol>
+<h1 id="内网穿透"><a href="#内网穿透" class="headerlink" title="内网穿透"></a>内网穿透</h1><p>&emsp;&emsp;通过以上的操作，我们就可以通过地址<code>http://192.168.48.128:8000</code>访问我们的Seafile云盘了，但是这种访问仅限于本机或者局域网以内。由于该IP地址非公网IP，因此当我们处在非同一局域网的环境时，我们将无法访问到自己的Seafile云盘了。所以我们还需要一个内网穿透的软件来做映射(当然，在自己的云服务器上部署Seafile时，由于云服务器一般都有固定的公网IP，可以跳过这一步了)。这里向大家介绍的是<a href="https://ngrok.com/" target="_blank" rel="external">ngrok</a>。</p>
+<h2 id="使用Ngrok进行内网穿透"><a href="#使用Ngrok进行内网穿透" class="headerlink" title="使用Ngrok进行内网穿透"></a>使用Ngrok进行内网穿透</h2><p>&emsp;&emsp;首先前往ngrok的官方网站<a href="https://ngrok.com/download" target="_blank" rel="external">下载页面</a>下载对应版本的ngrok。<br><img src="//source.jiangyayu.cn/install-seafile-server-on-personal-computer/5.png" style="zoom:0.7"><br>运行<code>ngrok.exe</code>,输入命令<code>ngrok http 8000</code>，结果如下：<br><img src="//source.jiangyayu.cn/install-seafile-server-on-personal-computer/6.png" style="zoom:0.8"><br>通过结果中返回的两个域名，我们即可在外网访问在自己电脑上部署的seafile了：<br><img src="//source.jiangyayu.cn/install-seafile-server-on-personal-computer/7.png" style="zoom:0.5"></p>
+<h2 id="使用Sunny-Ngrok进行内网穿透"><a href="#使用Sunny-Ngrok进行内网穿透" class="headerlink" title="使用Sunny-Ngrok进行内网穿透"></a>使用Sunny-Ngrok进行内网穿透</h2><p>&emsp;&emsp;通过前面的Ngrok的设置之后，我们已经实现在外网通过Ngrok提供的域名访问Seafile私有云。但是Ngrok生成的域名前缀是随机的，非常不好记，同时逼格也不够高。这里我们就介绍一种可以自定义域名的方法：使用<a href="https://ngrok.cc/" target="_blank" rel="external">Sunny-Ngrok</a>。<br>&emsp;&emsp;Sunny-Ngrok是基于Ngrok的一款内网转发软件，提供免费内网穿透服务，免费服务器支持绑定自定义域名。下面简单介绍如何使用Sunn-Ngrok实现自定义域名。</p>
+<h3 id="注册"><a href="#注册" class="headerlink" title="注册"></a>注册</h3><p>&emsp;&emsp;前往Sunny-Ngrok官网进行注册：<a href="https://ngrok.cc/" target="_blank" rel="external">https://ngrok.cc/</a></p>
+<h3 id="开通隧道"><a href="#开通隧道" class="headerlink" title="开通隧道"></a>开通隧道</h3><p>&emsp;&emsp;登陆Sunny-Ngrok并开通免费隧道。<br><img src="//source.jiangyayu.cn/install-seafile-server-on-personal-computer/8.png" style="zoom:0.7"><br>&emsp;&emsp;开通设置如下：<br><img src="//source.jiangyayu.cn/install-seafile-server-on-personal-computer/9.png" style="zoom:0.7"><br>其中<strong>隧道名称</strong>填写映射的应用名称，自己定义即可；<strong>前置域名</strong>为将来访问Seafile时候的域名的前缀，如上图，填写<code>seafiletest</code>后，将来访问的域名就是<code>http://seafiletest.ngrok.cc</code>;<strong>本地端口</strong>为映射的端口号，对于本文中的Seafile而言，填写<code>127.0.0.1:8000</code>即可，映射其他应用需填写其对应的端口号。<br>开通隧道之后，在<strong>隧道管理</strong>中可以查看到隧道id，这个隧道id将在后面用到。<br><img src="//source.jiangyayu.cn/install-seafile-server-on-personal-computer/10.png" style="zoom:0.7"></p>
+<h3 id="下载并运行Sunny-Ngrok客户端"><a href="#下载并运行Sunny-Ngrok客户端" class="headerlink" title="下载并运行Sunny-Ngrok客户端"></a>下载并运行Sunny-Ngrok客户端</h3><p>&emsp;&emsp;在Sunny-Ngrok下载<a href="https://ngrok.cc/#down-client" target="_blank" rel="external">客户端</a>,解压客户端，运行<code>Sunny-Ngrok启动工具.bat</code>,输入隧道id。<br><img src="//source.jiangyayu.cn/install-seafile-server-on-personal-computer/11.png" style="zoom:0.8"><br>此时就已经可以通过域名<code>http://seafiletest.ngrok.cc</code>访问自己电脑上的seafile服务了。在我们访问的过程中，Sunny-Ngrok会不断刷新每次请求的状态码：<br><img src="//source.jiangyayu.cn/install-seafile-server-on-personal-computer/12.png" style="zoom:0.8"><br>&emsp;&emsp;到这里有人可能会问了，不是说自定义域名嘛，你这里只是自定义了一个二级域名而已，我们能自定义的部分只是这个域名的前缀部分，一级域名部分的<code>ngrok.cc</code>并不能修改啊。确实，这样让人一眼就看出来了，这是通过Sunny-Ngrok做了转发的。那么，下面我就将介绍，如何绑定自己的域名，当然这前提是你得有个自己的域名。</p>
+<h3 id="绑定域名CNAME解析"><a href="#绑定域名CNAME解析" class="headerlink" title="绑定域名CNAME解析"></a>绑定域名CNAME解析</h3><p>&emsp;&emsp;我们这里尝试将域名<code>seafile.jiangyayu.cn</code>解析到我们本地计算机的Seafile服务。<br>&emsp;&emsp;首先打开腾讯的<a href="https://console.qcloud.com/cns/" target="_blank" rel="external">云解析平台</a>(其他渠道购买的域名请到对应的域名解析平台)，添加记录：<br>&emsp;&emsp;记录类型：CNAME<br>&emsp;&emsp;主机记录：seafile<br>&emsp;&emsp;记录值：server.ngrok.cc<br><img src="//source.jiangyayu.cn/install-seafile-server-on-personal-computer/13.png" style="zoom:0.7"></p>
+<p>&emsp;&emsp;然后我们回到<strong>隧道管理</strong>页面，打开编辑，在自定义域名中填入刚刚绑定的域名:<code>seafile.jiangyayu.cn</code>,并点击确认保存。<br><img src="//source.jiangyayu.cn/install-seafile-server-on-personal-computer/14.png" style="zoom:0.7"><br>重新运行<code>Sunny-Ngrok启动工具.bat</code>工具，此时我们已经可以通过自定义的域名<code>seafile.jiangyayu.cn</code>来访问我们本地计算机上的Seafile服务了。</p>
+<h1 id="手机照片自动同步"><a href="#手机照片自动同步" class="headerlink" title="手机照片自动同步"></a>手机照片自动同步</h1><p>说了这么多搭建Seafile私有云的东西，最终目的就是为了能够将手机里面的照片随时随地同步到我们本地的计算机，然后释放被大量照片占据的手机存储空间。下面就是手机照片自动同步的关键了：</p>
+<h2 id="安装iOS版的Seafile客户端"><a href="#安装iOS版的Seafile客户端" class="headerlink" title="安装iOS版的Seafile客户端"></a>安装iOS版的Seafile客户端</h2><p>在APP Store搜索下载Seafile Pro客户端，安装客户端，打开作如下设置：<br><div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 33.333333333333336%;"><a href="//source.jiangyayu.cn/install-seafile-server-on-personal-computer/15.png" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/install-seafile-server-on-personal-computer/15.png" style="zoom:0.5"></a></div><div class="group-picture-column" style="width: 33.333333333333336%;"><a href="//source.jiangyayu.cn/install-seafile-server-on-personal-computer/16.png" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/install-seafile-server-on-personal-computer/16.png" style="zoom:0.5"></a></div><div class="group-picture-column" style="width: 33.333333333333336%;"><a href="//source.jiangyayu.cn/install-seafile-server-on-personal-computer/17.png" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/install-seafile-server-on-personal-computer/17.png" style="zoom:0.5"></a></div></div></div></div><br>同步完之后，即可删除手机相册中的照片以释放手机存储空间。如下图所示，当需要查看照片时候，直接在资料库中进行浏览就行，在WiFi环境下，可以不用考虑GPRS流量的问题。即使在没有WiFi环境下需要查看某一两张照片也是能够接受的。<br><img src="//source.jiangyayu.cn/install-seafile-server-on-personal-computer/18.png" style="zoom:0.6"></p>
+<h2 id="查看同步的照片"><a href="#查看同步的照片" class="headerlink" title="查看同步的照片"></a>查看同步的照片</h2><p>由于Seafile对文件的加密，同步到本地计算机的照片被加密后存储在Seafile的数据库中的，是不能直接看到的。我们可以在本地计算机通过访问:<a href="http://localhost:8000" target="_blank" rel="external">http://localhost:8000</a> 进行访问。这里不通过地址<code>http://seafile.jiangyayu.cn</code>进行访问是因为localhost相当于本机直接访问，不需要通过网络传输，速度会更快。<br><img src="//source.jiangyayu.cn/install-seafile-server-on-personal-computer/19.png"><br>当然我们也可以下载Seafile的Windows客户端进行访问，这时候服务器地址也应当选择<code>http://localhost:8000</code>比较合适。<br><img src="//source.jiangyayu.cn/install-seafile-server-on-personal-computer/20.png"></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>&emsp;&emsp;本文以手机照片同步到本地计算机为例，简单的介绍了如何在自己的电脑上部署Seafile服务器环境；然后通过Ngrok进行数据转发，实现外网的映射，让在网络环境下可以很好的访问到服务；最后通过iOS端的Seafile客户端，实现相册的同步。<br>&emsp;&emsp;这里介绍的仅仅是Seafile的一种简单的用法而已，除此之外，Seafile还可以作为我们的私有云盘进行使用。能够将文件组织成资料库，每个资料库可以选择性的同步到任意的设备，其权限管理、版本控制等功能均给我们的工作带来极大的方便。大家如果感兴趣可以继续探索。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&amp;emsp;&amp;emsp;随着现在手机软件原来越大，手机像素越来越高。16GB的iPhone存储容量感人，安装不了几个APP，要是存上一些宝贵的照片，存储空间根本不够用，甚至一些64GB的手机用户也感觉越来越力不从心了。而iCloud也仅仅提供5GB的存储空间，对于我们这些16GB的iPhone用户来说简直是杯水车薪。而国内各大免费云盘也都纷纷停止服务，剩下的一下网盘也都限速限的厉害，再加上安全考虑，也就不在考虑范围内了。&lt;br&gt;&amp;emsp;&amp;emsp;本文就向大家介绍一款私有云盘软件——&lt;a href=&quot;https://www.seafile.com&quot;&gt;Seafile&lt;/a&gt;，以及如何通过这款私有云盘软件打造自己的私有云盘，并实现在网络环境下手机照片实时地自动同步到自己的电脑上，从而释放你的手机存储空间。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Web" scheme="https://blog.jiangyayu.cn/categories/Web/"/>
+    
+    
+      <category term="seafile" scheme="https://blog.jiangyayu.cn/tags/seafile/"/>
+    
+      <category term="ngrok" scheme="https://blog.jiangyayu.cn/tags/ngrok/"/>
+    
+  </entry>
   
   <entry>
     <title>C#-最小二乘法拟合曲线</title>
@@ -738,9 +809,9 @@
     
       <category term="matlab" scheme="https://blog.jiangyayu.cn/tags/matlab/"/>
     
-      <category term="NetCDF" scheme="https://blog.jiangyayu.cn/tags/NetCDF/"/>
-    
       <category term="可视化" scheme="https://blog.jiangyayu.cn/tags/%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
+    
+      <category term="NetCDF" scheme="https://blog.jiangyayu.cn/tags/NetCDF/"/>
     
   </entry>
   
@@ -1221,60 +1292,6 @@
       <category term="RS" scheme="https://blog.jiangyayu.cn/tags/RS/"/>
     
       <category term="影像波谱" scheme="https://blog.jiangyayu.cn/tags/%E5%BD%B1%E5%83%8F%E6%B3%A2%E8%B0%B1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ArcGIS练习3：空间分析</title>
-    <link href="https://blog.jiangyayu.cn//archives/ArcGIS-practice-3.html/"/>
-    <id>https://blog.jiangyayu.cn//archives/ArcGIS-practice-3.html/</id>
-    <published>2012-12-16T14:45:12.000Z</published>
-    <updated>2017-03-30T15:35:05.867Z</updated>
-    
-    <content type="html"><![CDATA[<p>本文将简单记述如何应用ArcGIS实现一个空间分析功能。<br><a id="more"></a></p>
-<h1 id="城市化的影响范围分析"><a href="#城市化的影响范围分析" class="headerlink" title="城市化的影响范围分析"></a>城市化的影响范围分析</h1><h2 id="加载数据"><a href="#加载数据" class="headerlink" title="加载数据"></a>加载数据</h2><p>加载图层<a href="//source.jiangyayu.cn/ArcGIS-practice-3/urban.zip">urban</a>。</p>
-<h2 id="缓冲区分析"><a href="#缓冲区分析" class="headerlink" title="缓冲区分析"></a>缓冲区分析</h2><ol>
-<li>依次打开ArcTool box→Analysis Tool→Proximity→Multiple Rinq Buffer ，在Input Feature选项框中选择图层urban，Distances设置为0.05，点击OK生成缓冲区。</li>
-</ol>
-<p><img src="//source.jiangyayu.cn/ArcGIS-practice-3/1.png" style="zoom:60%"><br><img src="//source.jiangyayu.cn/ArcGIS-practice-3/2.png"></p>
-<ol>
-<li>同理，对其他城镇进行缓冲区分析，设置缓冲区大小为0.06，结果如图：<br><img src="//source.jiangyayu.cn/ArcGIS-practice-3/3.png"></li>
-</ol>
-<h2 id="相交运算"><a href="#相交运算" class="headerlink" title="相交运算"></a>相交运算</h2><p>在Toolbox中依次Overlay→Intersect选择保护区缓冲和城镇缓冲，进行相交运算：<br><img src="//source.jiangyayu.cn/ArcGIS-practice-3/4.png" style="zoom:60%"><br><img src="//source.jiangyayu.cn/ArcGIS-practice-3/5.png"></p>
-<h2 id="擦除"><a href="#擦除" class="headerlink" title="擦除"></a>擦除</h2><p>在Toolbox中依次Overlay→Erase设置Input图层为“城镇缓冲”，Erase图层为 “相交运算”,这样即可将保护的部分从城市化的范围内擦除掉。<br><img src="//source.jiangyayu.cn/ArcGIS-practice-3/6.png" style="zoom:60%"><br><img src="//source.jiangyayu.cn/ArcGIS-practice-3/7.png"></p>
-<h2 id="空间运算结果"><a href="#空间运算结果" class="headerlink" title="空间运算结果"></a>空间运算结果</h2><p><img src="//source.jiangyayu.cn/ArcGIS-practice-3/8.png"></p>
-<h2 id="计算面积"><a href="#计算面积" class="headerlink" title="计算面积"></a>计算面积</h2><p>右击城市化图层，打开属性表，为该图层新建一个Area字段，在Area字段上右击鼠标，选择Calculate Geometry。<br><div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><a href="//source.jiangyayu.cn/ArcGIS-practice-3/9.png" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/ArcGIS-practice-3/9.png"></a></div><div class="group-picture-column" style="width: 50%;"><a href="//source.jiangyayu.cn/ArcGIS-practice-3/10.png" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/ArcGIS-practice-3/10.png"></a></div></div></div></div></p>
-<h1 id="土壤侵蚀危险性建模分析"><a href="#土壤侵蚀危险性建模分析" class="headerlink" title="土壤侵蚀危险性建模分析"></a>土壤侵蚀危险性建模分析</h1><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
-<li>添加矢量数据：<a href="//source.jiangyayu.cn/ArcGIS-practice-3/studyarea.zip">StudyArea</a>、<a href="//source.jiangyayu.cn/ArcGIS-practice-3/vegetation.zip">Vegetation</a>、栅格数据<a href="//source.jiangyayu.cn/ArcGIS-practice-3/soilsgrid.zip">Soilsgrid</a></li>
-<li>打开Arctoolbox，激活Spatial Analyst空间分析扩和3D分析扩展模块</li>
-<li>根据Vegetaion 中的属性[VegTYPE]设置植被图层的符号为[唯一值渲染]，根据SoilsGrid 图层中属性[S_Value]设置土壤类型栅格的符号为[唯一值渲染]，设置图层StudyArea的边界和填充，并调整各图层的顺序得到如下下效：<br><img src="//source.jiangyayu.cn/ArcGIS-practice-3/11.png"></li>
-<li>保存地图文档</li>
-<li>在ArcMap中，打开Arctoolbox，执行菜单命令:Tool→Options 在Options设置对话框中，设置Geopricessing选项页中My Toolboxs，将其指定为某个路径，比如C:\Users\Jiangyayu\Desktop\操作数据\Ex8<div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><a href="//source.jiangyayu.cn/ArcGIS-practice-3/12.png" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/ArcGIS-practice-3/12.png"></a></div><div class="group-picture-column" style="width: 50%;"><a href="//source.jiangyayu.cn/ArcGIS-practice-3/13.png" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/ArcGIS-practice-3/13.png"></a></div></div></div></div>
-</li>
-</ol>
-<h2 id="建立模型"><a href="#建立模型" class="headerlink" title="建立模型"></a>建立模型</h2><ol>
-<li>在Arctoolbox中，右键点击根目标Arctoolbox,在右键菜单中执行New Toolbox命令，创建一个工具箱，将新建工具箱改名，比如geosptial</li>
-<li>右键点击新建的工具箱geosptial,在右键菜单中，执行命令：New→Model，将打开ModelBuilder应用程序窗口：<div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><a href="//source.jiangyayu.cn/ArcGIS-practice-3/14.png" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/ArcGIS-practice-3/14.png"></a></div><div class="group-picture-column" style="width: 50%;"><a href="//source.jiangyayu.cn/ArcGIS-practice-3/15.png" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/ArcGIS-practice-3/15.png"></a></div></div></div></div></li>
-<li>在ModelBuilder窗口中，执行菜单命令 ：Model→Model Properties<div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><a href="//source.jiangyayu.cn/ArcGIS-practice-3/16.png" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/ArcGIS-practice-3/16.png"></a></div><div class="group-picture-column" style="width: 50%;"><a href="//source.jiangyayu.cn/ArcGIS-practice-3/17.png" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/ArcGIS-practice-3/17.png"></a></div></div><div class="group-picture-row"><div class="group-picture-column" style="width: 100%;"><a href="//source.jiangyayu.cn/ArcGIS-practice-3/18.png" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/ArcGIS-practice-3/18.png" style="zoom:60%"></a></div></div></div></div></li>
-<li>在ModelBuilder窗口中，执行菜单命令 ：Model→Diagram Properties<br><img src="//source.jiangyayu.cn/ArcGIS-practice-3/19.png" style="zoom:60%"></li>
-<li>设计ModelBuilder中各个模块的参数，并最终完成模型构造：<br><img src="//source.jiangyayu.cn/ArcGIS-practice-3/20.png"></li>
-</ol>
-<h2 id="运行模型"><a href="#运行模型" class="headerlink" title="运行模型"></a>运行模型</h2><p>在[ModelBuilder]窗口中执行菜单命令：Model→Run  Entire Model。<br>右键点击土壤侵蚀栅格，选择Add to Display。显示最终结果：<br><img src="//source.jiangyayu.cn/ArcGIS-practice-3/21.png"></p>
-<h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><p><img src="//source.jiangyayu.cn/ArcGIS-practice-3/result3.png"></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;本文将简单记述如何应用ArcGIS实现一个空间分析功能。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="GIS" scheme="https://blog.jiangyayu.cn/categories/GIS/"/>
-    
-    
-      <category term="ArcGIS" scheme="https://blog.jiangyayu.cn/tags/ArcGIS/"/>
-    
-      <category term="空间分析" scheme="https://blog.jiangyayu.cn/tags/%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/"/>
     
   </entry>
   
