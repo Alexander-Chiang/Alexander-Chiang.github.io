@@ -193,7 +193,7 @@
     <link href="https://blog.jiangyayu.cn//archives/hexo-build-blog.html/"/>
     <id>https://blog.jiangyayu.cn//archives/hexo-build-blog.html/</id>
     <published>2017-01-10T14:16:55.000Z</published>
-    <updated>2017-04-29T14:48:13.000Z</updated>
+    <updated>2017-04-29T15:21:00.399Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p><a href="https://hexo.io/zh-cn/" target="_blank" rel="external">Hexo</a> 是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="http://daringfireball.net/projects/markdown/" target="_blank" rel="external">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。  </p>
@@ -285,8 +285,8 @@
 </ol>
 <h2 id="部署到云服务器"><a href="#部署到云服务器" class="headerlink" title="部署到云服务器"></a>部署到云服务器</h2><p>部署到云服务器很简单，只需要将生成的<code>public</code>文件夹的内容拷贝到服务器的网站根目录下即可。在这里，再介绍一种使用git的方法将Hexo部署到云服务器上。</p>
 <h3 id="安装Git-1"><a href="#安装Git-1" class="headerlink" title="安装Git"></a>安装Git</h3><p>本文中使用的云服务器为<a href="https://www.qcloud.com/" target="_blank" rel="external">腾讯云主机</a>,操作系统为CentOS 6.5，安装Git可以通过以下两种方法安装：</p>
-<h4 id="yum安装"><a href="#yum安装" class="headerlink" title="yum安装"></a>yum安装</h4><p>使用yum安装Git十分简单：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># yum install git</div></pre></td></tr></table></figure></p>
-<h4 id="编译安装"><a href="#编译安装" class="headerlink" title="编译安装"></a>编译安装</h4><ol>
+<h4 id="方法一：yum安装"><a href="#方法一：yum安装" class="headerlink" title="方法一：yum安装"></a>方法一：yum安装</h4><p>使用yum安装Git十分简单：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># yum install git</div></pre></td></tr></table></figure></p>
+<h4 id="方法二：编译安装"><a href="#方法二：编译安装" class="headerlink" title="方法二：编译安装"></a>方法二：编译安装</h4><ol>
 <li><p>安装依赖包</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel</div><div class="line"># yum install  gcc perl-ExtUtils-MakeMaker</div></pre></td></tr></table></figure>
 </li>
