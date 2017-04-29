@@ -2082,7 +2082,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #25ffff;
+  background: #206062;
 }
 .links-of-author-item {
   text-align: center;
@@ -3041,10 +3041,10 @@ p.search-result {
 }
 @media (min-width: 992px) and (max-width: 20000px) {
   .header {
-    width: 90%;
+    width: 70%;
   }
   .container .main-inner {
-    width: 90%;
+    width: 70%;
   }
   .content-wrap {
     width: calc(100% - 260px);
