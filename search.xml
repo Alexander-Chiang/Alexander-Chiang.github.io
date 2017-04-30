@@ -229,9 +229,10 @@
 </li>
 </ol>
 <h3 id="Hexo部署到GitHub"><a href="#Hexo部署到GitHub" class="headerlink" title="Hexo部署到GitHub"></a>Hexo部署到GitHub</h3><p>使用<code>hexo deploy</code>部署到GitHub：</p>
-<pre><code>1. 安装`hexo-deployer-git`插件
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
-</code></pre><ol>
+<ol>
+<li><p>安装<code>hexo-deployer-git</code>插件</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
+</li>
 <li><p>在Hexo配置文件<code>_config.xml</code>中作如下修改：</p>
  <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">    type: git</div><div class="line">    repo: git@github.com:usename/username.github.io.git</div><div class="line">    branch: master</div></pre></td></tr></table></figure>
 </li>
