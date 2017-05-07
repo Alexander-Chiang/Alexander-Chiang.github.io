@@ -1424,7 +1424,7 @@ $(window).scroll(function() {
             docheight =$(document).height(),
             winheight = $(window).height();
         var scrolled = (wintop / (docheight - winheight)) * 100;
-        if(scrolled>1)
+        if(scrolled>1 && window.screen.width > 767)
         {
             document.getElementById('browse-percent').style.display = "block";
         }
