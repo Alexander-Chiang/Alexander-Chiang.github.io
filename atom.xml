@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.jiangyayu.cn/"/>
-  <updated>2017-04-29T14:37:19.730Z</updated>
+  <updated>2017-05-07T14:06:22.310Z</updated>
   <id>https://blog.jiangyayu.cn/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://blog.jiangyayu.cn/archives/install-seafile-server-on-personal-computer.html/"/>
     <id>https://blog.jiangyayu.cn/archives/install-seafile-server-on-personal-computer.html/</id>
     <published>2017-04-28T13:15:16.000Z</published>
-    <updated>2017-04-29T14:37:19.730Z</updated>
+    <updated>2017-05-07T14:06:22.310Z</updated>
     
     <content type="html"><![CDATA[<p>&emsp;&emsp;随着现在手机软件原来越大，手机像素越来越高。16GB的iPhone存储容量感人，安装不了几个APP，要是存上一些宝贵的照片，存储空间根本不够用，甚至一些64GB的手机用户也感觉越来越力不从心了。而iCloud也仅仅提供5GB的存储空间，对于我们这些16GB的iPhone用户来说简直是杯水车薪。而国内各大免费云盘也都纷纷停止服务，剩下的一下网盘也都限速限的厉害，再加上安全考虑，也就不在考虑范围内了。<br>&emsp;&emsp;本文就向大家介绍一款私有云盘软件——<a href="https://www.seafile.com" target="_blank" rel="external">Seafile</a>，以及如何通过这款私有云盘软件打造自己的私有云盘，并实现在网络环境下手机照片实时地自动同步到自己的电脑上，从而释放你的手机存储空间。<br><a id="more"></a></p>
 <h1 id="Seafile服务端的安装"><a href="#Seafile服务端的安装" class="headerlink" title="Seafile服务端的安装"></a>Seafile服务端的安装</h1><h2 id="Seafile简介"><a href="#Seafile简介" class="headerlink" title="Seafile简介"></a>Seafile简介</h2><blockquote>
@@ -31,32 +31,22 @@
 <h3 id="安装-Python-2-7-11-32-位版本"><a href="#安装-Python-2-7-11-32-位版本" class="headerlink" title="安装 Python 2.7.11 32 位版本"></a>安装 <code>Python 2.7.11</code> 32 位版本</h3><p>下载并安装 <a href="http://python.org/ftp/python/2.7.11/python-2.7.11.msi" target="_blank" rel="external">python 2.7.11 32 位版本</a><br>安装过程中请选择将<code>python.exe</code>添加到<strong>环境变量</strong>。</p>
 <p><img src="//source.jiangyayu.cn/install-seafile-server-on-personal-computer/1.png" style="zoom:0.7"></p>
 <p><strong>注意</strong>：一定要使用 <code>Python 2.7.11</code> 32 位版本。64 位版本或不是 2.7.11 的版本不能工作。</p>
-<h3 id="下载并解压-Seafile-服务器"><a href="#下载并解压-Seafile-服务器" class="headerlink" title="下载并解压 Seafile 服务器"></a>下载并解压 Seafile 服务器</h3><ul>
-<li>获取 <a href="http://seafile.com/download/" target="_blank" rel="external">Seafile 服务器</a>的最新版本。</li>
-<li>为 Seafile 服务器程序创建一个新的文件夹，比如<code>C:\SeafileProgram\</code>。请记住此文件夹的位置，我们将在以后用到它。</li>
-<li>将<strong>seafile-server_5.0.3_win32.tar.gz</strong>解压到<code>C:\SeafileProgram\</code>目录下。</li>
-</ul>
+<h3 id="下载并解压-Seafile-服务器"><a href="#下载并解压-Seafile-服务器" class="headerlink" title="下载并解压 Seafile 服务器"></a>下载并解压 Seafile 服务器</h3><p>1.获取 <a href="http://seafile.com/download/" target="_blank" rel="external">Seafile 服务器</a>的最新版本。<br>2.为 Seafile 服务器程序创建一个新的文件夹，比如<code>C:\SeafileProgram\</code>。请记住此文件夹的位置，我们将在以后用到它。<br>3.将<strong>seafile-server_5.0.3_win32.tar.gz</strong>解压到<code>C:\SeafileProgram\</code>目录下。</p>
 <p>现在，您的目录结构应该像如下这样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">C:\SeafileProgram</div><div class="line">         |__ seafile-server-5.0.3</div></pre></td></tr></table></figure></p>
-<h3 id="启动与初始化"><a href="#启动与初始化" class="headerlink" title="启动与初始化"></a>启动与初始化</h3><ol>
-<li><p>启动 Seafile 服务器<br> &emsp;&emsp;在<code>C:\SeafileProgram\seafile-server-5.0.3\</code>文件夹下，找到<code>run.bat</code>文件并双击，以启动 Seafile 服务器。此时，您应该注意到 Seafile 服务器的图标已经出现在您的系统托盘中。</p>
-</li>
-<li><p>选择一个磁盘作为 Seafile 服务器数据的存储位置<br> &emsp;&emsp;现在，您可以在弹出的对话框中选择一个磁盘，以便存储 Seafile 服务器的数据：</p>
+<h3 id="启动与初始化"><a href="#启动与初始化" class="headerlink" title="启动与初始化"></a>启动与初始化</h3><p>1.启动 Seafile 服务器<br>    &emsp;&emsp;在<code>C:\SeafileProgram\seafile-server-5.0.3\</code>文件夹下，找到<code>run.bat</code>文件并双击，以启动 Seafile 服务器。此时，您应该注意到 Seafile 服务器的图标已经出现在您的系统托盘中。</p>
+<p>2.选择一个磁盘作为 Seafile 服务器数据的存储位置<br>    &emsp;&emsp;现在，您可以在弹出的对话框中选择一个磁盘，以便存储 Seafile 服务器的数据：</p>
 <ul>
 <li>请确保选择的磁盘拥有足够的剩余空间；</li>
 <li>点击确认按钮后， Seafile 将会在您选择的磁盘下为您创建一个名为<code>seafile-server</code>的文件夹。这个文件夹就是 Seafile 服务器的数据文件夹。如果您选择D盘，那么数据文件夹为<code>D:\seafile-server</code>。</li>
 </ul>
-</li>
-<li><p>添加管理员帐号<br> &emsp;&emsp;右击 Seafile 服务器的系统托盘图标， 选择<strong>“添加管理员帐号”</strong>选项。在弹出的对话框中输入您的管理员用户名和密码。<br> <img src="//source.jiangyayu.cn/install-seafile-server-on-personal-computer/2.png" style="zoom:0.7"><br> &emsp;&emsp;如果操作成功， Seafile 服务器托盘图标处会弹出一个气泡提示您”添加 Seahub 管理员账户成功”。</p>
-</li>
-<li><p>配置 Seafile 服务器<br> &emsp;&emsp;初始化服务器之后，还需配置以下选项，<strong>否则不能进行文件的上传下载</strong>:</p>
+<p>3.添加管理员帐号<br>    &emsp;&emsp;右击 Seafile 服务器的系统托盘图标， 选择<strong>“添加管理员帐号”</strong>选项。在弹出的对话框中输入您的管理员用户名和密码。<br>    <img src="//source.jiangyayu.cn/install-seafile-server-on-personal-computer/2.png" style="zoom:0.7"><br>    &emsp;&emsp;如果操作成功， Seafile 服务器托盘图标处会弹出一个气泡提示您”添加 Seahub 管理员账户成功”。</p>
+<p>4.配置 Seafile 服务器<br>    &emsp;&emsp;初始化服务器之后，还需配置以下选项，<strong>否则不能进行文件的上传下载</strong>:</p>
 <ul>
-<li>访问服务器的 Web 界面 (打开 <code>http://&lt;您的 IP 地址&gt;:8000</code>)，用管理员账号登录；<br><img src="//source.jiangyayu.cn/install-seafile-server-on-personal-computer/3.png" style="zoom:0.5"></li>
+<li>访问服务器的 Web 界面 (打开 <code>http://&lt;您的 IP 地址&gt;:8000</code>)，用管理员账号登录；<br>  <img src="//source.jiangyayu.cn/install-seafile-server-on-personal-computer/3.png" style="zoom:0.5"></li>
 <li>点击左上角的扳手图标，进入管理员界面，在进入”设置”标签；</li>
 <li>将<strong>SERVICE_URL</strong>的值配置成<code>http://&lt;您的 IP 地址&gt;:8000</code>。比如您的 Windows 服务器地址为 <code>192.168.48.128</code>， 那么配置成<code>SERVICE_URL = http://192.168.48.128:8000</code>；</li>
-<li>将<strong>FILE_SERVER_ROOT</strong>的值配置成<code>http://&lt;您的 IP 地址&gt;:8082</code>。比如您的 Windows 服务器地址为 <code>192.168.48.128</code>， 那么配置成<code>SERVICE_URL = http://192.168.48.128:8082</code>。<br><img src="//source.jiangyayu.cn/install-seafile-server-on-personal-computer/4.png" style="zoom:0.5"></li>
+<li>将<strong>FILE_SERVER_ROOT</strong>的值配置成<code>http://&lt;您的 IP 地址&gt;:8082</code>。比如您的 Windows 服务器地址为 <code>192.168.48.128</code>， 那么配置成<code>SERVICE_URL = http://192.168.48.128:8082</code>。<br>  <img src="//source.jiangyayu.cn/install-seafile-server-on-personal-computer/4.png" style="zoom:0.5"></li>
 </ul>
-</li>
-</ol>
 <h1 id="内网穿透"><a href="#内网穿透" class="headerlink" title="内网穿透"></a>内网穿透</h1><p>&emsp;&emsp;通过以上的操作，我们就可以通过地址<code>http://192.168.48.128:8000</code>访问我们的Seafile云盘了，但是这种访问仅限于本机或者局域网以内。由于该IP地址非公网IP，因此当我们处在非同一局域网的环境时，我们将无法访问到自己的Seafile云盘了。所以我们还需要一个内网穿透的软件来做映射(当然，在自己的云服务器上部署Seafile时，由于云服务器一般都有固定的公网IP，可以跳过这一步了)。这里向大家介绍的是<a href="https://ngrok.com/" target="_blank" rel="external">ngrok</a>。</p>
 <h2 id="使用Ngrok进行内网穿透"><a href="#使用Ngrok进行内网穿透" class="headerlink" title="使用Ngrok进行内网穿透"></a>使用Ngrok进行内网穿透</h2><p>&emsp;&emsp;首先前往ngrok的官方网站<a href="https://ngrok.com/download" target="_blank" rel="external">下载页面</a>下载对应版本的ngrok。<br><img src="//source.jiangyayu.cn/install-seafile-server-on-personal-computer/5.png" style="zoom:0.7"><br>运行<code>ngrok.exe</code>,输入命令<code>ngrok http 8000</code>，结果如下：<br><img src="//source.jiangyayu.cn/install-seafile-server-on-personal-computer/6.png" style="zoom:0.8"><br>通过结果中返回的两个域名，我们即可在外网访问在自己电脑上部署的seafile了：<br><img src="//source.jiangyayu.cn/install-seafile-server-on-personal-computer/7.png" style="zoom:0.5"></p>
 <h2 id="使用Sunny-Ngrok进行内网穿透"><a href="#使用Sunny-Ngrok进行内网穿透" class="headerlink" title="使用Sunny-Ngrok进行内网穿透"></a>使用Sunny-Ngrok进行内网穿透</h2><p>&emsp;&emsp;通过前面的Ngrok的设置之后，我们已经实现在外网通过Ngrok提供的域名访问Seafile私有云。但是Ngrok生成的域名前缀是随机的，非常不好记，同时逼格也不够高。这里我们就介绍一种可以自定义域名的方法：使用<a href="https://ngrok.cc/" target="_blank" rel="external">Sunny-Ngrok</a>。<br>&emsp;&emsp;Sunny-Ngrok是基于Ngrok的一款内网转发软件，提供免费内网穿透服务，免费服务器支持绑定自定义域名。下面简单介绍如何使用Sunn-Ngrok实现自定义域名。</p>
