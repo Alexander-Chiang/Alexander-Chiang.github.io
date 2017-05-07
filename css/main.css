@@ -996,6 +996,16 @@ pre .javascript .function {
   -o-transition: background 300ms;
   transition: background 300ms;
 }
+@media (max-width: 767px) {
+  #rocket-to-top {
+    display: none;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  #rocket-to-top {
+    display: none;
+  }
+}
 #rocket-to-top.rocket-to-top-on {
   bottom: 40px;
 }
@@ -2160,7 +2170,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #4467ac;
+  background: #b9b5ed;
 }
 .links-of-author-item {
   text-align: center;

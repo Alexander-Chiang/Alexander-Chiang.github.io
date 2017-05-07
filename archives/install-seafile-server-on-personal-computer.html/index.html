@@ -1058,7 +1058,7 @@
         <div class="side-buttons-box mail_box">
           <a href="http://wpa.qq.com/msgrd?v=3&uin=1305280014&site=qq&menu=yes"><span class="bt-left"><i class="fa fa-qq" title="QQ"></i></span><span style="font-size:1px;display:inline-block;line-height:16px;clear:both;">QQ</span></a>
         </div>
-        <div class="side-buttons-box">
+        <div id="browse-percent" class="side-buttons-box" style="display:none">
           <span id="scrollIndicator" style="font-size:1px;display:inline-block;line-height:16px;clear:both;"></span>
         </div>
     </div>
@@ -1493,6 +1493,14 @@ $(window).scroll(function() {
             docheight =$(document).height(),
             winheight = $(window).height();
         var scrolled = (wintop / (docheight - winheight)) * 100;
+        if(scrolled>1)
+        {
+            document.getElementById('browse-percent').style.display = "block";
+        }
+        else
+        {
+            document.getElementById('browse-percent').style.display = "none";
+        }
         $('.scroll-line').css('width', (scrolled + '%')); 
         document.getElementById('scrollIndicator').innerHTML = Math.round(scrolled).toString()+'%'; 
 });
