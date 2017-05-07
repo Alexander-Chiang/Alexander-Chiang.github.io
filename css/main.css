@@ -1039,6 +1039,11 @@ pre .javascript .function {
   margin-top: 7px;
   margin-left: 7px;
 }
+@media (max-width: 767px) {
+  side-buttons {
+    display: none;
+  }
+}
 .mobile_code {
   padding: 2px 3px 0 3px;
 }
@@ -2170,7 +2175,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #38ffff;
+  background: #d4da30;
 }
 .links-of-author-item {
   text-align: center;
