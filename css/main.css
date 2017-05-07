@@ -1044,7 +1044,7 @@ pre .javascript .function {
 }
 @media (max-width: 767px) {
   .mobile_code {
-    display: none;
+    display: none !important;
   }
 }
 .mobile_code .code_img {
@@ -2170,7 +2170,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #b9b5ed;
+  background: #8e8fff;
 }
 .links-of-author-item {
   text-align: center;
