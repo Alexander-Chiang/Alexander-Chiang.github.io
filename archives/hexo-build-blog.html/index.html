@@ -101,7 +101,7 @@
 <meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/hexo-build-blog/3.png">
 <meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/hexo-build-blog/4.png">
 <meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/hexo-build-blog/5.png">
-<meta property="og:updated_time" content="2017-04-30T09:37:21.198Z">
+<meta property="og:updated_time" content="2017-07-16T11:07:59.449Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo搭建静态博客">
 <meta name="twitter:description" content="Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。  
@@ -564,10 +564,18 @@
 <h3 id="创建git用户"><a href="#创建git用户" class="headerlink" title="创建git用户"></a>创建git用户</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># useradd -m git  # 创建 git 用户，也可以用 adduser</div><div class="line"># passwd git # 设置密码</div><div class="line"># chmod 740 /etc/sudoers  #将新建的用户添加sudo权限</div><div class="line"># vi /etc/sudoers</div></pre></td></tr></table></figure>
 <p>添加以下内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git   ALL=(ALL)     ALL</div></pre></td></tr></table></figure></p>
 <h3 id="导入用户的公钥"><a href="#导入用户的公钥" class="headerlink" title="导入用户的公钥"></a>导入用户的公钥</h3><ol>
-<li>查询本地ssh<br>以windows下为例，打开Git Bash,输入<code>cd ~/.ssh</code>,如果返回<code>“… No such file or directory”</code>，说明没有生成过SSH Key。则使用3中方法生成，否则按照2中方法查询公钥。</li>
-<li>若已存在ssh密钥对，则输入<code>cat id_rsa.pub</code>,将查询到的结果复制下来，在服务器端,<strong>切换到git用户</strong> ，执行<code>vim ~/.ssh/authorized_keys</code>,导入刚刚复制的公钥，一行一个。</li>
-<li><p>生成新的Key：（引号内的内容替换为你自己的邮箱）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C &quot;your_email@youremail.com&quot;</div></pre></td></tr></table></figure>
+<li>查询本地ssh<br>以windows下为例，打开Git Bash,输入<code>cd ~/.ssh</code>,如果返回<code>“… No such file or directory”</code>，说明没有生成过SSH Key。则使用4中方法生成，否则按照2~3中方法查询公钥。</li>
+<li><p>若已存在ssh密钥对，则输入<code>cat id_rsa.pub</code>,将查询到的结果复制下来，在服务器端,使用root用户：<br>创建<code>.ssh</code>文件夹：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkdir /home/git/.ssh</div></pre></td></tr></table></figure>
+<p>新建<code>authorized_keys</code>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim /home/git/.ssh/authorized_keys</div></pre></td></tr></table></figure>
+<p>将查询的<code>id_rsa.pub</code>信息粘贴到<code>authorized_keys</code>。</p>
+</li>
+<li><p>修改<code>authorized_keys</code>用户组权限</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chown git:git -R /home/git/.ssh</div></pre></td></tr></table></figure>
+</li>
+<li><p>生成新的Key(若第一步查询，已存在ssh密钥对，则可以跳过此步骤)：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C &quot;your_email@youremail.com&quot;  （引号内的内容替换为你自己的邮箱）</div></pre></td></tr></table></figure>
 <p>输出显示：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Generating public/private rsa key pair. Enter file in which to save the key (/Users/your_user_directory/.ssh/id_rsa):</div></pre></td></tr></table></figure>
 <p>直接回车，不要修改默认路径。</p>
@@ -582,8 +590,12 @@
 <h3 id="配置git-hooks"><a href="#配置git-hooks" class="headerlink" title="配置git hooks"></a>配置git hooks</h3><p>新建并编辑刚刚初始化过的仓库里的<code>hooks/post-receive</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim /var/www/html/hexo.git/hooks/post-receive</div></pre></td></tr></table></figure>
 <p>输入如下内容:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">#!/bin/bash</div><div class="line">GIT_REPO=/var/www/html/hexo.git #git仓库</div><div class="line">TMP_GIT_CLONE=/tmp/hexo</div><div class="line">PUBLIC_WWW=/var/www/html/hexo #网站目录</div><div class="line">rm -rf $&#123;TMP_GIT_CLONE&#125;</div><div class="line">git clone $GIT_REPO $TMP_GIT_CLONE</div><div class="line">rm -rf $&#123;PUBLIC_WWW&#125;/*</div><div class="line">cp -rf $&#123;TMP_GIT_CLONE&#125;/* $&#123;PUBLIC_WWW&#125;</div></pre></td></tr></table></figure></p>
+<p>然后赋予该文件可执行权限：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chmod +x post-receive</div></pre></td></tr></table></figure></p>
 <p>此文件用于每次push之后，将git仓库中的静态博客复制到网站根目录下。<br>还需新建一个<code>/tmp/hexo</code>文件用于交换数据，同样应赋予git用户组权限,<strong>切换到root用户</strong>，执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mkdir /tmp/hexo</div><div class="line">chown git:git -R /tmp/hexo</div></pre></td></tr></table></figure></p>
 <h3 id="Hexo中配置"><a href="#Hexo中配置" class="headerlink" title="Hexo中配置"></a>Hexo中配置</h3><p>在hexo配置文件中修改deploy:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git </div><div class="line">  repo: </div><div class="line">    github: </div><div class="line">    vps: git@vps的ip地址:/var/www/html/hexo.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure></p>
+<p>然后就可以使用<code>hexo g</code>将博客部署到云服务器上。<br><strong>注：这里如果发生以下错误：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">FATAL Host key verification failed.</div><div class="line">fatal: Could not read from remote repository.</div></pre></td></tr></table></figure></p>
+<p>请检查<code>/etc/ssh/sshd_config</code>,开启了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">RSAAuthentication yes  </div><div class="line">PubkeyAuthentication yes  </div><div class="line">AuthorizedKeysFile     .ssh/authorized_keys</div></pre></td></tr></table></figure></p>
+<p>保存后重启sshd:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service sshd restart</div></pre></td></tr></table></figure></p>
 <h3 id="Hexo部署到云主机"><a href="#Hexo部署到云主机" class="headerlink" title="Hexo部署到云主机"></a>Hexo部署到云主机</h3><p>通过以上的配置，同样通过<code>hexo d</code>即可将生成的博客推送到云主机上。同时配置GitHub和vps可以将博客同步地发布到GitHub Pages和云主机上。</p>
 
       
@@ -1012,7 +1024,9 @@
         
 
         
-          <script>
+          <div class="feed-link motion-element">
+          
+            <script>
     (function(T,h,i,n,k,P,a,g,e){g=function(){P=h.createElement(i);a=h.getElementsByTagName(i)[0];P.src=k;P.charset="utf-8";P.async=1;a.parentNode.insertBefore(P,a)};T["ThinkPageWeatherWidgetObject"]=n;T[n]||(T[n]=function(){(T[n].q=T[n].q||[]).push(arguments)});T[n].l=+new Date();if(T.attachEvent){T.attachEvent("onload",g)}else{T.addEventListener("load",g,false)}}(window,document,"script","tpwidget","//widget.seniverse.com/widget/chameleon.js"))
 </script>
 <script>
@@ -1031,9 +1045,13 @@
     });
     tpwidget("show");
 </script>
-          <div class="feed-link motion-element">
             <div id="tp-weather-widget"></div>
+          
+          
           </div>
+        
+
+
         
 
 
