@@ -183,7 +183,7 @@
     <link href="https://blog.jiangyayu.cn/archives/hexo-build-blog.html/"/>
     <id>https://blog.jiangyayu.cn/archives/hexo-build-blog.html/</id>
     <published>2017-01-10T14:16:55.000Z</published>
-    <updated>2017-07-16T11:07:59.449Z</updated>
+    <updated>2017-07-19T17:32:49.035Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p><a href="https://hexo.io/zh-cn/" target="_blank" rel="external">Hexo</a> 是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="http://daringfireball.net/projects/markdown/" target="_blank" rel="external">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。  </p>
@@ -323,7 +323,8 @@
 <p>然后赋予该文件可执行权限：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chmod +x post-receive</div></pre></td></tr></table></figure></p>
 <p>此文件用于每次push之后，将git仓库中的静态博客复制到网站根目录下。<br>还需新建一个<code>/tmp/hexo</code>文件用于交换数据，同样应赋予git用户组权限,<strong>切换到root用户</strong>，执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mkdir /tmp/hexo</div><div class="line">chown git:git -R /tmp/hexo</div></pre></td></tr></table></figure></p>
 <h3 id="Hexo中配置"><a href="#Hexo中配置" class="headerlink" title="Hexo中配置"></a>Hexo中配置</h3><p>在hexo配置文件中修改deploy:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git </div><div class="line">  repo: </div><div class="line">    github: </div><div class="line">    vps: git@vps的ip地址:/var/www/html/hexo.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure></p>
-<p>然后就可以使用<code>hexo g</code>将博客部署到云服务器上。<br><strong>注：这里如果发生以下错误：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">FATAL Host key verification failed.</div><div class="line">fatal: Could not read from remote repository.</div></pre></td></tr></table></figure></p>
+<p>然后就可以使用<code>hexo g</code>将博客部署到云服务器上。</p>
+<p><strong>注：这里如果发生以下错误：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">FATAL Host key verification failed.</div><div class="line">fatal: Could not read from remote repository.</div></pre></td></tr></table></figure></p>
 <p>请检查<code>/etc/ssh/sshd_config</code>,开启了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">RSAAuthentication yes  </div><div class="line">PubkeyAuthentication yes  </div><div class="line">AuthorizedKeysFile     .ssh/authorized_keys</div></pre></td></tr></table></figure></p>
 <p>保存后重启sshd:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service sshd restart</div></pre></td></tr></table></figure></p>
 <h3 id="Hexo部署到云主机"><a href="#Hexo部署到云主机" class="headerlink" title="Hexo部署到云主机"></a>Hexo部署到云主机</h3><p>通过以上的配置，同样通过<code>hexo d</code>即可将生成的博客推送到云主机上。同时配置GitHub和vps可以将博客同步地发布到GitHub Pages和云主机上。</p>
@@ -814,9 +815,9 @@
     
       <category term="matlab" scheme="https://blog.jiangyayu.cn/tags/matlab/"/>
     
-      <category term="可视化" scheme="https://blog.jiangyayu.cn/tags/%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
-    
       <category term="NetCDF" scheme="https://blog.jiangyayu.cn/tags/NetCDF/"/>
+    
+      <category term="可视化" scheme="https://blog.jiangyayu.cn/tags/%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
     
   </entry>
   
