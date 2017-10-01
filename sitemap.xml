@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.jiangyayu.cn/archives/NJNU-Auto-Login-Csharp.html/</loc>
+    
+    <lastmod>2017-10-01T11:52:41.823Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.jiangyayu.cn/archives/NJNU-auto-login.html/</loc>
+    
+    <lastmod>2017-09-01T01:49:02.591Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.jiangyayu.cn/archives/hexo-build-blog.html/</loc>
     
     <lastmod>2017-07-19T17:32:49.035Z</lastmod>
@@ -128,7 +142,7 @@
   </url>
   
   <url>
-    <loc>https://blog.jiangyayu.cn/archives/photos.html/</loc>
+    <loc>https://blog.jiangyayu.cn/archives/Orthogonal-decomposition.html/</loc>
     
     <lastmod>2017-03-30T15:35:05.869Z</lastmod>
     
@@ -142,7 +156,7 @@
   </url>
   
   <url>
-    <loc>https://blog.jiangyayu.cn/archives/Orthogonal-decomposition.html/</loc>
+    <loc>https://blog.jiangyayu.cn/archives/photos.html/</loc>
     
     <lastmod>2017-03-30T15:35:05.869Z</lastmod>
     
@@ -156,14 +170,14 @@
   </url>
   
   <url>
-    <loc>https://blog.jiangyayu.cn/archives/ArcGIS-practice-3.html/</loc>
+    <loc>https://blog.jiangyayu.cn/archives/Digital-Image-Positioning.html/</loc>
     
     <lastmod>2017-03-30T15:35:05.867Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.jiangyayu.cn/archives/ArcGIS-practice-1.html/</loc>
+    <loc>https://blog.jiangyayu.cn/archives/ArcGIS-practice-3.html/</loc>
     
     <lastmod>2017-03-30T15:35:05.867Z</lastmod>
     
@@ -177,7 +191,7 @@
   </url>
   
   <url>
-    <loc>https://blog.jiangyayu.cn/archives/Digital-Image-Positioning.html/</loc>
+    <loc>https://blog.jiangyayu.cn/archives/ArcGIS-practice-1.html/</loc>
     
     <lastmod>2017-03-30T15:35:05.867Z</lastmod>
     

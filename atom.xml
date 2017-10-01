@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.jiangyayu.cn/"/>
-  <updated>2017-05-27T03:08:04.695Z</updated>
+  <updated>2017-10-01T11:52:41.823Z</updated>
   <id>https://blog.jiangyayu.cn/</id>
   
   <author>
@@ -14,6 +14,42 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>南京师范大学网络认证系统(.Net版)</title>
+    <link href="https://blog.jiangyayu.cn/archives/NJNU-Auto-Login-Csharp.html/"/>
+    <id>https://blog.jiangyayu.cn/archives/NJNU-Auto-Login-Csharp.html/</id>
+    <published>2017-09-15T11:50:42.000Z</published>
+    <updated>2017-10-01T11:52:41.823Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="挖坑待填"><a href="#挖坑待填" class="headerlink" title="挖坑待填"></a>挖坑待填</h3>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;挖坑待填&quot;&gt;&lt;a href=&quot;#挖坑待填&quot; class=&quot;headerlink&quot; title=&quot;挖坑待填&quot;&gt;&lt;/a&gt;挖坑待填&lt;/h3&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>NJNU-auto-login</title>
+    <link href="https://blog.jiangyayu.cn/archives/NJNU-auto-login.html/"/>
+    <id>https://blog.jiangyayu.cn/archives/NJNU-auto-login.html/</id>
+    <published>2017-08-31T12:00:20.000Z</published>
+    <updated>2017-09-01T01:49:02.591Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="分析js"><a href="#分析js" class="headerlink" title="分析js"></a>分析js</h2><h2 id="Python实现脚本登陆"><a href="#Python实现脚本登陆" class="headerlink" title="Python实现脚本登陆"></a>Python实现脚本登陆</h2><h2 id="完善脚本"><a href="#完善脚本" class="headerlink" title="完善脚本"></a>完善脚本</h2><h3 id="添加配置文件"><a href="#添加配置文件" class="headerlink" title="添加配置文件"></a>添加配置文件</h3><h3 id="登陆成功-失败提示"><a href="#登陆成功-失败提示" class="headerlink" title="登陆成功/失败提示"></a>登陆成功/失败提示</h3><h3 id="设置重连接"><a href="#设置重连接" class="headerlink" title="设置重连接"></a>设置重连接</h3><h2 id="生成exe"><a href="#生成exe" class="headerlink" title="生成exe"></a>生成exe</h2><h3 id="去除小黑框"><a href="#去除小黑框" class="headerlink" title="去除小黑框"></a>去除小黑框</h3><h3 id="设置开机自启动"><a href="#设置开机自启动" class="headerlink" title="设置开机自启动"></a>设置开机自启动</h3>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;分析js&quot;&gt;&lt;a href=&quot;#分析js&quot; class=&quot;headerlink&quot; title=&quot;分析js&quot;&gt;&lt;/a&gt;分析js&lt;/h2&gt;&lt;h2 id=&quot;Python实现脚本登陆&quot;&gt;&lt;a href=&quot;#Python实现脚本登陆&quot; class=&quot;headerlink&quot; 
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>拯救你的16GB iPhone&lt;/br&gt;利用Seafile创建私有云将照片同步到PC上</title>
@@ -815,9 +851,9 @@
     
       <category term="matlab" scheme="https://blog.jiangyayu.cn/tags/matlab/"/>
     
-      <category term="NetCDF" scheme="https://blog.jiangyayu.cn/tags/NetCDF/"/>
-    
       <category term="可视化" scheme="https://blog.jiangyayu.cn/tags/%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
+    
+      <category term="NetCDF" scheme="https://blog.jiangyayu.cn/tags/NetCDF/"/>
     
   </entry>
   
@@ -1049,255 +1085,6 @@
       <category term="matlab" scheme="https://blog.jiangyayu.cn/tags/matlab/"/>
     
       <category term="Erdas" scheme="https://blog.jiangyayu.cn/tags/Erdas/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>高级高光谱遥感应用</title>
-    <link href="https://blog.jiangyayu.cn/archives/Hyperspectral-RS-image-Processing.html/"/>
-    <id>https://blog.jiangyayu.cn/archives/Hyperspectral-RS-image-Processing.html/</id>
-    <published>2013-01-04T08:04:22.000Z</published>
-    <updated>2017-03-30T15:35:05.876Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="实习目的："><a href="#实习目的：" class="headerlink" title="实习目的："></a>实习目的：</h1><ol>
-<li>理解高光谱概念、地物光谱仪、光谱数据库、高光谱传感器；</li>
-<li>掌握ENVI软件的基本功能；</li>
-<li>熟悉ENVI遥感影像处理的一般方法；</li>
-<li>进一步掌握高级高光谱分析及制图方法；</li>
-<li>理解MNF理论及算法，线性混合波谱理论；</li>
-<li>总结获取高光谱端元的方法。<a id="more"></a>
-</li>
-</ol>
-<h1 id="实习主要仪器设备，软件及数据："><a href="#实习主要仪器设备，软件及数据：" class="headerlink" title="实习主要仪器设备，软件及数据："></a>实习主要仪器设备，软件及数据：</h1><ol>
-<li>硬件准备：PC机；</li>
-<li>操作系统：Linux系统或Windows 2k以上系统；</li>
-<li>软件工具：ENVI</li>
-<li>数据：美国California州AVIRIS影像数据，及USGS植被及矿物的光谱库数据:CD1/m94avsub；CD1/spec_lib；CD2/C95avsub；CD2/ spec_lib。<br><strong>数据下载</strong>：链接：<a href="http://pan.baidu.com/s/1nuTF6WT" target="_blank" rel="external">http://pan.baidu.com/s/1nuTF6WT</a> 密码：xljz</li>
-</ol>
-<h1 id="AVIRIS及测谱学（Imaging-Spectroscopy）介绍"><a href="#AVIRIS及测谱学（Imaging-Spectroscopy）介绍" class="headerlink" title="AVIRIS及测谱学（Imaging Spectroscopy）介绍"></a>AVIRIS及测谱学（Imaging Spectroscopy）介绍</h1><h2 id="测谱学介绍"><a href="#测谱学介绍" class="headerlink" title="测谱学介绍"></a>测谱学介绍</h2><p> &emsp;&emsp;光谱技术是被用于实验室中物理，化学和生物学等领域的研究材料性能，基于电磁辐射与物质的相互作用。在太阳能反射光谱成像光谱仪被设想为同样的目标，但是从地球上寻找和地区视角（下图所示）。陆地、水体和大气中的分子和微粒与太阳辐射在400±2500nm光谱区域，通过吸收，反射和散射过程相互作用。成像分光计在太阳反射光谱特性中被用于测量光谱图像在某些或全部的光谱。这些光谱测量是用来确定组成成分通过物理和化学的科学研究和应用光谱阳离子的区域范围内的图像。<br> <img src="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/1.png" alt="不同地物的光谱特性" style="zoom:0.8"></p>
-<h2 id="AVIRIS介绍"><a href="#AVIRIS介绍" class="headerlink" title="AVIRIS介绍"></a>AVIRIS介绍</h2><p> &emsp;&emsp;AVIRIS首先测量光谱图像于1987年也是第一个从400纳米到2500纳米测量太阳反射光谱的成像光谱仪(Figure 2)。AVIRIS在224个连续光谱通道以间隔为10 nm测量上升辐亮度。这些辐射光谱测量的影像宽度为11公里和长度800公里及20米的空间分辨率。美国航天局的ER-2飞机从2万米的高空获得Q-bay的AVIRIS光谱图像。AVIRIS的光谱，辐射和空间校准取决于实验室和监测每年飞行探测。已经获得超过4 TB的AVIRIS数据，请求数据已经被校准和分发给调查人员从最初的飞行测量。<br> &emsp;&emsp;自1987年以来，AVIRIS测得的光谱图像每年为科学研究和应用提供了帮助。250余篇论文和摘要已经被写入AVIRIS的研讨会(Vane, 1988, Green, 1990a; 1991; 1992; 1993; 1995; 1996a)。本次研讨会的文件和其他资料维护的AVIRIS的网站(<a href="http://makalu.jpl.nasa.gov/AVIRIS.html" target="_blank" rel="external">http://makalu.jpl.nasa.gov/AVIRIS.html</a>)。在过去的10年里,已经有相当数量的报纸写AVIRIS其他研讨会、座谈会、研讨会。先前与AVIRIS相关的专业期刊已经出版(Vane，1993)。整个遥感学领域还有其他与AVIRIS相关文章和论文。<br> &emsp;&emsp;研究者对AVIRIS系统不断努力升级和改进以满足用AVIRIS光谱图像对科学研究和应用的要求。这些改进还针对AVIRIS传感器，校准，数据系统和飞行操作。传感器的同时，科学研究和应用与AVIRIS寻求多样化和发展。<br> <img src="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/2.png" alt="figure2" style="zoom:0.8"></p>
-<h2 id="常用的高光谱传感器"><a href="#常用的高光谱传感器" class="headerlink" title="常用的高光谱传感器"></a>常用的高光谱传感器</h2><h3 id="Hyperion传感器"><a href="#Hyperion传感器" class="headerlink" title="Hyperion传感器"></a>Hyperion传感器</h3><p> &emsp;Hyperion传感器搭载于EO-1卫星平台，是第一台星载高光谱图谱测量仪，也是目前唯一在轨的星载高光谱成像光谱仪和唯一可公开获得的高光谱测量仪，意义重大。Hyperion采用谱像合一技术，合计有242个波段，覆盖了350-2600nm的波段范围，波段间隔10nm左右，空间分辨率为30m，1-7波段和57-77波段没有进行仪器辐射校正，实际定标范围覆盖了426.82-2395.5nm的198个波段。Hyperion的高光谱特性可以实现精确的估计农业产量、地质填图、精确制图，在采矿、地质、森林、农业以及环境保护领域有着广泛的应用前景。</p>
-<h3 id="CASI"><a href="#CASI" class="headerlink" title="CASI"></a>CASI</h3><p> &emsp;&emsp;小型机载成像光谱仪（CASI)是一款加拿大研制的机载商用成像光谱仪， 1990年起开始投入运行，在430~870nm范围内拥有多达288个波段，波段宽度仅为1.8nm。CASI轻型多光谱推扫式成像系统适用于航空遥感和实 验室实验。<br> &emsp;&emsp;CASI可用两种工作方式成像：多光谱方式和高光谱方式。当以多光谱方式 工作时，可产生多达19个非重叠的波段和最多每行512个像元，而且其波段中 心位置和波段宽度都可通过编程方式来控制。当CASI以高光谱方式工作时，可 拥有高达288个波段覆盖可见光至近红外区域。表1列举了 CASI仪器的主要 技术参数，其最新版本提供了一种结合多光谱和高光谱两种工作方式长处的“增 强型光谱工作方式”，具有很强的应用前景。<br> <img src="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/table.png" alt="表格"></p>
-<h1 id="便携式地物光谱仪ASD、USGS波谱库介绍"><a href="#便携式地物光谱仪ASD、USGS波谱库介绍" class="headerlink" title="便携式地物光谱仪ASD、USGS波谱库介绍"></a>便携式地物光谱仪ASD、USGS波谱库介绍</h1><h2 id="便携式地物光谱仪ASD"><a href="#便携式地物光谱仪ASD" class="headerlink" title="便携式地物光谱仪ASD"></a>便携式地物光谱仪ASD</h2><p> &emsp;&emsp;ASD便携式地物光谱仪：测量地表沉积物、土壤、植物、水体和人工目标在400-2500 nm波段范围的反射率和透过率，利用探测到的地物吸收特征对目标进行成分识别，并定量化地物的化学组分。测量太阳辐照度，用于研究大气组分。</p>
-<h2 id="USGS波谱库"><a href="#USGS波谱库" class="headerlink" title="USGS波谱库"></a>USGS波谱库</h2><p> &emsp;&emsp;USGS全称即United States Geological Surve（网站:<a href="http://speclab.cr.usgs.gov/spectral-lib.html" target="_blank" rel="external">http://speclab.cr.usgs.gov/spectral-lib.html</a> ），美国地质勘探局。USGS波谱库是美国地质勘探局光谱实验室的研究人员在实验室中测得了数百种物质的光谱反射率之后编制了的一个谱库。该库被用来作为物质遥感图像识别的参考。</p>
- <div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><a href="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/3.png" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/3.png" alt="地物波谱"></a></div><div class="group-picture-column" style="width: 50%;"><a href="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/4.png" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/4.png" alt="地物波谱"></a></div></div><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><a href="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/5.png" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/5.png" alt="地物波谱"></a></div><div class="group-picture-column" style="width: 50%;"><a href="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/6.png" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/6.png" alt="地物波谱"></a></div></div></div></div>
-<p> <strong>光谱特征：</strong><br> <strong>中长石</strong>： 在0.5μm到2.8μm之间反射率均比较大，而在这段波段以外则吸收较为明显。<br> <strong>三色紫罗兰：</strong>在0.5μm附近有反射峰，在0.7μm附近也有反射峰，虽然在1.3μm以后的反射率还有波动，但是都是有明显的下降趋势。<br> <strong>沿岸水：</strong>总体的反射率低，仅有0.1，红黄区（0.55~0.76μm）有明显的反射峰，是由于近岸受河流带来的陆源物质影响，在近红外（0.76微米附近）出现一个小的反射峰，是由于近岸的叶绿素浓度较高造成的。<br> <strong>大洋水：</strong>总体的反射率低，仅有0.1，在蓝绿光（0.4μm附近）有反射峰，说明水质清澈。</p>
-<h1 id="基于几何顶点端元提取的SAM分类"><a href="#基于几何顶点端元提取的SAM分类" class="headerlink" title="基于几何顶点端元提取的SAM分类"></a>基于几何顶点端元提取的SAM分类</h1><p> 根据cup95eff.int数据，运用MNF变换后的波段以及散点图工具提取端元。</p>
-<h2 id="加载数据"><a href="#加载数据" class="headerlink" title="加载数据"></a>加载数据</h2><p> 加载实验数据cup95eff.int。</p>
-<h2 id="获得MNF变换数据。"><a href="#获得MNF变换数据。" class="headerlink" title="获得MNF变换数据。"></a>获得MNF变换数据。</h2><p> 通过cup95eff.int获得练习MNF变换数据。</p>
-<ol>
-<li><p>在ENVI主菜单下选择Spectral→MNF Rotation→Forward MNF→Estimate Noise Statistics from Data。</p>
-<p><img src="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/7.png"></p>
-</li>
-<li><p>在打开的MNF Transform Input File对话框中选择输入数据cup95eff.int，点击OK。</p>
-</li>
-<li><p>为输出数据选择路径和名称，点击OK进行MNF变换，生成My_MNF。</p>
-<div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><a href="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/8.png" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/8.png"></a></div><div class="group-picture-column" style="width: 50%;"><a href="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/9.png" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/9.png"></a></div></div></div></div>
-</li>
-</ol>
-<h2 id="加载My-MNF散点图"><a href="#加载My-MNF散点图" class="headerlink" title="加载My_MNF散点图"></a>加载My_MNF散点图</h2><p> 加载My_MNF散点图。在影像主窗口菜单下选择Tools→2D Scatter Plot。在Scatter Plot Band Choice窗口中分别选择波段1和波段2，打开散点图。</p>
- <div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><a href="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/10.png" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/10.png"></a></div><div class="group-picture-column" style="width: 50%;"><a href="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/11.png" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/11.png"></a></div></div></div></div>
-<h2 id="获取端元。"><a href="#获取端元。" class="headerlink" title="获取端元。"></a>获取端元。</h2><ol>
-<li>在散点图绘制窗口，使用感兴趣区（ROIs）绘制工具，在数据分布集群的一个或者多个拐角上，圈出一些像素点。这些像素点将作为带颜色的像素，映射到影像相应的位置上。</li>
-<li>在散点图绘制窗口中，从Class下拉式菜单中选择所需的颜色，对几种不同的类，分别使用不同的颜色。<br><img src="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/12.png"></li>
-<li>使用影像和散点图中的跳跃像素（dancing pixels）功能（双击并拖曳鼠标中键），来帮助鉴别独特的区域。</li>
-<li><p>从散点图绘制窗口的下拉式菜单中，选择 Options → Export All in the Options，将这些像素列表将被导出作为ENVI 的感兴趣区（ROIs）。</p>
-<div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><a href="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/13.png" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/13.png"></a></div><div class="group-picture-column" style="width: 50%;"><a href="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/14.png" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/14.png"></a></div></div></div></div>
-</li>
-<li><p>在主影像显示窗口菜单栏中，选择 Overlay → Region of Interest，将感兴趣区加载到显示表观反射率的那个显示窗口中。</p>
-</li>
-<li><p>在2-D散点图窗口中选择Options → Z-Profile ，在文件列表中选择反射数cup95eff.int，随即显示一个空白波段图。在2-D散点图窗口中点击鼠标右键，在空白的2-D散点图窗口中就会出现当前的像素剖面图及其坐标值，将差别显著的点删去（用白色画样本区即可删除）。</p>
-<div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><a href="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/15.png" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/15.png"></a></div><div class="group-picture-column" style="width: 50%;"><a href="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/16.png" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/16.png"></a></div></div></div></div>
-</li>
-<li><p>使用散点图对话框中Options 下拉式菜单中的Mean All 菜单项，提取感兴趣区中的均值表观反射率波谱曲线。<br><img src="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/17.png" style="zoom:0.7"></p>
-<h2 id="进行光谱匹配获取种类"><a href="#进行光谱匹配获取种类" class="headerlink" title="进行光谱匹配获取种类"></a>进行光谱匹配获取种类</h2><p><br>&emsp;&emsp;在ENVI主菜单下选择：Spectral→ Spectral Analyst，在弹出的窗口中选择波谱库，在此我们选择USGS（美国地质调查局）波谱库，点击OK，在弹出的“Edit Identify Methods Weighting”窗口中设定计算参数后点击OK，随即弹出波谱分析窗口，点击Apply，在弹出的输入波段列表中选择我们要鉴别的波谱。 选择一个待鉴别的波谱后波谱分析窗口中就会显示这一波谱与波谱库中的波谱匹配分析的结果，如下图：</p>
-<div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><a href="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/18.png" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/18.png"></a></div><div class="group-picture-column" style="width: 50%;"><a href="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/19.png" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/19.png"></a></div></div></div></div>
-</li>
-</ol>
-<h2 id="其他波段的分析"><a href="#其他波段的分析" class="headerlink" title="其他波段的分析"></a>其他波段的分析</h2><p> 用同样的方法对其他几个波段进行匹配分析，确定其特征，并更改名称。</p>
-<h2 id="进行SAM分类"><a href="#进行SAM分类" class="headerlink" title="进行SAM分类"></a>进行SAM分类</h2><ol>
-<li>从ENVI 主菜单, 选择Classification → Supervised → Spectral Angle Mapper</li>
-<li><p>在打开的Endmember Collection：SAM对话框中，选择Import →form plot windows，选择上一步骤中已经识别的几个矿物的波谱曲线。</p>
-<div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><a href="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/20.png" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/20.png"></a></div><div class="group-picture-column" style="width: 50%;"><a href="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/21.png" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/21.png"></a></div></div></div></div>
-</li>
-<li><p>设置相应的参数，点击OK，生成分类的SAM文件和Rule文件</p>
-<div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><a href="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/22.png" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/22.png"></a></div><div class="group-picture-column" style="width: 50%;"><a href="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/23.png" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/23.png"></a></div></div></div></div>
-</li>
-</ol>
-<p> <br>&emsp;&emsp;用二维散点图提取端元的时候，通过圈取散点图的拐点处来选取感兴趣区能够很好地选取端元。通过散点图和影像的对应关系可以不断进行修改。但是在圈取的时候存在一定的主观因素。</p>
-<h1 id="基于PPI纯净象元端元提取的SAM分类"><a href="#基于PPI纯净象元端元提取的SAM分类" class="headerlink" title="基于PPI纯净象元端元提取的SAM分类"></a>基于PPI纯净象元端元提取的SAM分类</h1><p> <br>&emsp;&emsp;根据cup95eff.int数据，利用MNF变换后的波段以及纯净像元指数工具以及N维可视化仪提取端元。</p>
-<h2 id="获取PPI。"><a href="#获取PPI。" class="headerlink" title="获取PPI。"></a>获取PPI。</h2><ol>
-<li>在ENVI主菜单下选择：Pixel Purity Index → [FAST]New Output Band，选择My_MNF。在Spectral Subset中选择前5个波段，点击OK。</li>
-<li><p>设置迭代次数和阈值，选择保存路径，如下图所示：</p>
-<div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><a href="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/24.png" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/24.png"></a></div><div class="group-picture-column" style="width: 50%;"><a href="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/25.png" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/25.png"></a></div></div></div></div>
-</li>
-<li><p>点击OK，生成ppi。<br><img src="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/26.png"></p>
-</li>
-<li>打开新生成的PPI<br><img src="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/27.png" style="zoom:0.7"></li>
-<li><p>进行对比度拉伸，并与cup95ppi.dat进行比较。</p>
-<div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><a href="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/28.png" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/28.png"></a></div><div class="group-picture-column" style="width: 50%;"><a href="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/29.png" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/29.png"></a></div></div></div></div>
-</li>
-<li><p>选取不同组数的波段、迭代次数和阈值生成PPI，然后分别进行线性拉伸，分别与cup95ppi.dat进行比较，选取最为接近的一组。<br><img src="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/30.png"></p>
-<h2 id="由PPI图像生成样本区。"><a href="#由PPI图像生成样本区。" class="headerlink" title="由PPI图像生成样本区。"></a>由PPI图像生成样本区。</h2></li>
-<li><p>在ROIs Tool对话框中，在主菜单下选择Options →Band Threshold to ROI建立一个只包含拥有高PPI值像素的ROI。选择输入的PPI文件，在弹出的对话框中输入最小极限值。点击OK点击“OK”，即生成包含在迭代过程中300次以上作为极值的最纯像素的ROI，生成了红色的样本区。</p>
-<div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><a href="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/31.png" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/31.png"></a></div><div class="group-picture-column" style="width: 50%;"><a href="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/32.png" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/32.png"></a></div></div></div></div>
-</li>
-<li><p>在ENVI主菜单中选择Spectral → n-Dimensional Visualizer → Visualize with New Data，在弹出的对话框中选择前面处理好的MNF文件，选择其前十个波段进行观察。</p>
-</li>
-<li><p>点击ROI后将弹出可以选择1到10波段的N维控制对话框和N维散点图窗口。 选择前五个波段构成n-D散点图。并选择n-D控制对话框中的Options→Show Axes选项。随后在n-D控制窗口中点击Start进行旋转。</p>
-<div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><a href="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/33.png" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/33.png"></a></div><div class="group-picture-column" style="width: 50%;"><a href="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/34.png" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/34.png"></a></div></div></div></div>
-</li>
-<li><p>运用N维观察器进行动态旋转观察，当出现感兴趣的位置时停止旋转，选择一种颜色将点云的拐角处圈起来作为一个ROI，点击鼠标左键对ROI进行定义，点击右键完成ROI的建立。继续旋转，根据需要对类进行修改。<br><img src="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/35.png" style="zoom:0.7"></p>
-</li>
-</ol>
-<h2 id="光谱匹配"><a href="#光谱匹配" class="headerlink" title="光谱匹配"></a>光谱匹配</h2><ol>
-<li>在n-D Controls对话框中，选择Options→Mean All得到均值反射率曲线。<br><img src="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/36.png" style="zoom:0.7"></li>
-<li>同七中所述，利用波谱分析工具确定地物类别。<br><img src="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/37.png"><br><strong>识别结果：</strong></li>
-</ol>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">波谱</th>
-<th style="text-align:center">地物</th>
-<th style="text-align:center">波谱</th>
-<th style="text-align:center">地物</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">n_D Class #1</td>
-<td style="text-align:center">calcite</td>
-<td style="text-align:center">n_D Class #4</td>
-<td style="text-align:center">kaolini</td>
-</tr>
-<tr>
-<td style="text-align:center">n_D Class #2</td>
-<td style="text-align:center">hematit</td>
-<td style="text-align:center">n_D Class #5</td>
-<td style="text-align:center">budding</td>
-</tr>
-<tr>
-<td style="text-align:center">n_D Class #3</td>
-<td style="text-align:center">jarosit</td>
-<td style="text-align:center">n_D Class #6</td>
-<td style="text-align:center">alunite</td>
-</tr>
-</tbody>
-</table>
-<ol>
-<li>在n-D控制窗口中选择Options→Class Controls 弹出n-D分类控制窗口，在该窗口中设置个各类的颜色。<br><img src="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/38.png" style="zoom:0.7"></li>
-</ol>
-<h2 id="进行SAM分类-1"><a href="#进行SAM分类-1" class="headerlink" title="进行SAM分类"></a>进行SAM分类</h2><ol>
-<li>从ENVI 主菜单, 选择Classification → Supervised → Spectral Angle Mapper</li>
-<li><p>在打开的Endmember Collection：SAM对话框中，选择Import →form plot windows，选择n_D Class #1i~6<br><img src="//source.jiangyayu.cn/Hyperspectral-RS-image-Processing/39.png"></p>
-<p><br>&emsp;&emsp;用n维散点图进行端元提取的时候，先要进行PPI变换，提取其中的纯净象元，然后在用n维动态观察器进行动态观察，同样选取拐角处作为感兴趣区。对于高光谱遥感来说由于其数据特点，考虑到运用n-D散点图分析效果可能会更好。</p>
-</li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;实习目的：&quot;&gt;&lt;a href=&quot;#实习目的：&quot; class=&quot;headerlink&quot; title=&quot;实习目的：&quot;&gt;&lt;/a&gt;实习目的：&lt;/h1&gt;&lt;ol&gt;
-&lt;li&gt;理解高光谱概念、地物光谱仪、光谱数据库、高光谱传感器；&lt;/li&gt;
-&lt;li&gt;掌握ENVI软件的基本功能；&lt;/li&gt;
-&lt;li&gt;熟悉ENVI遥感影像处理的一般方法；&lt;/li&gt;
-&lt;li&gt;进一步掌握高级高光谱分析及制图方法；&lt;/li&gt;
-&lt;li&gt;理解MNF理论及算法，线性混合波谱理论；&lt;/li&gt;
-&lt;li&gt;总结获取高光谱端元的方法。
-    
-    </summary>
-    
-      <category term="RS" scheme="https://blog.jiangyayu.cn/categories/RS/"/>
-    
-    
-      <category term="RS" scheme="https://blog.jiangyayu.cn/tags/RS/"/>
-    
-      <category term="高光谱" scheme="https://blog.jiangyayu.cn/tags/%E9%AB%98%E5%85%89%E8%B0%B1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>AVIRIS卫星影像波谱与实验室波谱库波谱曲线的比较</title>
-    <link href="https://blog.jiangyayu.cn/archives/AVIRIS.html/"/>
-    <id>https://blog.jiangyayu.cn/archives/AVIRIS.html/</id>
-    <published>2012-12-17T07:27:10.000Z</published>
-    <updated>2017-03-30T15:35:05.898Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h1><ol>
-<li>理解卫星及实验室高光谱概念，初步了解辐亮度、反射率的概念；</li>
-<li>能够打开并处理卫星高光谱数据；</li>
-<li>能够加载不同波谱库的反射率波谱曲线，并学会处理；</li>
-<li>学会判读不同地物的光谱曲线特征，了解其与相应的卫星光谱的比较，并解释差异原因。<a id="more"></a>
-<h1 id="实验要求"><a href="#实验要求" class="headerlink" title="实验要求"></a>实验要求</h1></li>
-<li>打开AVIRIS影像光谱，确定点（448,505）、（502,589）、（531,541）以及（260,613）。要求：显示完整的曲线名称对照课本及影像，确定该区的主要岩性，并判读光谱曲线主要特征及其区别。</li>
-<li>打开JPL1.sli光谱库，绘制alunite so-4a，buddingtonite felds ts-11a，calcite c-3d，kaolinite well ordered ps-1a。要求：显示完整的波谱曲线名称，确定横纵坐标，并判读光谱主要特征及区别。</li>
-<li>打开usgs_min.sli光谱库。要求：在该波谱库中找出与JPL波谱库中对应的上述四种矿物波谱曲线最大相似度的四种矿物，并在同一个窗口中绘制其波谱廓线，显示完整的名称。</li>
-<li>将calcite（明矾石）的AVIRIS卫星影像及JPL、USGS波谱库中的光谱曲线放在同一个窗口中显示，并进行光谱形状上的比较，简要说明其差别的原因。</li>
-</ol>
-<h1 id="实验内容"><a href="#实验内容" class="headerlink" title="实验内容"></a>实验内容</h1><h2 id="实验一："><a href="#实验一：" class="headerlink" title="实验一："></a>实验一：</h2><h3 id="实验步骤"><a href="#实验步骤" class="headerlink" title="实验步骤"></a>实验步骤</h3><ol>
-<li>打开c95avsub文件夹中的cup95_rd.int文件，按顺序点击 Band 183、Band 193 和Band 207（波长分别为2.10、2.20 和2.35μm)，加载一幅彩色影像。</li>
-<li>从主影像显示窗口菜单栏中，选择 Tools → Pixel Locator。在 Pixel Locator 对话框中输入像素的坐标定位到所指定的点。</li>
-<li>选择 Tools → Profiles → Z-Profile (Spectrum)，来提取这个位置的辐亮度波谱曲线。</li>
-<li>选择 Options → Collect Spectra。然后再在Pixel Locator 对话框中输入像素的坐标，按照实验要求依次提取以下位置的辐亮度波谱曲线。</li>
-<li>选择 Options → Stack Plots，分别查看每一条波谱曲线。在绘图窗口中点击右键，并在弹出的快捷菜单中选择Plot Key 来显示波谱曲线的图例。<br><img src="//source.jiangyayu.cn/AVIRIS/1.png" alt="波谱曲线"></li>
-</ol>
-<h3 id="结果分析"><a href="#结果分析" class="headerlink" title="结果分析"></a>结果分析</h3><ol>
-<li>岩性分析：<br>（448,505）：Buddingtonite Zone<br>（502,589）：Strongly Argillized Zone with Kaolinite<br>（531,541）：Opalite Zone with Alunite<br>（260,613）：Calcite</li>
-<li>主要特征：<br>图像的横坐标表示波段，纵坐标表示辐亮度。<br>这四种岩石有着同样趋势光谱曲线：在2.015μm处附近出现谷值，在2.04μm附近出现了峰值，在2.06μm附近再一次出现谷值，之后曲线上升，从2.1μm之后开始缓慢下降，在2.2μm附近有一个较小的吸收，2.3μm之后波谱呈现波动状态。</li>
-<li>区别：<br>波谱曲线在两个较大的峰值和谷值处的大小有区别，其次在2.2μm处的小的吸收特性能够反映不同岩石的特性。</li>
-</ol>
-<h2 id="实验二："><a href="#实验二：" class="headerlink" title="实验二："></a>实验二：</h2><h3 id="实验步骤-1"><a href="#实验步骤-1" class="headerlink" title="实验步骤"></a>实验步骤</h3><ol>
-<li>从 ENVI 主菜单中选择Spectral → Spectral Libraries → Spectral Library Viewer。</li>
-<li>当 Spectral Library Input File 对话框出现后，点击Open Spec Lib，并从spec_lib/jpl_lib子目录中选择jpl1.sli 文件。</li>
-<li>点击 OK。jpl1.sli 文件将会出现在对话框的Select Input File 区域。</li>
-<li>点击该文件名，再点击 OK，打开Spectral Library Viewer 对话框。</li>
-<li>在 Spectral Library Viewer 对话框所列出的波谱曲线中，点击相应的矿物质名称，绘制下列矿物质的波谱曲线：<ul>
-<li>ALUNITE SO-4A</li>
-<li>BUDDINGTONITE FELDS TS-11A</li>
-<li>CALCITE C-3D</li>
-<li>KAOLINITE WELL ORDERED PS-1A<br><img src="//source.jiangyayu.cn/AVIRIS/2.png" alt="波谱曲线"></li>
-</ul>
-</li>
-</ol>
-<h3 id="结果分析-1"><a href="#结果分析-1" class="headerlink" title="结果分析"></a>结果分析</h3><ol>
-<li>主要特征：<br>横坐标为波段，做坐标为反射率。<br>光谱曲线整体比较平缓，在1.4μm左右和2.2μm左右有比较明显的吸收。</li>
-<li>区别：<br>KAOLINITE WELL ORDERED PS-1A 和ALUNITE SO-4A在1.4μm处的吸收比较明显，形成比较大的谷值，两者相对应的波段来说KAOLINITE WELL ORDERED PS-1A在1.4μm左右，而ALUNITE SO-4A则在1.5μm左右；BUDDINGTONITE FELDS TS-11A在1.4μm左右的吸收很小，CALCITE C-3D则几乎没有；在2.2μm左右以上四种岩石波谱均有所吸收，其中CALCITE C-3D对应的吸收波段值则更大一些，且吸收幅度相对小一些。</li>
-</ol>
-<h2 id="实验三："><a href="#实验三：" class="headerlink" title="实验三："></a>实验三：</h2><h3 id="实验步骤-2"><a href="#实验步骤-2" class="headerlink" title="实验步骤"></a>实验步骤</h3><ol>
-<li>从 ENVI 主菜单中选择Spectral →Spectral Analyst</li>
-<li>当Spectral Analyst Input Spectral Library对话框出现后，点击Open Spec Lib，并从spec_lib/ usgs_min子目录中选择usgs_min.sli 文件。</li>
-<li>点击 OK。将会弹出Edit Identify Methods Weighting窗口，在这里我们选择合适的权重（本实验取0.35），点击OK。</li>
-<li>在Spectral Analyst窗口点击Apply，在弹出的Spectral Analyst Input窗口中选择ALUNITE SO-4A并点击OK。这是ENVI会对光谱匹配度进行分析。结果会显示在Spectral Analyst中，其中第一项为匹配度最高的。</li>
-<li>双击第一项，会将匹配的两条光谱曲线显示在一起。<div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><a href="//source.jiangyayu.cn/AVIRIS/3.png" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/AVIRIS/3.png" alt="Spectral Analyst" style="zoom:40%"></a></div><div class="group-picture-column" style="width: 50%;"><a href="//source.jiangyayu.cn/AVIRIS/4.png" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/AVIRIS/4.png" alt="波谱曲线"></a></div></div></div></div></li>
-<li>用同样的方法找到与其他三种矿物波谱曲线匹配度最高的矿物，并将这些波谱曲线显示在同一窗口。<br><img src="//source.jiangyayu.cn/AVIRIS/5.png" alt="波谱曲线"></li>
-</ol>
-<h2 id="实验四："><a href="#实验四：" class="headerlink" title="实验四："></a>实验四：</h2><h3 id="实验步骤-3"><a href="#实验步骤-3" class="headerlink" title="实验步骤"></a>实验步骤</h3><ol>
-<li>在打开的Spectral Library Viewer窗口菜单下Options→Edit（x，y）Scale Factors，在弹出的Edit Display Scale窗口中设置Y Multiplier值为850，使得接下来绘出的波谱曲线与影像中获取的波谱曲线的纵坐标一致。</li>
-<li>在jpl1光谱库中选择CALCITE C-3D，点击绘出其光谱曲线。</li>
-<li>类似于步骤1、2，在usgs_min光谱库中选择carnall.spc Carnallite NMNH98011绘出光谱曲线。</li>
-<li>在波谱曲线窗口的菜单下，依次Options→New Windows:Blank，打开一个新窗口。</li>
-<li>将步骤2、3中绘制的光谱曲线和实验一中的X:260 Y:613拖到新建的绘图窗口中。</li>
-<li>设置相应的参数是结果如图所示：<br><img src="//source.jiangyayu.cn/AVIRIS/6.png" alt="波谱曲线"></li>
-</ol>
-<h3 id="结果分析-2"><a href="#结果分析-2" class="headerlink" title="结果分析"></a>结果分析</h3><p>两个实验室得到的光谱图像有一定的差别，主要原因可能是因为两者的环境存在着差异。但两者的共同特性很明显：2.34μm处均有比较明显的光谱吸收。两个实验室得到的结果与卫星影像上的光谱曲线的差别都很大，这主要是因为受太阳辐射和大气辐射共同作用的影响。但是其光谱曲线在2.34μm处被吸收的趋势还是能够看出来的。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;实验目的&quot;&gt;&lt;a href=&quot;#实验目的&quot; class=&quot;headerlink&quot; title=&quot;实验目的&quot;&gt;&lt;/a&gt;实验目的&lt;/h1&gt;&lt;ol&gt;
-&lt;li&gt;理解卫星及实验室高光谱概念，初步了解辐亮度、反射率的概念；&lt;/li&gt;
-&lt;li&gt;能够打开并处理卫星高光谱数据；&lt;/li&gt;
-&lt;li&gt;能够加载不同波谱库的反射率波谱曲线，并学会处理；&lt;/li&gt;
-&lt;li&gt;学会判读不同地物的光谱曲线特征，了解其与相应的卫星光谱的比较，并解释差异原因。
-    
-    </summary>
-    
-      <category term="RS" scheme="https://blog.jiangyayu.cn/categories/RS/"/>
-    
-    
-      <category term="RS" scheme="https://blog.jiangyayu.cn/tags/RS/"/>
-    
-      <category term="影像波谱" scheme="https://blog.jiangyayu.cn/tags/%E5%BD%B1%E5%83%8F%E6%B3%A2%E8%B0%B1/"/>
     
   </entry>
   
