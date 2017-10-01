@@ -61,7 +61,7 @@
 <p>最终生成以下文件：</p>
 <p><img src="//source.jiangyayu.cn/NJNU-auto-login/3.png"></p>
 <p>exe可执行文件就在<code>dist</code>文件夹中,将配置文件<code>config.ini</code>拷贝到该文件下，双击<code>NJNU_Auto_Login.exe</code>即可运行。</p>
-<h3 id="去除小黑框"><a href="#去除小黑框" class="headerlink" title="去除小黑框"></a>去除小黑框</h3><p>此时我们惊奇地发现，程序虽然能很好的运行，但是每次运行时都会弹出黑窗：</p>
+<h3 id="去除小黑框"><a href="#去除小黑框" class="headerlink" title="去除小黑框"></a>去除小黑框</h3><p>我们发现，程序虽然能很好的运行，但是每次运行时都会弹出黑窗：</p>
 <p><img src="//source.jiangyayu.cn/NJNU-auto-login/4.png"></p>
 <p>作为强迫症的我怎么能忍，必须搞掉：</p>
 <p>在<code>dict</code>文件夹中新建<code>start.vbs</code>文件，添加以下内容<br><figure class="highlight vbs"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">CreateObject</span>(<span class="string">"WScript.Shell"</span>).Run <span class="string">"cmd /c NJNU_Auto_Login.exe"</span>,<span class="number">0</span></div></pre></td></tr></table></figure></p>
