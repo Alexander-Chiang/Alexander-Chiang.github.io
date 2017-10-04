@@ -5,7 +5,7 @@
     
   <url>
     <loc>https://blog.jiangyayu.cn/archives/python-get-history-weather.html/</loc>
-    <lastmod>2017-10-04T06:52:14.830Z</lastmod>
+    <lastmod>2017-10-04T07:01:14.607Z</lastmod>
     <data>
         <display>
         <title>Python爬取历史天气数据</title>
@@ -412,6 +412,21 @@
     
     
   <url>
+    <loc>https://blog.jiangyayu.cn/archives/photos.html/</loc>
+    <lastmod>2017-03-30T15:35:05.869Z</lastmod>
+    <data>
+        <display>
+        <title>相册</title>
+        <pubTime>2017-03-06T13:50:47.987Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.jiangyayu.cn/archives/temp-salin.html/</loc>
     <lastmod>2017-03-30T15:35:05.869Z</lastmod>
     <data>
@@ -482,21 +497,6 @@
 
     
   <url>
-    <loc>https://blog.jiangyayu.cn/archives/photos.html/</loc>
-    <lastmod>2017-03-30T15:35:05.869Z</lastmod>
-    <data>
-        <display>
-        <title>相册</title>
-        <pubTime>2017-03-06T13:50:47.987Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://blog.jiangyayu.cn/archives/hadoop-install.html/</loc>
     <lastmod>2017-03-30T15:35:05.868Z</lastmod>
     <data>
@@ -516,6 +516,28 @@
            
              
               <breadCrumb title="大数据" url="https://blog.jiangyayu.cn/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.jiangyayu.cn/archives/ArcGIS-practice-2.html/</loc>
+    <lastmod>2017-03-30T15:35:05.867Z</lastmod>
+    <data>
+        <display>
+        <title>ArcGIS练习2：地图投影与编辑</title>
+        <pubTime>2012-12-16T13:58:08.000Z</pubTime>
+        
+        <tag>ArcGIS</tag>
+         
+        <tag>地图编辑</tag>
+         
+         
+           
+             
+              <breadCrumb title="GIS" url="https://blog.jiangyayu.cn/categories/GIS/"/>
           
         </display>
     </data>
@@ -557,28 +579,6 @@
         <tag>ArcGIS</tag>
          
         <tag>空间分析</tag>
-         
-         
-           
-             
-              <breadCrumb title="GIS" url="https://blog.jiangyayu.cn/categories/GIS/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.jiangyayu.cn/archives/ArcGIS-practice-2.html/</loc>
-    <lastmod>2017-03-30T15:35:05.867Z</lastmod>
-    <data>
-        <display>
-        <title>ArcGIS练习2：地图投影与编辑</title>
-        <pubTime>2012-12-16T13:58:08.000Z</pubTime>
-        
-        <tag>ArcGIS</tag>
-         
-        <tag>地图编辑</tag>
          
          
            
