@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="图像处理,matlab,Erdas," />
+  <meta name="keywords" content="Web,Python," />
 
 
 
@@ -86,68 +86,26 @@
 
 
 
-<meta name="description" content="实验目的：
-实验类型：综合性实验；             
-了解图像技术软件如matlab，ERDAS的软硬件环境、数据采集；
-初步掌握图像技术软件的基本操作技能；
-能够熟练的操作matlab，ERDAS软件，并能应用该软件进行简单的图像处理;
-掌握产品的输出设计。">
+<meta name="description" content="因论文实验需求，需要历史天气数据作为输入参数之一，因此特使用Python编写网络爬虫，爬取数据均来自历史天气网的历史天气。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数字图像处理综合实验">
-<meta property="og:url" content="https://blog.jiangyayu.cn/archives/Digital-Image-Processing.html/index.html">
+<meta property="og:title" content="Python爬取历史天气数据">
+<meta property="og:url" content="https://blog.jiangyayu.cn/archives/python-get-history-weather.html/index.html">
 <meta property="og:site_name" content="Alex's Blog">
-<meta property="og:description" content="实验目的：
-实验类型：综合性实验；             
-了解图像技术软件如matlab，ERDAS的软硬件环境、数据采集；
-初步掌握图像技术软件的基本操作技能；
-能够熟练的操作matlab，ERDAS软件，并能应用该软件进行简单的图像处理;
-掌握产品的输出设计。">
-<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/Digital-Image-Processing/1.png">
-<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/Digital-Image-Processing/2.png">
-<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/Digital-Image-Processing/3.png">
-<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/Digital-Image-Processing/4.png">
-<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/Digital-Image-Processing/5.png">
-<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/Digital-Image-Processing/6.png">
-<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/Digital-Image-Processing/7.png">
-<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/Digital-Image-Processing/8.png">
-<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/Digital-Image-Processing/9.png">
-<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/Digital-Image-Processing/10.png">
-<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/Digital-Image-Processing/yuantu.png">
-<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/Digital-Image-Processing/11.png">
-<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/Digital-Image-Processing/12.png">
-<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/Digital-Image-Processing/13.png">
-<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/Digital-Image-Processing/14.png">
-<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/Digital-Image-Processing/15.png">
-<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/Digital-Image-Processing/17.png">
-<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/Digital-Image-Processing/18.png">
-<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/Digital-Image-Processing/19.png">
-<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/Digital-Image-Processing/20.png">
-<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/Digital-Image-Processing/20.1.png">
-<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/Digital-Image-Processing/21.png">
-<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/Digital-Image-Processing/22.png">
-<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/Digital-Image-Processing/23.png">
-<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/Digital-Image-Processing/24.png">
-<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/Digital-Image-Processing/25.png">
-<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/Digital-Image-Processing/26.png">
-<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/Digital-Image-Processing/27.png">
-<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/Digital-Image-Processing/28.png">
-<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/Digital-Image-Processing/29.png">
-<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/Digital-Image-Processing/30.png">
-<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/Digital-Image-Processing/31.png">
-<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/Digital-Image-Processing/32.png">
-<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/Digital-Image-Processing/33.png">
-<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/Digital-Image-Processing/34.png">
-<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/Digital-Image-Processing/35.png">
-<meta property="og:updated_time" content="2017-03-30T15:35:05.874Z">
+<meta property="og:description" content="因论文实验需求，需要历史天气数据作为输入参数之一，因此特使用Python编写网络爬虫，爬取数据均来自历史天气网的历史天气。">
+<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/python-get-history-weather/1.png">
+<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/python-get-history-weather/2.png">
+<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/python-get-history-weather/3.png">
+<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/python-get-history-weather/4.png">
+<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/python-get-history-weather/5.png">
+<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/python-get-history-weather/6.png">
+<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/python-get-history-weather/7.png">
+<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/python-get-history-weather/8.png">
+<meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/python-get-history-weather/9.png">
+<meta property="og:updated_time" content="2017-10-04T06:52:14.830Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数字图像处理综合实验">
-<meta name="twitter:description" content="实验目的：
-实验类型：综合性实验；             
-了解图像技术软件如matlab，ERDAS的软硬件环境、数据采集；
-初步掌握图像技术软件的基本操作技能；
-能够熟练的操作matlab，ERDAS软件，并能应用该软件进行简单的图像处理;
-掌握产品的输出设计。">
-<meta name="twitter:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/Digital-Image-Processing/1.png">
+<meta name="twitter:title" content="Python爬取历史天气数据">
+<meta name="twitter:description" content="因论文实验需求，需要历史天气数据作为输入参数之一，因此特使用Python编写网络爬虫，爬取数据均来自历史天气网的历史天气。">
+<meta name="twitter:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/python-get-history-weather/1.png">
 
 
 
@@ -175,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="https://blog.jiangyayu.cn/archives/Digital-Image-Processing.html/"/>
+  <link rel="canonical" href="https://blog.jiangyayu.cn/archives/python-get-history-weather.html/"/>
 
 
 
 
 
-  <title> 数字图像处理综合实验 | Alex's Blog </title>
+  <title> Python爬取历史天气数据 | Alex's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -375,7 +333,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://blog.jiangyayu.cn/archives/Digital-Image-Processing.html/">
+  <link itemprop="mainEntityOfPage" href="https://blog.jiangyayu.cn/archives/python-get-history-weather.html/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Alexander Chiang">
@@ -399,7 +357,7 @@
             
             
               
-                数字图像处理综合实验
+                Python爬取历史天气数据
               
             
           </h1>
@@ -414,8 +372,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2013-05-22T15:27:10+08:00">
-                2013-05-22
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-08T23:54:34+08:00">
+                2017-09-08
               </time>
             
 
@@ -437,8 +395,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/RS/" itemprop="url" rel="index">
-                    <span itemprop="name">RS</span>
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
                   </a>
                 </span>
 
@@ -456,8 +414,8 @@
                 <i class="fa fa-comment-o"> 评论</i>
               </span>
               
-                <a href="/archives/Digital-Image-Processing.html/#SOHUCS" itemprop="discussionUrl">
-                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="archives/Digital-Image-Processing.html/" itemprop="commentsCount"></span>
+                <a href="/archives/python-get-history-weather.html/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="archives/python-get-history-weather.html/" itemprop="commentsCount"></span>
                 </a>
               
               </span>
@@ -468,7 +426,7 @@
 
           
           
-             <span id="/archives/Digital-Image-Processing.html/" class="leancloud_visitors" data-flag-title="数字图像处理综合实验">
+             <span id="/archives/python-get-history-weather.html/" class="leancloud_visitors" data-flag-title="Python爬取历史天气数据">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -495,110 +453,32 @@
       
 
       
-        <h1 id="实验目的："><a href="#实验目的：" class="headerlink" title="实验目的："></a>实验目的：</h1><ol>
-<li>实验类型：综合性实验；             </li>
-<li>了解图像技术软件如matlab，ERDAS的软硬件环境、数据采集；</li>
-<li>初步掌握图像技术软件的基本操作技能；</li>
-<li>能够熟练的操作matlab，ERDAS软件，并能应用该软件进行简单的图像处理;</li>
-<li>掌握产品的输出设计。<a id="more"></a>
-</li>
+        <p>因论文实验需求，需要历史天气数据作为输入参数之一，因此特使用Python编写网络爬虫，爬取数据均来自历史<a herf="http://www.tianqi.com/">天气网</a>的历史天气。<br><a id="more"></a></p>
+<h2 id="依赖包"><a href="#依赖包" class="headerlink" title="依赖包"></a>依赖包</h2><ol>
+<li>bs4：解析HTML或XML</li>
+<li>requests：发送Http请求</li>
+<li>xlwt：读写Excel文件</li>
+<li>MySQLdb: 连接mysql数据库</li>
 </ol>
-<h1 id="实验主要仪器设备-软件等"><a href="#实验主要仪器设备-软件等" class="headerlink" title="实验主要仪器设备,软件等"></a>实验主要仪器设备,软件等</h1><ol>
-<li>软件准备：matlab7.0，ERDASIMAGINE9.2;</li>
-<li>硬件准备：PC机 512M内存，32M显卡（最低）;</li>
-<li>资料准备：天津地区1999年，2005年的TM和分辨率为10米的SPOT影像图。</li>
-</ol>
-<h1 id="实验原理和内容："><a href="#实验原理和内容：" class="headerlink" title="实验原理和内容："></a>实验原理和内容：</h1><ol>
-<li>实验题目：数字图像图像处理综合实验</li>
-<li>具体要求：应用matlab软件或erdas软件对lena图像和1999，2005年天津地区遥感影像做增强处理；对增强后的地图进行岸线提取；对1999，2005年天津地区TM图像进行信息提取。</li>
-<li>功能描述：窗口命令及功能介绍，数据的输入/输出，数据预处理，图像增强，监督分类（非监督分类），分类后处理，目视解译等功能。</li>
-<li>实验原理：如图所示<br><img src="//source.jiangyayu.cn/Digital-Image-Processing/1.png" alt="实验原理图" style="zoom:0.6"></li>
-</ol>
-<h1 id="实验步骤："><a href="#实验步骤：" class="headerlink" title="实验步骤："></a>实验步骤：</h1><h2 id="实验一-对lena图像进行平滑处理"><a href="#实验一-对lena图像进行平滑处理" class="headerlink" title="实验一 对lena图像进行平滑处理"></a>实验一 对lena图像进行平滑处理</h2><div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><a href="//source.jiangyayu.cn/Digital-Image-Processing/2.png" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/Digital-Image-Processing/2.png" alt="lena"></a></div><div class="group-picture-column" style="width: 50%;"><a href="//source.jiangyayu.cn/Digital-Image-Processing/3.png" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/Digital-Image-Processing/3.png" alt="加入椒盐噪声"></a></div></div></div></div>
-<h3 id="平滑算子"><a href="#平滑算子" class="headerlink" title="平滑算子"></a>平滑算子</h3><ul>
-<li>均值3*3算子</li>
-</ul>
-<p><img src="//source.jiangyayu.cn/Digital-Image-Processing/4.png" alt="均值3*3算子" style="zoom:0.6"></p>
-<ul>
-<li>均值5*5算子</li>
-</ul>
-<p><img src="//source.jiangyayu.cn/Digital-Image-Processing/5.png" alt="均值5*5算子" style="zoom:0.6"></p>
-<ul>
-<li>均值7*7算子</li>
-</ul>
-<p><img src="//source.jiangyayu.cn/Digital-Image-Processing/6.png" alt="均值7*7算子" style="zoom:0.6"></p>
-<ul>
-<li>均值9*9算子</li>
-</ul>
-<p><img src="//source.jiangyayu.cn/Digital-Image-Processing/7.png" alt="均值9*9算子" style="zoom:0.6"></p>
-<h3 id="处理结果"><a href="#处理结果" class="headerlink" title="处理结果"></a>处理结果</h3><ul>
-<li>均值滤波处理：</li>
-</ul>
-<p><img src="//source.jiangyayu.cn/Digital-Image-Processing/8.png" alt="均值滤波处理" style="zoom:0.6"></p>
-<ul>
-<li>中值滤波处理：</li>
-</ul>
-<p><img src="//source.jiangyayu.cn/Digital-Image-Processing/9.png" alt="中值滤波处理" style="zoom:0.6"></p>
-<ul>
-<li>理想低通滤波：</li>
-</ul>
-<p><img src="//source.jiangyayu.cn/Digital-Image-Processing/10.png" alt="理想低通滤波" style="zoom:0.6"></p>
-<h3 id="评价结果"><a href="#评价结果" class="headerlink" title="评价结果"></a>评价结果</h3><p>&emsp;&emsp;均值滤波对于去除椒盐噪声有一定的作用，但是选择窗口尺寸的大小是很重要的环节。窗口小不能好滤除噪声，窗口过大又会造成图像模糊。相比较而言，中值滤波法能有效削弱椒盐噪声，且比均值、超限像素平均法更有效。这是中值滤波对于椒盐噪声这样的突出噪声的特有优势。<br>&emsp;&emsp;相对较上面两种空间域的图像增强处理，频域的平滑也有一定的作用，但是对滤波器的设计要求高，且处理后的图像比较模糊。</p>
-<h2 id="实验二-海岸线提取"><a href="#实验二-海岸线提取" class="headerlink" title="实验二  海岸线提取"></a>实验二  海岸线提取</h2><h3 id="原图"><a href="#原图" class="headerlink" title="原图"></a>原图</h3><p><img src="//source.jiangyayu.cn/Digital-Image-Processing/yuantu.png" alt="原图" style="zoom:0.18"></p>
-<h3 id="提取方法"><a href="#提取方法" class="headerlink" title="提取方法"></a>提取方法</h3><ol>
-<li><p>使用空间滤波锐化增强方法，对TM卫星影像第四波段，通过阈值设置，得到二值图。</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">%空域锐化滤波增强</span></div><div class="line">clear all; <span class="comment">% 清理命令窗口</span></div><div class="line">[I,map]=imread(<span class="string">'cameraman.tif'</span>); <span class="comment">% 读入图像</span></div><div class="line">subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">1</span>),imshow(I,map); <span class="comment">% 显示原始图像</span></div><div class="line">title(<span class="string">'original image'</span>) <span class="comment">% 设置图像标题</span></div><div class="line">I=double(I); <span class="comment">% 数据类型转换</span></div><div class="line">[IX,IY]=gradient(I); <span class="comment">% 梯度</span></div><div class="line">GM=<span class="built_in">sqrt</span>(IX.*IX+IY.*IY);</div><div class="line">OUT1=GM; <span class="comment">% 输出图像</span></div><div class="line">subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>),imshow(OUT1,map); <span class="comment">% 直接梯度值输出</span></div><div class="line">title(<span class="string">'gradient value '</span>) <span class="comment">% 设置图像标题</span></div><div class="line">OUT2=I; <span class="comment">% 输出图像</span></div><div class="line">J=<span class="built_in">find</span>(GM&gt;=<span class="number">15</span>); <span class="comment">% 阈值处理</span></div><div class="line">OUT2(J)=GM(J); <span class="comment">% 输出图像</span></div><div class="line">subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>),imshow(OUT2,map); <span class="comment">% 显示处理后的图像</span></div><div class="line">title(<span class="string">'Thresholded Gradient'</span>) <span class="comment">% 加阈梯度值输出；</span></div><div class="line">OUT3=I; <span class="comment">% 输出图像</span></div><div class="line">J=<span class="built_in">find</span>(GM&gt;=<span class="number">20</span>); <span class="comment">% 阈值黑白化</span></div><div class="line">OUT3(J)=<span class="number">255</span>; <span class="comment">% 设置为白色</span></div><div class="line">Q=<span class="built_in">find</span>(GM&lt;<span class="number">20</span>); <span class="comment">% 阈值黑白化</span></div><div class="line">OUT3(Q)=<span class="number">0</span>; <span class="comment">% 设置为黑色</span></div><div class="line">subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">4</span>),imshow(OUT3,map); <span class="comment">% 二值图像</span></div><div class="line">title(<span class="string">'Two values'</span>); <span class="comment">% 设置图像标题</span></div></pre></td></tr></table></figure>
-<p><img src="//source.jiangyayu.cn/Digital-Image-Processing/11.png" alt="二值化" style="zoom:0.18"></p>
-</li>
-<li><p>对二值图进行边界提取</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">F=imread(<span class="string">'Two values.tif'</span>);</div><div class="line">F1=im2bw(F); F2=bwfill(F1,<span class="string">'holes'</span>);</div><div class="line">SE=<span class="built_in">ones</span>(<span class="number">3</span>);</div><div class="line">F3=imdilate(F2,SE);</div><div class="line">F4=bwperim(F2);</div><div class="line">figure,imshow(F4);</div><div class="line">imwrite(F4,<span class="string">'bianjie.tif'</span>)</div></pre></td></tr></table></figure>
-<p><img src="//source.jiangyayu.cn/Digital-Image-Processing/12.png" alt="提取边界线" style="zoom:0.5"></p>
-</li>
-<li><p>在Photoshop对边界提取中产生的噪点和一些毛刺进行修正</p>
-<p><img src="//source.jiangyayu.cn/Digital-Image-Processing/13.png" alt="剔除毛刺" style="zoom:0.5"></p>
-</li>
-<li><p>用matlab对边界进行扩充</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">I = imread(<span class="string">'bianjie.tif'</span>);</div><div class="line">se = strel( <span class="string">'diamond'</span>,<span class="number">3</span>);</div><div class="line">a = imdilate(I,se);</div><div class="line">imshow(a);</div><div class="line">imwrite(a,<span class="string">'bianjie.tif'</span>);</div></pre></td></tr></table></figure>
-<p><img src="//source.jiangyayu.cn/Digital-Image-Processing/14.png" alt="扩充边界" style="zoom:0.5"></p>
-</li>
-<li><p>在原图上显示边界</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">I = imread(<span class="string">'bianjie.tif'</span>);</div><div class="line">f = imread(<span class="string">'subset1.tif'</span>);</div><div class="line">f(<span class="built_in">find</span>(I == <span class="number">1</span>)) = <span class="number">255</span>;</div><div class="line">imshow(f);</div><div class="line">imwrite(f,<span class="string">'xiaoguo.tif'</span>);</div></pre></td></tr></table></figure>
-<p><img src="//source.jiangyayu.cn/Digital-Image-Processing/15.png" alt="叠加显示" style="zoom:0.18"></p>
-</li>
-<li><p>结果分析<br>分析：图像海路交界地带，由于介于陆地和海水的光谱特性之间，在进行空间锐化增强时候做出的二值图分界不是很明确，在进行边缘提取的时候也就出现了很多不必要的线条和毛刺。虽然通过Photoshop修正了这些错误，但是还是会有小的瑕疵难以去除，而且整个过程显得不够智能化。</p>
-</li>
-</ol>
-<h2 id="实验三-信息提取综合实验"><a href="#实验三-信息提取综合实验" class="headerlink" title="实验三  信息提取综合实验"></a>实验三  信息提取综合实验</h2><h3 id="几何校正"><a href="#几何校正" class="headerlink" title="几何校正"></a>几何校正</h3><p>&emsp;&emsp;本实验中，利用已有坐标信息的tm影像对spot影像选取控制点，采用二次线性卷积算法进行几何校正，具体步骤为：</p>
-<ol>
-<li>分别在两个View中打开spot影像和tm影像<br><img src="//source.jiangyayu.cn/Digital-Image-Processing/17.png"></li>
-<li>在spot影像窗口的菜单中打开Raster-&gt;Geometric Correction打开Set Geometric Model模块（step1）</li>
-<li>然后选择Polynomial，点击OK在弹出的Polynomial Model Properties（step2）中设置Polynomial Order中选择2，点击Apply，然后关闭。</li>
-<li>随后在弹出的GCP Tool Reference Setup（step3）中选择Existing Viewer.点击OK后出现Viewer Selection Instructions。<br><img src="//source.jiangyayu.cn/Digital-Image-Processing/18.png"></li>
-<li>此时用鼠标点击tm影像所在窗口。此时会出现选取控制点的窗口。<br><img src="//source.jiangyayu.cn/Digital-Image-Processing/19.png"></li>
-<li>选取控制点，在spot影像中选取一些标志性地物作为控制点，同时在tm影像中找到相同地物，这样的一对点作为一组控制点。</li>
-<li>选取至少8个点作为控制点，并且使所选取的点尽量均匀分布在图像上，并要求最终的误差聚在1以内！<br><img src="//source.jiangyayu.cn/Digital-Image-Processing/20.png"></li>
-<li>选取好控制点之后，点击几何校正图标，在弹出的Resample窗口中设这各项参数如图所示，点击输出矫正后的影像。<br><img src="//source.jiangyayu.cn/Digital-Image-Processing/20.1.png" style="zoom:0.7"></li>
-</ol>
-<h3 id="数据融合和图像增强"><a href="#数据融合和图像增强" class="headerlink" title="数据融合和图像增强"></a>数据融合和图像增强</h3><ol>
-<li>在Erdas主菜单下，依次打开Interpreter-&gt;Spatial Enhancement -&gt;Resolution Merge在打开的Resolution Merge中设置如下：<br><img src="//source.jiangyayu.cn/Digital-Image-Processing/21.png"><br>点击OK输出影像。</li>
-<li>打开融合后的影像，在影像窗口菜单下选择，Raster-&gt;Contrast-&gt;Standard Deviation Stretch进行拉伸。</li>
-</ol>
-<h3 id="监督分类"><a href="#监督分类" class="headerlink" title="监督分类"></a>监督分类</h3><ol>
-<li>选取感兴趣区，并保存。<br><img src="//source.jiangyayu.cn/Digital-Image-Processing/22.png"></li>
-<li>在Erdas主菜单下依次打开classifier-&gt;supervised classification打开监督分类的窗口，设置如下：<br><img src="//source.jiangyayu.cn/Digital-Image-Processing/23.png" style="zoom:0.7"></li>
-<li>结果：<br><img src="//source.jiangyayu.cn/Digital-Image-Processing/24.png" style="zoom:0.7"></li>
-</ol>
-<h3 id="分类后处理"><a href="#分类后处理" class="headerlink" title="分类后处理"></a>分类后处理</h3><ol>
-<li>Clump<br>Interpreter-&gt;GIS Analysis-&gt;Clump<br><img src="//source.jiangyayu.cn/Digital-Image-Processing/25.png" style="zoom:0.7"></li>
-<li>Interpreter-&gt;GIS Analysis-&gt;Eliminate<br><img src="//source.jiangyayu.cn/Digital-Image-Processing/26.png"><br>Eliminate的结果：<br><img src="//source.jiangyayu.cn/Digital-Image-Processing/27.png" style="zoom:0.7"></li>
-<li>Interpreter-&gt;GIS Analysis-&gt;Recode<br><img src="//source.jiangyayu.cn/Digital-Image-Processing/28.png"><br>并对结果重新设置颜色：<br><img src="//source.jiangyayu.cn/Digital-Image-Processing/29.png" style="zoom:0.7"></li>
-</ol>
-<h3 id="目视解译"><a href="#目视解译" class="headerlink" title="目视解译"></a>目视解译</h3><p><img src="//source.jiangyayu.cn/Digital-Image-Processing/30.png"><br>&emsp;&emsp;将原图像的432波段合成的假彩色图像打开，让分类后的图像与之对比，进行修正。假彩色合成的图像中：水体呈蓝色，植被呈红色，建筑物则比较亮。</p>
-<h3 id="图像输出"><a href="#图像输出" class="headerlink" title="图像输出"></a>图像输出</h3><ol>
-<li>在ArcGIS中打开图像，右击图层打开属性表，然后选中其中一种地物，利用ToolBox中Conversion-&gt;From Raster-&gt;Raster to Polygon，将其转换成矢量图层。<br><img src="//source.jiangyayu.cn/Digital-Image-Processing/31.png"><br><img src="//source.jiangyayu.cn/Digital-Image-Processing/32.png"></li>
-<li>制版输出，添加比例尺图例等<br><img src="//source.jiangyayu.cn/Digital-Image-Processing/33.png" style="zoom:0.6"></li>
-</ol>
-<h3 id="结果分析"><a href="#结果分析" class="headerlink" title="结果分析"></a>结果分析</h3><p>对building图层添加Area字段，统计城镇覆盖率<br><div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><a href="//source.jiangyayu.cn/Digital-Image-Processing/34.png" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/Digital-Image-Processing/34.png" style="zoom:0.5"></a></div><div class="group-picture-column" style="width: 50%;"><a href="//source.jiangyayu.cn/Digital-Image-Processing/35.png" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/Digital-Image-Processing/35.png"></a></div></div></div></div></p>
+<h2 id="Python代码"><a href="#Python代码" class="headerlink" title="Python代码"></a>Python代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div><div class="line">208</div><div class="line">209</div><div class="line">210</div><div class="line">211</div><div class="line">212</div><div class="line">213</div><div class="line">214</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding=utf-8 -*-</span></div><div class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</div><div class="line"><span class="keyword">import</span> mysql.connector</div><div class="line"><span class="keyword">import</span> requests</div><div class="line"><span class="keyword">import</span> xlwt</div><div class="line"><span class="keyword">import</span> os</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">#获得某一个月的天气数据</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">getListByUrl</span><span class="params">(url)</span>:</span></div><div class="line">    i = <span class="number">0</span></div><div class="line">    res = requests.get(url,timeout=<span class="number">10</span>)</div><div class="line">    <span class="keyword">while</span>(res.status_code!=<span class="number">200</span> <span class="keyword">and</span> i&lt;<span class="number">3</span>):</div><div class="line">        res = requests.get(url,timeout=<span class="number">10</span>)</div><div class="line">        i += <span class="number">1</span></div><div class="line">    <span class="keyword">if</span>(res.status_code==<span class="number">200</span>):</div><div class="line">        soup = BeautifulSoup(res.text,<span class="string">"html.parser"</span>)</div><div class="line">        weathers = soup.select(<span class="string">"#tool_site"</span>)</div><div class="line">        title = weathers[<span class="number">1</span>].select(<span class="string">"h3"</span>)[<span class="number">0</span>].text</div><div class="line">        weatherInfors = weathers[<span class="number">1</span>].select(<span class="string">"ul"</span>)</div><div class="line">        weatherList = list()</div><div class="line">        <span class="keyword">for</span> weatherInfor <span class="keyword">in</span> weatherInfors:</div><div class="line">            singleWeather = list()</div><div class="line">            <span class="keyword">for</span> li <span class="keyword">in</span> weatherInfor.select(<span class="string">'li'</span>):</div><div class="line">                singleWeather.append(li.text)</div><div class="line">            weatherList.append(singleWeather)</div><div class="line">        print(title)</div><div class="line">        <span class="keyword">return</span> weatherList,title</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="keyword">return</span> <span class="keyword">None</span>,<span class="keyword">None</span></div><div class="line"></div><div class="line"><span class="comment">#@par:addressUrl 获得某地区的数据</span></div><div class="line"><span class="comment">#@par:excelSavePath  数据的保存地址</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">getListByAddress</span><span class="params">(addressUrl,excelSavePath)</span>:</span></div><div class="line">    <span class="comment"># url = "http://lishi.tianqi.com/beijing/index.html"</span></div><div class="line">    url = addressUrl</div><div class="line">    i = <span class="number">0</span></div><div class="line">    res = requests.get(url,timeout=<span class="number">10</span>)</div><div class="line">    <span class="keyword">while</span>(res.status_code!=<span class="number">200</span> <span class="keyword">and</span> i&lt;<span class="number">3</span>):</div><div class="line">        res = requests.get(url,timeout=<span class="number">10</span>)</div><div class="line">        i += <span class="number">1</span></div><div class="line">    <span class="keyword">if</span>(res.status_code==<span class="number">200</span>):</div><div class="line">        soup = BeautifulSoup(res.text,<span class="string">"html.parser"</span>)</div><div class="line">        dates = soup.select(<span class="string">".tqtongji1 ul li a"</span>)</div><div class="line">        workbook = xlwt.Workbook(encoding=<span class="string">'utf-8'</span>)</div><div class="line">        <span class="keyword">for</span> d <span class="keyword">in</span> dates:</div><div class="line">            weatherList,title = getListByUrl(d[<span class="string">"href"</span>])</div><div class="line">            <span class="keyword">if</span>(weatherList!=<span class="keyword">None</span>):</div><div class="line">                booksheet = workbook.add_sheet(title,cell_overwrite_ok=<span class="keyword">True</span>)</div><div class="line">                <span class="keyword">for</span> i,row <span class="keyword">in</span> enumerate(weatherList):</div><div class="line">                    <span class="keyword">for</span> j,col <span class="keyword">in</span> enumerate(row):</div><div class="line">                        booksheet.write(i,j,col)</div><div class="line">        workbook.save(excelSavePath)</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="keyword">return</span> <span class="keyword">None</span></div><div class="line"></div><div class="line"><span class="comment"># Jiang 获取指定城市的月份列表</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">getmonthlist</span><span class="params">(addressUrl)</span>:</span></div><div class="line">    url = addressUrl</div><div class="line">    i = <span class="number">0</span></div><div class="line">    res = requests.get(url,timeout=<span class="number">10</span>)</div><div class="line">    <span class="keyword">while</span>(res.status_code!=<span class="number">200</span> <span class="keyword">and</span> i&lt;<span class="number">3</span>):</div><div class="line">        res = requests.get(url,timeout=<span class="number">10</span>)</div><div class="line">        i += <span class="number">1</span></div><div class="line">    <span class="keyword">if</span>(res.status_code==<span class="number">200</span>):</div><div class="line">        soup = BeautifulSoup(res.text, <span class="string">"html.parser"</span>)</div><div class="line">        <span class="comment">#获取月份列表</span></div><div class="line">        dates = soup.select(<span class="string">".tqtongji1 ul li a"</span>)</div><div class="line">        <span class="keyword">return</span> dates</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="keyword">return</span> <span class="keyword">None</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment"># Jiang 获取指定月份的天气列表</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">getweatherlist</span><span class="params">(url)</span>:</span></div><div class="line">    i = <span class="number">0</span></div><div class="line">    res = requests.get(url,timeout=<span class="number">10</span>)</div><div class="line">    <span class="keyword">while</span>(res.status_code!=<span class="number">200</span> <span class="keyword">and</span> i&lt;<span class="number">3</span>):</div><div class="line">        res = requests.get(url,timeout=<span class="number">10</span>)</div><div class="line">        i += <span class="number">1</span></div><div class="line">    <span class="keyword">if</span> (res.status_code == <span class="number">200</span>):</div><div class="line">        soup = BeautifulSoup(res.text, <span class="string">"html.parser"</span>)</div><div class="line">        weathers = soup.select(<span class="string">"#tool_site"</span>)</div><div class="line">        title = weathers[<span class="number">1</span>].select(<span class="string">"h3"</span>)[<span class="number">0</span>].text</div><div class="line">        weatherInfors = weathers[<span class="number">1</span>].select(<span class="string">"ul"</span>)</div><div class="line">        weatherList = list()</div><div class="line">        <span class="keyword">for</span> weatherInfor <span class="keyword">in</span> weatherInfors:</div><div class="line">            singleWeather = list()</div><div class="line">            <span class="keyword">for</span> li <span class="keyword">in</span> weatherInfor.select(<span class="string">'li'</span>):</div><div class="line">                singleWeather.append(li.text)</div><div class="line">            weatherList.append(singleWeather)</div><div class="line">        print(title)</div><div class="line">        <span class="keyword">return</span> weatherList, title</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="keyword">return</span> <span class="keyword">None</span></div><div class="line"></div><div class="line"><span class="comment"># Jiang 创建数据库</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">createtable</span><span class="params">(conn)</span>:</span></div><div class="line">    cursor = conn.cursor()</div><div class="line">    str = <span class="string">'create table history_weather('</span> \</div><div class="line">          <span class="string">'id int primary key not null auto_increment,'</span> \</div><div class="line">          <span class="string">'city char(10),'</span> \</div><div class="line">          <span class="string">'date date,'</span> \</div><div class="line">          <span class="string">'Tmax int,'</span> \</div><div class="line">          <span class="string">'Tmin int,'</span> \</div><div class="line">          <span class="string">'weather char(10),'</span> \</div><div class="line">          <span class="string">'Wdirection char(10),'</span> \</div><div class="line">          <span class="string">'Wpower char(10))'</span></div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        cursor.execute(str)</div><div class="line">        conn.commit()</div><div class="line">    <span class="keyword">except</span>:</div><div class="line">        print(<span class="string">''</span>)</div><div class="line">    <span class="keyword">finally</span>:</div><div class="line">        cursor.close()</div><div class="line"></div><div class="line"><span class="comment"># Jiang 每月天气数据写入数据库</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">inserttomysql</span><span class="params">(city,weatherlist,conn)</span>:</span></div><div class="line">    cursor = conn.cursor()</div><div class="line">    sql = <span class="string">'INSERT INTO history_weather values(%s,%s,%s,%s,%s,%s,%s,%s)'</span></div><div class="line">    param = []</div><div class="line">    <span class="keyword">for</span> i  <span class="keyword">in</span> range(<span class="number">1</span>,len(weatherlist)):</div><div class="line">        tmp = weatherlist[i]</div><div class="line">        tmp.insert(<span class="number">0</span>,city)</div><div class="line">        tmp.insert(<span class="number">0</span>,<span class="string">''</span>)</div><div class="line">        param.append(tmp)</div><div class="line">    cursor.executemany(sql,param)</div><div class="line">    conn.commit()</div><div class="line">    cursor.close</div><div class="line"></div><div class="line"><span class="comment"># jiang 存储到数据库</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">SavetoMysql</span><span class="params">(host, port, user, passwd,db)</span>:</span></div><div class="line">    <span class="comment"># 建立数据库连接</span></div><div class="line">    conn = mysql.connector.connect(host=host,port=port,user=user,passwd=passwd,db=db)</div><div class="line">    createtable(conn)</div><div class="line">    <span class="comment"># 遍历所有城市</span></div><div class="line">    add = BeautifulSoup(requests.get(<span class="string">'http://lishi.tianqi.com/'</span>).text, <span class="string">"html.parser"</span>)</div><div class="line">    bcity = add.select(<span class="string">'[class=bcity]'</span>)</div><div class="line">    cityAddr = []</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(bcity)):</div><div class="line">        cityAddr.extend(bcity[i].find_all(<span class="string">'a'</span>, target=<span class="string">'_blank'</span>))</div><div class="line"></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(cityAddr)):</div><div class="line">        date = getmonthlist(cityAddr[i][<span class="string">'href'</span>])</div><div class="line">        city = cityAddr[i].text</div><div class="line">        <span class="keyword">if</span>(date!=<span class="keyword">None</span>):</div><div class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(len(date)):</div><div class="line">                weatherlist, title = getweatherlist(date[j][<span class="string">'href'</span>])</div><div class="line">                <span class="keyword">if</span>(weatherlist!=<span class="keyword">None</span>):</div><div class="line">                    inserttomysql(city, weatherlist, conn)</div><div class="line"></div><div class="line">    <span class="comment"># 关闭数据库连接</span></div><div class="line">    conn.close()</div><div class="line"></div><div class="line"><span class="comment">#jiang 历史天气保存到excel</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">SavetoExcel</span><span class="params">(addressName=<span class="string">"all"</span>)</span>:</span></div><div class="line">    addresses = BeautifulSoup(requests.get(<span class="string">'http://lishi.tianqi.com/'</span>).text, <span class="string">"html.parser"</span>)</div><div class="line">    <span class="keyword">if</span>(addressName==<span class="string">"all"</span>):</div><div class="line">        bcity = addresses.select(<span class="string">'[class=bcity]'</span>)</div><div class="line">        cityAddr = []</div><div class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(bcity)):</div><div class="line">            cityAddr.extend(bcity[i].find_all(<span class="string">'a'</span>, target=<span class="string">'_blank'</span>))</div><div class="line">        savePath = input(<span class="string">"请输入即将保存天气数据的路径（如若不输入，将默认保存到c:/weather/下）\n"</span>)</div><div class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(cityAddr)):</div><div class="line">            q = cityAddr[i]</div><div class="line">            city = cityAddr[i].text</div><div class="line">            <span class="keyword">if</span> <span class="keyword">not</span> savePath.strip():</div><div class="line">                savePath = <span class="string">'c:/weather/'</span></div><div class="line">            <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(savePath):</div><div class="line">                os.makedirs(savePath)</div><div class="line">            filePath = savePath + city + <span class="string">".xls"</span></div><div class="line">            getListByAddress(q[<span class="string">"href"</span>], filePath)</div><div class="line">            print(<span class="string">u"已保存"</span>+city+<span class="string">u"的天气:"</span> + filePath)</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        queryAddress = addresses.find_all(<span class="string">'a'</span>, text=addressName)</div><div class="line">        city = addressName</div><div class="line">        <span class="keyword">if</span> len(queryAddress):</div><div class="line">            savePath = input(<span class="string">"检测到有该城市数据，请输入即将保存天气数据的路径（如若不输入，将默认保存到c:/weather/"</span> + addressName + <span class="string">".xls）:\n"</span>)</div><div class="line">            <span class="keyword">if</span> <span class="keyword">not</span> savePath.strip():</div><div class="line">                savePath = <span class="string">'c:/weather/'</span></div><div class="line">            <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(savePath):</div><div class="line">                os.makedirs(savePath)</div><div class="line">            filePath = savePath + city + <span class="string">".xls"</span></div><div class="line">            <span class="keyword">for</span> q <span class="keyword">in</span> queryAddress:</div><div class="line">                getListByAddress(q[<span class="string">"href"</span>], filePath)</div><div class="line">                print(<span class="string">u"已经天气数据保存到:"</span> + filePath)</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            print(<span class="string">"不存在该城市的数据"</span>)</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></div><div class="line">    print(<span class="string">'选择数据存储到：\n'</span>)</div><div class="line">    <span class="keyword">print</span> (<span class="string">'1.存储到mysql\n'</span>)</div><div class="line">    <span class="keyword">print</span> (<span class="string">'2.存储到Excel\n'</span>)</div><div class="line">    choice = input(<span class="string">"请输入编号:"</span>)</div><div class="line">    <span class="keyword">if</span>(choice==<span class="string">'1'</span>):</div><div class="line">        host = input(<span class="string">"输入数据库主机地址:"</span>)</div><div class="line">        port = input(<span class="string">"输入数据库端口:"</span>)</div><div class="line">        user = input(<span class="string">"输入用户名："</span>)</div><div class="line">        passwd = input(<span class="string">"输入密码："</span>)</div><div class="line">        db = input(<span class="string">"输入数据库名："</span>)</div><div class="line">        <span class="keyword">if</span>(host==<span class="string">''</span> <span class="keyword">and</span> port==<span class="string">''</span> <span class="keyword">and</span> user==<span class="string">''</span> <span class="keyword">and</span> passwd==<span class="string">''</span> <span class="keyword">and</span> db==<span class="string">''</span>):</div><div class="line">            SavetoMysql()</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            SavetoMysql(host,port,user,passwd,db)</div><div class="line">    <span class="keyword">elif</span>(choice==<span class="string">'2'</span>):</div><div class="line">        addressName = input(<span class="string">"请输入即将获取天气的城市(输入all表示所有城市):"</span>)</div><div class="line">        SavetoExcel(addressName)</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="keyword">print</span> (<span class="string">'输入错误，按任意键退出。'</span>)</div><div class="line">        a = input(<span class="string">""</span>)</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</div><div class="line">    main()</div></pre></td></tr></table></figure>
+<h2 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h2><p>该代码可以实现爬取全国历史天气数据的爬取， 空间尺度可以精确到区级，包含了每日天气状况、最高最低气温、风向、风力数据。时间跨度从2011年1月（部分地区数据开始时间稍晚）至今。<br>代码运行时可以选择数据存储到数据库或者是Excel：</p>
+<p><img src="//source.jiangyayu.cn/python-get-history-weather/1.png"></p>
+<p>当选择数据库时，应输入数据库的连接信息，包括主机地址、数据库端口、用户名、密码和数据库名：</p>
+<p><img src="//source.jiangyayu.cn/python-get-history-weather/2.png"></p>
+<p>程序首先会自动创建一个名为<code>history_weather</code>的表，然后自动爬取所有城市所有年月的天气数据，存储到该表中：</p>
+<p><img src="//source.jiangyayu.cn/python-get-history-weather/3.png"></p>
+<p>结果：</p>
+<p><img src="//source.jiangyayu.cn/python-get-history-weather/4.png"></p>
+<p>当选择存储到Excel时，程序首先会让用户选择即将获取的城市，输入一个城市名，程序将先检测是否有该城市数据</p>
+<p><img src="//source.jiangyayu.cn/python-get-history-weather/5.png"></p>
+<p>若有，则要求用户输入保存路径，如果不输入(直接回车)，则输入Excel文件将直接保存到<code>c:/weather</code>中。</p>
+<p><img src="//source.jiangyayu.cn/python-get-history-weather/6.png"></p>
+<p>如果用户想需要获取所有城市的数据，则在输入城市名时输入<code>all</code></p>
+<p><img src="//source.jiangyayu.cn/python-get-history-weather/7.png"></p>
+<p>结果：</p>
+<p><img src="//source.jiangyayu.cn/python-get-history-weather/8.png"></p>
+<p><img src="//source.jiangyayu.cn/python-get-history-weather/9.png"></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>《<a href="="http://blog.csdn.net/huanbia/article/details/54019996"">Python爬取历史天气数据</a>》</p>
 
       
     </div>
@@ -650,11 +530,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/图像处理/" rel="tag"><i class="fa fa-tag"></i> 图像处理</a>
+            <a href="/tags/Web/" rel="tag"><i class="fa fa-tag"></i> Web</a>
           
-            <a href="/tags/matlab/" rel="tag"><i class="fa fa-tag"></i> matlab</a>
-          
-            <a href="/tags/Erdas/" rel="tag"><i class="fa fa-tag"></i> Erdas</a>
+            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
           
         </div>
       
@@ -663,8 +541,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/archives/Hyperspectral-RS-image-Processing.html/" rel="next" title="高级高光谱遥感应用">
-                <i class="fa fa-chevron-left"></i> 高级高光谱遥感应用
+              <a href="/archives/NJNU-auto-login.html/" rel="next" title="南京师范大学网络自动登录脚本(Python版)">
+                <i class="fa fa-chevron-left"></i> 南京师范大学网络自动登录脚本(Python版)
               </a>
             
           </div>
@@ -673,8 +551,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/archives/IDL-SST.html/" rel="prev" title="利用IDL从TRMM/TMI卫星数据反演全球SST">
-                利用IDL从TRMM/TMI卫星数据反演全球SST <i class="fa fa-chevron-right"></i>
+              <a href="/archives/NJNU-Auto-Login-Csharp.html/" rel="prev" title="南京师范大学网络认证系统(.Net版)">
+                南京师范大学网络认证系统(.Net版) <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -734,7 +612,7 @@
           
   <div class="comments" id="comments">
     
-      <div id="SOHUCS" sid="archives/Digital-Image-Processing.html/"></div>
+      <div id="SOHUCS" sid="archives/python-get-history-weather.html/"></div>
     
   </div>
 
@@ -1130,7 +1008,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#实验目的："><span class="nav-number">1.</span> <span class="nav-text">实验目的：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验主要仪器设备-软件等"><span class="nav-number">2.</span> <span class="nav-text">实验主要仪器设备,软件等</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验原理和内容："><span class="nav-number">3.</span> <span class="nav-text">实验原理和内容：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验步骤："><span class="nav-number">4.</span> <span class="nav-text">实验步骤：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#实验一-对lena图像进行平滑处理"><span class="nav-number">4.1.</span> <span class="nav-text">实验一 对lena图像进行平滑处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#平滑算子"><span class="nav-number">4.1.1.</span> <span class="nav-text">平滑算子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#处理结果"><span class="nav-number">4.1.2.</span> <span class="nav-text">处理结果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#评价结果"><span class="nav-number">4.1.3.</span> <span class="nav-text">评价结果</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实验二-海岸线提取"><span class="nav-number">4.2.</span> <span class="nav-text">实验二  海岸线提取</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#原图"><span class="nav-number">4.2.1.</span> <span class="nav-text">原图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提取方法"><span class="nav-number">4.2.2.</span> <span class="nav-text">提取方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实验三-信息提取综合实验"><span class="nav-number">4.3.</span> <span class="nav-text">实验三  信息提取综合实验</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#几何校正"><span class="nav-number">4.3.1.</span> <span class="nav-text">几何校正</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据融合和图像增强"><span class="nav-number">4.3.2.</span> <span class="nav-text">数据融合和图像增强</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#监督分类"><span class="nav-number">4.3.3.</span> <span class="nav-text">监督分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分类后处理"><span class="nav-number">4.3.4.</span> <span class="nav-text">分类后处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#目视解译"><span class="nav-number">4.3.5.</span> <span class="nav-text">目视解译</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图像输出"><span class="nav-number">4.3.6.</span> <span class="nav-text">图像输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结果分析"><span class="nav-number">4.3.7.</span> <span class="nav-text">结果分析</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#依赖包"><span class="nav-number">1.</span> <span class="nav-text">依赖包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python代码"><span class="nav-number">2.</span> <span class="nav-text">Python代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用说明"><span class="nav-number">3.</span> <span class="nav-text">使用说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
