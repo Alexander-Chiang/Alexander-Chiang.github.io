@@ -44,7 +44,7 @@
     <link href="https://blog.jiangyayu.cn/archives/python-get-history-weather.html/"/>
     <id>https://blog.jiangyayu.cn/archives/python-get-history-weather.html/</id>
     <published>2017-09-08T15:54:34.000Z</published>
-    <updated>2017-10-07T02:26:50.181Z</updated>
+    <updated>2017-10-07T02:29:08.003Z</updated>
     
     <content type="html"><![CDATA[<p>因论文实验需求，需要历史天气数据作为输入参数之一，因此特使用Python编写网络爬虫，爬取数据均来自历史<a herf="http://www.tianqi.com/">天气网</a>的历史天气。<br><a id="more"></a></p>
 <h2 id="依赖包"><a href="#依赖包" class="headerlink" title="依赖包"></a>依赖包</h2><ol>
@@ -64,7 +64,7 @@
 <p><img src="//source.jiangyayu.cn/python-get-history-weather/4.png"></p>
 <p>当选择存储到Excel时，程序首先会让用户选择即将获取的城市，输入一个城市名，程序将先检测是否有该城市数据</p>
 <p><img src="//source.jiangyayu.cn/python-get-history-weather/5.png"></p>
-<p>若有，则要求用户输入保存路径，如果不输入(直接回车)，则输入Excel文件将直接保存到<code>c:/weather</code>中。</p>
+<p> 存在该城市数据，则要求用户输入保存路径，如果不输入(直接回车)，则输入Excel文件将直接保存到<code>c:/weather</code>中。</p>
 <p><img src="//source.jiangyayu.cn/python-get-history-weather/6.png"></p>
 <p>如果用户想需要获取所有城市的数据，则在输入城市名时输入<code>all</code></p>
 <p><img src="//source.jiangyayu.cn/python-get-history-weather/7.png"></p>
@@ -82,9 +82,9 @@
       <category term="编程" scheme="https://blog.jiangyayu.cn/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="Web" scheme="https://blog.jiangyayu.cn/tags/Web/"/>
-    
       <category term="Python" scheme="https://blog.jiangyayu.cn/tags/Python/"/>
+    
+      <category term="Web" scheme="https://blog.jiangyayu.cn/tags/Web/"/>
     
   </entry>
   
@@ -149,9 +149,9 @@
       <category term="编程" scheme="https://blog.jiangyayu.cn/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="Web" scheme="https://blog.jiangyayu.cn/tags/Web/"/>
-    
       <category term="Python" scheme="https://blog.jiangyayu.cn/tags/Python/"/>
+    
+      <category term="Web" scheme="https://blog.jiangyayu.cn/tags/Web/"/>
     
   </entry>
   
