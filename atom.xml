@@ -44,7 +44,7 @@
     <link href="https://blog.jiangyayu.cn/archives/python-get-history-weather.html/"/>
     <id>https://blog.jiangyayu.cn/archives/python-get-history-weather.html/</id>
     <published>2017-09-08T15:54:34.000Z</published>
-    <updated>2017-10-04T07:01:14.607Z</updated>
+    <updated>2017-10-07T01:16:59.783Z</updated>
     
     <content type="html"><![CDATA[<p>因论文实验需求，需要历史天气数据作为输入参数之一，因此特使用Python编写网络爬虫，爬取数据均来自历史<a herf="http://www.tianqi.com/">天气网</a>的历史天气。<br><a id="more"></a></p>
 <h2 id="依赖包"><a href="#依赖包" class="headerlink" title="依赖包"></a>依赖包</h2><ol>
@@ -70,7 +70,7 @@
 <p><img src="//source. yayu.cn/python-get-history-weather/7.png"></p>
 <p>结果：</p>
 <p><img src="//source. yayu.cn/python-get-history-weather/8.png"></p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>《<a href="="http://blog.csdn.net/huanbia/article/details/54019996"">Python爬取历史天气数据</a>》</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>《<a href="http://blog.csdn.net/huanbia/article/details/54019996" target="_blank" rel="external">Python爬取历史天气数据</a>》</p>
 ]]></content>
     
     <summary type="html">
@@ -955,9 +955,9 @@
     
       <category term="matlab" scheme="https://blog.jiangyayu.cn/tags/matlab/"/>
     
-      <category term="可视化" scheme="https://blog.jiangyayu.cn/tags/%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
-    
       <category term="NetCDF" scheme="https://blog.jiangyayu.cn/tags/NetCDF/"/>
+    
+      <category term="可视化" scheme="https://blog.jiangyayu.cn/tags/%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
     
   </entry>
   
