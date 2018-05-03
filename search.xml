@@ -4,6 +4,49 @@
   
     
     <entry>
+      <title><![CDATA[Ubuntu 1604安装matlab R2018a]]></title>
+      <url>https://blog.jiangyayu.cn/archives/ubuntu-matlab.html/</url>
+      <content type="html"><![CDATA[<h2 id="下载MATLAB-R2018a"><a href="#下载MATLAB-R2018a" class="headerlink" title="下载MATLAB R2018a"></a>下载MATLAB R2018a</h2><p>链接：<a href="https://pan.baidu.com/s/1ww86pQx3-2MmzNJe6ms_lQ" target="_blank" rel="external">https://pan.baidu.com/s/1ww86pQx3-2MmzNJe6ms_lQ</a><br>密码：qnjg</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="挂载镜像文件"><a href="#挂载镜像文件" class="headerlink" title="挂载镜像文件"></a>挂载镜像文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mkdir /media/matlab</div><div class="line">mount -o loop /opt/matlab/R2018a_glnxa64_dvd1.iso /media/matlab</div></pre></td></tr></table></figure>
+<h3 id="解压Crack文件"><a href="#解压Crack文件" class="headerlink" title="解压Crack文件"></a>解压Crack文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mkdir /opt/matlab/crack</div><div class="line">tar -zxvf &apos;/opt/matlab/Matlab 2018a Linux64 Crack.tar.gz&apos; -C /opt/matlab/crack/</div></pre></td></tr></table></figure>
+<h3 id="启动安装"><a href="#启动安装" class="headerlink" title="启动安装"></a>启动安装</h3><p>启动安装，并设置安装密钥（位于crack中的readme.txt）,指定安装方式和安装路径。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/media/matlab/install -mode silent -fileInstallationKey 09806-07443-53955-64350-21751-41297 -agreeToLicense yes -activationPropertiesFile /opt/matlab/crack/license_standalone.lic -destinationFolder  /usr/local/matlab2018a</div></pre></td></tr></table></figure></p>
+<p>安装过程如下：<br><img src="//source.jiangyayu.cn/ubuntu-matlab/1.png"></p>
+<h3 id="更换镜像文件"><a href="#更换镜像文件" class="headerlink" title="更换镜像文件"></a>更换镜像文件</h3><p>当出现<strong>Info: Eject DVD 1 and insert DVD 2 to continue</strong>字样时，重新打开一个ssh连接窗口，卸载DVD1，并挂载DVD2：<br><img src="//source.jiangyayu.cn/ubuntu-matlab/2.png"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">umount /media/matlab</div><div class="line">mount /opt/matlab/R2018a_glnxa64_dvd2.iso /media/matlab</div></pre></td></tr></table></figure></p>
+<p>更换镜像文件后，安装继续：<br><img src="//source.jiangyayu.cn/ubuntu-matlab/3.png"></p>
+<h3 id="安装完成"><a href="#安装完成" class="headerlink" title="安装完成"></a>安装完成</h3><p>出现以下显示，安装完成。<br><img src="//source.jiangyayu.cn/ubuntu-matlab/4.png"></p>
+<h2 id="激活"><a href="#激活" class="headerlink" title="激活"></a>激活</h2><h3 id="复制激活配置文件"><a href="#复制激活配置文件" class="headerlink" title="复制激活配置文件"></a>复制激活配置文件</h3><p>重新挂载DVD1，复制激活文件。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">umount /media/matlab</div><div class="line">mount /opt/matlab/R2018a_glnxa64_dvd1.iso /media/matlab</div><div class="line">cp /media/matlab/activate.ini /usr/local/matlab2018a/etc</div></pre></td></tr></table></figure></p>
+<p>修改文件内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim /usr/local/matlab2018a/etc/activate.ini</div></pre></td></tr></table></figure></p>
+<p>分别将<strong>activateCommand</strong>、<strong>licenseFile</strong>值设置为<code>activateOffline</code>和<code>/opt/matlab/crack/license_standalone.lic</code><br>如下图所示：<br><img src="//source.jiangyayu.cn/ubuntu-matlab/5.png"></p>
+<h3 id="执行activate-matlab-sh脚本"><a href="#执行activate-matlab-sh脚本" class="headerlink" title="执行activate_matlab.sh脚本"></a>执行<code>activate_matlab.sh</code>脚本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd /usr/local/matlab2018a/bin</div><div class="line">./activate_matlab.sh -propertiesFile ../etc/activate.ini</div></pre></td></tr></table></figure>
+<h3 id="复制激活文件"><a href="#复制激活文件" class="headerlink" title="复制激活文件"></a>复制激活文件</h3><p>将<code>crack</code>中的<code>bin</code>文件夹下所有文件替换到<code>/usr/local/matlab2018a/bin</code>中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cp -r  /opt/matlab/crack/R2018a/* ../</div></pre></td></tr></table></figure></p>
+<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><p>启动matlab<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./matlab</div></pre></td></tr></table></figure></p>
+<p>如图所示：<br><img src="//source.jiangyayu.cn/ubuntu-matlab/6.png"><br><strong>若出现以下错误</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Fatal Internal Error: Unexpected exception: &apos;N9MathWorks6System15SimpleExceptionE: Dynamic exception type: St13runtime_error</div><div class="line">std::exception::what: Bundle#11 start failed: libXt.so.6: cannot open shared object file: No such file or directory&apos; in createMVMAndCallParser phase &apos;Creating local MVM&apos;</div></pre></td></tr></table></figure></p>
+<p>执行以下操作：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt install x11-xserver-utils</div></pre></td></tr></table></figure></p>
+<p>然后执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xhost si:localuser:root</div></pre></td></tr></table></figure></p>
+<h2 id="补充操作"><a href="#补充操作" class="headerlink" title="补充操作"></a>补充操作</h2><h3 id="为matlab创建单独用户"><a href="#为matlab创建单独用户" class="headerlink" title="为matlab创建单独用户"></a>为matlab创建单独用户</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo adduser matlab</div></pre></td></tr></table></figure>
+<h3 id="将matlab添加到环境变量中"><a href="#将matlab添加到环境变量中" class="headerlink" title="将matlab添加到环境变量中"></a>将matlab添加到环境变量中</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim ~/.bashrc</div></pre></td></tr></table></figure>
+<p>添加行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">export PATH=/opt/android-studio/bin:$PATH</div></pre></td></tr></table></figure></p>
+<p>使生效<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">source ~/.bashrc</div></pre></td></tr></table></figure></p>
+]]></content>
+      
+        <categories>
+            
+            <category> Linux </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> MATLAB </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[南京师范大学网络认证系统(.Net版)]]></title>
       <url>https://blog.jiangyayu.cn/archives/NJNU-Auto-Login-Csharp.html/</url>
       <content type="html"><![CDATA[<p>前段时间写了个自动登录校园网的Python脚本，室友使用了，觉得操作上还是不够傻瓜。于是特编写了一个.Net版本的，图形化界面，操作简单，还加入了宿舍网络的登录功能。具体实现过程不再赘述，这里只介绍一下使用方法。<br><a id="more"></a></p>
@@ -80,9 +123,9 @@
         
         <tags>
             
-            <tag> Python </tag>
-            
             <tag> Web </tag>
+            
+            <tag> Python </tag>
             
         </tags>
         
@@ -145,9 +188,9 @@
         
         <tags>
             
-            <tag> Python </tag>
-            
             <tag> Web </tag>
+            
+            <tag> Python </tag>
             
         </tags>
         
@@ -900,9 +943,9 @@
             
             <tag> matlab </tag>
             
-            <tag> NetCDF </tag>
-            
             <tag> 可视化 </tag>
+            
+            <tag> NetCDF </tag>
             
         </tags>
         
@@ -1110,9 +1153,9 @@
         
         <tags>
             
-            <tag> matlab </tag>
-            
             <tag> 图像处理 </tag>
+            
+            <tag> matlab </tag>
             
             <tag> Erdas </tag>
             
@@ -1619,9 +1662,9 @@
             
             <tag> 数字信号 </tag>
             
-            <tag> 数字滤波器 </tag>
-            
             <tag> matlab </tag>
+            
+            <tag> 数字滤波器 </tag>
             
         </tags>
         
@@ -1704,9 +1747,9 @@
             
             <tag> 数字信号 </tag>
             
-            <tag> matlab </tag>
-            
             <tag> 图像处理 </tag>
+            
+            <tag> matlab </tag>
             
         </tags>
         

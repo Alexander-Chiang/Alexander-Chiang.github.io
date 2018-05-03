@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>https://blog.jiangyayu.cn/archives/ubuntu-matlab.html/</loc>
+    <lastmod>2018-05-03T09:15:11.584Z</lastmod>
+    <data>
+        <display>
+        <title>Ubuntu 1604安装matlab R2018a</title>
+        <pubTime>2018-05-03T09:10:50.000Z</pubTime>
+        
+        <tag>Linux</tag>
+         
+        <tag>MATLAB</tag>
+         
+         
+           
+             
+              <breadCrumb title="Linux" url="https://blog.jiangyayu.cn/categories/Linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.jiangyayu.cn/archives/NJNU-Auto-Login-Csharp.html/</loc>
     <lastmod>2017-10-10T10:45:34.463Z</lastmod>
     <data>
@@ -33,9 +55,9 @@
         <title>Python爬取历史天气数据</title>
         <pubTime>2017-09-08T15:54:34.000Z</pubTime>
         
-        <tag>Python</tag>
-         
         <tag>Web</tag>
+         
+        <tag>Python</tag>
          
          
            
@@ -55,9 +77,9 @@
         <title>南京师范大学网络自动登录脚本(Python版)</title>
         <pubTime>2017-08-31T12:00:20.000Z</pubTime>
         
-        <tag>Python</tag>
-         
         <tag>Web</tag>
+         
+        <tag>Python</tag>
          
          
            
@@ -256,9 +278,9 @@
         
         <tag>matlab</tag>
          
-        <tag>NetCDF</tag>
-         
         <tag>可视化</tag>
+         
+        <tag>NetCDF</tag>
          
          
            
@@ -346,9 +368,9 @@
         <title>数字图像处理综合实验</title>
         <pubTime>2013-05-22T07:27:10.000Z</pubTime>
         
-        <tag>matlab</tag>
-         
         <tag>图像处理</tag>
+         
+        <tag>matlab</tag>
          
         <tag>Erdas</tag>
          
@@ -372,9 +394,9 @@
         
         <tag>数字信号</tag>
          
-        <tag>数字滤波器</tag>
-         
         <tag>matlab</tag>
+         
+        <tag>数字滤波器</tag>
          
          
            
@@ -410,28 +432,6 @@
     </url>
 
     
-    
-  <url>
-    <loc>https://blog.jiangyayu.cn/archives/Orthogonal-decomposition.html/</loc>
-    <lastmod>2017-03-30T15:35:05.869Z</lastmod>
-    <data>
-        <display>
-        <title>matlab物理场的正交分解</title>
-        <pubTime>2013-12-18T06:50:35.000Z</pubTime>
-        
-        <tag>正交分解</tag>
-         
-        <tag>海洋要素</tag>
-         
-         
-           
-             
-              <breadCrumb title="数据处理分析" url="https://blog.jiangyayu.cn/categories/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E5%88%86%E6%9E%90/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
   <url>
     <loc>https://blog.jiangyayu.cn/archives/temp-salin.html/</loc>
@@ -497,6 +497,28 @@
 
     
   <url>
+    <loc>https://blog.jiangyayu.cn/archives/Orthogonal-decomposition.html/</loc>
+    <lastmod>2017-03-30T15:35:05.869Z</lastmod>
+    <data>
+        <display>
+        <title>matlab物理场的正交分解</title>
+        <pubTime>2013-12-18T06:50:35.000Z</pubTime>
+        
+        <tag>正交分解</tag>
+         
+        <tag>海洋要素</tag>
+         
+         
+           
+             
+              <breadCrumb title="数据处理分析" url="https://blog.jiangyayu.cn/categories/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E5%88%86%E6%9E%90/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.jiangyayu.cn/archives/hadoop-install.html/</loc>
     <lastmod>2017-03-30T15:35:05.868Z</lastmod>
     <data>
@@ -532,9 +554,9 @@
         
         <tag>数字信号</tag>
          
-        <tag>matlab</tag>
-         
         <tag>图像处理</tag>
+         
+        <tag>matlab</tag>
          
          
            
