@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.jiangyayu.cn/"/>
-  <updated>2018-05-03T09:39:06.481Z</updated>
+  <updated>2018-05-09T01:15:17.826Z</updated>
   <id>https://blog.jiangyayu.cn/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://blog.jiangyayu.cn/archives/ubuntu-matlab.html/"/>
     <id>https://blog.jiangyayu.cn/archives/ubuntu-matlab.html/</id>
     <published>2018-05-03T09:10:50.000Z</published>
-    <updated>2018-05-03T09:39:06.481Z</updated>
+    <updated>2018-05-09T01:15:17.826Z</updated>
     
     <content type="html"><![CDATA[<p>Ubuntu Server 16.04 LTS无图形界面下安装MATLAB R2018a。</p>
 <a id="more"></a>
