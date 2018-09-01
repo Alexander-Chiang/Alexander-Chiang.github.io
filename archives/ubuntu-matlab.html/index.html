@@ -98,7 +98,7 @@
 <meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/ubuntu-matlab/4.png">
 <meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/ubuntu-matlab/5.png">
 <meta property="og:image" content="https://blog.jiangyayu.cn//source.jiangyayu.cn/ubuntu-matlab/6.png">
-<meta property="og:updated_time" content="2018-05-09T01:15:17.826Z">
+<meta property="og:updated_time" content="2018-06-13T06:55:59.651Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu 16.04安装MATLAB R2018a">
 <meta name="twitter:description" content="Ubuntu Server 16.04 LTS无图形界面下安装MATLAB R2018a。">
@@ -471,7 +471,7 @@
 <p>然后执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xhost si:localuser:root</div></pre></td></tr></table></figure></p>
 <h2 id="补充操作"><a href="#补充操作" class="headerlink" title="补充操作"></a>补充操作</h2><h3 id="为matlab创建单独用户"><a href="#为matlab创建单独用户" class="headerlink" title="为matlab创建单独用户"></a>为matlab创建单独用户</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo adduser matlab</div></pre></td></tr></table></figure>
 <h3 id="将matlab添加到环境变量中"><a href="#将matlab添加到环境变量中" class="headerlink" title="将matlab添加到环境变量中"></a>将matlab添加到环境变量中</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim ~/.bashrc</div></pre></td></tr></table></figure>
-<p>添加行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">export PATH=/opt/android-studio/bin:$PATH</div></pre></td></tr></table></figure></p>
+<p>添加行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">export PATH=&quot;/usr/local/matlab2018a/bin:$PATH&quot;</div></pre></td></tr></table></figure></p>
 <p>使生效<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">source ~/.bashrc</div></pre></td></tr></table></figure></p>
 
       
