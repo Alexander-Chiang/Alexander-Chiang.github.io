@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.jiangyayu.cn/"/>
-  <updated>2018-09-01T03:55:51.910Z</updated>
+  <updated>2019-01-19T10:15:23.652Z</updated>
   <id>https://blog.jiangyayu.cn/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://blog.jiangyayu.cn/archives/java-csv.html/"/>
     <id>https://blog.jiangyayu.cn/archives/java-csv.html/</id>
     <published>2018-09-01T03:55:51.000Z</published>
-    <updated>2018-09-01T03:55:51.910Z</updated>
+    <updated>2019-01-19T10:15:23.652Z</updated>
     
     <summary type="html">
     
@@ -107,7 +107,7 @@
     <link href="https://blog.jiangyayu.cn/archives/NJNU-Auto-Login-Csharp.html/"/>
     <id>https://blog.jiangyayu.cn/archives/NJNU-Auto-Login-Csharp.html/</id>
     <published>2017-09-15T11:50:42.000Z</published>
-    <updated>2017-10-10T10:45:34.463Z</updated>
+    <updated>2017-10-10T10:45:34.464Z</updated>
     
     <content type="html"><![CDATA[<p>前段时间写了个自动登录校园网的Python脚本，室友使用了，觉得操作上还是不够傻瓜。于是特编写了一个.Net版本的，图形化界面，操作简单，还加入了宿舍网络的登录功能。具体实现过程不再赘述，这里只介绍一下使用方法。<br><a id="more"></a></p>
 <h2 id="界面及功能设置介绍"><a href="#界面及功能设置介绍" class="headerlink" title="界面及功能设置介绍"></a>界面及功能设置介绍</h2><h3 id="软件界面"><a href="#软件界面" class="headerlink" title="软件界面"></a>软件界面</h3><p><img src="//source.jiangyayu.cn/NJNU-Auto-Login-CSharp/0.png"></p>
@@ -196,7 +196,7 @@
     <link href="https://blog.jiangyayu.cn/archives/NJNU-auto-login.html/"/>
     <id>https://blog.jiangyayu.cn/archives/NJNU-auto-login.html/</id>
     <published>2017-08-31T12:00:20.000Z</published>
-    <updated>2017-10-01T15:53:28.283Z</updated>
+    <updated>2017-10-01T15:53:28.284Z</updated>
     
     <content type="html"><![CDATA[<p>研究生期间每天来到实验室的第一件事就是打开电脑，打开浏览器登录校园网，然后开始办公。虽说也只是简简单单的一两步，但时间长了也会觉得乏味，最重要的是一点也不极客范。于是便萌生了编写一个脚本来实现开机自动登录校园网的想法。这里总结一下我使用Python实现的过程。<br><a id="more"></a><br><img src="//source.jiangyayu.cn/NJNU-auto-login/1.png"></p>
 <h2 id="分析js"><a href="#分析js" class="headerlink" title="分析js"></a>分析js</h2><p>分析登录页面的JS代码，找到登录函数：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">loginAction</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">if</span>($(<span class="string">"#username"</span>).val()==<span class="string">""</span>)&#123;</div><div class="line">		asyncbox.alert(<span class="string">"请输入用户名"</span>,<span class="string">"登录出错"</span>);</div><div class="line">		<span class="keyword">return</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">if</span>($(<span class="string">"#password"</span>).val()==<span class="string">""</span>)&#123;</div><div class="line">		asyncbox.alert(<span class="string">"请输入密码"</span>,<span class="string">"登录出错"</span>);</div><div class="line">		<span class="keyword">return</span>;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="comment">//getUserLineInfo();</span></div><div class="line">	getLoginInfo();</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
@@ -381,7 +381,7 @@
     <link href="https://blog.jiangyayu.cn/archives/photos.html/"/>
     <id>https://blog.jiangyayu.cn/archives/photos.html/</id>
     <published>2017-03-06T13:50:47.987Z</published>
-    <updated>2017-03-30T15:35:05.869Z</updated>
+    <updated>2017-03-30T15:35:05.870Z</updated>
     
     <content type="html"><![CDATA[<div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 33.333333333333336%;"><a href="//source.jiangyayu.cn/photos/33.小溪.jpg" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/photos/33.小溪.jpg" title="小溪"></a></div><div class="group-picture-column" style="width: 33.333333333333336%;"><a href="//source.jiangyayu.cn/photos/32.玄武湖日出.jpg" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/photos/32.玄武湖日出.jpg" title="玄武湖日出"></a></div><div class="group-picture-column" style="width: 33.333333333333336%;"><a href="//source.jiangyayu.cn/photos/30.上海.jpg" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/photos/30.上海.jpg" title="上海外滩夜景"></a></div></div></div></div>
 <div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 33.333333333333336%;"><a href="//source.jiangyayu.cn/photos/29.南师雪景.jpg" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/photos/29.南师雪景.jpg" title="南师雪景"></a></div><div class="group-picture-column" style="width: 33.333333333333336%;"><a href="//source.jiangyayu.cn/photos/27.南师随园.jpg" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/photos/27.南师随园.jpg" title="南师随园"></a></div><div class="group-picture-column" style="width: 33.333333333333336%;"><a href="//source.jiangyayu.cn/photos/25.如琴湖.jpg" data-fancybox="fancyboxgroup" class="fancybox"><img src="//source.jiangyayu.cn/photos/25.如琴湖.jpg" title="如琴湖"></a></div></div></div></div>
@@ -426,7 +426,7 @@
     <link href="https://blog.jiangyayu.cn/archives/hexo-build-blog.html/"/>
     <id>https://blog.jiangyayu.cn/archives/hexo-build-blog.html/</id>
     <published>2017-01-10T14:16:55.000Z</published>
-    <updated>2017-07-19T17:32:49.035Z</updated>
+    <updated>2017-07-19T17:32:49.036Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p><a href="https://hexo.io/zh-cn/" target="_blank" rel="external">Hexo</a> 是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="http://daringfireball.net/projects/markdown/" target="_blank" rel="external">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。  </p>
@@ -596,7 +596,7 @@
     <link href="https://blog.jiangyayu.cn/archives/CAS-Single-Sign-On.html/"/>
     <id>https://blog.jiangyayu.cn/archives/CAS-Single-Sign-On.html/</id>
     <published>2016-10-06T02:01:02.000Z</published>
-    <updated>2017-04-05T10:36:42.219Z</updated>
+    <updated>2017-04-05T10:36:42.220Z</updated>
     
     <content type="html"><![CDATA[<h2 id="SSO和CAS"><a href="#SSO和CAS" class="headerlink" title="SSO和CAS"></a>SSO和CAS</h2><p>&emsp;&emsp;单点登录（SingleSign On , 简称 SSO ）是目前比较流行的服务于企业业务整合的解决方案之一， SSO使得在多个应用系统中，用户只需要登录一次就可以访问所有相互信任的应用系统。<br><a id="more"></a><br>&emsp;&emsp;CAS是中央认证服务Central Authentication Service的简称，是对单点登录SSO（Single Sign On）的一种实现。最初由耶鲁大学的Shawn Bayern 开发，后由Jasig社区维护，经过十多年发展，目前已成为影响最大、广泛使用的、基于Java实现的、开源SSO解决方案。CAS由Cas Server和Cas Client两部分组成，Cas Server是核心，而Cas Client通常就对应于我们的应用。一个Cas Server可以对应于多个Cas Client。它允许我们在一个Client进行登录以后无需再让用户输入用户名和密码进行认证即可访问其它Client应用。</p>
 <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>安装JDK和Tomcat：<br>&emsp;&emsp;已经配置好Tomcat的可以跳过此步骤，未安装配置的可以参考另外一篇博客：<a href="https://blog.jiangyayu.cn//archives/tomcat-install.html">CentOS6.5中Tomcat的安装配置</a></p>
@@ -644,7 +644,7 @@
     <link href="https://blog.jiangyayu.cn/archives/tomcat-install.html/"/>
     <id>https://blog.jiangyayu.cn/archives/tomcat-install.html/</id>
     <published>2016-10-05T12:26:30.000Z</published>
-    <updated>2017-03-30T15:35:05.871Z</updated>
+    <updated>2017-03-30T15:35:05.872Z</updated>
     
     <content type="html"><![CDATA[<p>&emsp;&emsp;Tomcat 服务器是一个免费的开放源代码的Web 应用服务器，属于轻量级应用服务器，在中小型系统和并发访问用户不是很多的场合下被普遍使用，是开发和调试JSP 程序的首选。<br><a id="more"></a></p>
 <h2 id="JDK的安装配置"><a href="#JDK的安装配置" class="headerlink" title="JDK的安装配置"></a>JDK的安装配置</h2><p>&emsp;&emsp;tomcat的运行依赖于Java jdk，所以安装Tomcat前需要先安装jdk，已安装的可以跳过此步骤。判断主机是否安装jdk的方法：输入命令<code>java -version</code>，如果显示jdk版本号，则证明已经安装，如果不显示，则证明没有安装，如果没有安装则按照以下方法下载安装。</p>
@@ -693,9 +693,9 @@
       <category term="Linux" scheme="https://blog.jiangyayu.cn/categories/Linux/"/>
     
     
-      <category term="服务器" scheme="https://blog.jiangyayu.cn/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-    
       <category term="CentOS" scheme="https://blog.jiangyayu.cn/tags/CentOS/"/>
+    
+      <category term="服务器" scheme="https://blog.jiangyayu.cn/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
       <category term="Tomcat" scheme="https://blog.jiangyayu.cn/tags/Tomcat/"/>
     
@@ -743,7 +743,7 @@
     <link href="https://blog.jiangyayu.cn/archives/matlab-nc.html/"/>
     <id>https://blog.jiangyayu.cn/archives/matlab-nc.html/</id>
     <published>2016-04-20T04:53:40.000Z</published>
-    <updated>2017-03-30T15:35:05.875Z</updated>
+    <updated>2017-03-30T15:35:05.876Z</updated>
     
     <content type="html"><![CDATA[<h2 id="处理环境"><a href="#处理环境" class="headerlink" title="处理环境"></a>处理环境</h2><p>操作系统：Windows 10 64bit<br>软件：MATLAB R2016a<br>&emsp;&emsp;&emsp;ArcGIS Desktop 10.2<br>数据下载：链接：<a href="http://pan.baidu.com/s/1slIZ5nR" target="_blank" rel="external">http://pan.baidu.com/s/1slIZ5nR</a> 密码：2z3f<br><a id="more"></a></p>
 <h2 id="MATLAB批量处理NetCDF文件"><a href="#MATLAB批量处理NetCDF文件" class="headerlink" title="MATLAB批量处理NetCDF文件"></a>MATLAB批量处理NetCDF文件</h2><h3 id="设置输入输出"><a href="#设置输入输出" class="headerlink" title="设置输入输出"></a>设置输入输出</h3><p>&emsp;&emsp;将待处理的*.nc文件统一放在NDVI文件夹中，在MATLAB中设置输入输出路径：<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">pathinput = <span class="string">'D:\Program Files\MATLAB\Work\NDVI'</span>;</div><div class="line">pathoutput = <span class="string">'D:\output\';</span></div></pre></td></tr></table></figure></p>
@@ -816,7 +816,7 @@
     <link href="https://blog.jiangyayu.cn/archives/hadoop-install.html/"/>
     <id>https://blog.jiangyayu.cn/archives/hadoop-install.html/</id>
     <published>2016-01-16T05:11:05.000Z</published>
-    <updated>2017-03-30T15:35:05.868Z</updated>
+    <updated>2017-03-30T15:35:05.869Z</updated>
     
     <content type="html"><![CDATA[<h2 id="运行环境软硬件环境"><a href="#运行环境软硬件环境" class="headerlink" title="运行环境软硬件环境"></a>运行环境软硬件环境</h2><p>主机操作系统：Windows 10, 64-bit  (Build 10586) 10.0.10586<br>虚拟软件：VMware®Workstation 11.1.2 build-2780323<br>虚拟机操作系统：CentOS 6.5 64bit，单核，5G内存<br><a id="more"></a></p>
 <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="设置IP"><a href="#设置IP" class="headerlink" title="设置IP"></a>设置IP</h3><p><img src="//source.jiangyayu.cn/hadoop-install/1.png" style="zoom:0.8"><br>删除原来的连接信息，新建一个连接，设置该连接为手工方式，设置如下信息（需根据虚拟机设置相应参数以保证可以正常上网）：<br>IP地址：192.168.149.101<br>子网掩码：255.255.255.0<br>网关：192.168.149.2<br>DNS：192.168.149.2<br><img src="//source.jiangyayu.cn/hadoop-install/2.png" style="zoom:0.8" alter="设置IP地址"> </p>
@@ -883,7 +883,7 @@
     <link href="https://blog.jiangyayu.cn/archives/Orthogonal-decomposition.html/"/>
     <id>https://blog.jiangyayu.cn/archives/Orthogonal-decomposition.html/</id>
     <published>2013-12-18T06:50:35.000Z</published>
-    <updated>2017-03-30T15:35:05.869Z</updated>
+    <updated>2017-03-30T15:35:05.870Z</updated>
     
     <content type="html"><![CDATA[<h2 id="经验正交分解的原理"><a href="#经验正交分解的原理" class="headerlink" title="经验正交分解的原理"></a>经验正交分解的原理</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>&emsp;&emsp;经验正交函数分析方法(empirical orthogonal function,缩写为EOF)，也称特征向量分析(eigen vector analysis)，或者主成分分析(principal component analysis,缩写PCA)，是一种分析矩阵数据中的结构特征，提取主要数据特征量的一种方法。Lorenz在1950年代首次将其引入气象和气候研究，现在在地学及其他学科中得到了非常广泛的应用。<br><a id="more"></a><br>&emsp;&emsp;分析中通常特征向量对应的是空间样本，称空间特征向量或者空间模态；对应的是时间变化称为时间系数。</p>
 <h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><p>&emsp;（1）主要特色：能够有效地体现物理场的主要信息，保留次要信息并排除外来的随机干扰。<br>&emsp;（2）无固定的函数形式：这种正交函数展开不像三角函数展开、球函数展开那样有固定的展开形式。<br>&emsp;（3）图形是由场本身决定的，不是事先人为地给定典型场函数的。<br>&emsp;（4）具有收敛快、能更好地反应出场的基本结构的特征。</p>
@@ -927,7 +927,7 @@
     <link href="https://blog.jiangyayu.cn/archives/tide.html/"/>
     <id>https://blog.jiangyayu.cn/archives/tide.html/</id>
     <published>2013-12-10T05:54:39.000Z</published>
-    <updated>2017-03-30T15:35:05.869Z</updated>
+    <updated>2017-03-30T15:35:05.870Z</updated>
     
     <content type="html"><![CDATA[<p>使用matlab进行潮汐调和分析，判别潮汐类型。<br><a id="more"></a></p>
 <h2 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h2><h3 id="数据来源"><a href="#数据来源" class="headerlink" title="数据来源"></a>数据来源</h3><p>&emsp;&emsp;本次实验采用的数据来自夏威夷大学海平面中心（University of Hawaii Sea Level Center）：<a href="http://ilikai.soest.hawaii.edu/uhslc/datai.html" target="_blank" rel="external">http://ilikai.soest.hawaii.edu/uhslc/datai.html</a><br>本站提供下载：<br><br>&emsp;&emsp;厦门站：<a href="//source.jiangyayu.cn/tide/h376a95.dat">h376a95.dat</a></p>
