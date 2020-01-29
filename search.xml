@@ -4,37 +4,6 @@
   
     
     <entry>
-      <title><![CDATA[java-csv]]></title>
-      <url>https://blog.jiangyayu.cn/archives/java-csv.html/</url>
-      <content type="html"></content>
-      
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[Java解析Excel文件]]></title>
-      <url>https://blog.jiangyayu.cn/archives/java-excel.html/</url>
-      <content type="html"><![CDATA[<p>hhhh</p>
-]]></content>
-      
-        <categories>
-            
-            <category> 编程 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> java </tag>
-            
-            <tag> Excel </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[Ubuntu 16.04安装MATLAB R2018a]]></title>
       <url>https://blog.jiangyayu.cn/archives/ubuntu-matlab.html/</url>
       <content type="html"><![CDATA[<p>Ubuntu Server 16.04 LTS无图形界面下安装MATLAB R2018a。</p>
@@ -209,7 +178,7 @@
 <p><img src="//source.jiangyayu.cn/NJNU-auto-login/5.png"></p>
 <p>将前面说到的<code>start.vbs</code>快捷方式复制到打开的文件夹中便可以实现开机自启动了，从此告别手动登录校园网。</p>
 <h2 id="附"><a href="#附" class="headerlink" title="附"></a>附</h2><p>最后附上打包好的exe文件，大家下载后只需修改<code>config.ini</code>中的用户名和密码，然后将<code>start.vbs</code>快捷方式按照以上说明发送到<code>Startup</code>文件夹中即可。</p>
-<p>下载：<br><a href="//source.jiangyayu.cn/NJNU-auto-login/5.png">NJNU_Auto_Login.zip</a></p>
+<p>下载：<br><a href="//source.jiangyayu.cn/NJNU-auto-login/NJNU_Auto_Login.zip">NJNU_Auto_Login.zip</a></p>
 ]]></content>
       
         <categories>

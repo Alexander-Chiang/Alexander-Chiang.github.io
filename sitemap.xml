@@ -2,16 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://blog.jiangyayu.cn/archives/java-csv.html/</loc>
+    <loc>https://blog.jiangyayu.cn/archives/NJNU-auto-login.html/</loc>
     
-    <lastmod>2019-01-19T10:15:23.652Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.jiangyayu.cn/archives/java-excel.html/</loc>
-    
-    <lastmod>2018-09-01T03:53:39.830Z</lastmod>
+    <lastmod>2020-01-29T07:11:47.244Z</lastmod>
     
   </url>
   
@@ -33,13 +26,6 @@
     <loc>https://blog.jiangyayu.cn/archives/NJNU-Auto-Login-Csharp.html/</loc>
     
     <lastmod>2017-10-10T10:45:34.464Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.jiangyayu.cn/archives/NJNU-auto-login.html/</loc>
-    
-    <lastmod>2017-10-01T15:53:28.284Z</lastmod>
     
   </url>
   
@@ -163,7 +149,7 @@
   </url>
   
   <url>
-    <loc>https://blog.jiangyayu.cn/archives/photos.html/</loc>
+    <loc>https://blog.jiangyayu.cn/archives/temp-salin.html/</loc>
     
     <lastmod>2017-03-30T15:35:05.870Z</lastmod>
     
@@ -177,14 +163,14 @@
   </url>
   
   <url>
-    <loc>https://blog.jiangyayu.cn/archives/tide.html/</loc>
+    <loc>https://blog.jiangyayu.cn/archives/photos.html/</loc>
     
     <lastmod>2017-03-30T15:35:05.870Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.jiangyayu.cn/archives/temp-salin.html/</loc>
+    <loc>https://blog.jiangyayu.cn/archives/tide.html/</loc>
     
     <lastmod>2017-03-30T15:35:05.870Z</lastmod>
     
@@ -198,7 +184,14 @@
   </url>
   
   <url>
-    <loc>https://blog.jiangyayu.cn/archives/ArcGIS-practice-1.html/</loc>
+    <loc>https://blog.jiangyayu.cn/archives/ArcGIS-practice-3.html/</loc>
+    
+    <lastmod>2017-03-30T15:35:05.868Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.jiangyayu.cn/archives/Digital-Image-Positioning.html/</loc>
     
     <lastmod>2017-03-30T15:35:05.868Z</lastmod>
     
@@ -212,14 +205,7 @@
   </url>
   
   <url>
-    <loc>https://blog.jiangyayu.cn/archives/ArcGIS-practice-3.html/</loc>
-    
-    <lastmod>2017-03-30T15:35:05.868Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.jiangyayu.cn/archives/Digital-Image-Positioning.html/</loc>
+    <loc>https://blog.jiangyayu.cn/archives/ArcGIS-practice-1.html/</loc>
     
     <lastmod>2017-03-30T15:35:05.868Z</lastmod>
     
